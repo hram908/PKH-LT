@@ -1,0 +1,4 @@
+# IntelliJ Settings
+
+.idea/*
+*package-lock.json
