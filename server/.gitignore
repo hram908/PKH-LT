@@ -1,0 +1,9 @@
+# IntelliJ Settings
+
+**/.idea/*
+
+# Gradle Settings
+*/.gradle
+**/gradle
+gradlew
+gradlew.bat
