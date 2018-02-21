@@ -16,6 +16,7 @@
 .user-input{
   padding: 25px;
   position: fixed;
+  right: 100px;
   background: white;
   color: black;
   bottom: 200px;

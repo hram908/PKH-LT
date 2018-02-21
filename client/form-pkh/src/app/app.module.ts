@@ -7,6 +7,7 @@ import { InsuranceDataComponent } from './insurance-data/insurance-data.componen
 import { FormAComponent } from './chatbot/form-a/form-a.component';
 import { ChatbotComponent } from './chatbot/chatbot.component';
 import {FormsModule} from "@angular/forms";
+import {ChatbotService} from "./chatbot/chatbot-service";
 
 
 @NgModule({
@@ -21,7 +22,10 @@ import {FormsModule} from "@angular/forms";
     BrowserModule,
     FormsModule
   ],
-  providers: [FormData],
+  providers: [
+    FormData,
+    ChatbotService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
