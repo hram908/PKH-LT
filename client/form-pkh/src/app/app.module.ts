@@ -8,7 +8,8 @@ import { FormsModule } from '@angular/forms';
 import { AllgemeineDaten } from './allgemeineDaten';
 import { Formulardaten } from './formulardaten';
 import { ChatbotComponent } from './chatbot/chatbot.component';
-import {ChatbotService} from "./chatbot/chatbot-service";
+import {ChatbotService} from './chatbot/chatbot-service';
+import {FormAComponent} from './chatbot/form-a/form-a.component';
 
 
 @NgModule({
@@ -17,6 +18,7 @@ import {ChatbotService} from "./chatbot/chatbot-service";
     PersonendatenComponent,
     VersicherungsdatenComponent,
     StartfensterComponent,
+    FormAComponent,
     ChatbotComponent
   ],
   imports: [
