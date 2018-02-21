@@ -20,7 +20,6 @@ import { ChatbotComponent } from './chatbot/chatbot.component';
     BrowserModule
   ],
   providers: [FormData],
-  bootstrap: [AppComponent
-  ]
+  bootstrap: [AppComponent]
 })
 export class AppModule { }
