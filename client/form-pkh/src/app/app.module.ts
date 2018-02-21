@@ -1,24 +1,35 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import {AppComponent} from './app.component';
-import { PersonalDataComponent } from './formular/personal-data/personal-data.component';
-import { FormData } from './formData';
-import { InsuranceDataComponent } from './formular/insurance-data/insurance-data.component';
-import { GreetingWindowComponent } from './formular/greeting-window/greeting-window.component';
+import { AppComponent } from './app.component';
+import { PersonendatenComponent } from './formular/personendaten/personendaten.component';
+import { VersicherungsdatenComponent } from './formular/versicherungsdaten/versicherungsdaten.component';
+import { StartfensterComponent } from './formular/startfenster/startfenster.component';
+import { FormsModule } from '@angular/forms';
+import { AllgemeineDaten } from './allgemeineDaten';
+import { Formulardaten } from './formulardaten';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    PersonalDataComponent,
-    InsuranceDataComponent,
-    GreetingWindowComponent,
+    PersonendatenComponent,
+    VersicherungsdatenComponent,
+    StartfensterComponent,
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule
   ],
-  providers: [FormData],
-  bootstrap: [AppComponent
+  providers: [
+    Formulardaten,
+    AllgemeineDaten
+  ],
+  entryComponents: [
+    StartfensterComponent,
+    PersonendatenComponent
+  ],
+  bootstrap: [
+    AppComponent
   ]
 })
 export class AppModule { }

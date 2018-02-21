@@ -1,0 +1,13 @@
+  <div class="radio">
+    <label class="radio-inline" for="antragsteller"><input type="radio" id="antragsteller" name="beantragender" [(ngModel)]="allgemeineDaten.istAntragsteller" [value]="true">Antragsteller</label>
+  </div>
+
+  <div class="radio">
+    <label class="radio-inline" for="berater"><input type="radio" id="berater" name="beantragender" [(ngModel)]="allgemeineDaten.istAntragsteller" [value]="false">Jurist oder Sachbearbeiter</label>
+  </div>
+
+  <div *ngIf="allgemeineDaten.istAntragsteller" class="form-text">
+    Für die vollständige Befüllung des Formulars sind folgende Dokumente notwendig:<br>
+      - blablablabla
+  </div>
+  <br>
