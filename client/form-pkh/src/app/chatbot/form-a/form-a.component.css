@@ -12,3 +12,22 @@
   right: 150px;
   bottom: 100px;
 }
+
+.user-input{
+  padding: 25px;
+  position: fixed;
+  background: white;
+  color: black;
+  bottom: 200px;
+  text-align: center;
+}
+
+.chatbot-input{
+  padding: 25px;
+  position: fixed;
+  right: 100px;
+  background: white;
+  color: black;
+  top: 200px;
+  text-align: center;
+}

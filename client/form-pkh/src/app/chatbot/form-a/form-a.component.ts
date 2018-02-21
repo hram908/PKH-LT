@@ -11,6 +11,7 @@ export class FormAComponent{
 
   public chatbotText: string;
   public lastUserInput: string;
+  public showUserInput: boolean;
 
   constructor() {
     this.chatbotText = this.DefaultText;
@@ -18,6 +19,6 @@ export class FormAComponent{
   }
 
   public onUserInput(){
-    console.log("Do something: " + this.lastUserInput);
+    this.showUserInput = true;
   }
 }
