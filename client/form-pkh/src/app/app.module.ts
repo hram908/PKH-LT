@@ -7,6 +7,8 @@ import { StartfensterComponent } from './formular/startfenster/startfenster.comp
 import { FormsModule } from '@angular/forms';
 import { AllgemeineDaten } from './allgemeineDaten';
 import { Formulardaten } from './formulardaten';
+import { ChatbotComponent } from './chatbot/chatbot.component';
+import {ChatbotService} from "./chatbot/chatbot-service";
 
 
 @NgModule({
@@ -15,6 +17,7 @@ import { Formulardaten } from './formulardaten';
     PersonendatenComponent,
     VersicherungsdatenComponent,
     StartfensterComponent,
+    ChatbotComponent
   ],
   imports: [
     BrowserModule,
@@ -22,7 +25,8 @@ import { Formulardaten } from './formulardaten';
   ],
   providers: [
     Formulardaten,
-    AllgemeineDaten
+    AllgemeineDaten,
+    ChatbotService
   ],
   entryComponents: [
     StartfensterComponent,

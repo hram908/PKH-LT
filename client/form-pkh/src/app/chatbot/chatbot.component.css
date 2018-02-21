@@ -1,0 +1,40 @@
+.bot-button{
+  position:fixed;
+  background: grey;
+  color: white;
+  z-index: 1;
+  right: 0px;
+  top: 50px;
+  width: 50px;
+  height: 50px;
+  text-align: center;
+}
+
+.bot-button{
+  position:fixed;
+  background: black;
+  color: white;
+  right: 0px;
+  top: 50px;
+  transition: 0.7s;
+  text-align: center;
+}
+
+.bot-side-menu{
+  position:fixed;
+  background: black;
+  color: white;
+  right: -450px;
+  padding: 5px;
+  padding-top: 50px;
+  margin: 0px;
+  top: 0px;
+  height: 100%;
+  width: 500px;
+  transition: 0.7s;
+  text-align: center;
+}
+
+.bot-side-menu-active{
+  right: 0px;
+}
