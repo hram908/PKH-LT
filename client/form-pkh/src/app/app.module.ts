@@ -1,9 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {AppComponent} from './app.component';
-import { PersonalDataComponent } from './personal-data/personal-data.component';
+import { PersonalDataComponent } from './formular/personal-data/personal-data.component';
 import { FormData } from './formData';
-import { InsuranceDataComponent } from './insurance-data/insurance-data.component';
+import { InsuranceDataComponent } from './formular/insurance-data/insurance-data.component';
+import { GreetingWindowComponent } from './formular/greeting-window/greeting-window.component';
 
 
 @NgModule({
@@ -11,6 +12,7 @@ import { InsuranceDataComponent } from './insurance-data/insurance-data.componen
     AppComponent,
     PersonalDataComponent,
     InsuranceDataComponent,
+    GreetingWindowComponent,
   ],
   imports: [
     BrowserModule
