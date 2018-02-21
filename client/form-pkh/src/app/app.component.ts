@@ -1,11 +1,12 @@
 import {
-  AfterViewInit, Component, ComponentFactory, ComponentFactoryResolver, ComponentRef, OnDestroy, ViewChild,
+  AfterViewInit, Component, ComponentFactory, ComponentFactoryResolver, ComponentRef, OnDestroy, OnInit, ViewChild,
   ViewContainerRef
 } from '@angular/core';
 import {Formulardaten} from './formulardaten';
 import {StartfensterComponent} from './formular/startfenster/startfenster.component';
 import {AllgemeineDaten} from './allgemeineDaten';
 import {PersonendatenComponent} from './formular/personendaten/personendaten.component';
+import {StepSpeicher} from './stepSpeicher';
 
 
 
@@ -22,27 +23,46 @@ export class AppComponent implements AfterViewInit, OnDestroy {
   title = 'Prozesskostenhilfe-Helfer';
 
   constructor(private componentFactoryResolver: ComponentFactoryResolver, public formulardaten: Formulardaten,
-              public allgemeineDaten: AllgemeineDaten) {
+              public allgemeineDaten: AllgemeineDaten, public stepSpeicher: StepSpeicher) {
   }
 
   ngAfterViewInit() {
-    this.erschaffeComponent('0');
+    this.erschaffeComponent();
   }
 
   ngOnDestroy() {
     this.componentRef.destroy();
   }
 
-  erschaffeComponent(komponente: string) {
+  erschaffeComponent() {
     this.container.clear();
-    const factory = this.componentFactoryResolver.resolveComponentFactory(this.holeAbschnitt(komponente));
+    const factory = this.componentFactoryResolver.resolveComponentFactory(this.stepSpeicher.aktuellerAbschnitt.component);
     this.componentRef = this.container.createComponent(factory);
   }
 
-  holeAbschnitt(id: string): any {
-    switch (id) {
-      case '0': return StartfensterComponent;
-      case 'A': return PersonendatenComponent;
+  weiter() {
+    this.container.clear();
+    const factory = this.componentFactoryResolver.resolveComponentFactory(this.naechsterAbschnitt(this.stepSpeicher.aktuellerAbschnitt.id));
+    this.componentRef = this.container.createComponent(factory);
+  }
+
+  zurueck() {
+    this.container.clear();
+    const factory = this.componentFactoryResolver.resolveComponentFactory(
+      this.vorherigerAbschnitt(this.stepSpeicher.aktuellerAbschnitt.id));
+    this.componentRef = this.container.createComponent(factory);
+  }
+
+  naechsterAbschnitt(id: string): any {
+    switch (this.stepSpeicher.aktuellerAbschnitt.id) {
+      case '0': return PersonendatenComponent;
+    }
+  }
+
+  vorherigerAbschnitt(id: string): any {
+    switch (this.stepSpeicher.aktuellerAbschnitt.id) {
+      case 'A': return StartfensterComponent;
+      default: return StartfensterComponent;
     }
   }
 }

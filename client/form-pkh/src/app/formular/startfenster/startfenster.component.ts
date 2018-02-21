@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import { AllgemeineDaten } from '../../allgemeineDaten';
 
 @Component({
@@ -6,8 +6,11 @@ import { AllgemeineDaten } from '../../allgemeineDaten';
   templateUrl: './startfenster.component.html',
   styleUrls: ['./startfenster.component.css']
 })
-export class StartfensterComponent {
+export class StartfensterComponent implements OnInit{
 
   constructor(public allgemeineDaten: AllgemeineDaten) {
+  }
+
+  ngOnInit() {
   }
 }

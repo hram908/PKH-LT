@@ -10,6 +10,7 @@ import { Formulardaten } from './formulardaten';
 import { ChatbotComponent } from './chatbot/chatbot.component';
 import {ChatbotService} from './chatbot/chatbot-service';
 import {FormAComponent} from './chatbot/form-a/form-a.component';
+import {StepSpeicher} from './stepSpeicher';
 
 
 @NgModule({
@@ -28,7 +29,8 @@ import {FormAComponent} from './chatbot/form-a/form-a.component';
   providers: [
     Formulardaten,
     AllgemeineDaten,
-    ChatbotService
+    ChatbotService,
+    StepSpeicher
   ],
   entryComponents: [
     StartfensterComponent,
