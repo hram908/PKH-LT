@@ -1,3 +1,6 @@
 <div class="container bot-dialog-container">
-  <label class="label label-defaul">Wie kann ich ihnen helfen?</label>
+  <label class="label label-defaul">{{chatbotText}}</label>
+
+  <input type="text" class="form-control" [(ngModel)]="lastUserInput">
+  <button type="button" class="btn negative-button" (click)="onUserInput()">Los!</button>
 </div>

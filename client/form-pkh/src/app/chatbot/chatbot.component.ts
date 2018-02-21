@@ -12,7 +12,6 @@ public botIsActive: boolean;
   }
 
   public toggleBot(){
-    console.log("Bot status:" + this.botIsActive);
     this.botIsActive = !this.botIsActive;
   }
 

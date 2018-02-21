@@ -6,6 +6,7 @@ import { FormData } from './formData';
 import { InsuranceDataComponent } from './insurance-data/insurance-data.component';
 import { FormAComponent } from './chatbot/form-a/form-a.component';
 import { ChatbotComponent } from './chatbot/chatbot.component';
+import {FormsModule} from "@angular/forms";
 
 
 @NgModule({
@@ -14,10 +15,11 @@ import { ChatbotComponent } from './chatbot/chatbot.component';
     PersonalDataComponent,
     InsuranceDataComponent,
     FormAComponent,
-    ChatbotComponent,
+    ChatbotComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule
   ],
   providers: [FormData],
   bootstrap: [AppComponent]

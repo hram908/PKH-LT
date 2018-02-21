@@ -5,11 +5,19 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './form-a.component.html',
   styleUrls: ['./form-a.component.css']
 })
-export class FormAComponent implements OnInit {
+export class FormAComponent{
 
-  constructor() { }
+  private readonly DefaultText: string = "Wie kann ich Ihnen helfen?";
 
-  ngOnInit() {
+  public chatbotText: string;
+  public lastUserInput: string;
+
+  constructor() {
+    this.chatbotText = this.DefaultText;
+    this.lastUserInput = "";
   }
 
+  public onUserInput(){
+    console.log("Do something: " + this.lastUserInput);
+  }
 }
