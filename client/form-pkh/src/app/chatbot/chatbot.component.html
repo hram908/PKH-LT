@@ -1,4 +1,8 @@
-<button class="btn btn-default" (click)="toggleBot()">Bot</button>
+<button class="btn btn-default bot-button" (click)="toggleBot()">Bot</button>
+
 <ng-container *ngIf="botIsActive">
-Hurrah!
+  <div class="bot-side-menu" [class.bot-side-menu-active]="botIsActive">
+    <app-form-a></app-form-a>
+  </div>
 </ng-container>
+
