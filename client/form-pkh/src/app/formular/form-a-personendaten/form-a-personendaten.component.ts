@@ -1,5 +1,6 @@
 import {Component} from '@angular/core';
 import {FormAMaterial} from '../../formulardaten/form-a-material';
+import {StartfensterComponent} from '../startfenster/startfenster.component';
 
 @Component({
   selector: 'app-form-a-personendaten',
@@ -13,4 +14,7 @@ export class FormAPersonendatenComponent {
 
   }
 
+  getUntertitel(): string {
+    return FormAPersonendatenComponent.UNTERTITEL;
+  }
 }

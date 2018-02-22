@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {StartfensterComponent} from '../startfenster/startfenster.component';
 
 @Component({
   selector: 'app-form-h-wohnkosten',
@@ -12,4 +13,7 @@ export class FormHWohnkostenComponent implements OnInit {
   ngOnInit() {
   }
 
+  getUntertitel(): string {
+    return FormHWohnkostenComponent.UNTERTITEL;
+  }
 }

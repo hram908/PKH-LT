@@ -1,12 +1,16 @@
 <div id="formularUeberschrift">
-  <h2>{{UNTERTITEL}}</h2>
+  <h2>{{getUntertitel()}}</h2>
 </div>
 <div class="radio">
   <label class="radio-inline" for="antragsteller"><input type="radio" id="antragsteller" name="beantragender" [(ngModel)]="allgemeineDaten.istAntragsteller" [value]="true">Antragsteller</label>
 </div>
 
 <div class="radio">
-  <label class="radio-inline" for="berater"><input type="radio" id="berater" name="beantragender" [(ngModel)]="allgemeineDaten.istAntragsteller" [value]="false">Jurist oder Sachbearbeiter</label>
+  <label class="radio-inline" for="berater"><input type="radio" id="berater" name="beantragender" [(ngModel)]="allgemeineDaten.istAntragsteller" [value]="false">Sozialberater</label>
+</div>
+
+<div class="radio">
+  <label class="radio-inline" for="jurist"><input type="radio" id="jurist" name="beantragender" [(ngModel)]="allgemeineDaten.istAntragsteller" [value]="false">Jurist</label>
 </div>
 
 <div class="form-text">

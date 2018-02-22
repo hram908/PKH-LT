@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {StartfensterComponent} from '../startfenster/startfenster.component';
 
 @Component({
   selector: 'app-form-i-sonstige-verpflichtungen',
@@ -12,4 +13,7 @@ export class FormISonstigeVerpflichtungenComponent implements OnInit {
   ngOnInit() {
   }
 
+  getUntertitel(): string {
+    return FormISonstigeVerpflichtungenComponent.UNTERTITEL;
+  }
 }

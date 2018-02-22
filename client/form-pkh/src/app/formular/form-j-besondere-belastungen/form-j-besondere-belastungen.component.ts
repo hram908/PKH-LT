@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {StartfensterComponent} from '../startfenster/startfenster.component';
 
 @Component({
   selector: 'app-form-jbesondere-belastungen',
@@ -12,4 +13,7 @@ export class FormJBesondereBelastungenComponent implements OnInit {
   ngOnInit() {
   }
 
+  getUntertitel(): string {
+    return FormJBesondereBelastungenComponent.UNTERTITEL;
+  }
 }

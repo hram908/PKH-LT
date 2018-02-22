@@ -14,4 +14,8 @@ export class StartfensterComponent implements OnInit {
 
   ngOnInit() {
   }
+
+  getUntertitel(): string {
+    return StartfensterComponent.UNTERTITEL;
+  }
 }
