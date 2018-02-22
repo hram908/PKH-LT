@@ -1,13 +1,17 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Willkommen zum {{ title }}!
-  </h1>
-</div>
-<h2>Bitte gib deine Daten ein: </h2>
-<div>
-  {{formData.name}}
-  <app-personal-data></app-personal-data>
+<div class="container">
+  <div id="ueberschrift" style="text-align:center">
+    <h1>
+      Willkommen zum {{ title }}!
+    </h1>
+  </div>
+  <div id="formularUeberschrift">
+    <h2>Bitte gib deine Daten ein: </h2>
+  </div>
+  <div id="formularDiv" class="form-group">
+    <ng-template #appHost></ng-template>
+  </div>
+  <button class="btn btn-primary custom-control-inline" (click)="zurueck()">Zurück</button>
+  <button type="button" class="btn btn-primary custom-control-inline" (click)="weiter()">Weiter</button>
   <app-chatbot></app-chatbot>
 </div>
-

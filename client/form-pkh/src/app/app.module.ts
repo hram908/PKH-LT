@@ -1,27 +1,60 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import {AppComponent} from './app.component';
-import { PersonalDataComponent } from './personal-data/personal-data.component';
-import { FormData } from './formData';
-import { InsuranceDataComponent } from './insurance-data/insurance-data.component';
-import { FormAComponent } from './chatbot/form-a/form-a.component';
+import { AppComponent } from './app.component';
+import { FormAPersonendatenComponent } from './formular/form-a-personendaten/form-a-personendaten.component';
+import { FormBVersicherungenComponent } from './formular/form-b-versicherungen/form-b-versicherungen.component';
+import { StartfensterComponent } from './formular/startfenster/startfenster.component';
+import { FormsModule } from '@angular/forms';
+import { AllgemeineDaten } from './allgemeineDaten';
+import { Formulardaten } from './formulardaten';
 import { ChatbotComponent } from './chatbot/chatbot.component';
-import {FormsModule} from "@angular/forms";
+import {ChatbotService} from './chatbot/chatbot-service';
+import {FormAComponent} from './chatbot/form-a/form-a.component';
+import {StepSpeicher} from './stepSpeicher';
+import { FormCUnterhaltsanspruchComponent } from './formular/form-c-unterhaltsanspruch/form-c-unterhaltsanspruch.component';
+import { FormDGewaehrterUnterhaltComponent } from './formular/form-d-gewaehrter-unterhalt/form-d-gewaehrter-unterhalt.component';
+import { FormEBruttoeinnahmenComponent } from './formular/form-e-bruttoeinnahmen/form-e-bruttoeinnahmen.component';
+import { FormFAbzuegeComponent } from './formular/form-f-abzuege/form-f-abzuege.component';
+import { FormGEigentumComponent } from './formular/form-g-eigentum/form-g-eigentum.component';
+import { FormHWohnkostenComponent } from './formular/form-h-wohnkosten/form-h-wohnkosten.component';
+// tslint:disable-next-line
+import { FormISonstigeVerpflichtungenComponent } from './formular/form-i-sonstige-verpflichtungen/form-i-sonstige-verpflichtungen.component';
+import { FormJBesondereBelastungenComponent } from './formular/form-j-besondere-belastungen/form-j-besondere-belastungen.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    PersonalDataComponent,
-    InsuranceDataComponent,
+    FormAPersonendatenComponent,
+    FormBVersicherungenComponent,
+    StartfensterComponent,
     FormAComponent,
-    ChatbotComponent
+    ChatbotComponent,
+    FormCUnterhaltsanspruchComponent,
+    FormDGewaehrterUnterhaltComponent,
+    FormEBruttoeinnahmenComponent,
+    FormFAbzuegeComponent,
+    FormGEigentumComponent,
+    FormHWohnkostenComponent,
+    FormISonstigeVerpflichtungenComponent,
+    FormJBesondereBelastungenComponent
   ],
   imports: [
     BrowserModule,
     FormsModule
   ],
-  providers: [FormData],
-  bootstrap: [AppComponent]
+  providers: [
+    Formulardaten,
+    AllgemeineDaten,
+    ChatbotService,
+    StepSpeicher
+  ],
+  entryComponents: [
+    StartfensterComponent,
+    FormAPersonendatenComponent
+  ],
+  bootstrap: [
+    AppComponent
+  ]
 })
 export class AppModule { }
