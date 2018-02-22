@@ -6,7 +6,6 @@ call ng build --prod --base-href ./
 
 echo Copy client to server...
 xcopy /s /y "dist" "..\..\server\pkh-backend\src\main\resources\public\"
-echo Finished copying files
 
 set error=%errorlevel%
 cd ../
