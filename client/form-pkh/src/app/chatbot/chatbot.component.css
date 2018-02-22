@@ -1,40 +1,39 @@
-.bot-button{
-  position:fixed;
-  background: grey;
+.bot-button {
+  position: fixed;
+  background: black;
   color: white;
   z-index: 1;
-  right: 0px;
+  right: 0;
   top: 50px;
   width: 50px;
   height: 50px;
-  text-align: center;
-}
-
-.bot-button{
-  position:fixed;
-  background: black;
-  color: white;
-  right: 0px;
-  top: 50px;
   transition: 0.7s;
   text-align: center;
 }
 
-.bot-side-menu{
-  position:fixed;
+.bot-button-pushed {
+  position: fixed;
+  color: white;
+  right: 500px;
+  top: 50px;
+  text-align: center;
+}
+
+.bot-side-menu {
+  position: fixed;
   background: black;
   color: white;
-  right: -450px;
+  right: -500px;
   padding: 5px;
   padding-top: 50px;
-  margin: 0px;
-  top: 0px;
+  margin: 0;
+  top: 0;
   height: 100%;
   width: 500px;
   transition: 0.7s;
   text-align: center;
 }
 
-.bot-side-menu-active{
-  right: 0px;
+.bot-side-menu-pushed {
+  right: 0;
 }

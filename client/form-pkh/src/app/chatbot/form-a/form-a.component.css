@@ -1,31 +1,5 @@
-.form-control{
-  position: fixed;
-  right: 150px;
-  bottom: 100px;
-  width: 200px;
-}
-
-.negative-button{
-  background: white;
-  color: black;
-  position: fixed;
-  right: 150px;
-  bottom: 100px;
-}
-
-.user-input{
-  padding: 25px;
-  position: fixed;
-  right: 100px;
-  background: white;
-  color: black;
-  bottom: 200px;
-  text-align: center;
-}
-
 .chatbot-input{
   padding: 25px;
-  position: fixed;
   right: 100px;
   background: white;
   color: black;
