@@ -21,6 +21,7 @@ import { FormISonstigeVerpflichtungenComponent } from './formular/form-i-sonstig
 import { FormJBesondereBelastungenComponent } from './formular/form-j-besondere-belastungen/form-j-besondere-belastungen.component';
 import {FormAMaterial} from './formulardaten/form-a-material';
 import {AppDirective} from './app.directive';
+import { ViewSwitchComponent } from './navigation/view-switch.component';
 
 
 @NgModule({
@@ -39,7 +40,8 @@ import {AppDirective} from './app.directive';
     FormHWohnkostenComponent,
     FormISonstigeVerpflichtungenComponent,
     FormJBesondereBelastungenComponent,
-    AppDirective
+    AppDirective,
+    ViewSwitchComponent
   ],
   imports: [
     BrowserModule,
