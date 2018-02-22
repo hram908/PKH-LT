@@ -1,6 +1,6 @@
 import {Abschnitt} from './abschnitt';
 import {StartfensterComponent} from './formular/startfenster/startfenster.component';
-import {PersonendatenComponent} from './formular/personendaten/personendaten.component';
+import {FormAPersonendatenComponent} from './formular/form-a-personendaten/form-a-personendaten.component';
 
 export class StepSpeicher {
   aktuellerAbschnitt: Abschnitt;
@@ -8,7 +8,7 @@ export class StepSpeicher {
 
   constructor() {
     this.abschnitte.push(new Abschnitt('0', 'Beginn', StartfensterComponent));
-    this.abschnitte.push(new Abschnitt('A', 'Personendaten', PersonendatenComponent));
+    this.abschnitte.push(new Abschnitt('A', 'Personendaten', FormAPersonendatenComponent));
     /*this.abschnitte.push(new Abschnitt('B', 'Beginn2'));
     this.abschnitte.push(new Abschnitt('C', 'Beginn3'));
     this.abschnitte.push(new Abschnitt('D', 'Beginn4'));

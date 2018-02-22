@@ -1,8 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
-import { PersonendatenComponent } from './formular/personendaten/personendaten.component';
-import { VersicherungsdatenComponent } from './formular/versicherungsdaten/versicherungsdaten.component';
+import { FormAPersonendatenComponent } from './formular/form-a-personendaten/form-a-personendaten.component';
+import { FormBVersicherungenComponent } from './formular/form-b-versicherungen/form-b-versicherungen.component';
 import { StartfensterComponent } from './formular/startfenster/startfenster.component';
 import { FormsModule } from '@angular/forms';
 import { AllgemeineDaten } from './allgemeineDaten';
@@ -11,16 +11,33 @@ import { ChatbotComponent } from './chatbot/chatbot.component';
 import {ChatbotService} from './chatbot/chatbot-service';
 import {FormAComponent} from './chatbot/form-a/form-a.component';
 import {StepSpeicher} from './stepSpeicher';
+import { FormCUnterhaltsanspruchComponent } from './formular/form-c-unterhaltsanspruch/form-c-unterhaltsanspruch.component';
+import { FormDGewaehrterUnterhaltComponent } from './formular/form-d-gewaehrter-unterhalt/form-d-gewaehrter-unterhalt.component';
+import { FormEBruttoeinnahmenComponent } from './formular/form-e-bruttoeinnahmen/form-e-bruttoeinnahmen.component';
+import { FormFAbzuegeComponent } from './formular/form-f-abzuege/form-f-abzuege.component';
+import { FormGEigentumComponent } from './formular/form-g-eigentum/form-g-eigentum.component';
+import { FormHWohnkostenComponent } from './formular/form-h-wohnkosten/form-h-wohnkosten.component';
+// tslint:disable-next-line
+import { FormISonstigeVerpflichtungenComponent } from './formular/form-i-sonstige-verpflichtungen/form-i-sonstige-verpflichtungen.component';
+import { FormJBesondereBelastungenComponent } from './formular/form-j-besondere-belastungen/form-j-besondere-belastungen.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    PersonendatenComponent,
-    VersicherungsdatenComponent,
+    FormAPersonendatenComponent,
+    FormBVersicherungenComponent,
     StartfensterComponent,
     FormAComponent,
-    ChatbotComponent
+    ChatbotComponent,
+    FormCUnterhaltsanspruchComponent,
+    FormDGewaehrterUnterhaltComponent,
+    FormEBruttoeinnahmenComponent,
+    FormFAbzuegeComponent,
+    FormGEigentumComponent,
+    FormHWohnkostenComponent,
+    FormISonstigeVerpflichtungenComponent,
+    FormJBesondereBelastungenComponent
   ],
   imports: [
     BrowserModule,
@@ -34,7 +51,7 @@ import {StepSpeicher} from './stepSpeicher';
   ],
   entryComponents: [
     StartfensterComponent,
-    PersonendatenComponent
+    FormAPersonendatenComponent
   ],
   bootstrap: [
     AppComponent

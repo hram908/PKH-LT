@@ -5,7 +5,7 @@ import {
 import {Formulardaten} from './formulardaten';
 import {StartfensterComponent} from './formular/startfenster/startfenster.component';
 import {AllgemeineDaten} from './allgemeineDaten';
-import {PersonendatenComponent} from './formular/personendaten/personendaten.component';
+import {FormAPersonendatenComponent} from './formular/form-a-personendaten/form-a-personendaten.component';
 import {StepSpeicher} from './stepSpeicher';
 
 
@@ -55,7 +55,7 @@ export class AppComponent implements AfterViewInit, OnDestroy {
 
   naechsterAbschnitt(id: string): any {
     switch (this.stepSpeicher.aktuellerAbschnitt.id) {
-      case '0': return PersonendatenComponent;
+      case '0': return FormAPersonendatenComponent;
     }
   }
 
