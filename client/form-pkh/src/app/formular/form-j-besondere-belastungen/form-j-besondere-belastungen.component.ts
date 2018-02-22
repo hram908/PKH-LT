@@ -1,19 +1,16 @@
-import { Component, OnInit } from '@angular/core';
-import {StartfensterComponent} from '../startfenster/startfenster.component';
+import {Component} from '@angular/core';
+import {Untertitel} from '../../common/untertitel';
 
 @Component({
   selector: 'app-form-jbesondere-belastungen',
   templateUrl: './form-j-besondere-belastungen.component.html',
   styleUrls: ['./form-j-besondere-belastungen.component.css']
 })
-export class FormJBesondereBelastungenComponent implements OnInit {
-  static UNTERTITEL = 'Startfenster';
-  constructor() { }
-
-  ngOnInit() {
+export class FormJBesondereBelastungenComponent {
+  constructor() {
   }
 
   getUntertitel(): string {
-    return FormJBesondereBelastungenComponent.UNTERTITEL;
+    return Untertitel.J;
   }
 }

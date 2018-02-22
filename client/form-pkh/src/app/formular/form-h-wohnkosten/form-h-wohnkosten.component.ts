@@ -1,19 +1,17 @@
-import { Component, OnInit } from '@angular/core';
-import {StartfensterComponent} from '../startfenster/startfenster.component';
+import {Component} from '@angular/core';
+import {Untertitel} from '../../common/untertitel';
 
 @Component({
   selector: 'app-form-h-wohnkosten',
   templateUrl: './form-h-wohnkosten.component.html',
   styleUrls: ['./form-h-wohnkosten.component.css']
 })
-export class FormHWohnkostenComponent implements OnInit {
-  static UNTERTITEL = 'Startfenster';
-  constructor() { }
-
-  ngOnInit() {
+export class FormHWohnkostenComponent {
+  constructor() {
   }
 
   getUntertitel(): string {
-    return FormHWohnkostenComponent.UNTERTITEL;
+    return Untertitel.H;
   }
 }
+

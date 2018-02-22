@@ -1,19 +1,16 @@
-import { Component, OnInit } from '@angular/core';
-import {StartfensterComponent} from '../startfenster/startfenster.component';
+import {Component} from '@angular/core';
+import {Untertitel} from '../../common/untertitel';
 
 @Component({
   selector: 'app-form-c-unterhaltsanspruch',
   templateUrl: './form-c-unterhaltsanspruch.component.html',
   styleUrls: ['./form-c-unterhaltsanspruch.component.css']
 })
-export class FormCUnterhaltsanspruchComponent implements OnInit {
-  static UNTERTITEL = 'Startfenster';
-  constructor() { }
-
-  ngOnInit() {
+export class FormCUnterhaltsanspruchComponent {
+  constructor() {
   }
 
   getUntertitel(): string {
-    return FormCUnterhaltsanspruchComponent.UNTERTITEL;
+    return Untertitel.C;
   }
 }

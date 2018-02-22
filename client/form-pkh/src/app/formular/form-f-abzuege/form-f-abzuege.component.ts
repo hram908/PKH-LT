@@ -1,19 +1,16 @@
-import { Component, OnInit } from '@angular/core';
-import {StartfensterComponent} from '../startfenster/startfenster.component';
+import {Component} from '@angular/core';
+import {Untertitel} from '../../common/untertitel';
 
 @Component({
   selector: 'app-form-f-abzuege',
   templateUrl: './form-f-abzuege.component.html',
   styleUrls: ['./form-f-abzuege.component.css']
 })
-export class FormFAbzuegeComponent implements OnInit {
-  static UNTERTITEL = 'Startfenster';
-  constructor() { }
-
-  ngOnInit() {
+export class FormFAbzuegeComponent {
+  constructor() {
   }
 
   getUntertitel(): string {
-    return FormFAbzuegeComponent.UNTERTITEL;
+    return Untertitel.F;
   }
 }

@@ -1,19 +1,16 @@
-import { Component, OnInit } from '@angular/core';
-import {StartfensterComponent} from '../startfenster/startfenster.component';
+import {Component} from '@angular/core';
+import {Untertitel} from '../../common/untertitel';
 
 @Component({
   selector: 'app-form-d-gewaehrter-unterhalt',
   templateUrl: './form-d-gewaehrter-unterhalt.component.html',
   styleUrls: ['./form-d-gewaehrter-unterhalt.component.css']
 })
-export class FormDGewaehrterUnterhaltComponent implements OnInit {
-  static UNTERTITEL = 'Startfenster';
-  constructor() { }
-
-  ngOnInit() {
+export class FormDGewaehrterUnterhaltComponent {
+  constructor() {
   }
 
   getUntertitel(): string {
-    return FormDGewaehrterUnterhaltComponent.UNTERTITEL;
+    return Untertitel.D;
   }
 }

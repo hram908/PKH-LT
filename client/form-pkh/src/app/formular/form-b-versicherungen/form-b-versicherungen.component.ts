@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {StartfensterComponent} from '../startfenster/startfenster.component';
+import {Untertitel} from '../../common/untertitel';
 
 @Component({
   selector: 'app-form-b-versicherungen',
@@ -7,11 +7,10 @@ import {StartfensterComponent} from '../startfenster/startfenster.component';
   styleUrls: ['./form-b-versicherungen.component.css']
 })
 export class FormBVersicherungenComponent {
-  static UNTERTITEL = 'Versicherungen';
-
-  constructor() { }
+  constructor() {
+  }
 
   getUntertitel(): string {
-    return FormBVersicherungenComponent.UNTERTITEL;
+    return Untertitel.B;
   }
 }
