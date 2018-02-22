@@ -2,7 +2,7 @@
 
 echo Building client...
 cd client/form-pkh
-call ng build --prod
+call ng build --prod --base-href ./
 
 echo Copy client to server...
 xcopy /s /y "dist" "..\..\server\pkh-backend\src\main\resources\public\"
@@ -14,7 +14,7 @@ if %error% neq 0 exit /b %error%
 
 echo Building Server...
 cd ../server/pkh-backend
-call gradlew clean build
+call gradlew build --stacktrace
 
 set error=%errorlevel%
 cd ../

@@ -24,6 +24,8 @@ import {AppDirective} from './app.directive';
 import { ViewSwitchComponent } from './navigation/view-switch.component';
 
 
+
+
 @NgModule({
   declarations: [
     AppComponent,
