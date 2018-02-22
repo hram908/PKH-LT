@@ -10,3 +10,6 @@ gradlew.bat
 
 # Build files
 **/build/
+
+# generated
+**/resources
