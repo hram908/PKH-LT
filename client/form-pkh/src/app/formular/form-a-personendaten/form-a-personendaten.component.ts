@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import { Formulardaten } from '../../formulardaten';
+import {FormAMaterial} from '../../formulardaten/form-a-material';
 
 @Component({
   selector: 'app-form-a-personendaten',
@@ -7,7 +7,10 @@ import { Formulardaten } from '../../formulardaten';
   styleUrls: ['./form-a-personendaten.component.css']
 })
 export class FormAPersonendatenComponent {
+  static UNTERTITEL = 'Personendaten';
 
-  constructor(public formulardaten: Formulardaten) { }
+  constructor(public formA: FormAMaterial) {
+
+  }
 
 }

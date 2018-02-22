@@ -6,6 +6,6 @@ import {Component} from '@angular/core';
   styleUrls: ['./form-b-versicherungen.component.css']
 })
 export class FormBVersicherungenComponent {
-
+  static UNTERTITEL = 'Versicherungen';
   constructor() { }
 }

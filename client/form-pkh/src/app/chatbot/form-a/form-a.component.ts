@@ -1,14 +1,14 @@
 import { Component, OnInit } from '@angular/core';
-import {ChatbotService} from "../chatbot-service";
+import {ChatbotService} from '../chatbot-service';
 
 @Component({
   selector: 'app-form-a',
   templateUrl: './form-a.component.html',
   styleUrls: ['./form-a.component.css']
 })
-export class FormAComponent{
+export class FormAComponent {
 
-  private readonly DefaultText: string = "Kann ich Ihnen helfen?";
+  private readonly DefaultText: string = 'Kann ich Ihnen helfen?';
 
   public chatbotText: string;
   public lastUserInput: string;
@@ -16,10 +16,10 @@ export class FormAComponent{
 
   constructor(private chatbotService: ChatbotService) {
     this.chatbotText = this.DefaultText;
-    this.lastUserInput = "";
+    this.lastUserInput = '';
   }
 
-  public onUserInput(){
+  public onUserInput() {
     this.showUserInput = true;
     this.chatbotText = this.chatbotService.generateAnswer(this.lastUserInput);
   }

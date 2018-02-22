@@ -2,13 +2,10 @@ import {
   AfterViewInit, Component, ComponentFactory, ComponentFactoryResolver, ComponentRef, OnDestroy, OnInit, ViewChild,
   ViewContainerRef
 } from '@angular/core';
-import {Formulardaten} from './formulardaten';
 import {StartfensterComponent} from './formular/startfenster/startfenster.component';
 import {AllgemeineDaten} from './allgemeineDaten';
 import {FormAPersonendatenComponent} from './formular/form-a-personendaten/form-a-personendaten.component';
 import {StepSpeicher} from './stepSpeicher';
-
-
 
 @Component({
   selector: 'app-root',
@@ -17,16 +14,18 @@ import {StepSpeicher} from './stepSpeicher';
 })
 
 
-export class AppComponent implements AfterViewInit, OnDestroy {
+export class AppComponent implements OnDestroy, OnInit {
   @ViewChild('appHost', { read: ViewContainerRef }) container;
   componentRef: ComponentRef<ComponentFactoryResolver>;
   title = 'Prozesskostenhilfe-Helfer';
+  rechtsgebiet = false;
+  chatbot = false;
 
-  constructor(private componentFactoryResolver: ComponentFactoryResolver, public formulardaten: Formulardaten,
+  constructor(private componentFactoryResolver: ComponentFactoryResolver,
               public allgemeineDaten: AllgemeineDaten, public stepSpeicher: StepSpeicher) {
   }
 
-  ngAfterViewInit() {
+  ngOnInit() {
     this.erschaffeComponent();
   }
 
@@ -54,14 +53,15 @@ export class AppComponent implements AfterViewInit, OnDestroy {
   }
 
   naechsterAbschnitt(id: string): any {
-    switch (this.stepSpeicher.aktuellerAbschnitt.id) {
-      case '0': return FormAPersonendatenComponent;
+    switch (id) {
+      case 'A': return FormAPersonendatenComponent;
+      default: return FormAPersonendatenComponent;
     }
   }
 
   vorherigerAbschnitt(id: string): any {
-    switch (this.stepSpeicher.aktuellerAbschnitt.id) {
-      case 'A': return StartfensterComponent;
+    switch (id) {
+      case '0': return StartfensterComponent;
       default: return StartfensterComponent;
     }
   }

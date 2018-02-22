@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./form-e-bruttoeinnahmen.component.css']
 })
 export class FormEBruttoeinnahmenComponent implements OnInit {
-
+  static UNTERTITEL = 'Bruttoeinnahmen';
   constructor() { }
 
   ngOnInit() {

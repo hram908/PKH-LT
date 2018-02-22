@@ -1,4 +1,4 @@
-export class Formulardaten {
+export class FormAMaterial {
   vorname = '';
   nachname = '';
   geburtstag = '';

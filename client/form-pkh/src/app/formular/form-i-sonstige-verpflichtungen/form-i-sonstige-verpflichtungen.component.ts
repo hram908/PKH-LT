@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./form-i-sonstige-verpflichtungen.component.css']
 })
 export class FormISonstigeVerpflichtungenComponent implements OnInit {
-
+  static UNTERTITEL = 'Startfenster';
   constructor() { }
 
   ngOnInit() {

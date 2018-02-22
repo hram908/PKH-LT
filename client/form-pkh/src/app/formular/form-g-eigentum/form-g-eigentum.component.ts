@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./form-g-eigentum.component.css']
 })
 export class FormGEigentumComponent implements OnInit {
-
+  static UNTERTITEL = 'Startfenster';
   constructor() { }
 
   ngOnInit() {

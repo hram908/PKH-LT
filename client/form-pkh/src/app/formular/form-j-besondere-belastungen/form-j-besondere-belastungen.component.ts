@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./form-j-besondere-belastungen.component.css']
 })
 export class FormJBesondereBelastungenComponent implements OnInit {
-
+  static UNTERTITEL = 'Startfenster';
   constructor() { }
 
   ngOnInit() {

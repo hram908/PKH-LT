@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./form-h-wohnkosten.component.css']
 })
 export class FormHWohnkostenComponent implements OnInit {
-
+  static UNTERTITEL = 'Startfenster';
   constructor() { }
 
   ngOnInit() {

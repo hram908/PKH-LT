@@ -1,16 +1,19 @@
-  <div class="radio">
-    <label class="radio-inline" for="antragsteller"><input type="radio" id="antragsteller" name="beantragender" [(ngModel)]="allgemeineDaten.istAntragsteller" [value]="true">Antragsteller</label>
-  </div>
+<div id="formularUeberschrift">
+  <h2>{{UNTERTITEL}}</h2>
+</div>
+<div class="radio">
+  <label class="radio-inline" for="antragsteller"><input type="radio" id="antragsteller" name="beantragender" [(ngModel)]="allgemeineDaten.istAntragsteller" [value]="true">Antragsteller</label>
+</div>
 
-  <div class="radio">
-    <label class="radio-inline" for="berater"><input type="radio" id="berater" name="beantragender" [(ngModel)]="allgemeineDaten.istAntragsteller" [value]="false">Jurist oder Sachbearbeiter</label>
-  </div>
+<div class="radio">
+  <label class="radio-inline" for="berater"><input type="radio" id="berater" name="beantragender" [(ngModel)]="allgemeineDaten.istAntragsteller" [value]="false">Jurist oder Sachbearbeiter</label>
+</div>
 
-  <div *ngIf="allgemeineDaten.istAntragsteller" class="form-text">
-    <br><br><br>Für die vollständige Befüllung dieses Formulars sind voraussichtlich folgende Dokumente notwendig:<br>
-      - Lohnbescheinigung, Steuerbescheid, Bewilligungsbescheid mit Berechnungsbogen<br>
-      - Pflichtbeiträge, Lebensversicherung<br>
-      - Mietvertrag, Heizkostenabrechnung, Kontoauszüge<br>
-      - aktuellen Sozialhilfe-Bescheid einschließlich des Berechnungsbogens<br>
-  </div>
-  <br>
+<div class="form-text">
+  <br><br><br>Für die vollständige Befüllung dieses Formulars sind voraussichtlich folgende Dokumente notwendig:<br>
+    - Lohnbescheinigung, Steuerbescheid, Bewilligungsbescheid mit Berechnungsbogen<br>
+    - Pflichtbeiträge, Lebensversicherung<br>
+    - Mietvertrag, Heizkostenabrechnung, Kontoauszüge<br>
+    - aktuellen Sozialhilfe-Bescheid einschließlich des Berechnungsbogens<br>
+</div>
+<br>

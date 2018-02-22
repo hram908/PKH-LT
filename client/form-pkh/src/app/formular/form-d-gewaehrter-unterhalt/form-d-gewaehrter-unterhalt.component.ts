@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./form-d-gewaehrter-unterhalt.component.css']
 })
 export class FormDGewaehrterUnterhaltComponent implements OnInit {
-
+  static UNTERTITEL = 'Startfenster';
   constructor() { }
 
   ngOnInit() {

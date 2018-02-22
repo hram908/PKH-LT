@@ -6,7 +6,6 @@ import { FormBVersicherungenComponent } from './formular/form-b-versicherungen/f
 import { StartfensterComponent } from './formular/startfenster/startfenster.component';
 import { FormsModule } from '@angular/forms';
 import { AllgemeineDaten } from './allgemeineDaten';
-import { Formulardaten } from './formulardaten';
 import { ChatbotComponent } from './chatbot/chatbot.component';
 import {ChatbotService} from './chatbot/chatbot-service';
 import {FormAComponent} from './chatbot/form-a/form-a.component';
@@ -20,6 +19,8 @@ import { FormHWohnkostenComponent } from './formular/form-h-wohnkosten/form-h-wo
 // tslint:disable-next-line
 import { FormISonstigeVerpflichtungenComponent } from './formular/form-i-sonstige-verpflichtungen/form-i-sonstige-verpflichtungen.component';
 import { FormJBesondereBelastungenComponent } from './formular/form-j-besondere-belastungen/form-j-besondere-belastungen.component';
+import {FormAMaterial} from './formulardaten/form-a-material';
+import {AppDirective} from './app.directive';
 
 
 @NgModule({
@@ -37,14 +38,15 @@ import { FormJBesondereBelastungenComponent } from './formular/form-j-besondere-
     FormGEigentumComponent,
     FormHWohnkostenComponent,
     FormISonstigeVerpflichtungenComponent,
-    FormJBesondereBelastungenComponent
+    FormJBesondereBelastungenComponent,
+    AppDirective
   ],
   imports: [
     BrowserModule,
     FormsModule
   ],
   providers: [
-    Formulardaten,
+    FormAMaterial,
     AllgemeineDaten,
     ChatbotService,
     StepSpeicher
