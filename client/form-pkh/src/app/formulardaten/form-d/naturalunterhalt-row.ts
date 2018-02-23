@@ -1,3 +1,7 @@
+/**
+ * @author: Isabella
+ **/
+
 export class NaturalunterhaltRow{
   vollstaendigerName: string;
   geburtsdatum: Date;

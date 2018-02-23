@@ -1,3 +1,7 @@
+/**
+ * @author: Thomas, Isabella
+ **/
+
 export class FormAMaterial {
   vollstaendigerName: string;
   beruf: string;

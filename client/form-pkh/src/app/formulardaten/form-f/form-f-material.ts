@@ -1,4 +1,7 @@
 import {Abzuege} from './abzuege';
+/**
+ * @author: Isabella
+ **/
 
 export class FormFMaterial {
   steuern: Abzuege;

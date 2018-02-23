@@ -1,4 +1,7 @@
 import {EintragG} from './eintrag-g';
+/**
+ * @author: Isabella
+ **/
 
 export class FormGMaterial {
   konto: EintragG;

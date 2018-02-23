@@ -19,7 +19,7 @@ import { FormHWohnkostenComponent } from './formular/form-h-wohnkosten/form-h-wo
 // tslint:disable-next-line
 import { FormISonstigeVerpflichtungenComponent } from './formular/form-i-sonstige-verpflichtungen/form-i-sonstige-verpflichtungen.component';
 import { FormJBesondereBelastungenComponent } from './formular/form-j-besondere-belastungen/form-j-besondere-belastungen.component';
-import {FormAMaterial} from './formulardaten/form-a-material';
+import {FormAMaterial} from './formulardaten/form-a/form-a-material';
 import {AppDirective} from './app.directive';
 import { ViewSwitchComponent } from './navigation/view-switch.component';
 

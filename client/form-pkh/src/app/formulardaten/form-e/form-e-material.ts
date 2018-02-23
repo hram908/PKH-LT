@@ -1,5 +1,8 @@
 import {EinnahmenE} from './einnahmen-e';
 import {WeitereEinnahmenE} from './weitere-einnahmen-e';
+/**
+ * @author: Isabella
+ **/
 
 export class FormEMaterial {
   einnahmen: EinnahmenE[];

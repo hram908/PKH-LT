@@ -1,4 +1,7 @@
 import {RaumnutzungH} from './raumnutzung-h';
+/**
+ * @author: Isabella
+ **/
 
 export class FormHMaterial {
   wohnraumgroesse: [number, number]; // second one is the 'Belegnummer'

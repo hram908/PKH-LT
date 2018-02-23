@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {FormAMaterial} from '../../formulardaten/form-a-material';
+import {FormAMaterial} from '../../formulardaten/form-a/form-a-material';
 import {Untertitel} from '../../common/untertitel';
 
 @Component({

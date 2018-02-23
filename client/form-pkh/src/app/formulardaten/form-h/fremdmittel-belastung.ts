@@ -1,3 +1,7 @@
+/**
+ * @author: Isabella
+ **/
+
 export class FremdmittelBelastung{
   // first block
   datumDesVertrages: Date;

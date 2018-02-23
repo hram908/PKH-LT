@@ -1,3 +1,7 @@
+/**
+ * @author: Isabella
+ **/
+
 export class EintragI{
   beschreibung: string;
   restschuld: number;
