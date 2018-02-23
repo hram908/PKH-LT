@@ -1,13 +1,13 @@
 import {Component} from '@angular/core';
 import {Untertitel} from '../../common/untertitel';
-import {IFormBase} from '../../common/i-form-base';
+import {IFormComponentBase} from '../../common/i-form-component-base';
 
 @Component({
   selector: 'app-form-b-versicherungen',
   templateUrl: './form-b-versicherungen.component.html',
   styleUrls: ['./form-b-versicherungen.component.css']
 })
-export class FormBVersicherungenComponent implements IFormBase{
+export class FormBVersicherungenComponent implements IFormComponentBase{
   constructor() {
   }
 
