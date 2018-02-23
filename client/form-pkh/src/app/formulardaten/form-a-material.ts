@@ -1,6 +1,7 @@
 export class FormAMaterial {
   vorname = '';
   nachname = '';
+  geburtsname = '';
   beruf = '';
   geburtstag = '';
   familienstand = '';
@@ -8,4 +9,12 @@ export class FormAMaterial {
   hausnummer: number;
   plz: number;
   ort = '';
+  gesetzlicherVertreter = false;
+  vertreterName = '';
+  vertreterVorname = '';
+  vertreterStrasse = '';
+  vertreterHausnummer = '';
+  vertreterPlz = '';
+  vertreterOrt = '';
+  vertreterTelefon = '';
 }

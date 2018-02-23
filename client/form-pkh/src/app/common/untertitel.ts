@@ -1,6 +1,6 @@
-export class Untertitel{
-  public static readonly A: string = 'Personendaten';
-  public static readonly B: string = 'Versicherungen';
+export class Untertitel {
+  public static readonly A: string = 'Angaben zu Ihrer Person';
+  public static readonly B: string = 'Rechtsschutzversicherung/Mitgliedschaft';
   public static readonly C: string = 'Unterhaltsanspruch';
   public static readonly D: string = 'Gewährter Unterhalt';
   public static readonly E: string = 'Bruttoeinnahmen';
