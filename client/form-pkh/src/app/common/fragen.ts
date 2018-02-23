@@ -19,14 +19,19 @@ export class Fragen {
   public static readonly A_GesetzlicherVertreter = 'Sofern vorhanden: Gesetzlicher Vertreter';
 
   // Formularabschnitt B
-  public static readonly B1 = 'Trägt eine Rechtsschutzversicherung oder eine andere Stelle/Person (z. B. Gewerkschaft,' +
+  public static readonly B1 = 'Trägt eine Rechtsschutzversicherung oder eine andere Stelle/Person (z. B. Gewerkschaft, ' +
     'Mieterverein, Sozialverband) die Kosten Ihrer Prozess- oder Verfahrensführung?';
-  public static readonly B2 = 'Wenn nein: Besteht eine Rechtsschutzversicherung oder die Mitgliedschaft in einem Verein/einer' +
-    'Organisation (z. B. Gewerkschaft, Mieterverein, Sozialverband), der/die die Kosten der beabsichtigten Prozess- oder' +
+  public static readonly B2 = 'Wenn nein: Besteht eine Rechtsschutzversicherung oder die Mitgliedschaft in einem Verein/einer ' +
+    'Organisation (z. B. Gewerkschaft, Mieterverein, Sozialverband), der/die die Kosten der beabsichtigten Prozess- oder ' +
     'Verfahrensführung tragen oder einen Prozessbevollmächtigten stellen könnte?';
 
   // Formularabschnitt C
-  public static readonly C_Unterhalt = '';
+  public static readonly C_Frage = 'Haben Sie Angehörige, die Ihnen gegenüber gesetzlich zur Leistung von Unterhalt verpflichtet' +
+    'sind (auch wenn tatsächlich keine Leistungen erfolgen)?';
+  public static readonly C_Zusatz = 'z. B. Mutter, Vater, Ehepartner, eingetragene(r) Lebenspartner/in';
+  public static readonly C_FrageJa = 'Name des Unterhaltsverpflichteten';
+  public static readonly C_Hinweis = 'Bitte geben Sie auf einem weiteren Exemplar dieses Formulars seine persönlichen und ' +
+    'wirtschaftlichen Verhältnisse an, sofern diese nicht bereits vollständig aus den folgenden Abschnitten ersichtlich sind.';
 
   // Formularabschnitt D
   public static readonly D_Angehoerige = '';
