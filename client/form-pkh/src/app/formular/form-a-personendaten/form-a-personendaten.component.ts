@@ -2,6 +2,7 @@ import {Component} from '@angular/core';
 import {FormAMaterial} from '../../formulardaten/form-a/form-a-material';
 import {Untertitel} from '../../common/untertitel';
 import {IFormComponentBase} from '../../common/i-form-component-base';
+import {Fragen} from '../../common/fragen';
 
 @Component({
   selector: 'app-form-a-personendaten',
@@ -15,5 +16,9 @@ export class FormAPersonendatenComponent implements IFormComponentBase{
 
   getUntertitel(): string {
     return Untertitel.A;
+  }
+
+  getFragen() {
+    return Fragen;
   }
 }

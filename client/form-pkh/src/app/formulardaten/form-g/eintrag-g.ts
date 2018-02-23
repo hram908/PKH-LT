@@ -1,8 +1,8 @@
 /**
- * @author: Isabella
+ * @author: Isabella, Thomas
  **/
 
-export class EintragG{
-  art: string;
-  vermoegen: number;
+export class EintragG {
+  art = '';
+  vermoegen = '';
 }

@@ -1,7 +1,8 @@
 /**
- * @author: Isabella
+ * @author: Isabella, Thomas
  **/
 
-export class EinnahmenE{
-  einnahmen: number;
+export class EinnahmenE {
+  einnahmen = '';
+  belegnummer = '';
 }
