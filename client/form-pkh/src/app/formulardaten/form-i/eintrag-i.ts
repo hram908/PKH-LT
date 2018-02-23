@@ -7,5 +7,4 @@ export class EintragI{
   restschuld: number;
   gesamtbelastungMtl: number;
   einigeZahlung: number;
-  belegnummer: number;
 }

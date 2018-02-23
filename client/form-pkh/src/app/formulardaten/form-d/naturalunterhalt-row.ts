@@ -8,5 +8,4 @@ export class NaturalunterhaltRow{
   verhaeltnis: string;
   monatsbeitrag: number;
   einnahmenAngehoeriger: boolean;
-  belegnummer: number;
 }

@@ -11,5 +11,4 @@ export class FremdmittelBelastung{
 
   restschuld: number;
   zinsenMonatlich: number;
-  belegnummer: number;
 }
