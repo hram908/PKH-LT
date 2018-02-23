@@ -22,6 +22,8 @@ import { FormJBesondereBelastungenComponent } from './formular/form-j-besondere-
 import {FormAMaterial} from './formulardaten/form-a/form-a-material';
 import {AppDirective} from './app.directive';
 import { ViewSwitchComponent } from './navigation/view-switch.component';
+import {ViewSwitchService} from './navigation/view-switch-service';
+import {FormularService} from './formular/formular-service';
 
 
 
@@ -52,6 +54,7 @@ import { ViewSwitchComponent } from './navigation/view-switch.component';
   providers: [
     FormAMaterial,
     AllgemeineDaten,
+    ViewSwitchService,
     ChatbotService,
     StepSpeicher
   ],

@@ -1,3 +1,5 @@
-<p>
-  navigationview-switch works!
-</p>
+<div class="btn-group-vertical sidenav">
+  <ng-container *ngFor="let navButton of allNavButtons">
+    <button type="button" class="btn btn-default">{{navButton}}</button>
+  </ng-container>
+</div>
