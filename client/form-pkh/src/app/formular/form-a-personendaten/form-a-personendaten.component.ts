@@ -1,6 +1,7 @@
 import {Component} from '@angular/core';
 import {FormAMaterial} from '../../formulardaten/form-a/form-a-material';
 import {Untertitel} from '../../common/untertitel';
+import {Fragen} from '../../common/fragen';
 
 @Component({
   selector: 'app-form-a-personendaten',
@@ -14,5 +15,9 @@ export class FormAPersonendatenComponent {
 
   getUntertitel(): string {
     return Untertitel.A;
+  }
+
+  getFragen() {
+    return Fragen;
   }
 }
