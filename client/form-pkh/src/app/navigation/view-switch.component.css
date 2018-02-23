@@ -1,5 +1,10 @@
-.sidenav{
+.sidenav {
   position: fixed;
   left: 0;
   top: auto;
+}
+
+.back-forward-buttons {
+  position: fixed;
+  bottom: 50px;
 }

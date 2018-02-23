@@ -11,16 +11,22 @@ import {Injectable} from '@angular/core';
  **/
 @Injectable()
 export class ViewSwitchService {
-  private currentForm;
+  private _currentForm: string;
   public allNavButtons: string[];
 
   public constructor() {
+    this._currentForm = NavButtons.num0;
     this.initializeNavButtons();
   }
 
+  public get currentForm(): string{
+    return this._currentForm;
+  }
 
   private initializeNavButtons() {
     this.allNavButtons = [
+      NavButtons.num0,
+      NavButtons.num1,
       NavButtons.A,
       NavButtons.B,
       NavButtons.C,
