@@ -1,11 +1,11 @@
 /**
- * @author: Isabella
+ * @author: Isabella, Thomas
  **/
 
-export class NaturalunterhaltRow{
-  vollstaendigerName: string;
-  geburtsdatum: Date;
-  verhaeltnis: string;
-  monatsbeitrag: number;
-  einnahmenAngehoeriger: boolean;
+export class NaturalunterhaltRow {
+  vollstaendigerName = '';
+  geburtsdatum = '';
+  verhaeltnis = '';
+  monatsbeitrag = '';
+  einnahmenAngehoeriger = false;
 }

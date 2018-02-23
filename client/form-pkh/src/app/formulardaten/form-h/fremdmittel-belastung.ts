@@ -1,14 +1,14 @@
 /**
- * @author: Isabella
+ * @author: Isabella, Thomas
  **/
 
-export class FremdmittelBelastung{
+export class FremdmittelBelastung {
   // first block
-  datumDesVertrages: Date;
-  darlehensNehmer: string;
-  kreditinstitut: string;
-  zahlungsende: Date;
+  datumDesVertrages = '';
+  darlehensNehmer = '';
+  kreditinstitut = '';
+  zahlungsende = '';
 
-  restschuld: number;
-  zinsenMonatlich: number;
+  restschuld = '';
+  zinsenMonatlich = '';
 }

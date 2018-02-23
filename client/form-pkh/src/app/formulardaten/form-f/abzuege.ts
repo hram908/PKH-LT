@@ -1,8 +1,8 @@
 /**
- * @author: Isabella
+ * @author: Isabella, Thomas
  **/
 
-export class Abzuege{
-  art: string;
-  betrag: number;
+export class Abzuege {
+  art = '';
+  betrag = '';
 }

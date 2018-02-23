@@ -1,9 +1,9 @@
 /**
- * @author: Isabella
+ * @author: Isabella, Thomas
  **/
 
-export class WeitereEinnahmenE{
-  art: string;
-  bezugszeitraum: string; //TODO maybe Date instead?
-  einnahmen: number;
+export class WeitereEinnahmenE {
+  art = '';
+  bezugszeitraum = '';
+  einnahmen = '';
 }

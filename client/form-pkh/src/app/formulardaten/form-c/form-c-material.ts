@@ -3,5 +3,5 @@
  **/
 
 export class FormCMaterial {
-  hatUnterhaltsanspruch: boolean;
+  hatUnterhaltsanspruch = false;
 }
