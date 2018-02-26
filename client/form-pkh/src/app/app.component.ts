@@ -6,6 +6,8 @@ import {StartfensterComponent} from './formular/startfenster/startfenster.compon
 import {AllgemeineDaten} from './allgemeineDaten';
 import {FormAPersonendatenComponent} from './formular/form-a-personendaten/form-a-personendaten.component';
 import {StepSpeicher} from './stepSpeicher';
+import {FormBVersicherungenComponent} from './formular/form-b-versicherungen/form-b-versicherungen.component';
+import {FormCUnterhaltsanspruchComponent} from './formular/form-c-unterhaltsanspruch/form-c-unterhaltsanspruch.component';
 
 @Component({
   selector: 'app-root',
@@ -54,15 +56,29 @@ export class AppComponent implements OnDestroy, OnInit {
 
   naechsterAbschnitt(id: string): any {
     switch (id) {
-      case 'A': return FormAPersonendatenComponent;
-      default: return FormAPersonendatenComponent;
+      case '0': this.stepSpeicher.aktuellerAbschnitt = this.stepSpeicher.abschnitte[1];
+        break;
+      case 'A': this.stepSpeicher.aktuellerAbschnitt = this.stepSpeicher.abschnitte[2];
+        break;
+      case 'B': this.stepSpeicher.aktuellerAbschnitt = this.stepSpeicher.abschnitte[3];
+        break;
+      case 'C': this.stepSpeicher.aktuellerAbschnitt = this.stepSpeicher.abschnitte[4];
+        break;
     }
+    return this.stepSpeicher.aktuellerAbschnitt.component;
   }
 
   vorherigerAbschnitt(id: string): any {
     switch (id) {
-      case '0': return StartfensterComponent;
-      default: return StartfensterComponent;
+      case 'A': this.stepSpeicher.aktuellerAbschnitt = this.stepSpeicher.abschnitte[0];
+        break;
+      case 'B': this.stepSpeicher.aktuellerAbschnitt = this.stepSpeicher.abschnitte[1];
+        break;
+      case 'C': this.stepSpeicher.aktuellerAbschnitt = this.stepSpeicher.abschnitte[2];
+        break;
+      case 'J': this.stepSpeicher.aktuellerAbschnitt = this.stepSpeicher.abschnitte[3];
+        break;
     }
+    return this.stepSpeicher.aktuellerAbschnitt.component;
   }
 }

@@ -36,6 +36,7 @@ import {FormularService} from './formular/formular-service';
     StartfensterComponent,
     FormAComponent,
     ChatbotComponent,
+    FormBVersicherungenComponent,
     FormCUnterhaltsanspruchComponent,
     FormDGewaehrterUnterhaltComponent,
     FormEBruttoeinnahmenComponent,
@@ -60,7 +61,10 @@ import {FormularService} from './formular/formular-service';
   ],
   entryComponents: [
     StartfensterComponent,
-    FormAPersonendatenComponent
+    FormAPersonendatenComponent,
+    FormBVersicherungenComponent,
+    FormCUnterhaltsanspruchComponent,
+    FormJBesondereBelastungenComponent,
   ],
   bootstrap: [
     AppComponent
