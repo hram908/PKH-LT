@@ -1,6 +1,40 @@
 <div id="formularUeberschrift">
   <h2>{{getUntertitel()}}</h2>
 </div>
+
+<!-- Abschnitt Frage nach Wohnung 1 -->
+<div class="row">
+  <div class="col-sm-4">
+    <div class="form-group">
+      <label for="groesse">{{getFragen().formH.groesse}} 1. Gesamtgröße des Wohnraums, den Sie allein oder gemeinsam mit anderen Personen bewohnen</label>
+      <input id="groesse" type="text" class="form-control" placeholder="Pflicht" [(ngModel)]="formH.groesse" required="required" data-error="Die Wohnungsgröße ist notwendig.">
+    </div>
+  </div>
+</div>
+<!-- ENDE Abschnitt Frage nach Wohnung 1 -->
+
+<!-- Abschnitt Frage nach Wohnung 2 -->
+<div class="row">
+  <div class="col-sm-4">
+    <div class="form-group">
+      <label for="anzahlZimmer">{{getFragen().formH.anzahlZimmer}} 2. Anzahl der Zimmer</label>
+      <input id="anzahlZimmer" type="text" class="form-control" placeholder="Pflicht" [(ngModel)]="formH.anzahlZimmer" required="required" data-error="Die Zimmerzahl ist notwendig.">
+    </div>
+  </div>
+</div>
+<!-- ENDE Abschnitt Frage nach Wohnung 2 -->
+
+<!-- Abschnitt Frage nach Wohnung 3 -->
+<div class="row">
+  <div class="col-sm-4">
+    <div class="form-group">
+      <label for="anzahlPersonenWohnraum">{{getFragen().formH.anzahlPersonenWohnraum}} 2. Anzahl der Personen, die diese Wohnraum bewohnen</label>
+      <input id="anzahlPersonenWohnraum" type="text" class="form-control" placeholder="Pflicht" [(ngModel)]="formH.anzahlPersonenWohnraum" required="required" data-error="Die Anzahl der Personen, die die Wohnung bewohnen ist notwendig.">
+    </div>
+  </div>
+</div>
+<!-- ENDE Abschnitt Frage nach Wohnung 3 -->
+
 <!-- Abschnitt Frage nach Wohnung 4 -->
 <label class="form-check-inline"> 4.Nutzen Sie den Raum als Mieter oder in einem ähnlichen Nutzungsverhältnis?</label>
 <div class="row">
