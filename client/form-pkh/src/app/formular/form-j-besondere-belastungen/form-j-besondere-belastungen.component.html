@@ -1,3 +1,35 @@
 <div id="formularUeberschrift">
   <h2>{{getUntertitel()}}</h2>
 </div>
+
+<!-- Abschnitt Frage nach besonderen Belastungen -->
+    <label class="form-check-inline">Haben Sie besondere Belastungen? (z.B. Mehrausgaben für körperbehinderten Angehörigen und Angabe des GdB/
+      Mehrbedarfs gemäß §21 SGB II und §30 SGB XII)</label>
+    <div class="row">
+      <div class="col-sm-6">
+        <div class="radio">
+          <label class="radio-inline" for="belastung_ja"><input type="radio" id="belastung_ja" name="besBelastung" [(ngModel)]="formJ.besondereBelastungen" [value]="true">Ja</label>
+          <label class="radio-inline" for="belastung_nein"><input type="radio" id="belastung_nein" name="besBelastung" [(ngModel)]="formJ.besondereBelastungen" [value]="false">Nein</label>
+        </div>
+      </div>
+    </div>
+    <!-- ENDE Abschnitt Frage nach besonderen Belastungen -->
+
+    <!-- Abschnitt Daten für besondere Belastungen 2-->
+    <ng-container *ngIf="formJ.besondereBelastungen">
+      <!-- Abschnitt für besondere Belastungen -->
+      <div class="row">
+        <div class="col-sm-4">
+          <div class="form-group">
+            <label for="besBelastung">{{getFragen().J_Belastung}} *</label>
+            <input id="besBelastung" type="text" class="form-control" placeholder="Pflicht *" [(ngModel)]="formJ.besondereBelastung" required="required">
+          </div>
+        </div>
+        <div class="col-sm-4">
+          <div class="form-group">
+            <label for="besB">{{getFragen().J_Belastung}} *</label>
+            <input id="besB" type="text" class="form-control" placeholder="Pflicht *" [(ngModel)]="formJ.besondereBelastung" required="required">
+          </div>
+        </div>
+      </div>
+        <!-- ENDE Abschnitt Frage nach besonderen Belastungen 2-->

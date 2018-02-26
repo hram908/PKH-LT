@@ -1,3 +1,46 @@
 <div id="formularUeberschrift">
   <h2>{{getUntertitel()}}</h2>
 </div>
+<!-- Abschnitt Frage nach sontigen Zahlungsverpflichtungen -->
+<label class="form-check-inline">Haben Sie sonstige Zahlungsverpflichtungen? (z.B. Ratenkredite der Bank, Dahrlehnsverträge, Zahlungsnachweise)</label>
+<div class="row">
+  <div class="col-sm-6">
+    <div class="radio">
+      <label class="radio-inline" for="zahlungsverpflichtung_ja"><input type="radio" id="zahlungsverpflichtung_ja" name="sonZahlungsverpflichtung" [(ngModel)]="formI.sonstigeVerpflichtungen" [value]="true">Ja</label>
+      <label class="radio-inline" for="zahlungsverpflichtung_nein"><input type="radio" id="zahlungsverpflichtung_nein" name="sonZahlungsverpflichtung" [(ngModel)]="formI.sonstigeVerpflichtungen" [value]="false">Nein</label>
+    </div>
+  </div>
+</div>
+<!-- ENDE Abschnitt Frage nach sontigen Zahlungsverpflichtungen -->
+
+<!-- Abschnitt Daten für sonstige Verpflichtungen 2-->
+<ng-container *ngIf="formI.sonstigeVerpflichtungen">
+  <!-- Abschnitt für sonstige Verpflichtungen  -->
+  <div class="row">
+    <div class="col-sm-2">
+      <div class="form-group">
+        <label for="sonsVerpflichtung">{{getFragen().J_Belastung}} *</label>
+        <input id="sonsVerpflichtung" type="text" class="form-control" placeholder="Pflicht *" [(ngModel)]="formI.sonstigeVerpflichtung" required="required">
+      </div>
+    </div>
+    <div class="col-sm-2">
+      <div class="form-group">
+        <label for="sonV1">{{getFragen().J_Belastung}} *</label>
+        <input id="sonV1" type="text" class="form-control" placeholder="Pflicht *" [(ngModel)]="formI.sonstigeVerpflichtung" required="required">
+      </div>
+    </div>
+    <div class="col-sm-2">
+      <div class="form-group">
+        <label for="sonV2">{{getFragen().J_Belastung}} *</label>
+        <input id="sonV2" type="text" class="form-control" placeholder="Pflicht *" [(ngModel)]="formI.sonstigeVerpflichtung" required="required">
+      </div>
+    </div>
+    <div class="col-sm-2">
+      <div class="form-group">
+        <label for="sonV3">{{getFragen().J_Belastung}} *</label>
+        <input id="sonV3" type="text" class="form-control" placeholder="Pflicht *" [(ngModel)]="formI.sonstigeVerpflichtung" required="required">
+      </div>
+    </div>
+  </div>
+  <!-- ENDE Abschnitt Frage nach sonstige Verpflichtungen  2-->
+

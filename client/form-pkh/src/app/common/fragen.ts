@@ -36,4 +36,16 @@ export class Fragen {
   // Formularabschnitt D
   public static readonly D_Angehoerige = '';
 
+  // Formularabschnitt E
+
+  // Formularabschnitt F
+
+  // Formularabschnitt G
+
+  // Formularabschnitt H
+
+  // Formularabschnitt I
+
+  // Formularabschnitt J
+
 }
