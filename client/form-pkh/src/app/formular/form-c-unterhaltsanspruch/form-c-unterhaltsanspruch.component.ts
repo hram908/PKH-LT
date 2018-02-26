@@ -1,7 +1,8 @@
 import {Component} from '@angular/core';
 import {Untertitel} from '../../common/untertitel';
 import {IFormComponentBase} from '../../common/i-form-component-base';
-import {FormCMaterial} from "../../formulardaten/form-c/form-c-material";
+import {FormCMaterial} from '../../formulardaten/form-c/form-c-material';
+import {Fragen} from '../../common/fragen';
 
 
 @Component({
@@ -9,12 +10,16 @@ import {FormCMaterial} from "../../formulardaten/form-c/form-c-material";
   templateUrl: './form-c-unterhaltsanspruch.component.html',
   styleUrls: ['./form-c-unterhaltsanspruch.component.css']
 })
-export class FormCUnterhaltsanspruchComponent implements IFormComponentBase{
+export class FormCUnterhaltsanspruchComponent implements IFormComponentBase {
   constructor(public formC: FormCMaterial) {
   }
 
   getUntertitel(): string {
     return Untertitel.C;
+  }
+
+  getFragen() {
+    return Fragen;
   }
 }
 
