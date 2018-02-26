@@ -1,5 +1,9 @@
 <div class="btn-group-vertical sidenav">
   <ng-container *ngFor="let navButton of allNavButtons">
-    <button type="button" class="btn btn-default">{{navButton}}</button>
+    <button type="button" class="btn btn-default" (active)="navButton == currentFormString" (click)="showForm(navButton)">{{navButton}}</button>
   </ng-container>
+</div>
+<div class="back-forward-buttons">
+<button *ngIf="currentAbschnitt != '0'" class="btn btn-primary custom-control-inline" (click)="showFormBefore()">Zurück</button>
+<button *ngIf="currentAbschnitt != 'J'" type="button" class="btn btn-primary custom-control-inline" (click)="showFormAfter()">Weiter</button>
 </div>
