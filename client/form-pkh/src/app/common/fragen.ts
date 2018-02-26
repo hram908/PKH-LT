@@ -43,10 +43,20 @@ export class Fragen {
   // Formularabschnitt G
 
   // Formularabschnitt H
-  public static readonly H_Mieter = 'Test';
+  public static readonly H_Gesamtgroesse = ' 1. Gesamtgröße des Wohnraums, den Sie allein oder gemeinsam mit anderen Personen bewohnen';
+  public static readonly H_AnzahlZimmer = '2. Anzahl der Zimmer';
+  public static readonly H_AnzahlPersonenWohnraum = '3. Anzahl der Personen, die diese Wohnraum bewohnen';
+  public static readonly H_Nebenkosten = 'Miete ohne Nebenkosten';
+  public static readonly H_Heizkosten = 'Heizungskosten';
+  public static readonly H_SonstNebenkosten = 'sonstige Nebenkosten';
+  public static readonly H_Gesamtbetrag = 'Gesamtbetrag';
+  public static readonly H_KostenAlleine = 'Ich allein zahle davon';
 
   // Formularabschnitt I
 
   // Formularabschnitt J
-
+  public static readonly J_belastungBezeichung = 'Bezeichung';
+  public static readonly J_IchAlleineZahle = 'Ich allein zahle davon';
+  public static readonly J_BelastungBezeichung1 = 'Bezeichung';
+  public static readonly J_IchAlleineZahle1 = 'Ich allein zahle davon';
 }
