@@ -24,6 +24,10 @@ export class ViewSwitchComponent {
     return this.viewSwitchService.allNavButtonsString;
   }
 
+  public showForm(selectedFormString: string){
+    this.viewSwitchService.currentAbschnitt = this.viewSwitchService.alleAbschnitte.find(abschnitt => abschnitt.id == selectedFormString);
+  }
+
   public showFormBefore() {
     // not the first form
     if (this.currentFormString != this.allNavButtons[0]) {

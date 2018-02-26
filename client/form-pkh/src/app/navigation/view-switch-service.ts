@@ -53,12 +53,4 @@ export class ViewSwitchService {
   public initializeNavButtonStrings() {
     this.allNavButtonsString = this.stepSpeicher.abschnitte.map(abschnitt => abschnitt.id);
   }
-
-  showFormAfter() {
-    // not the last form
-    if (this._currentAbschnitt != this.stepSpeicher.abschnitte[this.stepSpeicher.abschnitte.length - 1]) {
-      let indexFormAfter: number = this.alleAbschnitte.indexOf(this.currentAbschnitt) + 1;
-      this.currentAbschnitt = this.alleAbschnitte[indexFormAfter];
-    }
-  }
 }
