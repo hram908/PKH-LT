@@ -1,102 +1,188 @@
-<div id="formularUeberschrift">
+<div class="form-group" id="formularUeberschrift">
   <h2>{{getUntertitel()}}</h2>
-</div>
+  <div class="controls">
+    <!-- Abschnitt für den vollständigen Namen -->
+    <div class="row">
+      <div class="col-sm-4">
+        <div class="form-group">
+          <label for="name">{{getFragen().A_Vorname}} *</label>
+          <input id="name" type="text" class="form-control" placeholder="Pflicht" [(ngModel)]="formA.vorname" required="required" data-error="Der Vorname ist notwendig.">
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <div class="form-group">
+          <label for="nachname">{{getFragen().A_Name}} *</label>
+          <input id="nachname" type="text" class="form-control" placeholder="Pflicht" [(ngModel)]="formA.nachname" required="required" data-error="Der Nachname ist notwendig.">
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-4">
+        <div class="form-group">
+          <label for="geburtsname">{{getFragen().A_Geburtsname}}</label>
+          <input id="geburtsname" type="text" class="form-control" [(ngModel)]="formA.geburtsname" placeholder="Abweichender Geburtsname">
+        </div>
+      </div>
+      <div class="col-sm-2">
+        <div class="form-group">
+          <label for="familienstand">{{getFragen().A_Familienstand}} *</label>
+          <select id="familienstand" class="form-control" [(ngModel)]="formA.familienstand" required="required">
+            <option value="" disabled selected hidden>Pflicht</option>
+            <option [value]="'Ledig'">Ledig</option>
+            <option [value]="'Verheiratet'">Verheiratet</option>
+            <option [value]="'Eingetragene Partnerschaft'">Eingetragene Partnerschaft</option>
+            <option [value]="'Verwitwet'">Verwitwet</option>
+            <option [value]="'Geschieden'">Geschieden</option>
+          </select>
+        </div>
+      </div>
+      <div class="col-sm-2">
+        <div class="form-group">
+          <label for="geburtsdatum">{{getFragen().A_Geburtsdatum}} *</label>
+          <input id="geburtsdatum" type="date" class="form-control" [(ngModel)]="formA.geburtstag" required="required">
+        </div>
+      </div>
+    </div>
+    <!-- ENDE Abschnitt Namen -->
 
-<div class="controls">
+    <!-- Abschnitt für die zusätzlichen Daten (Telefon, Beruf, etc.) -->
+    <div class="row">
+      <div class="col-sm-4">
+        <div class="form-group">
+          <label for="beruf">{{getFragen().A_Beruf}}</label>
+          <input id="beruf" type="text" class="form-control" [(ngModel)]="formA.beruf" placeholder="Optional">
+        </div>
+      </div>
+      <div class="col-sm-2">
+        <div class="form-group">
+          <label for="berufstyp">Erwerbstätigkeit *</label>
+          <select id="berufstyp" class="form-control" [(ngModel)]="formA.berufstyp" required="required">
+            <option value="" disabled selected hidden>Pflicht</option>
+            <option [value]="'Angestellt'">Angestellt</option>
+            <option [value]="'Selbstständig'">Selbstständig</option>
+            <option [value]="'Schüler'">Schüler</option>
+            <option [value]="'Student'">Student</option>
+            <option [value]="'Arbeitssuchend'">Arbeitssuchend</option>
+          </select>
+        </div>
+      </div>
+      <div class="col-sm-2">
+        <div class="form-group">
+          <label for="telefon">Telefonnummer *</label>
+          <input id="telefon" type="tel" class="form-control" [(ngModel)]="formA.telefon" placeholder="Pflicht" required="required">
+          <label id="sublabel">{{getFragen().A_Telefonnummer}}</label>
+        </div>
+      </div>
+    </div>
+    <!-- ENDE Abschnitt für zusätzliche Daten -->
 
-  <div class="row">
-    <div class="col-sm-2">
-      <div class="form-group">
-        <label for="name">{{getFragen().A_Vorname}} *</label>
-        <input id="name" type="text" class="form-control" placeholder="Bitte gib deinen Vornamen ein *" [(ngModel)]="formA.vorname" required="required" data-error="Der Vorname ist notwendig.">
+    <!-- Abschnitt für die Anschrift -->
+    <label>{{getFragen().A_Anschrift}}</label>
+    <div class="row">
+      <div class="col-sm-4">
+        <div class="form-group">
+          <label for="strasse">{{getFragen().A_Strasse}} *</label>
+          <input id="strasse" type="text" class="form-control" [(ngModel)]="formA.strasse" placeholder="Pflicht">
+        </div>
+      </div>
+      <div class="col-sm-2">
+        <div class="form-group">
+          <label for="hausnummer">{{getFragen().A_Hausnummer}} *</label>
+          <input id="hausnummer" type="text" class="form-control" [(ngModel)]="formA.hausnummer" placeholder="Pflicht">
+        </div>
       </div>
     </div>
-    <div class="col-sm-2">
-      <div class="form-group">
-        <label for="nachname">{{getFragen().A_Name}} *</label>
-        <input id="nachname" type="text" class="form-control" placeholder="Bitte gib deinen Nachnamen ein *" [(ngModel)]="formA.nachname" required="required" data-error="Der Nachname ist notwendig.">
+    <div class="row">
+      <div class="col-sm-2">
+        <div class="form-group">
+          <label for="plz">{{getFragen().A_Plz}} *</label>
+          <input id="plz" type="text" class="form-control" [(ngModel)]="formA.plz" placeholder="Pflicht">
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <div class="form-group">
+          <label for="ort">{{getFragen().A_Ort}} *</label>
+          <input id="ort" type="text" class="form-control" [(ngModel)]="formA.ort" placeholder="Pflicht">
+        </div>
       </div>
     </div>
-    <div class="col-sm-2">
-      <div class="form-group">
-        <label for="geburtsname">{{getFragen().A_Geburtsname}}</label>
-        <input id="geburtsname" type="text" class="form-control" [(ngModel)]="formA.geburtsname" placeholder="Der Geburtsname, wenn er vom Nachnamen abweicht *">
+    <!-- ENDE Abschnitt für die Anschrift -->
+
+    <div class="row">
+      <div class="col-sm-6">
+        <p class="text-muted"><strong>*</strong> Diese Felder sind notwendig.</p>
       </div>
     </div>
-  </div>
-  <div class="row">
-    <div class="col-sm-2">
-      <div class="form-group">
-        <label for="telefon">Telefonnummer</label>
-        <input id="telefon" type="tel" class="form-control" [(ngModel)]="formA.telefon" placeholder="Bitte gib deine Telefonnummer ein">
-        <label style="font-size: 8px">{{getFragen().A_Telefonnummer}}</label>
+
+    <!-- Abschnitt Frage nach gesetzlichem Vertreter -->
+    <label class="form-check-inline">Haben Sie einen gesetzlichen Vertreter?</label>
+    <div class="row">
+      <div class="col-sm-6">
+        <div class="radio">
+          <label class="radio-inline" for="vertreter_ja"><input type="radio" id="vertreter_ja" name="gesVertreter" [(ngModel)]="formA.gesetzlicherVertreter" [value]="true">Ja</label>
+          <label class="radio-inline" for="vertreter_nein"><input type="radio" id="vertreter_nein" name="gesVertreter" [(ngModel)]="formA.gesetzlicherVertreter" [value]="false">Nein</label>
+        </div>
       </div>
     </div>
-    <div class="col-sm-2">
-      <div class="form-group">
-        <label for="geburtsdatum">{{getFragen().A_Geburtsdatum}} *</label>
-        <input id="geburtsdatum" type="date" class="form-control" [(ngModel)]="formA.geburtstag" placeholder="Bitte gib deinen Beruf ein *" required="required">
+    <!-- ENDE Abschnitt Frage nach gesetzlichem Vertreter -->
+
+    <!-- Abschnitt Daten des gesetzlichen Vertreters -->
+    <ng-container *ngIf="formA.gesetzlicherVertreter">
+      <!-- Abschnitt für den Namen und Telefon -->
+      <div class="row">
+        <div class="col-sm-3">
+          <div class="form-group">
+            <label for="nameVertreter">{{getFragen().A_Vorname}} *</label>
+            <input id="nameVertreter" type="text" class="form-control" placeholder="Pflicht *" [(ngModel)]="formA.vertreterVorname" required="required">
+          </div>
+        </div>
+        <div class="col-sm-3">
+          <div class="form-group">
+            <label for="nachnameVertreter">{{getFragen().A_Name}} *</label>
+            <input id="nachnameVertreter" type="text" class="form-control" placeholder="Pflicht *" [(ngModel)]="formA.vertreterName" required="required">
+          </div>
+        </div>
+        <div class="col-sm-2">
+          <div class="form-group">
+            <label for="telefonVertreter">Telefonnummer *</label>
+            <input id="telefonVertreter" type="tel" class="form-control" [(ngModel)]="formA.vertreterTelefon" placeholder="Pflicht">
+          </div>
+        </div>
       </div>
-    </div>
-    <div class="col-sm-1">
-      <div class="form-group">
-        <label for="beruf">{{getFragen().A_Beruf}}</label>
-        <input id="beruf" type="text" class="form-control" [(ngModel)]="formA.beruf" placeholder="Bitte gib deinen Beruf ein *" required="required">
+      <!-- ENDE Abschnitt Namen / Telefon -->
+
+      <!-- Abschnitt für die Anschrift -->
+      <label>{{getFragen().A_Anschrift}}</label>
+      <div class="row">
+        <div class="col-sm-4">
+          <div class="form-group">
+            <label for="strasseVertreter">{{getFragen().A_Strasse}}</label>
+            <input id="strasseVertreter" type="text" class="form-control" [(ngModel)]="formA.vertreterStrasse">
+          </div>
+        </div>
+        <div class="col-sm-2">
+          <div class="form-group">
+            <label for="hausnummerVertreter">{{getFragen().A_Hausnummer}}</label>
+            <input id="hausnummerVertreter" type="number" class="form-control" [(ngModel)]="formA.vertreterHausnummer">
+          </div>
+        </div>
       </div>
-    </div>
-    <div class="col-sm-1">
-      <div class="form-group">
-        <label for="familienstand">{{getFragen().A_Familienstand}} *</label>
-        <input id="familienstand" type="text" class="form-control" [(ngModel)]="formA.familienstand" placeholder="Bitte gib deinen Beruf ein *" required="required">
+      <div class="row">
+        <div class="col-sm-2">
+          <div class="form-group">
+            <label for="plzVertreter">{{getFragen().A_Plz}}</label>
+            <input id="plzVertreter" type="text" class="form-control" [(ngModel)]="formA.vertreterPlz">
+          </div>
+        </div>
+        <div class="col-sm-4">
+          <div class="form-group">
+            <label for="ortVertreter">{{getFragen().A_Ort}}</label>
+            <input id="ortVertreter" type="text" class="form-control" [(ngModel)]="formA.vertreterOrt">
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
-  <label>{{getFragen().A_Anschrift}}</label>
-  <div class="row">
-    <div class="col-sm-3">
-      <div class="form-group">
-        <label for="strasse">{{getFragen().A_Strasse}}</label>
-        <input id="strasse" type="text" class="form-control" [(ngModel)]="formA.strasse">
-      </div>
-    </div>
-    <div class="col-sm-1">
-      <div class="form-group">
-        <label for="hausnummer">{{getFragen().A_Hausnummer}}</label>
-        <input id="hausnummer" type="number" class="form-control" [(ngModel)]="formA.hausnummer">
-      </div>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-sm-1">
-      <div class="form-group">
-        <label for="plz">{{getFragen().A_Plz}}</label>
-        <input id="plz" type="text" class="form-control" [(ngModel)]="formA.plz">
-      </div>
-    </div>
-    <div class="col-sm-3">
-      <div class="form-group">
-        <label for="ort">{{getFragen().A_Ort}}</label>
-        <input id="ort" type="text" class="form-control" [(ngModel)]="formA.ort">
-      </div>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-sm-6">
-      <div class="form-group">
-        <label for="vertreter">{{getFragen().A_GesetzlicherVertreter}}</label>
-      </div>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-sm-2">
-      <div class="form-group">
-        <input id="vertreter" type="checkbox" class="form-control" [(ngModel)]="formA.gesetzlicherVertreter">
-      </div>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-sm-9">
-      <p class="text-muted"><strong>*</strong> Diese Felder sind notwendig.</p>
-    </div>
+      <!-- ENDE Abschnitt für die Anschrift -->
+    </ng-container>
+    <!-- ENDE Abschnitt Daten des gesetzlichen Vertreters -->
   </div>
 </div>

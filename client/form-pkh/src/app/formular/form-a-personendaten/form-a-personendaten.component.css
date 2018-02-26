@@ -1,7 +1,3 @@
-label {
-  margin: 5px;
-}
-
-input {
-  margin: 5px;
+#sublabel {
+  font-size: 8px;
 }

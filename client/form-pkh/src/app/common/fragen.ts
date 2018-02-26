@@ -7,7 +7,7 @@ export class Fragen {
   public static readonly A_Name = 'Nachname';
   public static readonly A_Vorname = 'Vorname';
   public static readonly A_Geburtsname = 'ggf. Geburtsname';
-  public static readonly A_Beruf = 'Beruf, Erwerbstätigkeit';
+  public static readonly A_Beruf = 'Beruf';
   public static readonly A_Geburtsdatum = 'Geburtsdatum';
   public static readonly A_Familienstand = 'Familienstand';
   public static readonly A_Anschrift = 'Anschrift';
