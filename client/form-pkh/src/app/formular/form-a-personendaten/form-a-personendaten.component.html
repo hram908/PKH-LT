@@ -5,13 +5,13 @@
     <div class="row">
       <div class="col-sm-4">
         <div class="form-group">
-          <label for="name">{{getFragen().A_Vorname}} *</label>
+          <label for="name">{{getFragen().A.vorname}} *</label>
           <input id="name" type="text" class="form-control" placeholder="Pflicht" [(ngModel)]="formA.vorname" required="required" data-error="Der Vorname ist notwendig.">
         </div>
       </div>
       <div class="col-sm-4">
         <div class="form-group">
-          <label for="nachname">{{getFragen().A_Name}} *</label>
+          <label for="nachname">{{getFragen().A.nachname}} *</label>
           <input id="nachname" type="text" class="form-control" placeholder="Pflicht" [(ngModel)]="formA.nachname" required="required" data-error="Der Nachname ist notwendig.">
         </div>
       </div>
@@ -68,9 +68,9 @@
       </div>
       <div class="col-sm-2">
         <div class="form-group">
-          <label for="telefon">Telefonnummer *</label>
+          <label for="telefon">{{getFragen().A.telefon.TEL_KRZ}} *</label>
           <input id="telefon" type="tel" class="form-control" [(ngModel)]="formA.telefon" placeholder="Pflicht" required="required">
-          <label id="sublabel">{{getFragen().A_Telefonnummer}}</label>
+          <label id="sublabel">{{getFragen().A.telefon.TEL_LNG}}</label>
         </div>
       </div>
     </div>
