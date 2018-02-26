@@ -28,13 +28,12 @@ export class ViewSwitchService {
   public allNavButtons;
   public formChanged: EventEmitter<IFormComponentBase>;
 
-  public constructor(stepSpeicher: StepSpeicher) {
-    this._currentForm = NavButtons.num0;
+  public constructor(private stepSpeicher: StepSpeicher) {
+    this._currentForm = this.stepSpeicher.aktuellerAbschnitt.id;
     this.navMap = new Map<string, IFormComponentBase>();
     this.allNavButtons = [];
     this.formChanged = new EventEmitter<IFormComponentBase>();
     this.initializeNavButtons();
-    this.initializeNavMap();
   }
 
   public get currentForm(): string {
@@ -47,33 +46,7 @@ export class ViewSwitchService {
   }
 
   public initializeNavButtons() {
-    this.allNavButtons = [
-      NavButtons.num0,
-      NavButtons.num1,
-      NavButtons.A,
-      NavButtons.B,
-      NavButtons.C,
-      NavButtons.D,
-      NavButtons.E,
-      NavButtons.F,
-      NavButtons.G,
-      NavButtons.H,
-      NavButtons.I,
-      NavButtons.J
-    ]
-  }
-
-  // HACK - because Array.from(navMap.keys()) always return empty array
-  private initializeNavMap() {
-    this.navMap[NavButtons.A] = FormAPersonendatenComponent;
-    this.navMap[NavButtons.B] = FormBVersicherungenComponent;
-    this.navMap[NavButtons.C] = FormCUnterhaltsanspruchComponent;
-    this.navMap[NavButtons.D] = FormDGewaehrterUnterhaltComponent;
-    this.navMap[NavButtons.E] = FormEBruttoeinnahmenComponent;
-    this.navMap[NavButtons.F] = FormFAbzuegeComponent;
-    this.navMap[NavButtons.G] = FormGEigentumComponent;
-    this.navMap[NavButtons.H] = FormHWohnkostenComponent;
-    this.navMap[NavButtons.I] = FormISonstigeVerpflichtungenComponent;
-    this.navMap[NavButtons.J] = FormJBesondereBelastungenComponent;
+    this.allNavButtons = this.stepSpeicher.abschnitte.map(abschnitt => abschnitt.id);
+    console.log(this.allNavButtons);
   }
 }

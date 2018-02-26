@@ -20,8 +20,7 @@ export class ViewSwitchComponent {
   }
 
   public get allNavButtons(): string[] {
-    let buttons: string[] = Array.from(this.viewSwitchService.allNavButtons.keys());
-    return buttons;
+    return this.viewSwitchService.allNavButtons;
   }
 
   public showFormBefore() {
