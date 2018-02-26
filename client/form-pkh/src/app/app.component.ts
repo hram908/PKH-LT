@@ -64,6 +64,8 @@ export class AppComponent implements OnDestroy, OnInit {
         break;
       case 'C': this.stepSpeicher.aktuellerAbschnitt = this.stepSpeicher.abschnitte[4];
         break;
+      case 'I': this.stepSpeicher.aktuellerAbschnitt = this.stepSpeicher.abschnitte[5];
+        break;
     }
     return this.stepSpeicher.aktuellerAbschnitt.component;
   }
@@ -76,7 +78,9 @@ export class AppComponent implements OnDestroy, OnInit {
         break;
       case 'C': this.stepSpeicher.aktuellerAbschnitt = this.stepSpeicher.abschnitte[2];
         break;
-      case 'J': this.stepSpeicher.aktuellerAbschnitt = this.stepSpeicher.abschnitte[3];
+      case 'I': this.stepSpeicher.aktuellerAbschnitt = this.stepSpeicher.abschnitte[3];
+        break;
+      case 'J': this.stepSpeicher.aktuellerAbschnitt = this.stepSpeicher.abschnitte[4];
         break;
     }
     return this.stepSpeicher.aktuellerAbschnitt.component;

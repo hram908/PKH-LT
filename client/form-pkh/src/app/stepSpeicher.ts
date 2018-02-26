@@ -4,6 +4,7 @@ import {FormAPersonendatenComponent} from './formular/form-a-personendaten/form-
 import {FormBVersicherungenComponent} from './formular/form-b-versicherungen/form-b-versicherungen.component';
 import {FormCUnterhaltsanspruchComponent} from './formular/form-c-unterhaltsanspruch/form-c-unterhaltsanspruch.component';
 import {FormJBesondereBelastungenComponent} from './formular/form-j-besondere-belastungen/form-j-besondere-belastungen.component';
+import {FormISonstigeVerpflichtungenComponent} from './formular/form-i-sonstige-verpflichtungen/form-i-sonstige-verpflichtungen.component';
 
 export class StepSpeicher {
   aktuellerAbschnitt: Abschnitt;
@@ -20,6 +21,7 @@ export class StepSpeicher {
     this.abschnitte.push(new Abschnitt('G', 'Beginn7'));
     this.abschnitte.push(new Abschnitt('H', 'Beginn8'));
     this.abschnitte.push(new Abschnitt('I', 'Beginn9'));*/
+    this.abschnitte.push(new Abschnitt('I', 'Sonstige Zahlungsverpflichtungen', FormISonstigeVerpflichtungenComponent));
     this.abschnitte.push(new Abschnitt('J', 'Besondere Belastungen', FormJBesondereBelastungenComponent));
 
     this.aktuellerAbschnitt = this.abschnitte[0];

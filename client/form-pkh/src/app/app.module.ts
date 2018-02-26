@@ -64,6 +64,7 @@ import {FormularService} from './formular/formular-service';
     FormAPersonendatenComponent,
     FormBVersicherungenComponent,
     FormCUnterhaltsanspruchComponent,
+    FormISonstigeVerpflichtungenComponent,
     FormJBesondereBelastungenComponent,
   ],
   bootstrap: [
