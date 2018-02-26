@@ -8,6 +8,7 @@ import {FormAPersonendatenComponent} from './formular/form-a-personendaten/form-
 import {StepSpeicher} from './stepSpeicher';
 import {ViewSwitchService} from './navigation/view-switch-service';
 import {IFormComponentBase} from './common/i-form-component-base';
+import {Abschnitt} from './abschnitt';
 
 @Component({
   selector: 'app-root',
@@ -25,7 +26,7 @@ export class AppComponent implements OnDestroy, OnInit {
 
   constructor(private viewSwitchService: ViewSwitchService,
               private componentFactoryResolver: ComponentFactoryResolver,
-              public allgemeineDaten: AllgemeineDaten, public stepSpeicher: StepSpeicher) {
+              public allgemeineDaten: AllgemeineDaten) {
     this.viewSwitchService.formChanged.subscribe(this.onFormViewChanged);
   }
 
@@ -39,31 +40,15 @@ export class AppComponent implements OnDestroy, OnInit {
 
   erschaffeComponent() {
     this.container.clear();
-    const factory = this.componentFactoryResolver.resolveComponentFactory(this.stepSpeicher.aktuellerAbschnitt.component);
+    const factory = this.componentFactoryResolver.resolveComponentFactory(this.viewSwitchService.currentAbschnitt.component);
     this.componentRef = this.container.createComponent(factory);
   }
 
-  private onFormViewChanged = (component: IFormComponentBase) => {
+  private onFormViewChanged = (abschnitt: Abschnitt) => {
+    if(abschnitt){
     this.container.clear();
-    const factory = this.componentFactoryResolver.resolveComponentFactory(this.stepSpeicher.aktuellerAbschnitt.component);
+    const factory = this.componentFactoryResolver.resolveComponentFactory(abschnitt.component);
     this.componentRef = this.container.createComponent(factory);
-  }
-
-  naechsterAbschnitt(id: string): any {
-    switch (id) {
-      case 'A':
-        return FormAPersonendatenComponent;
-      default:
-        return FormAPersonendatenComponent;
-    }
-  }
-
-  vorherigerAbschnitt(id: string): any {
-    switch (id) {
-      case '0':
-        return StartfensterComponent;
-      default:
-        return StartfensterComponent;
     }
   }
 }

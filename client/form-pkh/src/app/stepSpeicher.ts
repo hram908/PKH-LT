@@ -16,7 +16,6 @@ import {FormGEigentumComponent} from './formular/form-g-eigentum/form-g-eigentum
  * @author Thomas, Isi
  */
 export class StepSpeicher {
-  aktuellerAbschnitt: Abschnitt;
   abschnitte: Abschnitt[] = [];
 
   constructor() {
@@ -33,6 +32,5 @@ export class StepSpeicher {
     this.abschnitte.push(new Abschnitt('J', 'BesondereBelastungen', FormJBesondereBelastungenComponent));
   //  this.abschnitte.push(new Abschnitt('K', 'Beginn11'));
 
-    this.aktuellerAbschnitt = this.abschnitte[0];
   }
 }

@@ -17,36 +17,48 @@ import {FormEBruttoeinnahmenComponent} from '../formular/form-e-bruttoeinnahmen/
 import {FormBVersicherungenComponent} from '../formular/form-b-versicherungen/form-b-versicherungen.component';
 import {StartfensterComponent} from '../formular/startfenster/startfenster.component';
 import {StepSpeicher} from '../stepSpeicher';
+import {Abschnitt} from '../abschnitt';
 
 /**
  * @author Isabella
  **/
 @Injectable()
 export class ViewSwitchService {
-  private _currentForm: string;
-  private navMap: Map<string, IFormComponentBase>;
-  public allNavButtons;
-  public formChanged: EventEmitter<IFormComponentBase>;
+  private _currentAbschnitt: Abschnitt;
+  private readonly _alleAbschnitte: Abschnitt[];
+
+  public allNavButtonsString: string[];
+  public formChanged: EventEmitter<Abschnitt>;
 
   public constructor(private stepSpeicher: StepSpeicher) {
-    this._currentForm = this.stepSpeicher.aktuellerAbschnitt.id;
-    this.navMap = new Map<string, IFormComponentBase>();
-    this.allNavButtons = [];
-    this.formChanged = new EventEmitter<IFormComponentBase>();
-    this.initializeNavButtons();
+    this._currentAbschnitt = this.stepSpeicher.abschnitte[0];
+    this.allNavButtonsString = [];
+    this.formChanged = new EventEmitter<Abschnitt>();
+    this.initializeNavButtonStrings();
   }
 
-  public get currentForm(): string {
-    return this._currentForm;
+  public get currentAbschnitt(): Abschnitt {
+    return this._currentAbschnitt;
   }
 
-  public set currentForm(form: string) {
-    this._currentForm = form;
-    this.formChanged.emit(this.navMap[this._currentForm]);
+  public set currentAbschnitt(abschnitt: Abschnitt) {
+    this._currentAbschnitt = this.stepSpeicher.abschnitte.find(a => a.id == abschnitt.id);
+    this.formChanged.emit(this._currentAbschnitt);
   }
 
-  public initializeNavButtons() {
-    this.allNavButtons = this.stepSpeicher.abschnitte.map(abschnitt => abschnitt.id);
-    console.log(this.allNavButtons);
+  public get alleAbschnitte(): Abschnitt[]{
+    return this.stepSpeicher.abschnitte;
+  }
+
+  public initializeNavButtonStrings() {
+    this.allNavButtonsString = this.stepSpeicher.abschnitte.map(abschnitt => abschnitt.id);
+  }
+
+  showFormAfter() {
+    // not the last form
+    if (this._currentAbschnitt != this.stepSpeicher.abschnitte[this.stepSpeicher.abschnitte.length - 1]) {
+      let indexFormAfter: number = this.alleAbschnitte.indexOf(this.currentAbschnitt) + 1;
+      this.currentAbschnitt = this.alleAbschnitte[indexFormAfter];
+    }
   }
 }
