@@ -10,6 +10,7 @@ import {ViewSwitchService} from './navigation/view-switch-service';
 import {IFormComponentBase} from './common/i-form-component-base';
 import {Abschnitt} from './abschnitt';
 
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',

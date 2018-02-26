@@ -6,6 +6,7 @@ export class FormAMaterial {
   vorname = '';
   nachname = '';
   geburtsname = '';
+  berufstyp = '';
   beruf = '';
   geburtstag = '';
   familienstand = '';

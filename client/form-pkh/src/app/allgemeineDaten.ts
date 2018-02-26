@@ -3,7 +3,7 @@ import {StartfensterComponent} from './formular/startfenster/startfenster.compon
 import {FormAPersonendatenComponent} from './formular/form-a-personendaten/form-a-personendaten.component';
 
 export class AllgemeineDaten {
-  istAntragsteller = true;
+  istAntragsteller = 2;
   hatEhepartner = false;
   kinder = 0;
 }

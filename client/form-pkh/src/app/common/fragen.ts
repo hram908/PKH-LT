@@ -7,7 +7,7 @@ export class Fragen {
   public static readonly A_Name = 'Nachname';
   public static readonly A_Vorname = 'Vorname';
   public static readonly A_Geburtsname = 'ggf. Geburtsname';
-  public static readonly A_Beruf = 'Beruf, Erwerbstätigkeit';
+  public static readonly A_Beruf = 'Beruf';
   public static readonly A_Geburtsdatum = 'Geburtsdatum';
   public static readonly A_Familienstand = 'Familienstand';
   public static readonly A_Anschrift = 'Anschrift';
@@ -35,5 +35,17 @@ export class Fragen {
 
   // Formularabschnitt D
   public static readonly D_Angehoerige = '';
+
+  // Formularabschnitt E
+
+  // Formularabschnitt F
+
+  // Formularabschnitt G
+
+  // Formularabschnitt H
+
+  // Formularabschnitt I
+
+  // Formularabschnitt J
 
 }

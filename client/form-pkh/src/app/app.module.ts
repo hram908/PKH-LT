@@ -24,6 +24,10 @@ import {AppDirective} from './app.directive';
 import { ViewSwitchComponent } from './navigation/view-switch.component';
 import {ViewSwitchService} from './navigation/view-switch-service';
 import {FormularService} from './formular/formular-service';
+import {FormBMaterial} from './formulardaten/form-b/form-b-material';
+import {FormCMaterial} from './formulardaten/form-c/form-c-material';
+import {FormIMaterial} from './formulardaten/form-i/form-i-material';
+import {FormJMaterial} from './formulardaten/form-j/form-j-material';
 
 
 
@@ -36,6 +40,7 @@ import {FormularService} from './formular/formular-service';
     StartfensterComponent,
     FormAComponent,
     ChatbotComponent,
+    FormBVersicherungenComponent,
     FormCUnterhaltsanspruchComponent,
     FormDGewaehrterUnterhaltComponent,
     FormEBruttoeinnahmenComponent,
@@ -53,6 +58,10 @@ import {FormularService} from './formular/formular-service';
   ],
   providers: [
     FormAMaterial,
+    FormBMaterial,
+    FormCMaterial,
+    FormIMaterial,
+    FormJMaterial,
     AllgemeineDaten,
     ViewSwitchService,
     ChatbotService,
@@ -60,7 +69,11 @@ import {FormularService} from './formular/formular-service';
   ],
   entryComponents: [
     StartfensterComponent,
-    FormAPersonendatenComponent
+    FormAPersonendatenComponent,
+    FormBVersicherungenComponent,
+    FormCUnterhaltsanspruchComponent,
+    FormISonstigeVerpflichtungenComponent,
+    FormJBesondereBelastungenComponent,
   ],
   bootstrap: [
     AppComponent

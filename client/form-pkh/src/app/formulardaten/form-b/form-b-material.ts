@@ -3,6 +3,6 @@
  **/
 
 export class FormBMaterial {
-  hatKostentraeger = false;
-  hatRechtschutzversicherung = false;
+  hatKostentraeger = 0;
+  hatRechtschutzversicherung = 0;
 }
