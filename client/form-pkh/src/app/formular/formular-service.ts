@@ -12,7 +12,9 @@ import {FormHWohnkostenComponent} from './form-h-wohnkosten/form-h-wohnkosten.co
 import {FormISonstigeVerpflichtungenComponent} from './form-i-sonstige-verpflichtungen/form-i-sonstige-verpflichtungen.component';
 import {FormJBesondereBelastungenComponent} from './form-j-besondere-belastungen/form-j-besondere-belastungen.component';
 import {IFormComponentBase} from '../common/i-form-component-base';
+import {Injectable} from '@angular/core';
 
+@Injectable()
 export class FormularService {
   public activeForm: IFormComponentBase;
   public constructor(private formA: FormAPersonendatenComponent,

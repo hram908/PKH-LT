@@ -6,6 +6,8 @@ import {StartfensterComponent} from './formular/startfenster/startfenster.compon
 import {AllgemeineDaten} from './allgemeineDaten';
 import {FormAPersonendatenComponent} from './formular/form-a-personendaten/form-a-personendaten.component';
 import {StepSpeicher} from './stepSpeicher';
+import {ViewSwitchService} from './navigation/view-switch-service';
+import {IFormComponentBase} from './common/i-form-component-base';
 
 @Component({
   selector: 'app-root',
@@ -15,14 +17,16 @@ import {StepSpeicher} from './stepSpeicher';
 
 
 export class AppComponent implements OnDestroy, OnInit {
-  @ViewChild('appHost', { read: ViewContainerRef }) container;
+  @ViewChild('appHost', {read: ViewContainerRef}) container;
   componentRef: ComponentRef<ComponentFactoryResolver>;
   title = 'Prozesskostenhilfe-Helfer';
   rechtsgebiet = false;
   chatbot = false;
 
-  constructor(private componentFactoryResolver: ComponentFactoryResolver,
+  constructor(private viewSwitchService: ViewSwitchService,
+              private componentFactoryResolver: ComponentFactoryResolver,
               public allgemeineDaten: AllgemeineDaten, public stepSpeicher: StepSpeicher) {
+    this.viewSwitchService.formChanged.subscribe(this.onFormViewChanged);
   }
 
   ngOnInit() {
@@ -39,30 +43,27 @@ export class AppComponent implements OnDestroy, OnInit {
     this.componentRef = this.container.createComponent(factory);
   }
 
-  weiter() {
+  private onFormViewChanged = (component: IFormComponentBase) => {
     this.container.clear();
-    const factory = this.componentFactoryResolver.resolveComponentFactory(this.naechsterAbschnitt(this.stepSpeicher.aktuellerAbschnitt.id));
-    this.componentRef = this.container.createComponent(factory);
-  }
-
-  zurueck() {
-    this.container.clear();
-    const factory = this.componentFactoryResolver.resolveComponentFactory(
-      this.vorherigerAbschnitt(this.stepSpeicher.aktuellerAbschnitt.id));
+    const factory = this.componentFactoryResolver.resolveComponentFactory(this.stepSpeicher.aktuellerAbschnitt.component);
     this.componentRef = this.container.createComponent(factory);
   }
 
   naechsterAbschnitt(id: string): any {
     switch (id) {
-      case 'A': return FormAPersonendatenComponent;
-      default: return FormAPersonendatenComponent;
+      case 'A':
+        return FormAPersonendatenComponent;
+      default:
+        return FormAPersonendatenComponent;
     }
   }
 
   vorherigerAbschnitt(id: string): any {
     switch (id) {
-      case '0': return StartfensterComponent;
-      default: return StartfensterComponent;
+      case '0':
+        return StartfensterComponent;
+      default:
+        return StartfensterComponent;
     }
   }
 }

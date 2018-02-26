@@ -4,6 +4,6 @@
   </ng-container>
 </div>
 <div class="back-forward-buttons">
-<button *ngIf="currentForm != '0'" class="btn btn-primary custom-control-inline">Zurück</button>
-<button *ngIf="currentForm != 'J'" type="button" class="btn btn-primary custom-control-inline">Weiter</button>
+<button *ngIf="currentForm != '0'" class="btn btn-primary custom-control-inline" (click)="showFormBefore()">Zurück</button>
+<button *ngIf="currentForm != 'J'" type="button" class="btn btn-primary custom-control-inline" (click)="showFormAfter()">Weiter</button>
 </div>
