@@ -11,14 +11,14 @@ import {Fragen} from '../../common/fragen';
 })
 export class FormHWohnkostenComponent implements IFormComponentBase {
   constructor(public formH: FormHMaterial) {
-}
-
-  getUntertitel(): string {
-    return Untertitel.I;
   }
 
   getFragen() {
     return Fragen;
+  }
+
+  getUntertitel(): string {
+    return Untertitel.H;
   }
 }
 

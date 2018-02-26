@@ -43,6 +43,7 @@ export class Fragen {
   // Formularabschnitt G
 
   // Formularabschnitt H
+  public static readonly H_Mieter = 'Test';
 
   // Formularabschnitt I
 

@@ -12,8 +12,8 @@ import {FormJMaterial} from './form-j/form-j-material';
 /**
  * @author Isabella
  **/
-export class PkhFormMaterial{
-abschnittA: FormAMaterial;
+export class PkhFormMaterial {
+  abschnittA: FormAMaterial;
   abschnittB: FormBMaterial;
   abschnittC: FormCMaterial;
   abschnittD: FormDMaterial;

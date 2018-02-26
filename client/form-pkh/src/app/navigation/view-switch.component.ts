@@ -1,7 +1,6 @@
-import {Component, OnInit} from '@angular/core';
+import {Component} from '@angular/core';
 import {ViewSwitchService} from './view-switch-service';
-import {NavButtons} from './nav-buttons';
-import {Abschnitt} from '../abschnitt';
+import {FormBMaterial} from '../formulardaten/form-b/form-b-material';
 
 @Component({
   selector: 'app-view-switch',
@@ -13,7 +12,7 @@ import {Abschnitt} from '../abschnitt';
  **/
 export class ViewSwitchComponent {
 
-  constructor(private viewSwitchService: ViewSwitchService) {
+  constructor(private viewSwitchService: ViewSwitchService, public formB: FormBMaterial) {
   }
 
   public get currentFormString(): string {
@@ -24,20 +23,20 @@ export class ViewSwitchComponent {
     return this.viewSwitchService.allNavButtonsString;
   }
 
-  public showForm(selectedFormString: string){
-    this.viewSwitchService.currentAbschnitt = this.viewSwitchService.alleAbschnitte.find(abschnitt => abschnitt.id == selectedFormString);
+  public showForm(selectedFormString: string) {
+    this.viewSwitchService.currentAbschnitt = this.viewSwitchService.alleAbschnitte.find(abschnitt => abschnitt.id === selectedFormString);
   }
 
   public showFormBefore() {
     // not the first form
-    if (this.currentFormString != this.allNavButtons[0]) {
-      let indexFormBefore: number = this.viewSwitchService.alleAbschnitte.indexOf(this.viewSwitchService.currentAbschnitt) - 1;
+    if (this.currentFormString !== this.allNavButtons[0]) {
+      const indexFormBefore: number = this.viewSwitchService.alleAbschnitte.indexOf(this.viewSwitchService.currentAbschnitt) - 1;
       this.viewSwitchService.currentAbschnitt = this.viewSwitchService.alleAbschnitte[indexFormBefore];
     }
   }
 
   public showFormAfter() {
-    let indexFormBefore: number = this.viewSwitchService.alleAbschnitte.indexOf(this.viewSwitchService.currentAbschnitt) + 1;
+    const indexFormBefore: number = this.viewSwitchService.alleAbschnitte.indexOf(this.viewSwitchService.currentAbschnitt) + 1;
     this.viewSwitchService.currentAbschnitt = this.viewSwitchService.alleAbschnitte[indexFormBefore];
   }
 }

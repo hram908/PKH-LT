@@ -9,4 +9,6 @@ export class FormHMaterial {
   personenImWohnraum: [number, number]; // second one is the 'Belegnummer'
   mieterNutzung: RaumnutzungH;
   eigentumsNutzung: RaumnutzungH;
+  mieter = false;
+  IstMieter = '';
 }

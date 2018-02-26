@@ -32,6 +32,7 @@ import {FormDMaterial} from './formulardaten/form-d/form-d-material';
 import {FormEMaterial} from './formulardaten/form-e/form-e-material';
 import {FormFMaterial} from './formulardaten/form-f/form-f-material';
 import {FormGMaterial} from './formulardaten/form-g/form-g-material';
+import {FormHMaterial} from './formulardaten/form-h/form-h-material';
 
 
 
@@ -68,6 +69,7 @@ import {FormGMaterial} from './formulardaten/form-g/form-g-material';
     FormEMaterial,
     FormFMaterial,
     FormGMaterial,
+    FormHMaterial,
     FormIMaterial,
     FormJMaterial,
     AllgemeineDaten,
