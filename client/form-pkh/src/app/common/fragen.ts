@@ -64,7 +64,9 @@ export class Fragen {
   public static readonly H_uebrigeNebenkosten = 'übrige Nebenkosten'
   public static readonly H_gesamtBetrag = 'Gesamtbetrag'
   public static readonly H_zahleAlleine = 'Ich allein zahle davon'
-  public static readonly H_genauereEinzelangaben = '6. Genaue Einzelangaben zu der Belastung aus Fremdmitteln bei Nutzung als (Mit-)Eigentümer (z.B. Darlehnsvertrag, mit Datum, Dahrlensnehmer, Kreditinstitut, Dahrlehnsrate pro Monat ... '
+  public static readonly H_bezeichnung = 'Bezeichnung'
+  public static readonly H_dahrlenRestschuld = 'Restschuld in EUR'
+  public static readonly H_dahrlenZinsenUndTilgung = 'Zinsen und Tilgung'
 
 // Formularabschnitt I
   public static readonly I_bezeichnung = 'Bezeichung';

@@ -46,7 +46,6 @@
   </div>
 </div>
 <!-- ENDE Abschnitt Frage nach Wohnung 4 -->
-
 <!-- Abschnitt Daten für Wohnung 4-->
 <ng-container *ngIf="formH.mieter">
   <!-- Abschnitt für Wohnung 4 -->
@@ -95,7 +94,6 @@
     </div>
   </div>
   <!-- ENDE Abschnitt Frage nach Wohnung 5 -->
-
   <!-- Abschnitt Daten für Wohnung 5-->
   <ng-container *ngIf="formH.eigentuemer">
     <!-- Abschnitt für Wohnung 5 -->
@@ -134,12 +132,36 @@
     <!-- ENDE Abschnitt Frage nach Wohnung 5-->
 
     <!-- Abschnitt Frage nach Wohnung 6 -->
+    <label class="form-check-inline"> 6. Haben Sie Belastungen aus Fremdmitteln als (Mit-)Eigentümer? (z.B. Dahrlensverträge, Kredite)</label>
     <div class="row">
-      <div class="col-sm-4">
-        <div class="form-group">
-          <label for="genEinzel">{{getFragen().H_genauereEinzelangaben}} </label>
-          <input id="genEinzel" type="text" class="form-control" placeholder="Pflicht" [(ngModel)]="formH.genEinzel" required="required" data-error="Die Wohnungsgröße ist notwendig.">
+      <div class="col-sm-6">
+        <div class="radio">
+          <label class="radio-inline" for="dahrlen_ja"><input type="radio" id="dahrlen_ja" name="besBelastung" [(ngModel)]="formH.dahrlen" [value]="true">Ja</label>
+          <label class="radio-inline" for="dahrlen_nein"><input type="radio" id="dahrlen_nein" name="besBelastung" [(ngModel)]="formH.dahrlen" [value]="false">Nein</label>
         </div>
       </div>
     </div>
     <!-- ENDE Abschnitt Frage nach Wohnung 6 -->
+    <!-- Abschnitt Daten für Wohnung 6-->
+    <ng-container *ngIf="formH.dahrlen">
+      <!-- Abschnitt für Wohnung 5 -->
+      <div class="row">
+        <div class="col-sm-4">
+          <div class="form-group">
+            <label for="ZinsenUndTilgung">{{getFragen().H_bezeichnung}} </label>
+            <input id="ZinsenUndTilgung" type="text" class="form-control" placeholder="Pflicht" [(ngModel)]="formH.zinsenUndTilgung" required="required">
+          </div>
+        </div>
+        <div class="col-sm-3">
+          <div class="form-group">
+            <label for="Heizungskosten">{{getFragen().H_dahrlenRestschuld}}</label>
+            <input id="Heizungskosten" type="text" class="form-control" placeholder="Pflicht" [(ngModel)]="formH.heizungskosten" required="required">
+          </div>
+        </div>
+        <div class="col-sm-3">
+          <div class="form-group">
+            <label for="uebNebenkosten">{{getFragen().H_dahrlenZinsenUndTilgung}} </label>
+            <input id="uebNebenkosten" type="text" class="form-control" placeholder="Pflicht" [(ngModel)]="formH.uebrigeNebenkosten" required="required">
+      </div>
+      <!-- ENDE Abschnitt Frage nach Wohnung 6-->
+
