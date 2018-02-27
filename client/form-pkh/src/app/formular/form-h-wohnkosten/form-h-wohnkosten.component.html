@@ -7,7 +7,8 @@
   <div class="col-sm-4">
     <div class="form-group">
       <label for="groesse">{{getFragen().H_gesamtgroesseWohnung}} </label>
-      <input id="groesse" type="text" class="form-control" placeholder="Pflicht" [(ngModel)]="formH.groesse" required="required" data-error="Die Wohnungsgröße ist notwendig.">
+      <input id="groesse" type="text" class="form-control" placeholder="Pflicht" [(ngModel)]="formH.groesse"
+             required="required" data-error="Die Wohnungsgröße ist notwendig.">
     </div>
   </div>
 </div>
@@ -18,7 +19,8 @@
   <div class="col-sm-4">
     <div class="form-group">
       <label for="anzahlZimmer">{{getFragen().H_anzahlZimmer}} </label>
-      <input id="anzahlZimmer" type="text" class="form-control" placeholder="Pflicht" [(ngModel)]="formH.anzahlZimmer" required="required" data-error="Die Zimmerzahl ist notwendig.">
+      <input id="anzahlZimmer" type="text" class="form-control" placeholder="Pflicht" [(ngModel)]="formH.anzahlZimmer"
+             required="required" data-error="Die Zimmerzahl ist notwendig.">
     </div>
   </div>
 </div>
@@ -29,7 +31,9 @@
   <div class="col-sm-4">
     <div class="form-group">
       <label for="anzahlPersonenWohnraum">{{getFragen().H_anzahlPersonenWohnraum}} </label>
-      <input id="anzahlPersonenWohnraum" type="text" class="form-control" placeholder="Pflicht" [(ngModel)]="formH.anzahlPersonenWohnraum" required="required" data-error="Die Anzahl der Personen, die die Wohnung bewohnen ist notwendig.">
+      <input id="anzahlPersonenWohnraum" type="text" class="form-control" placeholder="Pflicht"
+             [(ngModel)]="formH.anzahlPersonenWohnraum" required="required"
+             data-error="Die Anzahl der Personen, die die Wohnung bewohnen ist notwendig.">
     </div>
   </div>
 </div>
@@ -40,8 +44,10 @@
 <div class="row">
   <div class="col-sm-6">
     <div class="radio">
-      <label class="radio-inline" for="mieter_ja"><input type="radio" id="mieter_ja" name="besBelastung" [(ngModel)]="formH.mieter" [value]="true">Ja</label>
-      <label class="radio-inline" for="mieter_nein"><input type="radio" id="mieter_nein" name="besBelastung" [(ngModel)]="formH.mieter" [value]="false">Nein</label>
+      <label class="radio-inline" for="mieter_ja"><input type="radio" id="mieter_ja" name="besBelastung"
+                                                         [(ngModel)]="formH.mieter" [value]="true">Ja</label>
+      <label class="radio-inline" for="mieter_nein"><input type="radio" id="mieter_nein" name="besBelastung"
+                                                           [(ngModel)]="formH.mieter" [value]="false">Nein</label>
     </div>
   </div>
 </div>
@@ -53,31 +59,36 @@
     <div class="col-sm-2">
       <div class="form-group">
         <label for="MieteOhneNeben">{{getFragen().H_nebenkosten}} </label>
-        <input id="MieteOhneNeben" type="text" class="form-control" placeholder="Pflicht" [(ngModel)]="formH.nebenkosten" required="required">
+        <input id="MieteOhneNeben" type="text" class="form-control" placeholder="Pflicht"
+               [(ngModel)]="formH.nebenkosten" required="required">
       </div>
     </div>
     <div class="col-sm-2">
       <div class="form-group">
         <label for="Heizkosten">{{getFragen().H_heizkosten}}</label>
-        <input id="Heizkosten" type="text" class="form-control" placeholder="Pflicht" [(ngModel)]="formH.heizkosten" required="required">
+        <input id="Heizkosten" type="text" class="form-control" placeholder="Pflicht" [(ngModel)]="formH.heizkosten"
+               required="required">
       </div>
     </div>
     <div class="col-sm-2">
       <div class="form-group">
         <label for="andNebenkosten">{{getFragen().H_sonstNebenkosten}} </label>
-        <input id="andNebenkosten" type="text" class="form-control" placeholder="Pflicht" [(ngModel)]="formH.sonstNebenkosten" required="required">
+        <input id="andNebenkosten" type="text" class="form-control" placeholder="Pflicht"
+               [(ngModel)]="formH.sonstNebenkosten" required="required">
       </div>
     </div>
     <div class="col-sm-2">
       <div class="form-group">
         <label for="WohnungGes">{{getFragen().H_gesamtbetrag}} </label>
-        <input id="WohnungGes" type="text" class="form-control" placeholder="Pflicht" [(ngModel)]="formH.gesamtbetrag" required="required">
+        <input id="WohnungGes" type="text" class="form-control" placeholder="Pflicht" [(ngModel)]="formH.gesamtbetrag"
+               required="required">
       </div>
     </div>
     <div class="col-sm-2">
       <div class="form-group">
         <label for="WohnungAllein">{{getFragen().H_kostenAlleine}} </label>
-        <input id="WohnungAllein" type="text" class="form-control" placeholder="Pflicht" [(ngModel)]="formH.kostenAlleine" required="required">
+        <input id="WohnungAllein" type="text" class="form-control" placeholder="Pflicht"
+               [(ngModel)]="formH.kostenAlleine" required="required">
       </div>
     </div>
   </div>
@@ -88,8 +99,12 @@
   <div class="row">
     <div class="col-sm-6">
       <div class="radio">
-        <label class="radio-inline" for="eigentuemer_ja"><input type="radio" id="eigentuemer_ja" name="besBelastung" [(ngModel)]="formH.eigentuemer" [value]="true">Ja</label>
-        <label class="radio-inline" for="eigentuemer_nein"><input type="radio" id="eigentuemer_nein" name="besBelastung" [(ngModel)]="formH.eigentuemer" [value]="false">Nein</label>
+        <label class="radio-inline" for="eigentuemer_ja"><input type="radio" id="eigentuemer_ja" name="besBelastung"
+                                                                [(ngModel)]="formH.eigentuemer"
+                                                                [value]="true">Ja</label>
+        <label class="radio-inline" for="eigentuemer_nein"><input type="radio" id="eigentuemer_nein" name="besBelastung"
+                                                                  [(ngModel)]="formH.eigentuemer"
+                                                                  [value]="false">Nein</label>
       </div>
     </div>
   </div>
@@ -101,43 +116,51 @@
       <div class="col-sm-2">
         <div class="form-group">
           <label for="ZinsenUndTilgung">{{getFragen().H_zinsenUndTilgung}} </label>
-          <input id="ZinsenUndTilgung" type="text" class="form-control" placeholder="Pflicht" [(ngModel)]="formH.zinsenUndTilgung" required="required">
+          <input id="ZinsenUndTilgung" type="text" class="form-control" placeholder="Pflicht"
+                 [(ngModel)]="formH.zinsenUndTilgung" required="required">
         </div>
       </div>
       <div class="col-sm-2">
         <div class="form-group">
           <label for="Heizungskosten">{{getFragen().H_heizungskosten}}</label>
-          <input id="Heizungskosten" type="text" class="form-control" placeholder="Pflicht" [(ngModel)]="formH.heizungskosten" required="required">
+          <input id="Heizungskosten" type="text" class="form-control" placeholder="Pflicht"
+                 [(ngModel)]="formH.heizungskosten" required="required">
         </div>
       </div>
       <div class="col-sm-2">
         <div class="form-group">
           <label for="uebNebenkosten">{{getFragen().H_uebrigeNebenkosten}} </label>
-          <input id="uebNebenkosten" type="text" class="form-control" placeholder="Pflicht" [(ngModel)]="formH.uebrigeNebenkosten" required="required">
+          <input id="uebNebenkosten" type="text" class="form-control" placeholder="Pflicht"
+                 [(ngModel)]="formH.uebrigeNebenkosten" required="required">
         </div>
       </div>
       <div class="col-sm-2">
         <div class="form-group">
           <label for="gesBetrag">{{getFragen().H_gesamtBetrag}} </label>
-          <input id="gesBetrag" type="text" class="form-control" placeholder="Pflicht" [(ngModel)]="formH.gesamtBetrag" required="required">
+          <input id="gesBetrag" type="text" class="form-control" placeholder="Pflicht" [(ngModel)]="formH.gesamtBetrag"
+                 required="required">
         </div>
       </div>
       <div class="col-sm-2">
         <div class="form-group">
           <label for="ZahleAllein">{{getFragen().H_zahleAlleine}} </label>
-          <input id="ZahleAllein" type="text" class="form-control" placeholder="Pflicht" [(ngModel)]="formH.zahleAlleine" required="required">
+          <input id="ZahleAllein" type="text" class="form-control" placeholder="Pflicht"
+                 [(ngModel)]="formH.zahleAlleine" required="required">
         </div>
       </div>
     </div>
     <!-- ENDE Abschnitt Frage nach Wohnung 5-->
 
     <!-- Abschnitt Frage nach Wohnung 6 -->
-    <label class="form-check-inline"> 6. Haben Sie Belastungen aus Fremdmitteln als (Mit-)Eigentümer? (z.B. Dahrlensverträge, Kredite)</label>
+    <label class="form-check-inline"> 6. Haben Sie Belastungen aus Fremdmitteln als (Mit-)Eigentümer? (z.B.
+      Dahrlensverträge, Kredite)</label>
     <div class="row">
       <div class="col-sm-6">
         <div class="radio">
-          <label class="radio-inline" for="dahrlen_ja"><input type="radio" id="dahrlen_ja" name="besBelastung" [(ngModel)]="formH.dahrlen" [value]="true">Ja</label>
-          <label class="radio-inline" for="dahrlen_nein"><input type="radio" id="dahrlen_nein" name="besBelastung" [(ngModel)]="formH.dahrlen" [value]="false">Nein</label>
+          <label class="radio-inline" for="dahrlen_ja"><input type="radio" id="dahrlen_ja" name="besBelastung"
+                                                              [(ngModel)]="formH.dahrlen" [value]="true">Ja</label>
+          <label class="radio-inline" for="dahrlen_nein"><input type="radio" id="dahrlen_nein" name="besBelastung"
+                                                                [(ngModel)]="formH.dahrlen" [value]="false">Nein</label>
         </div>
       </div>
     </div>
@@ -148,20 +171,26 @@
       <div class="row">
         <div class="col-sm-4">
           <div class="form-group">
-            <label for="ZinsenUndTilgung">{{getFragen().H_bezeichnung}} </label>
-            <input id="ZinsenUndTilgung" type="text" class="form-control" placeholder="Pflicht" [(ngModel)]="formH.zinsenUndTilgung" required="required">
+            <label for="ZinsenUndTilgung2">{{getFragen().H_bezeichnung}} </label>
+            <input id="ZinsenUndTilgung2" type="text" class="form-control" placeholder="Pflicht"
+                   [(ngModel)]="formH.zinsenUndTilgung" required="required">
           </div>
         </div>
         <div class="col-sm-3">
           <div class="form-group">
-            <label for="Heizungskosten">{{getFragen().H_dahrlenRestschuld}}</label>
-            <input id="Heizungskosten" type="text" class="form-control" placeholder="Pflicht" [(ngModel)]="formH.heizungskosten" required="required">
+            <label for="Heizungskosten2">{{getFragen().H_dahrlenRestschuld}}</label>
+            <input id="Heizungskosten2" type="text" class="form-control" placeholder="Pflicht"
+                   [(ngModel)]="formH.heizungskosten" required="required">
           </div>
         </div>
         <div class="col-sm-3">
           <div class="form-group">
-            <label for="uebNebenkosten">{{getFragen().H_dahrlenZinsenUndTilgung}} </label>
-            <input id="uebNebenkosten" type="text" class="form-control" placeholder="Pflicht" [(ngModel)]="formH.uebrigeNebenkosten" required="required">
+            <label for="uebNebenkosten2">{{getFragen().H_dahrlenZinsenUndTilgung}} </label>
+            <input id="uebNebenkosten2" type="text" class="form-control" placeholder="Pflicht"
+                   [(ngModel)]="formH.uebrigeNebenkosten" required="required">
+          </div>
+        </div>
       </div>
-      <!-- ENDE Abschnitt Frage nach Wohnung 6-->
+    </ng-container>
+    <!-- ENDE Abschnitt Frage nach Wohnung 6-->
 

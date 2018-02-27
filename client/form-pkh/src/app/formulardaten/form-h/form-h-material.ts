@@ -11,4 +11,11 @@ export class FormHMaterial {
   eigentumsNutzung: RaumnutzungH;
   mieter = false;
   IstMieter = '';
+  groesse = '';
+  uebrigeNebenkosten = '';
+  heizungskosten = '';
+  zinsenUndTilgung = '';
+  dahrlen = '';
+  zahleAlleine = '';
+  gesamtBetrag = '';
 }
