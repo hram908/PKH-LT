@@ -1,19 +1,20 @@
 <div id="formularUeberschrift">
   <h2>{{getUntertitel()}}</h2>
+</div>
 
-<!-- Abschnitt Frage nach Bankkonto/Grundeigentum/etc. -->
-<label class="form-check-inline"> 1. Verfügen Sie oder Ihr Ehepartner/eingetragener Lebenspartner über Bank-, Giro-, Sparkonten oder ähnliches? (Angaben auch bei fehlendem Guthaben erforderlich)</label>
-<div class="row">
-  <div class="col-sm-6">
-    <div class="radio">
-      <label class="radio-inline" for="bank_ja"><input type="radio" id="bank_ja" name="bank"
+  <!-- Abschnitt Frage nach Bankkonto/Grundeigentum/etc. -->
+  <label class="form-check-inline"> 1. Verfügen Sie oder Ihr Ehepartner/eingetragener Lebenspartner über Bank-, Giro-, Sparkonten oder ähnliches? (Angaben auch bei fehlendem Guthaben erforderlich)</label>
+  <div class="row">
+    <div class="col-sm-6">
+      <div class="radio">
+        <label class="radio-inline" for="bank_ja"><input type="radio" id="bank_ja" name="bank"
                                                          [(ngModel)]="formG.bank" [value]="true">Ja</label>
-      <label class="radio-inline" for="bank_nein"><input type="radio" id="bank_nein" name="bank"
+        <label class="radio-inline" for="bank_nein"><input type="radio" id="bank_nein" name="bank"
                                                            [(ngModel)]="formG.bank" [value]="false">Nein</label>
+      </div>
     </div>
   </div>
-</div>
-<!-- ENDE Abschnitt Frage nach Bankkonto/Grundeigentum/etc -->
+  <!-- ENDE Abschnitt Frage nach Bankkonto/Grundeigentum/etc -->
 
   <!-- Abschnitt Frage nach Grundeigentum. -->
   <label class="form-check-inline"> 2. Verfügen Sie oder Ihr Ehepartner/eingetragener Lebenspartner über Grundeigentum? (z.B. Grundstück, Haus, Wohnung)</label>
@@ -21,9 +22,9 @@
     <div class="col-sm-6">
       <div class="radio">
         <label class="radio-inline" for="eigentum_ja"><input type="radio" id="eigentum_ja" name="grundeigentum"
-                                                         [(ngModel)]="formG.eigentum" [value]="true">Ja</label>
+                                                             [(ngModel)]="formG.eigentum" [value]="true">Ja</label>
         <label class="radio-inline" for="eigentum_nein"><input type="radio" id="eigentum_nein" name="grundeigentum"
-                                                           [(ngModel)]="formG.eigentum" [value]="false">Nein</label>
+                                                               [(ngModel)]="formG.eigentum" [value]="false">Nein</label>
       </div>
     </div>
   </div>
@@ -35,9 +36,9 @@
     <div class="col-sm-6">
       <div class="radio">
         <label class="radio-inline" for="kraftfahrzeug_ja"><input type="radio" id="kraftfahrzeug_ja" name="kraftfahrzeug"
-                                                         [(ngModel)]="formG.kraftfahrzeug" [value]="true">Ja</label>
+                                                                  [(ngModel)]="formG.kraftfahrzeug" [value]="true">Ja</label>
         <label class="radio-inline" for="kraftfahrzeug_nein"><input type="radio" id="kraftfahrzeug_nein" name="kraftfahrzeug"
-                                                           [(ngModel)]="formG.kraftfahrzeug" [value]="false">Nein</label>
+                                                                    [(ngModel)]="formG.kraftfahrzeug" [value]="false">Nein</label>
       </div>
     </div>
   </div>
@@ -49,9 +50,9 @@
     <div class="col-sm-6">
       <div class="radio">
         <label class="radio-inline" for="bargeld_ja"><input type="radio" id="bargeld_ja" name="bargeld"
-                                                         [(ngModel)]="formG.bargeld" [value]="true">Ja</label>
+                                                            [(ngModel)]="formG.bargeld" [value]="true">Ja</label>
         <label class="radio-inline" for="bargeld_nein"><input type="radio" id="bargeld_nein" name="bargeld"
-                                                           [(ngModel)]="formG.bargeld" [value]="false">Nein</label>
+                                                              [(ngModel)]="formG.bargeld" [value]="false">Nein</label>
       </div>
     </div>
   </div>
@@ -63,9 +64,9 @@
     <div class="col-sm-6">
       <div class="radio">
         <label class="radio-inline" for="lebenVer_ja"><input type="radio" id="lebenVer_ja" name="lebenVer"
-                                                         [(ngModel)]="formG.lebenVer" [value]="true">Ja</label>
+                                                             [(ngModel)]="formG.lebenVer" [value]="true">Ja</label>
         <label class="radio-inline" for="lebenVer_nein"><input type="radio" id="lebenVer_nein" name="lebenVer"
-                                                           [(ngModel)]="formG.lebenVer" [value]="false">Nein</label>
+                                                               [(ngModel)]="formG.lebenVer" [value]="false">Nein</label>
       </div>
     </div>
   </div>
@@ -77,12 +78,10 @@
     <div class="col-sm-6">
       <div class="radio">
         <label class="radio-inline" for="sonsVermoegen_ja"><input type="radio" id="sonsVermoegen_ja" name="sonsVermoegen"
-                                                         [(ngModel)]="formG.sonsVermoegen" [value]="true">Ja</label>
+                                                                  [(ngModel)]="formG.sonsVermoegen" [value]="true">Ja</label>
         <label class="radio-inline" for="sonsVermoegen_nein"><input type="radio" id="sonsVermoegen_nein" name="sonsVermoegen"
-                                                           [(ngModel)]="formG.sonsVermoegen" [value]="false">Nein</label>
+                                                                    [(ngModel)]="formG.sonsVermoegen" [value]="false">Nein</label>
       </div>
     </div>
   </div>
   <!-- ENDE Abschnitt Frage nach sonstigem Vermögen. -->
-
-</div>
