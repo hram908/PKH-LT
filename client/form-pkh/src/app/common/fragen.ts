@@ -59,14 +59,14 @@ export class Fragen {
   public static readonly H_sonstNebenkosten = 'sonstige Nebenkosten';
   public static readonly H_gesamtbetrag = 'Gesamtbetrag';
   public static readonly H_kostenAlleine = 'Ich allein zahle davon';
-  public static readonly H_zinsenUndTilgung = 'Zinsen und Tilgung'
-  public static readonly H_heizungskosten = 'Heizungskosten'
-  public static readonly H_uebrigeNebenkosten = 'übrige Nebenkosten'
-  public static readonly H_gesamtBetrag = 'Gesamtbetrag'
-  public static readonly H_zahleAlleine = 'Ich allein zahle davon'
-  public static readonly H_bezeichnung = 'Informationen zum Vertrag'
-  public static readonly H_dahrlenRestschuld = 'Restschuld in EUR'
-  public static readonly H_dahrlenZinsenUndTilgung = 'Zinsen und Tilgung'
+  public static readonly H_zinsenUndTilgung = 'Zinsen und Tilgung';
+  public static readonly H_heizungskosten = 'Heizungskosten';
+  public static readonly H_uebrigeNebenkosten = 'übrige Nebenkosten';
+  public static readonly H_gesamtBetrag = 'Gesamtbetrag';
+  public static readonly H_zahleAlleine = 'Ich allein zahle davon';
+  public static readonly H_bezeichnung = 'Informationen zum Vertrag';
+  public static readonly H_dahrlenRestschuld = 'Restschuld in EUR';
+  public static readonly H_dahrlenZinsenUndTilgung = 'Zinsen und Tilgung';
 
 // Formularabschnitt I
   public static readonly I_bezeichnung = 'Bezeichung';
