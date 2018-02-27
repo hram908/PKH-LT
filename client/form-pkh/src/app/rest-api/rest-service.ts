@@ -6,7 +6,9 @@ import {Injectable} from '@angular/core';
 export class RestService {
   constructor(httpClient: HttpClient, pkhForm: PkhFormMaterial) {
     const headers = new HttpHeaders();
-    const anfrage = httpClient.post('localhost:4242/formular', pkhForm,  {headers: headers});
+
+    const anfrage = httpClient.post('http://127.0.0.1:4242/formular', pkhForm);
+
     console.log(anfrage.subscribe());
   }
 }

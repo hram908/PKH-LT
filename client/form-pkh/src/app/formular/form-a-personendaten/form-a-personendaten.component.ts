@@ -10,11 +10,15 @@ import {Fragen} from '../../common/fragen';
   styleUrls: ['./form-a-personendaten.component.css']
 })
 export class FormAPersonendatenComponent implements IFormComponentBase {
-  constructor(public formA: FormAMaterial, public fragen: Fragen) {
+  constructor(public formA: FormAMaterial) {
 
   }
 
   getUntertitel(): string {
     return Untertitel.A;
+  }
+
+  getFragen() {
+    return Fragen;
   }
 }

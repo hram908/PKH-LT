@@ -35,6 +35,7 @@ import {FormHMaterial} from './formulardaten/form-h/form-h-material';
 import {PkhFormMaterial} from './formulardaten/pkh-form-material';
 import {RestService} from './rest-api/rest-service';
 import {HttpClientModule} from '@angular/common/http';
+import {Fragen} from './common/fragen';
 
 
 
@@ -76,6 +77,7 @@ import {HttpClientModule} from '@angular/common/http';
     FormIMaterial,
     FormJMaterial,
     PkhFormMaterial,
+    Fragen,
     AllgemeineDaten,
     RestService,
     ViewSwitchService,

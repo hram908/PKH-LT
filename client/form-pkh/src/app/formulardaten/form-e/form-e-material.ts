@@ -9,7 +9,7 @@ export class FormEMaterial {
   weitereEinnahmen: WeitereEinnahmenE[] = [];
 
   public constructor() {
-    this.einnahmen.length = 12; // should have length 12
+    // this.einnahmen.length = 12; // should have length 12
   }
 
   // Noch notwendig?
