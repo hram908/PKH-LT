@@ -7,7 +7,7 @@ import {IFormComponentBase} from '../../common/i-form-component-base';
   templateUrl: './form-d-gewaehrter-unterhalt.component.html',
   styleUrls: ['./form-d-gewaehrter-unterhalt.component.css']
 })
-export class FormDGewaehrterUnterhaltComponent implements IFormComponentBase{
+export class FormDGewaehrterUnterhaltComponent implements IFormComponentBase {
   constructor() {
   }
 

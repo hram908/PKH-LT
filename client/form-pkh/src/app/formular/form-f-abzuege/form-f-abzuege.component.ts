@@ -7,7 +7,7 @@ import {IFormComponentBase} from '../../common/i-form-component-base';
   templateUrl: './form-f-abzuege.component.html',
   styleUrls: ['./form-f-abzuege.component.css']
 })
-export class FormFAbzuegeComponent implements IFormComponentBase{
+export class FormFAbzuegeComponent implements IFormComponentBase {
   constructor() {
   }
 

@@ -9,7 +9,7 @@ import {Fragen} from '../../common/fragen';
   templateUrl: './form-j-besondere-belastungen.component.html',
   styleUrls: ['./form-j-besondere-belastungen.component.css']
 })
-export class FormJBesondereBelastungenComponent implements IFormComponentBase{
+export class FormJBesondereBelastungenComponent implements IFormComponentBase {
   constructor(public formJ: FormJMaterial) {
   }
 

@@ -7,7 +7,7 @@ import {IFormComponentBase} from '../../common/i-form-component-base';
   templateUrl: './form-g-eigentum.component.html',
   styleUrls: ['./form-g-eigentum.component.css']
 })
-export class FormGEigentumComponent implements IFormComponentBase{
+export class FormGEigentumComponent implements IFormComponentBase {
   constructor() {
   }
 

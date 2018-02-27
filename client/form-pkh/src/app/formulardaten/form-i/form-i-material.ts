@@ -5,4 +5,13 @@ import {EintragI} from './eintrag-i';
 
 export class FormIMaterial {
   zahlungsverpflichtungen: EintragI[];
+  sonstigeVerpflichtungen = '';
+  sonstigeVerpflichtungRestschuld = '';
+  sonstigeVerpflichtungGesamt = '';
+  sonstigeVerpflichtungAlleine = '';
+  sonstigeVerpflichtungBezeichung1 = '';
+  sonstigeVerpflichtungRestschuld1 = '';
+  sonstigeVerpflichtungGesamt1 = '';
+  sonstigeVerpflichtungAlleine1 = '';
+  sonstigeVerpflichtungBezeichnung = '';
 }

@@ -7,7 +7,7 @@ import {IFormComponentBase} from '../../common/i-form-component-base';
   templateUrl: './form-e-bruttoeinnahmen.component.html',
   styleUrls: ['./form-e-bruttoeinnahmen.component.css']
 })
-export class FormEBruttoeinnahmenComponent implements IFormComponentBase{
+export class FormEBruttoeinnahmenComponent implements IFormComponentBase {
   constructor() {
   }
 

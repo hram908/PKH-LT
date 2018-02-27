@@ -9,7 +9,7 @@ import {Fragen} from '../../common/fragen';
   templateUrl: './form-i-sonstige-verpflichtungen.component.html',
   styleUrls: ['./form-i-sonstige-verpflichtungen.component.css']
 })
-export class FormISonstigeVerpflichtungenComponent implements IFormComponentBase{
+export class FormISonstigeVerpflichtungenComponent implements IFormComponentBase {
   constructor(public formI: FormIMaterial) {
   }
 
