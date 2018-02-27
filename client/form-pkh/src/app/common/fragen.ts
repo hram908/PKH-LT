@@ -64,7 +64,7 @@ export class Fragen {
   public static readonly H_uebrigeNebenkosten = 'übrige Nebenkosten'
   public static readonly H_gesamtBetrag = 'Gesamtbetrag'
   public static readonly H_zahleAlleine = 'Ich allein zahle davon'
-  public static readonly H_bezeichnung = 'Bezeichnung'
+  public static readonly H_bezeichnung = 'Informationen zum Vertrag'
   public static readonly H_dahrlenRestschuld = 'Restschuld in EUR'
   public static readonly H_dahrlenZinsenUndTilgung = 'Zinsen und Tilgung'
 
