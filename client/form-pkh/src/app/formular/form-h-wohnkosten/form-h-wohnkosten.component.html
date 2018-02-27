@@ -1,6 +1,5 @@
 <div id="formularUeberschrift">
   <h2>{{getUntertitel()}}</h2>
-</div>
 
 <!-- Abschnitt Frage nach Wohnung 1 -->
 <div class="row">
@@ -44,9 +43,9 @@
 <div class="row">
   <div class="col-sm-6">
     <div class="radio">
-      <label class="radio-inline" for="mieter_ja"><input type="radio" id="mieter_ja" name="besBelastung"
+      <label class="radio-inline" for="mieter_ja"><input type="radio" id="mieter_ja" name="mieter"
                                                          [(ngModel)]="formH.mieter" [value]="true">Ja</label>
-      <label class="radio-inline" for="mieter_nein"><input type="radio" id="mieter_nein" name="besBelastung"
+      <label class="radio-inline" for="mieter_nein"><input type="radio" id="mieter_nein" name="mieter"
                                                            [(ngModel)]="formH.mieter" [value]="false">Nein</label>
     </div>
   </div>
@@ -99,10 +98,10 @@
   <div class="row">
     <div class="col-sm-6">
       <div class="radio">
-        <label class="radio-inline" for="eigentuemer_ja"><input type="radio" id="eigentuemer_ja" name="besBelastung"
+        <label class="radio-inline" for="eigentuemer_ja"><input type="radio" id="eigentuemer_ja" name="eigentum"
                                                                 [(ngModel)]="formH.eigentuemer"
                                                                 [value]="true">Ja</label>
-        <label class="radio-inline" for="eigentuemer_nein"><input type="radio" id="eigentuemer_nein" name="besBelastung"
+        <label class="radio-inline" for="eigentuemer_nein"><input type="radio" id="eigentuemer_nein" name="eigentum"
                                                                   [(ngModel)]="formH.eigentuemer"
                                                                   [value]="false">Nein</label>
       </div>
@@ -157,9 +156,9 @@
     <div class="row">
       <div class="col-sm-6">
         <div class="radio">
-          <label class="radio-inline" for="dahrlen_ja"><input type="radio" id="dahrlen_ja" name="besBelastung"
+          <label class="radio-inline" for="dahrlen_ja"><input type="radio" id="dahrlen_ja" name="belastung"
                                                               [(ngModel)]="formH.dahrlen" [value]="true">Ja</label>
-          <label class="radio-inline" for="dahrlen_nein"><input type="radio" id="dahrlen_nein" name="besBelastung"
+          <label class="radio-inline" for="dahrlen_nein"><input type="radio" id="dahrlen_nein" name="belastung"
                                                                 [(ngModel)]="formH.dahrlen" [value]="false">Nein</label>
         </div>
       </div>
@@ -193,4 +192,4 @@
       </div>
     </ng-container>
     <!-- ENDE Abschnitt Frage nach Wohnung 6-->
-
+</div>
