@@ -54,19 +54,28 @@ export class Fragen {
   public static readonly H = {
     'mieter': 'Test',
   };
-  public static readonly H_Gesamtgroesse = ' 1. Gesamtgröße des Wohnraums, den Sie allein oder gemeinsam mit anderen Personen bewohnen';
-  public static readonly H_AnzahlZimmer = '2. Anzahl der Zimmer';
-  public static readonly H_AnzahlPersonenWohnraum = '3. Anzahl der Personen, die diese Wohnraum bewohnen';
-  public static readonly H_Nebenkosten = 'Miete ohne Nebenkosten';
-  public static readonly H_Heizkosten = 'Heizungskosten';
-  public static readonly H_SonstNebenkosten = 'sonstige Nebenkosten';
-  public static readonly H_Gesamtbetrag = 'Gesamtbetrag';
-  public static readonly H_KostenAlleine = 'Ich allein zahle davon';
+  public static readonly H_gesamtgroesseWohnung = ' 1. Gesamtgröße des Wohnraums, den Sie allein oder gemeinsam mit anderen Personen bewohnen';
+  public static readonly H_anzahlZimmer = '2. Anzahl der Zimmer';
+  public static readonly H_anzahlPersonenWohnraum = '3. Anzahl der Personen, die diese Wohnraum bewohnen';
+  public static readonly H_nebenkosten = 'Miete ohne Nebenkosten';
+  public static readonly H_heizkosten = 'Heizungskosten';
+  public static readonly H_sonstNebenkosten = 'sonstige Nebenkosten';
+  public static readonly H_gesamtbetrag = 'Gesamtbetrag';
+  public static readonly H_kostenAlleine = 'Ich allein zahle davon';
+
   // Formularabschnitt I
+  public static readonly I_bezeichnung = 'Bezeichung';
+  public static readonly I_restschuld = 'Restschuld';
+  public static readonly I_gesamtbelastung = 'Gesamtbelastung';
+  public static readonly I_alleineZahlen = 'Ich allein zahle';
+  public static readonly I_bezeichnung1 = 'Bezeichung';
+  public static readonly I_restschuld1 = 'Restschuld';
+  public static readonly I_gesamtbelastung1 = 'Gesamtbelastung';
+  public static readonly I_alleineZahlen1 = 'Ich allein zahle';
 
   // Formularabschnitt J
   public static readonly J_belastungBezeichung = 'Bezeichung';
-  public static readonly J_IchAlleineZahle = 'Ich allein zahle davon';
-  public static readonly J_BelastungBezeichung1 = 'Bezeichung';
-  public static readonly J_IchAlleineZahle1 = 'Ich allein zahle davon';
+  public static readonly J_ichAlleineZahle = 'Ich allein zahle davon';
+  public static readonly J_belastungBezeichung1 = 'Bezeichung';
+  public static readonly J_ichAlleineZahle1 = 'Ich allein zahle davon';
 }

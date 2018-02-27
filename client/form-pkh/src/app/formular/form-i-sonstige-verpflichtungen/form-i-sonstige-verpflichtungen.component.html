@@ -26,26 +26,26 @@
   <div class="row">
     <div class="col-sm-2">
       <div class="form-group">
-        <label for="sonsVerpflichtung">{{getFragen().J_Belastung}} </label>
+        <label for="sonsVerpflichtung">{{getFragen().I_bezeichnung}} Bezeichnung</label>
         <input id="sonsVerpflichtung" type="text" class="form-control" placeholder="Pflicht"
                [(ngModel)]="formI.sonstigeVerpflichtung" required="required">
       </div>
     </div>
     <div class="col-sm-2">
       <div class="form-group">
-        <label for="sonVerpflichtungRestBetrag">{{getFragen().J_Belastung}} Restschuld in EUR</label>
+        <label for="sonVerpflichtungRestBetrag">{{getFragen().I_restschuld}} Restschuld in EUR</label>
         <input id="sonVerpflichtungRestBetrag" type="text" class="form-control" placeholder="Pflicht" [(ngModel)]="formI.sonstigeVerpflichtung" required="required">
       </div>
     </div>
     <div class="col-sm-2">
       <div class="form-group">
-        <label for="sonVerpflichtungGesBetrag">{{getFragen().J_Belastung}} Gesamtbelastung</label>
+        <label for="sonVerpflichtungGesBetrag">{{getFragen().I_gesamtbelastung}} Gesamtbelastung</label>
         <input id="sonVerpflichtungGesBetrag" type="text" class="form-control" placeholder="Pflicht" [(ngModel)]="formI.sonstigeVerpflichtung" required="required">
       </div>
     </div>
     <div class="col-sm-2">
       <div class="form-group">
-        <label for="sonVerpflichtungEigBetrag">{{getFragen().J_Belastung}} Ich allein zahle davon</label>
+        <label for="sonVerpflichtungEigBetrag">{{getFragen().I_alleineZahlen}} Ich allein zahle davon</label>
         <input id="sonVerpflichtungEigBetrag" type="text" class="form-control" placeholder="Pflicht" [(ngModel)]="formI.sonstigeVerpflichtung" required="required">
       </div>
     </div>
@@ -54,25 +54,25 @@
   <div class="row">
     <div class="col-sm-2">
       <div class="form-group">
-        <label for="sonsVerpflichtung1">{{getFragen().J_Belastung}} </label>
+        <label for="sonsVerpflichtung1">{{getFragen().I_bezeichnung1}} Bezeichnung</label>
         <input id="sonsVerpflichtung1" type="text" class="form-control" placeholder="weitere" [(ngModel)]="formI.sonstigeVerpflichtung" required="required">
       </div>
     </div>
     <div class="col-sm-2">
       <div class="form-group">
-        <label for="sonVerpflichtungRestBetrag1">{{getFragen().J_Belastung}} Restschuld in EUR</label>
+        <label for="sonVerpflichtungRestBetrag1">{{getFragen().I_restschuld1}} Restschuld in EUR</label>
         <input id="sonVerpflichtungRestBetrag1" type="text" class="form-control" placeholder="weitere" [(ngModel)]="formI.sonstigeVerpflichtung" required="required">
       </div>
     </div>
     <div class="col-sm-2">
       <div class="form-group">
-        <label for="sonVerpflichtungGesBetrag1">{{getFragen().J_Belastung}} Gesamtbelastung</label>
+        <label for="sonVerpflichtungGesBetrag1">{{getFragen().I_gesamtbelastung1}} Gesamtbelastung</label>
         <input id="sonVerpflichtungGesBetrag1" type="text" class="form-control" placeholder="weitere" [(ngModel)]="formI.sonstigeVerpflichtung" required="required">
       </div>
     </div>
     <div class="col-sm-2">
       <div class="form-group">
-        <label for="sonVerpflichtungEigBetrag1">{{getFragen().J_Belastung}} Ich allein zahle davon</label>
+        <label for="sonVerpflichtungEigBetrag1">{{getFragen().I_alleineZahle1}} Ich allein zahle davon</label>
         <input id="sonVerpflichtungEigBetrag1" type="text" class="form-control" placeholder="weitere" [(ngModel)]="formI.sonstigeVerpflichtung" required="required">
       </div>
     </div>
