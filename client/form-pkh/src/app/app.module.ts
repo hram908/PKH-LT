@@ -33,6 +33,7 @@ import {FormEMaterial} from './formulardaten/form-e/form-e-material';
 import {FormFMaterial} from './formulardaten/form-f/form-f-material';
 import {FormGMaterial} from './formulardaten/form-g/form-g-material';
 import {FormHMaterial} from './formulardaten/form-h/form-h-material';
+import {PkhFormMaterial} from './formulardaten/pkh-form-material';
 
 
 
@@ -72,6 +73,7 @@ import {FormHMaterial} from './formulardaten/form-h/form-h-material';
     FormHMaterial,
     FormIMaterial,
     FormJMaterial,
+    PkhFormMaterial,
     AllgemeineDaten,
     ViewSwitchService,
     ChatbotService,

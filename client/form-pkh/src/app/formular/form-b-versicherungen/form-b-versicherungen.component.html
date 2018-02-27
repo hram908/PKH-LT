@@ -22,8 +22,11 @@ IF 1 || 2 == 2
 ELSE
   -> Hinweis Ablehnungsbescheid + Hinweis am Ende Formular
   -> C
+
+  TODO: Alle Radios rufen setNotiz auf, darin wird geprüft wie der aktuelle Stand ist und setzt entsprechend eine Notiz
 -->
 <div class="controls">
+  <!-- Frage nach Rechtsschutzversicherung -->
   <label class="form-check-inline">Haben Sie eine Rechtsschutzversicherung?</label>
   <div class="row">
     <div class="col-sm-8">
@@ -39,6 +42,9 @@ ELSE
       </div>
     </div>
   </div>
+  <!-- ENDE Frage nach Rechtsschutzversicherung -->
+
+  <!-- Frage nach anderen Versicherern oder Unterstützern -->
   <label class="form-check-inline">Sind Sie Mitglied in einer Gruppierung wie z.B. Gewerkschaft, Mieterverein oder
     Sozialverband?</label>
   <div class="row">
@@ -54,7 +60,9 @@ ELSE
       </div>
     </div>
   </div>
+  <!-- ENDE Frage nach anderen Versicherern oder Unterstützern -->
 
+  <!-- Wenn irgend ein Versicherer/Unterstützer mit Ja angegeben wurde, wird dieser Container angezeigt -->
   <ng-container *ngIf="formB.hatKostentraeger == 1 || formB.hatRechtschutzversicherung == 1">
     <label class="form-check-inline">Werden die Kosten teilweise oder vollständig von einem dieser Träger
       übernommen?</label>
@@ -105,6 +113,7 @@ ELSE
     -->
   </ng-container>
 
+
   <ng-container *ngIf="formB.uebernahme == 2">
     <div class="row">
       <div class="col-sm-8" id="ablehnung">
@@ -112,12 +121,6 @@ ELSE
         werden!
       </div>
     </div>
-  </ng-container>
-  <!-- Unsichtbarer Abschnitt der dafür da wäre, im Falle der entsprechenden Auswahl die Notiz zu befüllen. (Eventuell in ts Datei umsetzen?) -->
-  <ng-container *ngIf="formB.hatKostentraeger == 2 || formB.hatRechtschutzversicherung == 2">
-    <!-- Notiz für Sozialbearbeiter
-         TODO: Material um Notizfeld ergänzen und an dieser Stelle mit Hinweis befüllen
-     -->
   </ng-container>
 
   <ng-container *ngIf="formB.uebernahme == 0">
@@ -129,11 +132,11 @@ ELSE
       <div class="col-sm-8">
         <div class="radio">
           <label class="radio-inline" for="antragGestellt_ja"><input type="radio" id="antragGestellt_ja" name="uebernahme"
-                                                                  [(ngModel)]="formB.antragGestellt"
-                                                                  [value]="1">Ja</label>
+                                                                     [(ngModel)]="formB.antragGestellt"
+                                                                     [value]="1">Ja</label>
           <label class="radio-inline" for="antragGestellt_nein"><input type="radio" id="antragGestellt_nein" name="uebernahme"
-                                                                   [(ngModel)]="formB.antragGestellt"
-                                                                   [value]="0">Nein</label>
+                                                                       [(ngModel)]="formB.antragGestellt"
+                                                                       [value]="0">Nein</label>
         </div>
       </div>
     </div>
@@ -151,4 +154,11 @@ ELSE
       </div>
     </div>
   </ng-container>
+
+  <!-- Unsichtbarer Abschnitt der dafür da wäre, im Falle der entsprechenden Auswahl die Notiz zu befüllen. (Eventuell in ts Datei umsetzen?)
+  <ng-container *ngIf="formB.hatKostentraeger == 2 || formB.hatRechtschutzversicherung == 2" >
+    <!-- Notiz für Sozialbearbeiter
+         TODO: Material um Notizfeld ergänzen und an dieser Stelle mit Hinweis befüllen
+
+  </ng-container>-->
 </div>

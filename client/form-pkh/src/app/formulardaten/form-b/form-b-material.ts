@@ -9,4 +9,5 @@ export class FormBMaterial {
   tlwUebernahme = '';
   tlwUebernahmeTyp = 'EUR';
   antragGestellt = -1;
+  notiz = '';
 }

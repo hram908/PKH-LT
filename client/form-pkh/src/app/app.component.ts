@@ -9,6 +9,7 @@ import {StepSpeicher} from './stepSpeicher';
 import {ViewSwitchService} from './navigation/view-switch-service';
 import {IFormComponentBase} from './common/i-form-component-base';
 import {Abschnitt} from './abschnitt';
+import {PkhFormMaterial} from './formulardaten/pkh-form-material';
 
 
 @Component({
@@ -46,7 +47,7 @@ export class AppComponent implements OnDestroy, OnInit {
   }
 
   private onFormViewChanged = (abschnitt: Abschnitt) => {
-    if(abschnitt){
+    if (abschnitt) {
     this.container.clear();
     const factory = this.componentFactoryResolver.resolveComponentFactory(abschnitt.component);
     this.componentRef = this.container.createComponent(factory);

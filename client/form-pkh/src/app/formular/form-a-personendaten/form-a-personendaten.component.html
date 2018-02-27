@@ -119,15 +119,15 @@
     <div class="row">
       <div class="col-sm-6">
         <div class="radio">
-          <label class="radio-inline" for="vertreter_ja"><input type="radio" id="vertreter_ja" name="gesVertreter" [(ngModel)]="formA.gesetzlicherVertreter" [value]="true">Ja</label>
-          <label class="radio-inline" for="vertreter_nein"><input type="radio" id="vertreter_nein" name="gesVertreter" [(ngModel)]="formA.gesetzlicherVertreter" [value]="false">Nein</label>
+          <label class="radio-inline" for="vertreter_ja"><input type="radio" id="vertreter_ja" name="gesVertreter" [(ngModel)]="formA.hatGesetzlicherVertreter" [value]="true">Ja</label>
+          <label class="radio-inline" for="vertreter_nein"><input type="radio" id="vertreter_nein" name="gesVertreter" [(ngModel)]="formA.hatGesetzlicherVertreter" [value]="false">Nein</label>
         </div>
       </div>
     </div>
     <!-- ENDE Abschnitt Frage nach gesetzlichem Vertreter -->
 
     <!-- Abschnitt Daten des gesetzlichen Vertreters -->
-    <ng-container *ngIf="formA.gesetzlicherVertreter">
+    <ng-container *ngIf="formA.hatGesetzlicherVertreter">
       <!-- Abschnitt für den Namen und Telefon -->
       <div class="row">
         <div class="col-sm-3">

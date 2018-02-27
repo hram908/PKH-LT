@@ -9,7 +9,7 @@ import {Fragen} from '../../common/fragen';
   templateUrl: './form-a-personendaten.component.html',
   styleUrls: ['./form-a-personendaten.component.css']
 })
-export class FormAPersonendatenComponent implements IFormComponentBase{
+export class FormAPersonendatenComponent implements IFormComponentBase {
   constructor(public formA: FormAMaterial) {
 
   }
