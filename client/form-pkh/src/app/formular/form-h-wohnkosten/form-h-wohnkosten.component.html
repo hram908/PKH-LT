@@ -54,32 +54,92 @@
     <div class="col-sm-2">
       <div class="form-group">
         <label for="MieteOhneNeben">{{getFragen().H_nebenkosten}} </label>
-        <input id="MieteOhneNeben" type="text" class="form-control" placeholder="Pflicht" [(ngModel)]="formH.IstMieter" required="required">
+        <input id="MieteOhneNeben" type="text" class="form-control" placeholder="Pflicht" [(ngModel)]="formH.nebenkosten" required="required">
       </div>
     </div>
     <div class="col-sm-2">
       <div class="form-group">
-        <label for="Heizungskosten">{{getFragen().H_heizkosten}}</label>
-        <input id="Heizungskosten" type="text" class="form-control" placeholder="Pflicht" [(ngModel)]="formH.IstMieter" required="required">
+        <label for="Heizkosten">{{getFragen().H_heizkosten}}</label>
+        <input id="Heizkosten" type="text" class="form-control" placeholder="Pflicht" [(ngModel)]="formH.heizkosten" required="required">
       </div>
     </div>
     <div class="col-sm-2">
       <div class="form-group">
         <label for="andNebenkosten">{{getFragen().H_sonstNebenkosten}} </label>
-        <input id="andNebenkosten" type="text" class="form-control" placeholder="Pflicht" [(ngModel)]="formH.IstMieter" required="required">
+        <input id="andNebenkosten" type="text" class="form-control" placeholder="Pflicht" [(ngModel)]="formH.sonstNebenkosten" required="required">
       </div>
     </div>
     <div class="col-sm-2">
       <div class="form-group">
         <label for="WohnungGes">{{getFragen().H_gesamtbetrag}} </label>
-        <input id="WohnungGes" type="text" class="form-control" placeholder="Pflicht" [(ngModel)]="formH.IstMieter" required="required">
+        <input id="WohnungGes" type="text" class="form-control" placeholder="Pflicht" [(ngModel)]="formH.gesamtbetrag" required="required">
       </div>
     </div>
     <div class="col-sm-2">
       <div class="form-group">
         <label for="WohnungAllein">{{getFragen().H_kostenAlleine}} </label>
-        <input id="WohnungAllein" type="text" class="form-control" placeholder="Pflicht" [(ngModel)]="formH.IstMieter" required="required">
+        <input id="WohnungAllein" type="text" class="form-control" placeholder="Pflicht" [(ngModel)]="formH.kostenAlleine" required="required">
       </div>
     </div>
   </div>
   <!-- ENDE Abschnitt Frage nach Wohnung 4-->
+
+  <!-- Abschnitt Frage nach Wohnung 5 -->
+  <label class="form-check-inline"> 5. Nutzen Sie den Raum als Eigentümer, Miteigentümer oder Erbbauberechtigen?</label>
+  <div class="row">
+    <div class="col-sm-6">
+      <div class="radio">
+        <label class="radio-inline" for="eigentuemer_ja"><input type="radio" id="eigentuemer_ja" name="besBelastung" [(ngModel)]="formH.eigentuemer" [value]="true">Ja</label>
+        <label class="radio-inline" for="eigentuemer_nein"><input type="radio" id="eigentuemer_nein" name="besBelastung" [(ngModel)]="formH.eigentuemer" [value]="false">Nein</label>
+      </div>
+    </div>
+  </div>
+  <!-- ENDE Abschnitt Frage nach Wohnung 5 -->
+
+  <!-- Abschnitt Daten für Wohnung 5-->
+  <ng-container *ngIf="formH.eigentuemer">
+    <!-- Abschnitt für Wohnung 5 -->
+    <div class="row">
+      <div class="col-sm-2">
+        <div class="form-group">
+          <label for="ZinsenUndTilgung">{{getFragen().H_zinsenUndTilgung}} </label>
+          <input id="ZinsenUndTilgung" type="text" class="form-control" placeholder="Pflicht" [(ngModel)]="formH.zinsenUndTilgung" required="required">
+        </div>
+      </div>
+      <div class="col-sm-2">
+        <div class="form-group">
+          <label for="Heizungskosten">{{getFragen().H_heizungskosten}}</label>
+          <input id="Heizungskosten" type="text" class="form-control" placeholder="Pflicht" [(ngModel)]="formH.heizungskosten" required="required">
+        </div>
+      </div>
+      <div class="col-sm-2">
+        <div class="form-group">
+          <label for="uebNebenkosten">{{getFragen().H_uebrigeNebenkosten}} </label>
+          <input id="uebNebenkosten" type="text" class="form-control" placeholder="Pflicht" [(ngModel)]="formH.uebrigeNebenkosten" required="required">
+        </div>
+      </div>
+      <div class="col-sm-2">
+        <div class="form-group">
+          <label for="gesBetrag">{{getFragen().H_gesamtBetrag}} </label>
+          <input id="gesBetrag" type="text" class="form-control" placeholder="Pflicht" [(ngModel)]="formH.gesamtBetrag" required="required">
+        </div>
+      </div>
+      <div class="col-sm-2">
+        <div class="form-group">
+          <label for="ZahleAllein">{{getFragen().H_zahleAlleine}} </label>
+          <input id="ZahleAllein" type="text" class="form-control" placeholder="Pflicht" [(ngModel)]="formH.zahleAlleine" required="required">
+        </div>
+      </div>
+    </div>
+    <!-- ENDE Abschnitt Frage nach Wohnung 5-->
+
+    <!-- Abschnitt Frage nach Wohnung 6 -->
+    <div class="row">
+      <div class="col-sm-4">
+        <div class="form-group">
+          <label for="genEinzel">{{getFragen().H_genauereEinzelangaben}} </label>
+          <input id="genEinzel" type="text" class="form-control" placeholder="Pflicht" [(ngModel)]="formH.genEinzel" required="required" data-error="Die Wohnungsgröße ist notwendig.">
+        </div>
+      </div>
+    </div>
+    <!-- ENDE Abschnitt Frage nach Wohnung 6 -->

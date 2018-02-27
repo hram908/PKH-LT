@@ -22,13 +22,13 @@
         <div class="col-sm-4">
           <div class="form-group">
             <label for="besBelastung">{{getFragen().J_belastungBezeichung}}</label>
-            <input id="besBelastung" type="text" class="form-control" placeholder="Pflicht" [(ngModel)]="formJ.besondereBelastung" required="required">
+            <input id="besBelastung" type="text" class="form-control" placeholder="Pflicht" [(ngModel)]="formJ.besondereBelastungBezeichnung" required="required">
           </div>
         </div>
         <div class="col-sm-4">
           <div class="form-group">
             <label for="besBelastungBetrag">{{getFragen().J_ichAlleineZahle}} </label>
-            <input id="besBelastungBetrag" type="text" class="form-control" placeholder="Pflicht" [(ngModel)]="formJ.besondereBelastung" required="required">
+            <input id="besBelastungBetrag" type="text" class="form-control" placeholder="Pflicht" [(ngModel)]="formJ.besondereBelastungAlleine" required="required">
           </div>
         </div>
       </div>
@@ -37,13 +37,13 @@
         <div class="col-sm-4">
           <div class="form-group">
             <label for="besBelastung1">{{getFragen().J_belastungBezeichung1}}</label>
-            <input id="besBelastung1" type="text" placeholder="weitere" class="form-control" [(ngModel)]="formJ.besondereBelastung" required="required">
+            <input id="besBelastung1" type="text" placeholder="weitere" class="form-control" [(ngModel)]="formJ.besondereBelastungBezeichnung1" required="required">
           </div>
         </div>
         <div class="col-sm-4">
           <div class="form-group">
             <label for="besBelastungBetrag1">{{getFragen().J_ichAlleineZahle1}} </label>
-            <input id="besBelastungBetrag1" type="text" placeholder="weitere" class="form-control" [(ngModel)]="formJ.besondereBelastung" required="required">
+            <input id="besBelastungBetrag1" type="text" placeholder="weitere" class="form-control" [(ngModel)]="formJ.besondereBelastungAlleine1" required="required">
           </div>
         </div>
       </div>

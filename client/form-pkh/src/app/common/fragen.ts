@@ -51,19 +51,22 @@ export class Fragen {
   // Formularabschnitt G
 
   // Formularabschnitt H
-  public static readonly H = {
-    'mieter': 'Test',
-  };
   public static readonly H_gesamtgroesseWohnung = ' 1. Gesamtgröße des Wohnraums, den Sie allein oder gemeinsam mit anderen Personen bewohnen';
   public static readonly H_anzahlZimmer = '2. Anzahl der Zimmer';
   public static readonly H_anzahlPersonenWohnraum = '3. Anzahl der Personen, die diese Wohnraum bewohnen';
-  public static readonly H_nebenkosten = 'Miete ohne Nebenkosten';
+  public static readonly H_nebenkosten = 'Kaltiete';
   public static readonly H_heizkosten = 'Heizungskosten';
   public static readonly H_sonstNebenkosten = 'sonstige Nebenkosten';
   public static readonly H_gesamtbetrag = 'Gesamtbetrag';
   public static readonly H_kostenAlleine = 'Ich allein zahle davon';
+  public static readonly H_zinsenUndTilgung = 'Zinsen und Tilgung'
+  public static readonly H_heizungskosten = 'Heizungskosten'
+  public static readonly H_uebrigeNebenkosten = 'übrige Nebenkosten'
+  public static readonly H_gesamtBetrag = 'Gesamtbetrag'
+  public static readonly H_zahleAlleine = 'Ich allein zahle davon'
+  public static readonly H_genauereEinzelangaben = '6. Genaue Einzelangaben zu der Belastung aus Fremdmitteln bei Nutzung als (Mit-)Eigentümer (z.B. Darlehnsvertrag, mit Datum, Dahrlensnehmer, Kreditinstitut, Dahrlehnsrate pro Monat ... '
 
-  // Formularabschnitt I
+// Formularabschnitt I
   public static readonly I_bezeichnung = 'Bezeichung';
   public static readonly I_restschuld = 'Restschuld';
   public static readonly I_gesamtbelastung = 'Gesamtbelastung';
