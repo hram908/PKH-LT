@@ -10,6 +10,7 @@ import {ViewSwitchService} from './navigation/view-switch-service';
 import {IFormComponentBase} from './common/i-form-component-base';
 import {Abschnitt} from './abschnitt';
 import {PkhFormMaterial} from './formulardaten/pkh-form-material';
+import {RestService} from './rest-api/rest-service';
 
 
 @Component({
@@ -28,7 +29,7 @@ export class AppComponent implements OnDestroy, OnInit {
 
   constructor(private viewSwitchService: ViewSwitchService,
               private componentFactoryResolver: ComponentFactoryResolver,
-              public allgemeineDaten: AllgemeineDaten) {
+              public allgemeineDaten: AllgemeineDaten/*, public rest: RestService*/) {
     this.viewSwitchService.formChanged.subscribe(this.onFormViewChanged);
   }
 
