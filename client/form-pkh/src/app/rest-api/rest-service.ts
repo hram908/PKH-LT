@@ -1,4 +1,4 @@
-import {HttpClient, HttpHandler, HttpHeaders} from '@angular/common/http';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {PkhFormMaterial} from '../formulardaten/pkh-form-material';
 import {Injectable} from '@angular/core';
 

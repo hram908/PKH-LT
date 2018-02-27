@@ -52,7 +52,8 @@ export class Fragen {
   // Formularabschnitt G
 
   // Formularabschnitt H
-  public static readonly H_gesamtgroesseWohnung = ' 1. Gesamtgröße des Wohnraums, den Sie allein oder gemeinsam mit anderen Personen bewohnen';
+  public static readonly H_gesamtgroesseWohnung = ' 1. Gesamtgröße des Wohnraums, den Sie ' +
+    'allein oder gemeinsam mit anderen Personen bewohnen';
   public static readonly H_anzahlZimmer = '2. Anzahl der Zimmer';
   public static readonly H_anzahlPersonenWohnraum = '3. Anzahl der Personen, die diese Wohnraum bewohnen';
   public static readonly H_nebenkosten = 'Kaltiete';

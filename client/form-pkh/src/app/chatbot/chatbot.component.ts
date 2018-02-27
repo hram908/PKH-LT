@@ -5,13 +5,13 @@ import { Component} from '@angular/core';
   templateUrl: './chatbot.component.html',
   styleUrls: ['./chatbot.component.css']
 })
-export class ChatbotComponent{
+export class ChatbotComponent {
 public botIsActive: boolean;
   constructor() {
     this.botIsActive = false;
   }
 
-  public toggleBot(){
+  public toggleBot() {
     this.botIsActive = !this.botIsActive;
   }
 

@@ -2,7 +2,7 @@
  * @author: Isabella
  **/
 
-export class EintragJ{
+export class EintragJ {
   beschreibung: string;
   alleinigeZahlung: number;
 }

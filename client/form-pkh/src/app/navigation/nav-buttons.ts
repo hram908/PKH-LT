@@ -1,4 +1,4 @@
-export enum NavButtons{
+export enum NavButtons {
   num0 = '0',
   num1 = '1',
   A = 'A',
