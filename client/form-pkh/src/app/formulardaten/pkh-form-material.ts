@@ -8,19 +8,22 @@ import {FormGMaterial} from './form-g/form-g-material';
 import {FormHMaterial} from './form-h/form-h-material';
 import {FormIMaterial} from './form-i/form-i-material';
 import {FormJMaterial} from './form-j/form-j-material';
+import {Injectable} from '@angular/core';
 
 /**
  * @author Isabella
  **/
-export class PkhFormMaterial{
-abschnittA: FormAMaterial;
-  abschnittB: FormBMaterial;
-  abschnittC: FormCMaterial;
-  abschnittD: FormDMaterial;
-  abschnittE: FormEMaterial;
-  abschnittF: FormFMaterial;
-  abschnittG: FormGMaterial;
-  abschnittH: FormHMaterial;
-  abschnittI: FormIMaterial;
-  abschnittJ: FormJMaterial;
+@Injectable()
+export class PkhFormMaterial {
+  constructor(public abschnittA: FormAMaterial,
+              public abschnittB: FormBMaterial,
+              public abschnittC: FormCMaterial,
+              public abschnittD: FormDMaterial,
+              public abschnittE: FormEMaterial,
+              public abschnittF: FormFMaterial,
+              public abschnittG: FormGMaterial,
+              public abschnittH: FormHMaterial,
+              public abschnittI: FormIMaterial,
+              public abschnittJ: FormJMaterial) {
+  }
 }

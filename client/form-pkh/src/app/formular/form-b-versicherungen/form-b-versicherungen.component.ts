@@ -20,4 +20,9 @@ export class FormBVersicherungenComponent implements IFormComponentBase {
   getFragen() {
     return Fragen;
   }
+
+  private setNotiz() {
+    this.formB.notiz = 'Möglichte Kostenträger prüfen.';
+    console.log(this.formB.notiz);
+  }
 }

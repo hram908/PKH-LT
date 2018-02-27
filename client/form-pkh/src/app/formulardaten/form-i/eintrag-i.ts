@@ -2,7 +2,7 @@
  * @author: Isabella
  **/
 
-export class EintragI{
+export class EintragI {
   beschreibung: string;
   restschuld: number;
   gesamtbelastungMtl: number;

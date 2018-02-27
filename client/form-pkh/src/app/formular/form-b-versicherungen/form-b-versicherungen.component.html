@@ -22,26 +22,143 @@ IF 1 || 2 == 2
 ELSE
   -> Hinweis Ablehnungsbescheid + Hinweis am Ende Formular
   -> C
+
+  TODO: Alle Radios rufen setNotiz auf, darin wird geprüft wie der aktuelle Stand ist und setzt entsprechend eine Notiz
 -->
 <div class="controls">
+  <!-- Frage nach Rechtsschutzversicherung -->
   <label class="form-check-inline">Haben Sie eine Rechtsschutzversicherung?</label>
   <div class="row">
     <div class="col-sm-8">
       <div class="radio">
-        <label class="radio-inline" for="rsv_ja"><input type="radio" id="rsv_ja" name="rsv" [(ngModel)]="formB.hatRechtschutzversicherung" [value]="1">Ja</label>
-        <label class="radio-inline" for="rsv_nein"><input type="radio" id="rsv_nein" name="rsv" [(ngModel)]="formB.hatRechtschutzversicherung" [value]="0">Nein</label>
-        <label class="radio-inline" for="rsv_unbekannt"><input type="radio" id="rsv_unbekannt" name="rsv" [(ngModel)]="formB.hatRechtschutzversicherung" [value]="2">Unbekannt</label>
+        <label class="radio-inline" for="rsv_ja"><input type="radio" id="rsv_ja" name="rsv"
+                                                        [(ngModel)]="formB.hatRechtschutzversicherung"
+                                                        [value]="1">Ja</label>
+        <label class="radio-inline" for="rsv_nein"><input type="radio" id="rsv_nein" name="rsv"
+                                                          [(ngModel)]="formB.hatRechtschutzversicherung" [value]="0">Nein</label>
+        <label class="radio-inline" for="rsv_unbekannt"><input type="radio" id="rsv_unbekannt" name="rsv"
+                                                               [(ngModel)]="formB.hatRechtschutzversicherung"
+                                                               [value]="2">Unbekannt</label>
       </div>
     </div>
   </div>
-  <label class="form-check-inline">Haben Sie eine Rechtsschutzversicherung?</label>
+  <!-- ENDE Frage nach Rechtsschutzversicherung -->
+
+  <!-- Frage nach anderen Versicherern oder Unterstützern -->
+  <label class="form-check-inline">Sind Sie Mitglied in einer Gruppierung wie z.B. Gewerkschaft, Mieterverein oder
+    Sozialverband?</label>
   <div class="row">
     <div class="col-sm-8">
       <div class="radio">
-        <label class="radio-inline" for="sonstige_ja"><input type="radio" id="sonstige_ja" name="sonstige" [(ngModel)]="formB.hatKostentraeger" [value]="1">Ja</label>
-        <label class="radio-inline" for="sonstige_nein"><input type="radio" id="sonstige_nein" name="sonstige" [(ngModel)]="formB.hatKostentraeger" [value]="0">Nein</label>
-        <label class="radio-inline" for="sonstige_unbekannt"><input type="radio" id="sonstige_unbekannt" name="sonstige" [(ngModel)]="formB.hatKostentraeger" [value]="2">Unbekannt</label>
+        <label class="radio-inline" for="sonstige_ja"><input type="radio" id="sonstige_ja" name="sonstige"
+                                                             [(ngModel)]="formB.hatKostentraeger" [value]="1">Ja</label>
+        <label class="radio-inline" for="sonstige_nein"><input type="radio" id="sonstige_nein" name="sonstige"
+                                                               [(ngModel)]="formB.hatKostentraeger"
+                                                               [value]="0">Nein</label>
+        <label class="radio-inline" for="sonstige_unbekannt"><input type="radio" id="sonstige_unbekannt" name="sonstige"
+                                                                    [(ngModel)]="formB.hatKostentraeger" [value]="2">Unbekannt</label>
       </div>
     </div>
   </div>
+  <!-- ENDE Frage nach anderen Versicherern oder Unterstützern -->
+
+  <!-- Wenn irgend ein Versicherer/Unterstützer mit Ja angegeben wurde, wird dieser Container angezeigt -->
+  <ng-container *ngIf="formB.hatKostentraeger == 1 || formB.hatRechtschutzversicherung == 1">
+    <label class="form-check-inline">Werden die Kosten teilweise oder vollständig von einem dieser Träger
+      übernommen?</label>
+    <div class="row">
+      <div class="col-sm-8">
+        <div class="radio">
+          <label class="radio-inline" for="uebernahme_tlw"><input type="radio" id="uebernahme_tlw" name="uebernahme"
+                                                                  [(ngModel)]="formB.uebernahme"
+                                                                  [value]="1">Teilweise</label>
+          <label class="radio-inline" for="uebernahme_voll"><input type="radio" id="uebernahme_voll" name="uebernahme"
+                                                                   [(ngModel)]="formB.uebernahme"
+                                                                   [value]="2">Voll</label>
+          <label class="radio-inline" for="uebernahme_nein"><input type="radio" id="uebernahme_nein" name="uebernahme"
+                                                                   [(ngModel)]="formB.uebernahme"
+                                                                   [value]="0">Nein</label>
+        </div>
+      </div>
+    </div>
+    <div class="row" *ngIf="formB.uebernahme == 1">
+      <div class="col-sm-4">
+        <div class="form-group">
+          <label for="kostenuebernahme">In welcher Höhe werden die Kosten übernommen?</label>
+          <input pattern="[0-9]{0,10}[,]{0,1}[0-9]{0,2}" id="kostenuebernahme" type="text" class="form-control"
+                 [(ngModel)]="formB.tlwUebernahme" placeholder="...">
+        </div>
+      </div>
+      <div class="col-sm-2">
+        <div class="form-group">
+          <label for="uebernahmeTlw">Typ</label>
+          <select id="uebernahmeTlw" class="form-control" [(ngModel)]="formB.tlwUebernahmeTyp" required="required">
+            <option [value]="'EUR'">EUR</option>
+            <option [value]="'PROZ'">%</option>
+          </select>
+        </div>
+      </div>
+    </div>
+    <!--
+      -> 3. Trägt eine der Stellen?
+      -> Hinweis Bescheinigung
+      -> Welche Höhe? (Teilweise | Voll | kein Antrag gestellt)
+        IF (Teilweise)
+          -> Eingabe Wert | Auswahl Typ (EUR|PROZ)
+        ELSE
+          -> ENDE
+
+      IF (kein Antrag gestellt)
+        -> Bezeichnen Sie die Stelle + Stellen Sie einen Antrag
+    -->
+  </ng-container>
+
+
+  <ng-container *ngIf="formB.uebernahme == 2">
+    <div class="row">
+      <div class="col-sm-8" id="ablehnung">
+        Wenn die Kosten vollständig übernommen werden, wird der Antrag vom Gericht abgelehnt und sollte nicht gestellt
+        werden!
+      </div>
+    </div>
+  </ng-container>
+
+  <ng-container *ngIf="formB.uebernahme == 0">
+    <!-- Notiz für Sozialbearbeiter
+         TODO: Material um Notizfeld ergänzen und an dieser Stelle mit Hinweis befüllen
+     -->
+    <label class="form-check-inline">Wurde bereits ein Antrag gestellt?</label>
+    <div class="row">
+      <div class="col-sm-8">
+        <div class="radio">
+          <label class="radio-inline" for="antragGestellt_ja"><input type="radio" id="antragGestellt_ja" name="uebernahme"
+                                                                     [(ngModel)]="formB.antragGestellt"
+                                                                     [value]="1">Ja</label>
+          <label class="radio-inline" for="antragGestellt_nein"><input type="radio" id="antragGestellt_nein" name="uebernahme"
+                                                                       [(ngModel)]="formB.antragGestellt"
+                                                                       [value]="0">Nein</label>
+        </div>
+      </div>
+    </div>
+    <div class="row" *ngIf="formB.antragGestellt == 0">
+      <div class="col-sm-8" id="keinAntrag">
+        Sie sollten als erstes Anträge bei ihrem Versicherer und sonstigen Trägern stellen!
+      </div>
+    </div>
+    <div class="row" *ngIf="formB.antragGestellt == 1">
+      <div class="col-sm-8" id="einAntrag">
+        Denken Sie daran, den Bescheid zu den Unterlagen zu legen!
+        <!-- Notiz für Sozialbearbeiter
+           TODO: Material um Notizfeld ergänzen und an dieser Stelle mit Hinweis befüllen
+       -->
+      </div>
+    </div>
+  </ng-container>
+
+  <!-- Unsichtbarer Abschnitt der dafür da wäre, im Falle der entsprechenden Auswahl die Notiz zu befüllen. (Eventuell in ts Datei umsetzen?)
+  <ng-container *ngIf="formB.hatKostentraeger == 2 || formB.hatRechtschutzversicherung == 2" >
+    <!-- Notiz für Sozialbearbeiter
+         TODO: Material um Notizfeld ergänzen und an dieser Stelle mit Hinweis befüllen
+
+  </ng-container>-->
 </div>

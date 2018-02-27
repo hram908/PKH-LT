@@ -23,11 +23,18 @@ import {FormAMaterial} from './formulardaten/form-a/form-a-material';
 import {AppDirective} from './app.directive';
 import { ViewSwitchComponent } from './navigation/view-switch.component';
 import {ViewSwitchService} from './navigation/view-switch-service';
-import {FormularService} from './formular/formular-service';
 import {FormBMaterial} from './formulardaten/form-b/form-b-material';
 import {FormCMaterial} from './formulardaten/form-c/form-c-material';
 import {FormIMaterial} from './formulardaten/form-i/form-i-material';
 import {FormJMaterial} from './formulardaten/form-j/form-j-material';
+import {FormDMaterial} from './formulardaten/form-d/form-d-material';
+import {FormEMaterial} from './formulardaten/form-e/form-e-material';
+import {FormFMaterial} from './formulardaten/form-f/form-f-material';
+import {FormGMaterial} from './formulardaten/form-g/form-g-material';
+import {FormHMaterial} from './formulardaten/form-h/form-h-material';
+import {PkhFormMaterial} from './formulardaten/pkh-form-material';
+import {RestService} from './rest-api/rest-service';
+import {HttpClientModule} from '@angular/common/http';
 
 
 
@@ -54,15 +61,23 @@ import {FormJMaterial} from './formulardaten/form-j/form-j-material';
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    HttpClientModule,
+    FormsModule,
   ],
   providers: [
     FormAMaterial,
     FormBMaterial,
     FormCMaterial,
+    FormDMaterial,
+    FormEMaterial,
+    FormFMaterial,
+    FormGMaterial,
+    FormHMaterial,
     FormIMaterial,
     FormJMaterial,
+    PkhFormMaterial,
     AllgemeineDaten,
+    RestService,
     ViewSwitchService,
     ChatbotService,
     StepSpeicher
@@ -72,6 +87,11 @@ import {FormJMaterial} from './formulardaten/form-j/form-j-material';
     FormAPersonendatenComponent,
     FormBVersicherungenComponent,
     FormCUnterhaltsanspruchComponent,
+    FormDGewaehrterUnterhaltComponent,
+    FormEBruttoeinnahmenComponent,
+    FormFAbzuegeComponent,
+    FormGEigentumComponent,
+    FormHWohnkostenComponent,
     FormISonstigeVerpflichtungenComponent,
     FormJBesondereBelastungenComponent,
   ],

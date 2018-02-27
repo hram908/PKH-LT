@@ -5,13 +5,13 @@
     <div class="row">
       <div class="col-sm-4">
         <div class="form-group">
-          <label for="name">{{getFragen().A_Vorname}} *</label>
+          <label for="name">{{fragen.A.vorname}} *</label>
           <input id="name" type="text" class="form-control" placeholder="Pflicht" [(ngModel)]="formA.vorname" required="required" data-error="Der Vorname ist notwendig.">
         </div>
       </div>
       <div class="col-sm-4">
         <div class="form-group">
-          <label for="nachname">{{getFragen().A_Name}} *</label>
+          <label for="nachname">{{fragen.A.nachname}} *</label>
           <input id="nachname" type="text" class="form-control" placeholder="Pflicht" [(ngModel)]="formA.nachname" required="required" data-error="Der Nachname ist notwendig.">
         </div>
       </div>
@@ -19,13 +19,13 @@
     <div class="row">
       <div class="col-sm-4">
         <div class="form-group">
-          <label for="geburtsname">{{getFragen().A_Geburtsname}}</label>
+          <label for="geburtsname">{{fragen.A_Geburtsname}}</label>
           <input id="geburtsname" type="text" class="form-control" [(ngModel)]="formA.geburtsname" placeholder="Abweichender Geburtsname">
         </div>
       </div>
       <div class="col-sm-2">
         <div class="form-group">
-          <label for="familienstand">{{getFragen().A_Familienstand}} *</label>
+          <label for="familienstand">{{fragen.A_Familienstand}} *</label>
           <select id="familienstand" class="form-control" [(ngModel)]="formA.familienstand" required="required">
             <option value="" disabled selected hidden>Pflicht</option>
             <option [value]="'Ledig'">Ledig</option>
@@ -38,7 +38,7 @@
       </div>
       <div class="col-sm-2">
         <div class="form-group">
-          <label for="geburtsdatum">{{getFragen().A_Geburtsdatum}} *</label>
+          <label for="geburtsdatum">{{fragen.A_Geburtsdatum}} *</label>
           <input id="geburtsdatum" type="date" class="form-control" [(ngModel)]="formA.geburtstag" required="required">
         </div>
       </div>
@@ -49,7 +49,7 @@
     <div class="row">
       <div class="col-sm-4">
         <div class="form-group">
-          <label for="beruf">{{getFragen().A_Beruf}}</label>
+          <label for="beruf">{{fragen.A_Beruf}}</label>
           <input id="beruf" type="text" class="form-control" [(ngModel)]="formA.beruf" placeholder="Optional">
         </div>
       </div>
@@ -68,26 +68,26 @@
       </div>
       <div class="col-sm-2">
         <div class="form-group">
-          <label for="telefon">Telefonnummer *</label>
+          <label for="telefon">{{fragen.A.telefon.TEL_KRZ}} *</label>
           <input id="telefon" type="tel" class="form-control" [(ngModel)]="formA.telefon" placeholder="Pflicht" required="required">
-          <label id="sublabel">{{getFragen().A_Telefonnummer}}</label>
+          <label id="sublabel">{{fragen.A.telefon.TEL_LNG}}</label>
         </div>
       </div>
     </div>
     <!-- ENDE Abschnitt für zusätzliche Daten -->
 
     <!-- Abschnitt für die Anschrift -->
-    <label>{{getFragen().A_Anschrift}}</label>
+    <label>{{fragen.A_Anschrift}}</label>
     <div class="row">
       <div class="col-sm-4">
         <div class="form-group">
-          <label for="strasse">{{getFragen().A_Strasse}} *</label>
+          <label for="strasse">{{fragen.A_Strasse}} *</label>
           <input id="strasse" type="text" class="form-control" [(ngModel)]="formA.strasse" placeholder="Pflicht">
         </div>
       </div>
       <div class="col-sm-2">
         <div class="form-group">
-          <label for="hausnummer">{{getFragen().A_Hausnummer}} *</label>
+          <label for="hausnummer">{{fragen.A_Hausnummer}} *</label>
           <input id="hausnummer" type="text" class="form-control" [(ngModel)]="formA.hausnummer" placeholder="Pflicht">
         </div>
       </div>
@@ -95,13 +95,13 @@
     <div class="row">
       <div class="col-sm-2">
         <div class="form-group">
-          <label for="plz">{{getFragen().A_Plz}} *</label>
+          <label for="plz">{{fragen.A_Plz}} *</label>
           <input id="plz" type="text" class="form-control" [(ngModel)]="formA.plz" placeholder="Pflicht">
         </div>
       </div>
       <div class="col-sm-4">
         <div class="form-group">
-          <label for="ort">{{getFragen().A_Ort}} *</label>
+          <label for="ort">{{fragen.A_Ort}} *</label>
           <input id="ort" type="text" class="form-control" [(ngModel)]="formA.ort" placeholder="Pflicht">
         </div>
       </div>
@@ -119,26 +119,26 @@
     <div class="row">
       <div class="col-sm-6">
         <div class="radio">
-          <label class="radio-inline" for="vertreter_ja"><input type="radio" id="vertreter_ja" name="gesVertreter" [(ngModel)]="formA.gesetzlicherVertreter" [value]="true">Ja</label>
-          <label class="radio-inline" for="vertreter_nein"><input type="radio" id="vertreter_nein" name="gesVertreter" [(ngModel)]="formA.gesetzlicherVertreter" [value]="false">Nein</label>
+          <label class="radio-inline" for="vertreter_ja"><input type="radio" id="vertreter_ja" name="gesVertreter" [(ngModel)]="formA.hatGesetzlicherVertreter" [value]="true">Ja</label>
+          <label class="radio-inline" for="vertreter_nein"><input type="radio" id="vertreter_nein" name="gesVertreter" [(ngModel)]="formA.hatGesetzlicherVertreter" [value]="false">Nein</label>
         </div>
       </div>
     </div>
     <!-- ENDE Abschnitt Frage nach gesetzlichem Vertreter -->
 
     <!-- Abschnitt Daten des gesetzlichen Vertreters -->
-    <ng-container *ngIf="formA.gesetzlicherVertreter">
+    <ng-container *ngIf="formA.hatGesetzlicherVertreter">
       <!-- Abschnitt für den Namen und Telefon -->
       <div class="row">
         <div class="col-sm-3">
           <div class="form-group">
-            <label for="nameVertreter">{{getFragen().A_Vorname}} *</label>
+            <label for="nameVertreter">{{fragen.A_Vorname}} *</label>
             <input id="nameVertreter" type="text" class="form-control" placeholder="Pflicht *" [(ngModel)]="formA.vertreterVorname" required="required">
           </div>
         </div>
         <div class="col-sm-3">
           <div class="form-group">
-            <label for="nachnameVertreter">{{getFragen().A_Name}} *</label>
+            <label for="nachnameVertreter">{{fragen.A_Name}} *</label>
             <input id="nachnameVertreter" type="text" class="form-control" placeholder="Pflicht *" [(ngModel)]="formA.vertreterName" required="required">
           </div>
         </div>
@@ -152,17 +152,17 @@
       <!-- ENDE Abschnitt Namen / Telefon -->
 
       <!-- Abschnitt für die Anschrift -->
-      <label>{{getFragen().A_Anschrift}}</label>
+      <label>{{fragen.A_Anschrift}}</label>
       <div class="row">
         <div class="col-sm-4">
           <div class="form-group">
-            <label for="strasseVertreter">{{getFragen().A_Strasse}}</label>
+            <label for="strasseVertreter">{{fragen.A_Strasse}}</label>
             <input id="strasseVertreter" type="text" class="form-control" [(ngModel)]="formA.vertreterStrasse">
           </div>
         </div>
         <div class="col-sm-2">
           <div class="form-group">
-            <label for="hausnummerVertreter">{{getFragen().A_Hausnummer}}</label>
+            <label for="hausnummerVertreter">{{fragen.A_Hausnummer}}</label>
             <input id="hausnummerVertreter" type="number" class="form-control" [(ngModel)]="formA.vertreterHausnummer">
           </div>
         </div>
@@ -170,13 +170,13 @@
       <div class="row">
         <div class="col-sm-2">
           <div class="form-group">
-            <label for="plzVertreter">{{getFragen().A_Plz}}</label>
+            <label for="plzVertreter">{{fragen.A_Plz}}</label>
             <input id="plzVertreter" type="text" class="form-control" [(ngModel)]="formA.vertreterPlz">
           </div>
         </div>
         <div class="col-sm-4">
           <div class="form-group">
-            <label for="ortVertreter">{{getFragen().A_Ort}}</label>
+            <label for="ortVertreter">{{fragen.A_Ort}}</label>
             <input id="ortVertreter" type="text" class="form-control" [(ngModel)]="formA.vertreterOrt">
           </div>
         </div>

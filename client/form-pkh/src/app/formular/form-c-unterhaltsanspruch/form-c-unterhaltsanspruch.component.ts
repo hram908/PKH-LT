@@ -17,10 +17,6 @@ export class FormCUnterhaltsanspruchComponent implements IFormComponentBase {
   getUntertitel(): string {
     return Untertitel.C;
   }
-
-  getFragen() {
-    return Fragen;
-  }
 }
 
 

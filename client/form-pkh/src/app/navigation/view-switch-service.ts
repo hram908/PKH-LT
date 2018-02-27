@@ -2,7 +2,6 @@ import {IFormComponentBase} from '../common/i-form-component-base';
 import {FormAComponent} from '../chatbot/form-a/form-a.component';
 import {FormAMaterial} from '../formulardaten/form-a/form-a-material';
 import {FormAPersonendatenComponent} from '../formular/form-a-personendaten/form-a-personendaten.component';
-import {FormularService} from '../formular/formular-service';
 import {ChatbotService} from '../chatbot/chatbot-service';
 import {NavButtons} from './nav-buttons';
 import {EventEmitter, Injectable} from '@angular/core';
@@ -42,11 +41,11 @@ export class ViewSwitchService {
   }
 
   public set currentAbschnitt(abschnitt: Abschnitt) {
-    this._currentAbschnitt = this.stepSpeicher.abschnitte.find(a => a.id == abschnitt.id);
+    this._currentAbschnitt = this.stepSpeicher.abschnitte.find(a => a.id === abschnitt.id);
     this.formChanged.emit(this._currentAbschnitt);
   }
 
-  public get alleAbschnitte(): Abschnitt[]{
+  public get alleAbschnitte(): Abschnitt[] {
     return this.stepSpeicher.abschnitte;
   }
 

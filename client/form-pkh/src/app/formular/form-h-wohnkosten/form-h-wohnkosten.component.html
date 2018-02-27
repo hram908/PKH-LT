@@ -1,3 +1,85 @@
 <div id="formularUeberschrift">
   <h2>{{getUntertitel()}}</h2>
 </div>
+
+<!-- Abschnitt Frage nach Wohnung 1 -->
+<div class="row">
+  <div class="col-sm-4">
+    <div class="form-group">
+      <label for="groesse">{{getFragen().H_Gesamtgroesse}} </label>
+      <input id="groesse" type="text" class="form-control" placeholder="Pflicht" [(ngModel)]="formH.groesse" required="required" data-error="Die Wohnungsgröße ist notwendig.">
+    </div>
+  </div>
+</div>
+<!-- ENDE Abschnitt Frage nach Wohnung 1 -->
+
+<!-- Abschnitt Frage nach Wohnung 2 -->
+<div class="row">
+  <div class="col-sm-4">
+    <div class="form-group">
+      <label for="anzahlZimmer">{{getFragen().H_AnzahlZimmer}} </label>
+      <input id="anzahlZimmer" type="text" class="form-control" placeholder="Pflicht" [(ngModel)]="formH.anzahlZimmer" required="required" data-error="Die Zimmerzahl ist notwendig.">
+    </div>
+  </div>
+</div>
+<!-- ENDE Abschnitt Frage nach Wohnung 2 -->
+
+<!-- Abschnitt Frage nach Wohnung 3 -->
+<div class="row">
+  <div class="col-sm-4">
+    <div class="form-group">
+      <label for="anzahlPersonenWohnraum">{{getFragen().H_AnzahlPersonenWohnraum}} </label>
+      <input id="anzahlPersonenWohnraum" type="text" class="form-control" placeholder="Pflicht" [(ngModel)]="formH.anzahlPersonenWohnraum" required="required" data-error="Die Anzahl der Personen, die die Wohnung bewohnen ist notwendig.">
+    </div>
+  </div>
+</div>
+<!-- ENDE Abschnitt Frage nach Wohnung 3 -->
+
+<!-- Abschnitt Frage nach Wohnung 4 -->
+<label class="form-check-inline"> 4. Nutzen Sie den Raum als Mieter oder in einem ähnlichen Nutzungsverhältnis?</label>
+<div class="row">
+  <div class="col-sm-6">
+    <div class="radio">
+      <label class="radio-inline" for="mieter_ja"><input type="radio" id="mieter_ja" name="besBelastung" [(ngModel)]="formH.mieter" [value]="true">Ja</label>
+      <label class="radio-inline" for="mieter_nein"><input type="radio" id="mieter_nein" name="besBelastung" [(ngModel)]="formH.mieter" [value]="false">Nein</label>
+    </div>
+  </div>
+</div>
+<!-- ENDE Abschnitt Frage nach Wohnung 4 -->
+
+<!-- Abschnitt Daten für Wohnung 4-->
+<ng-container *ngIf="formH.mieter">
+  <!-- Abschnitt für Wohnung 4 -->
+  <div class="row">
+    <div class="col-sm-2">
+      <div class="form-group">
+        <label for="MieteOhneNeben">{{getFragen().H_Nebenkosten}} </label>
+        <input id="MieteOhneNeben" type="text" class="form-control" placeholder="Pflicht" [(ngModel)]="formH.IstMieter" required="required">
+      </div>
+    </div>
+    <div class="col-sm-2">
+      <div class="form-group">
+        <label for="Heizungskosten">{{getFragen().H_Heizkosten}}</label>
+        <input id="Heizungskosten" type="text" class="form-control" placeholder="Pflicht" [(ngModel)]="formH.IstMieter" required="required">
+      </div>
+    </div>
+    <div class="col-sm-2">
+      <div class="form-group">
+        <label for="andNebenkosten">{{getFragen().H_SonstNebenkosten}} </label>
+        <input id="andNebenkosten" type="text" class="form-control" placeholder="Pflicht" [(ngModel)]="formH.IstMieter" required="required">
+      </div>
+    </div>
+    <div class="col-sm-2">
+      <div class="form-group">
+        <label for="WohnungGes">{{getFragen().H_Gesamtbetrag}} </label>
+        <input id="WohnungGes" type="text" class="form-control" placeholder="Pflicht" [(ngModel)]="formH.IstMieter" required="required">
+      </div>
+    </div>
+    <div class="col-sm-2">
+      <div class="form-group">
+        <label for="WohnungAllein">{{getFragen().H_KostenAlleine}} </label>
+        <input id="WohnungAllein" type="text" class="form-control" placeholder="Pflicht" [(ngModel)]="formH.IstMieter" required="required">
+      </div>
+    </div>
+  </div>
+  <!-- ENDE Abschnitt Frage nach Wohnung 4-->

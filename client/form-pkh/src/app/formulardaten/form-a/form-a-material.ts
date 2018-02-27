@@ -16,7 +16,7 @@ export class FormAMaterial {
   plz = '';
   ort = '';
 
-  gesetzlicherVertreter = false;
+  hatGesetzlicherVertreter = false;
   vertreterName = '';
   vertreterVorname = '';
   vertreterStrasse = '';
