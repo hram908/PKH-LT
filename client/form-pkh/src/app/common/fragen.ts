@@ -34,10 +34,11 @@ export class Fragen {
     'Verfahrensführung tragen oder einen Prozessbevollmächtigten stellen könnte?';
 
   // Formularabschnitt C
-  public static readonly C_Frage = 'Haben Sie Angehörige, die Ihnen gegenüber gesetzlich zur Leistung von Unterhalt verpflichtet' +
+  public static readonly C_Frage = 'Haben Sie Angehörige, die Ihnen gegenüber gesetzlich zur Leistung von Unterhalt verpflichtet ' +
     'sind (auch wenn tatsächlich keine Leistungen erfolgen)?';
   public static readonly C_Zusatz = 'z. B. Mutter, Vater, Ehepartner, eingetragene(r) Lebenspartner/in';
   public static readonly C_FrageJa = 'Name des Unterhaltsverpflichteten';
+  public static readonly C_FrageJaEhe = 'Name des Ehepartners';
   public static readonly C_Hinweis = 'Bitte geben Sie auf einem weiteren Exemplar dieses Formulars seine persönlichen und ' +
     'wirtschaftlichen Verhältnisse an, sofern diese nicht bereits vollständig aus den folgenden Abschnitten ersichtlich sind.';
 

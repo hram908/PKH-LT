@@ -3,6 +3,7 @@ import {Untertitel} from '../../common/untertitel';
 import {IFormComponentBase} from '../../common/i-form-component-base';
 import {FormCMaterial} from '../../formulardaten/form-c/form-c-material';
 import {Fragen} from '../../common/fragen';
+import {FormAMaterial} from "../../formulardaten/form-a/form-a-material";
 
 
 @Component({
@@ -11,12 +12,18 @@ import {Fragen} from '../../common/fragen';
   styleUrls: ['./form-c-unterhaltsanspruch.component.css']
 })
 export class FormCUnterhaltsanspruchComponent implements IFormComponentBase {
-  constructor(public formC: FormCMaterial) {
+  constructor(public formC: FormCMaterial,
+              public formA: FormAMaterial) {
   }
 
   getUntertitel(): string {
     return Untertitel.C;
   }
+
+  getFragen() {
+    return Fragen;
+  }
+
 }
 
 
