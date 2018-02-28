@@ -56,7 +56,17 @@ export class Fragen {
   public static readonly D_einnahmenAngehoeriger = 'Einnahmen des Angehörigen';
 
   // Formularabschnitt E
-
+  public static readonly E_Frage = 'Haben Sie Einnahmen aus';
+  public static readonly E_FrageEhepartner = 'Hat Ihr Ehepartner/eingetragener Lebenspartner Einnahmen aus';
+  public static readonly E_FrageNichtselbst = 'nichtselbstständiger Arbeit?';
+  public static readonly E_FrageSelbst = 'selbstständiger Arbeit/ Gewerbebetrieb/Land- und Forstwirtschaft?';
+  public static readonly E_FrageVermietung = 'aus Vermietung und Verpachtung?';
+  public static readonly E_Kapital = 'Kapitalvermögen?';
+  public static readonly E_Kindergeld = 'Kindergeld/Kinderzuschlag?';
+  public static readonly E_Wohngeld = 'Wohngeld?';
+  public static readonly E_Unterhalt = 'Unterhalt?';
+  public static readonly E_Rente = 'Rente/Pension?';
+  public static readonly E_Arbeitslosengeld1 = 'Arbeitslosengeld1?';
   // Formularabschnitt F
   public static readonly F_steuernBezeichnung = 'Steuern/Solidaritätszuschlag';
   public static readonly F_steuernBetrag = 'Betrag in EUR pro Monat';
