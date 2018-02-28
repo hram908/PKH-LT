@@ -13,6 +13,10 @@ export class FormGEigentumComponent implements IFormComponentBase {
   constructor(public formG: FormGMaterial) {
   }
 
+  getFragen() {
+    return Fragen;
+  }
+
   getUntertitel(): string {
     return Untertitel.G;
   }

@@ -4,6 +4,4 @@ import {FormAPersonendatenComponent} from './formular/form-a-personendaten/form-
 
 export class AllgemeineDaten {
   istAntragsteller = 2;
-  hatEhepartner = false;
-  kinder = 0;
 }

@@ -1,6 +1,7 @@
 import {Component} from '@angular/core';
 import {Untertitel} from '../../common/untertitel';
 import {IFormComponentBase} from '../../common/i-form-component-base';
+import {Fragen} from '../../common/fragen';
 
 @Component({
   selector: 'app-form-e-bruttoeinnahmen',
@@ -13,5 +14,9 @@ export class FormEBruttoeinnahmenComponent implements IFormComponentBase {
 
   getUntertitel(): string {
     return Untertitel.E;
+  }
+
+  getFragen() {
+    return Fragen;
   }
 }

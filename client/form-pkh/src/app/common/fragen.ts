@@ -84,7 +84,7 @@ export class Fragen {
     'allein oder gemeinsam mit anderen Personen bewohnen';
   public static readonly H_anzahlZimmer = '2. Anzahl der Zimmer';
   public static readonly H_anzahlPersonenWohnraum = '3. Anzahl der Personen, die diese Wohnraum bewohnen';
-  public static readonly H_nebenkosten = 'Kaltiete';
+  public static readonly H_miete = 'Kaltmiete';
   public static readonly H_heizkosten = 'Heizungskosten';
   public static readonly H_sonstNebenkosten = 'sonstige Nebenkosten';
   public static readonly H_gesamtbetrag = 'Gesamtbetrag';
