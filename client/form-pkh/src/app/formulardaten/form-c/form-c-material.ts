@@ -5,5 +5,5 @@ import {Unterhaltsverpflichteter} from './unterhaltsverpflichteter';
 
 export class FormCMaterial {
   hatUnterhaltsanspruch = false;
-  unterhaltsverpflichteter: Unterhaltsverpflichteter[] = [new Unterhaltsverpflichteter()];
+  unterhaltsverpflichteter: Unterhaltsverpflichteter[] = [new Unterhaltsverpflichteter(), new Unterhaltsverpflichteter()];
 }

@@ -5,5 +5,6 @@ import {EintragJ} from './eintrag-j';
  **/
 
 export class FormJMaterial {
-  besondereBelastungen: EintragJ[];
+  hatBesondereBelastungen = false;
+  besondereBelastungen: EintragJ[] = [new EintragJ()];
 }

@@ -3,48 +3,49 @@
 </div>
 
 <!-- Abschnitt Frage nach besonderen Belastungen -->
-    <label class="form-check-inline">Haben Sie besondere Belastungen? (z.B. Mehrausgaben für körperbehinderten Angehörigen und Angabe des GdB/
-      Mehrbedarfs gemäß §21 SGB II und §30 SGB XII)</label>
-    <div class="row">
-      <div class="col-sm-6">
-        <div class="radio">
-          <label class="radio-inline" for="belastung_ja"><input type="radio" id="belastung_ja" name="besBelastung" [(ngModel)]="formJ.besondereBelastungen" [value]="true">Ja</label>
-          <label class="radio-inline" for="belastung_nein"><input type="radio" id="belastung_nein" name="besBelastung" [(ngModel)]="formJ.besondereBelastungen" [value]="false">Nein</label>
-        </div>
+<label class="form-check-inline">Haben Sie besondere Belastungen? (z.B. Mehrausgaben für körperbehinderten Angehörigen
+  und Angabe des GdB/
+  Mehrbedarfs gemäß §21 SGB II und §30 SGB XII)</label>
+<div class="row">
+  <div class="col-sm-2">
+    <div class="radio">
+      <label class="radio-inline" for="belastung_ja"><input type="radio" id="belastung_ja" name="besBelastung"
+                                                            [(ngModel)]="formJ.hatBesondereBelastungen"
+                                                            [value]="true">Ja</label>
+      <label class="radio-inline" for="belastung_nein"><input type="radio" id="belastung_nein" name="besBelastung"
+                                                              [(ngModel)]="formJ.hatBesondereBelastungen"
+                                                              [value]="false">Nein</label>
+    </div>
+  </div>
+  <ng-container *ngIf="formJ.hatBesondereBelastungen">
+    <div class="col-sm-2">
+      <button class="btn btn-group-md btn-primary" [disabled]="formJ.besondereBelastungen.length >= 8" (click)="fuegeHinzuBelastung()"><span
+        class="glyphicon glyphicon-plus"></span></button>
+      <button class="btn btn-group-md btn-primary" [disabled]="formJ.besondereBelastungen.length <= 1" (click)="entferneBelastung()"><span
+        class="glyphicon glyphicon-minus"></span></button>
+    </div>
+  </ng-container>
+</div>
+<!-- ENDE Abschnitt Frage nach besonderen Belastungen -->
+
+<!-- Abschnitt Daten für besondere Belastungen 2-->
+<ng-container *ngIf="formJ.hatBesondereBelastungen">
+  <!-- Abschnitt für besondere Belastungen -->
+  <div class="row" *ngFor="let belastung of formJ.besondereBelastungen; let i = index">
+    <div class="col-sm-4">
+      <div class="form-group">
+        <label for="besBelastung_{{i}}">{{getFragen().J_belastungBezeichung}}</label>
+        <input id="besBelastung_{{i}}" type="text" class="form-control" placeholder="Pflicht"
+               [(ngModel)]="belastung.beschreibung" required="required">
       </div>
     </div>
-    <!-- ENDE Abschnitt Frage nach besonderen Belastungen -->
-
-    <!-- Abschnitt Daten für besondere Belastungen 2-->
-    <ng-container *ngIf="formJ.besondereBelastungen">
-      <!-- Abschnitt für besondere Belastungen -->
-      <div class="row">
-        <div class="col-sm-4">
-          <div class="form-group">
-            <label for="besBelastung">{{getFragen().J_belastungBezeichung}}</label>
-            <input id="besBelastung" type="text" class="form-control" placeholder="Pflicht" [(ngModel)]="formJ.besondereBelastungBezeichnung" required="required">
-          </div>
-        </div>
-        <div class="col-sm-4">
-          <div class="form-group">
-            <label for="besBelastungBetrag">{{getFragen().J_ichAlleineZahle}} </label>
-            <input id="besBelastungBetrag" type="text" class="form-control" placeholder="Pflicht" [(ngModel)]="formJ.besondereBelastungAlleine" required="required">
-          </div>
-        </div>
+    <div class="col-sm-4">
+      <div class="form-group">
+        <label for="besBelastungBetrag_{{i}}">{{getFragen().J_ichAlleineZahle}} </label>
+        <input id="besBelastungBetrag_{{i}}" type="text" class="form-control" placeholder="Pflicht"
+               [(ngModel)]="belastung.alleinigeZahlung" required="required">
       </div>
-
-      <div class="row">
-        <div class="col-sm-4">
-          <div class="form-group">
-            <label for="besBelastung1">{{getFragen().J_belastungBezeichung1}}</label>
-            <input id="besBelastung1" type="text" placeholder="weitere" class="form-control" [(ngModel)]="formJ.besondereBelastungBezeichnung1" required="required">
-          </div>
-        </div>
-        <div class="col-sm-4">
-          <div class="form-group">
-            <label for="besBelastungBetrag1">{{getFragen().J_ichAlleineZahle1}} </label>
-            <input id="besBelastungBetrag1" type="text" placeholder="weitere" class="form-control" [(ngModel)]="formJ.besondereBelastungAlleine1" required="required">
-          </div>
-        </div>
-      </div>
-        <!-- ENDE Abschnitt Frage nach besonderen Belastungen 2-->
+    </div>
+  </div>
+</ng-container>
+<!-- ENDE Abschnitt Frage nach besonderen Belastungen 2-->
