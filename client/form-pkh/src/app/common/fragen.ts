@@ -50,9 +50,18 @@ export class Fragen {
   // Formularabschnitt F
 
   // Formularabschnitt G
-  public static readonly G_bankkonto = '2. Anzahl der Zimmer';
-  public static readonly G_bankkontoStand = '2. Anzahl der Zimmer';
-
+  public static readonly G_kontoBezeichnung = 'Bezeichnung';
+  public static readonly G_kontoBetrag = 'Betrag in EUR';
+  public static readonly G_grundeigentumBezeichnung = 'Bezeichnung';
+  public static readonly G_grundeigentumBetrag = 'Betrag in EUR';
+  public static readonly G_kraftfahrzeugeBezeichnung = 'Bezeichnung';
+  public static readonly G_kraftfahrzeugeBetrag = 'Betrag in EUR';
+  public static readonly G_wertgegenstaendeBezeichnung = 'Bezeichnung';
+  public static readonly G_wertgegenstaendeBetrag = 'Betrag in EUR';
+  public static readonly G_versicherungBezeichnung = 'Bezeichnung';
+  public static readonly G_versicherungBetrag = 'Betrag in EUR';
+  public static readonly G_sonstigeBezeichnung = 'Bezeichnung';
+  public static readonly G_sonstigeBetrag = 'Betrag in EUR';
 
   // Formularabschnitt H
   public static readonly H_gesamtgroesseWohnung = ' 1. Gesamtgröße des Wohnraums, den Sie ' +
