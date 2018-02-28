@@ -41,6 +41,20 @@
 -  go to *Run > Edit Configurations...*
 -  *Add New Configuration > Gradle* and select the directory *server/pkh-backend* as gradle project
 -  add *bootRun* in Tasks
+-  nice to have: check *'Single instance only'*
+
+
+### Working with Watson Conversation
+
+-  go to the directory *server/pkh-backend/src/main/resources*
+-  create a file named 'watson-conversation-credentials.txt'
+-  type in your credentials as follows:
+
+   -  watson.conversation.workspace-id=*your workspace id*
+   -  watson.conversation.username=*your username*
+   -  watson.conversation.password=*your password*
+   -  watson.conversation.version-date=*your version date*
+
 
 ## Build
 **for the war file:**
