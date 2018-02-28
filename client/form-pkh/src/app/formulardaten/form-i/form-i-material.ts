@@ -1,7 +1,7 @@
 import {EintragI} from './eintrag-i';
 
 /**
- * @author: Isabella
+ * @author: Isabella, Thomas, Jana
  **/
 
 export class FormIMaterial {

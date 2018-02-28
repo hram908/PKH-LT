@@ -1,6 +1,7 @@
 import {EintragJ} from './eintrag-j';
+
 /**
- * @author: Isabella
+ * @author: Isabella, Thomas, Jana
  **/
 
 export class FormJMaterial {

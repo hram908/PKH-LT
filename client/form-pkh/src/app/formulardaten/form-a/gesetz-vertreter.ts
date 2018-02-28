@@ -1,5 +1,5 @@
 export class GesetzVertreter {
-  hatGesetzlicherVertreter = false;
+  hatGesetzlichenVertreter = false;
   vertreterName = '';
   vertreterVorname = '';
   vertreterStrasse = '';

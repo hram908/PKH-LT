@@ -1,5 +1,5 @@
 /**
- * @author: Isabella
+ * @author: Isabella, Thomas, Jana
  **/
 // TODO: ausführliche Kommentare warum Integer und die verschiedenen Bedeutungen/Zustände
 export class FormBMaterial {

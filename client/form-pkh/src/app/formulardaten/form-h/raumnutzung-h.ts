@@ -1,6 +1,7 @@
 import {FremdmittelBelastung} from './fremdmittel-belastung';
+
 /**
- * @author: Isabella
+ * @author: Isabella, Jana
  **/
 
 export class RaumnutzungH {

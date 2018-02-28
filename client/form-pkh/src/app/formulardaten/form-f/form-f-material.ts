@@ -1,9 +1,10 @@
 import {TypAbzuege} from './typ-abzuege';
+
 /**
- * @author: Isabella
+ * @author: Isabella, Thomas, Jana
  **/
 
 export class FormFMaterial {
-  antragsteller: TypAbzuege;
-  ehepartner: TypAbzuege;
+  antragsteller: TypAbzuege = new TypAbzuege;
+  ehepartner: TypAbzuege = new TypAbzuege;
 }

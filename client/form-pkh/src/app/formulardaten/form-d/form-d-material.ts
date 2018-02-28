@@ -1,6 +1,7 @@
 import {NaturalunterhaltRow} from './naturalunterhalt-row';
+
 /**
- * @author: Isabella
+ * @author: Isabella, Thomas, Jana
  **/
 
 export class FormDMaterial {

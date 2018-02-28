@@ -1,5 +1,5 @@
 /**
- * @author: Isabella, Thomas
+ * @author: Isabella, Thomas, Jana
  **/
 
 export class FremdmittelBelastung {

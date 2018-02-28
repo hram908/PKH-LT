@@ -12,7 +12,7 @@ import {Injectable} from '@angular/core';
 import {Notiz} from './notiz';
 
 /**
- * @author Isabella
+ * @author Isabella, Thomas, jana
  **/
 @Injectable()
 export class PkhMaterial {

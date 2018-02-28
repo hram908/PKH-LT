@@ -1,5 +1,5 @@
 /**
- * @author: Isabella
+ * @author: Isabella, Thomas, Jana
  **/
 
 export class EintragJ {

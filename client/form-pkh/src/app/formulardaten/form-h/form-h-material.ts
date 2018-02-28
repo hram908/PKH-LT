@@ -1,7 +1,7 @@
 import {RaumnutzungH} from './raumnutzung-h';
 
 /**
- * @author: Isabella
+ * @author: Isabella, Thomas, Jana
  **/
 
 export class FormHMaterial {

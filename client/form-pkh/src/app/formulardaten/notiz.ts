@@ -1,3 +1,7 @@
+/**
+ * @author: Isabella, Thomas, Jana
+ **/
+
 export class Notiz {
   A = {
     'notiz': ''

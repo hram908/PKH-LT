@@ -2,9 +2,9 @@ import {Antragsteller} from './antragsteller';
 import {GesetzVertreter} from './gesetz-vertreter';
 
 /**
- * @author: Thomas, Isabella
+ * @author: Thomas, Isabella, Jana
  **/
 export class FormAMaterial {
-  antragsteller: Antragsteller;
-  gesetzVertreter: GesetzVertreter;
+  antragsteller: Antragsteller = new Antragsteller();
+  gesetzVertreter: GesetzVertreter = new GesetzVertreter();
 }

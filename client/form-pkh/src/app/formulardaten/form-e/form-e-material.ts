@@ -1,10 +1,10 @@
 import {Einnahmen} from './einnahmen';
 
 /**
- * @author: Isabella
+ * @author: Isabella, Thomas, Jana
  **/
 
 export class FormEMaterial {
-  antragsteller: Einnahmen;
-  ehepartner: Einnahmen;
+  antragsteller: Einnahmen = new Einnahmen();
+  ehepartner: Einnahmen = new Einnahmen();
 }
