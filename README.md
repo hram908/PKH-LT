@@ -2,17 +2,45 @@
 
 ## Prerequisites
 
-### Backend (Import in IntelliJ IDEA)
+### Import in IntelliJ IDEA
 
 -  File > New > Project From Version Control > GitHub
+-  clone repository
+-  go to File > Project Structure > Modules
+-  import module *server/pkh-backend*
 
 ### Web-Client
 
 -  install node.js and npm
--  go to root directory of the web-client
--  npm install -g @angular/cli
--  npm install
--  ng serve
+-  go to root directory of the web-client (*client/form-pkh*)
+-  open the terminal
+-  *npm install -g @angular/cli*
+-  *npm install*
+
+### Backend 
+
+-  go to root directory of the server (*server/pkh-backend*)
+-  open he terminal 
+-  *gradlew install*
+
+## Development
+
+### Run the Web-Client
+
+-  go to root directoy of the web-client (*client/form-pkh*)
+-  open the terminal
+-  *ng serve*
+
+### Run the Backend
+
+-  go to root directoy of the backend *server/pkh-backend*
+-  open the terminal
+-  *gradlew bootRun*
+
+**in IntelliJ:**
+-  go to *Run > Edit Configurations...*
+-  *Add New Configuration > Gradle* and select the directory *server/pkh-backend* as gradle project
+-  add *bootRun* in Tasks
 
 ## Build
 **for the war file:**
