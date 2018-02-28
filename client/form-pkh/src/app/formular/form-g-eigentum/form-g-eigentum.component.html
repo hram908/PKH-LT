@@ -1,7 +1,7 @@
 <div id="formularUeberschrift">
   <h2>{{getUntertitel()}}</h2>
 </div>
-
+<!-- TODO Prüfen !-->
   <!-- Abschnitt Frage nach Bankkonto/Grundeigentum/etc. -->
   <label class="form-check-inline"> 1. Verfügen Sie oder Ihr Ehepartner/eingetragener Lebenspartner über Bank-, Giro-, Sparkonten oder ähnliches? (Angaben auch bei fehlendem Guthaben erforderlich)</label>
   <div class="row">
@@ -22,7 +22,7 @@
     <div class="col-sm-4">
       <div class="form-group">
         <label for="kontoBezeichnung">{{getFragen().G_kontoBezeichnung}}</label>
-        <input id="kontoBezeichnung" type="text" class="form-control" placeholder="Pflicht" [(ngModel)]="formG.kontoBezeichnung" required="required">
+        <input id="kontoBezeichnung" type="text" class="form-control" placeholder="Pflicht" [(ngModel)]="formG.konto.kontoBezeichnung" required="required">
       </div>
     </div>
     <div class="col-sm-4">
