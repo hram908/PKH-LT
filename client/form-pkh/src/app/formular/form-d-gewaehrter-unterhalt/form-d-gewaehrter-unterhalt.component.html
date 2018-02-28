@@ -21,11 +21,11 @@
   </div>
 
   <ng-container *ngIf="formD.gewaehrtNaturalunterhalt">
-    <div class="row">
+    <div class="row" *ngFor="let naturalunterhalt of formD.naturalunterhalt">
       <div class="col-sm-3">
         <div class="form-group">
           <label for="named">{{getFragen().D_Name}}</label>
-          <input id="named" type="text" class="form-control" placeholder="Pflicht" [(ngModel)]="formDNat.vollstaendigerName"
+          <input id="named" type="text" class="form-control" placeholder="Pflicht" [(ngModel)]="naturalunterhalt.vollstaendigerName"
                  required="required" data-error="Der Vorname ist notwendig.">
         </div>
       </div>
@@ -33,7 +33,7 @@
       <div class="col-sm-3">
         <div class="form-group">
           <label for="geburtsdatumd">{{getFragen().D_Geburtsdatum}} *</label>
-          <input id="geburtsdatumd" type="text" class="form-control" placeholder="Pflicht" [(ngModel)]="formDNat.vollstaendigerName"
+          <input id="geburtsdatumd" type="text" class="form-control" placeholder="Pflicht" [(ngModel)]="naturalunterhalt.vollstaendigerName"
                  required="required" data-error="Der Vorname ist notwendig.">
         </div>
       </div>
