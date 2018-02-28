@@ -83,18 +83,9 @@
 </div>
 <!-- ENDE Abschnitt Sonstige Webungskosten/Betirbsausgaben -->
 
-<!-- Abschnitt Frage F für Ehepartner -->
-<label class="form-check-inline">Haben sie einen Ehepartner/eingetragenen Lebenspartner?</label>
-<div class="row">
-  <div class="col-sm-6">
-    <div class="radio">
-      <label class="radio-inline" for="ehepartnerF_ja"><input type="radio" id="ehepartnerF_ja" name="ehepartnerF" [(ngModel)]="formF.fragenFuerEhepartner" [value]="true">Ja</label>
-      <label class="radio-inline" for="ehepartnerF_nein"><input type="radio" id="ehepartnerF_nein" name="ehepartnerF" [(ngModel)]="formF.fragenFuerEhepartner" [value]="false">Nein</label>
-    </div>
-  </div>
-</div>
-<!-- ENDE Abschnitt Frage F für Ehepartner -->
-<ng-container *ngIf="formF.fragenFuerEhepartner">
+<!-- Abschnitt Ehepartner -->
+<ng-container *ngIf="formA.antragsteller.familienstand == 'Eingetragene Partnerschaft' || formA.antragsteller.familienstand == 'Verheiratet'">
+<label>Ehepartner:</label>
 <!-- Abschnitt für Steuern/Solidaritätszuschlag -->
 <div class="row">
   <div class="col-sm-4">
