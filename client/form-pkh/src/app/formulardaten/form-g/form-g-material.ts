@@ -5,15 +5,22 @@ import {EintragG} from './eintrag-g';
 
 export class FormGMaterial {
   hatKonto = true;
-  konto: EintragG[];
+  kontoBezeichnung: EintragG[];
+  kontoBetrag: EintragG[];
   hatGrundeigentum = false;
-  grundeigentum: EintragG[];
+  grundeigentumBezeichnung: EintragG[];
+  grundeigentumBetrag: EintragG[];
   hatKraftfahrzeug = false;
-  kraftfahrzeuge: EintragG[];
+  kraftfahrzeugeBezeichnung: EintragG[];
+  kraftfahrzeugeBetrag: EintragG[];
   hatWertgegenstaende = false;
-  wertgegenstaende: EintragG[];
+  wertgegenstaendeBezeichnung: EintragG[];
+  wertgegenstaendeBetrag: EintragG[];
   hatVersicherung = false;
-  versicherung: EintragG[];
+  versicherungBezeichnung: EintragG[];
+  versicherungBetrag: EintragG[];
   hatSonstige = false;
   sonstige: EintragG[];
+  sonstigeBezeichnung: EintragG[];
+  sonstigeBetrag: EintragG[];
 }
