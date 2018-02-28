@@ -11,27 +11,35 @@
     </div>
   </div>
 
-<ng-container *ngIf='formA.antragsteller.familienstand === "Eingetragene Partnerschaft" || formA.antragsteller.familienstand === "Verheiratet"'>
+  <ng-container
+    *ngIf='formA.antragsteller.familienstand === "Eingetragene Partnerschaft" || formA.antragsteller.familienstand === "Verheiratet"'>
+    <div class="row">
+      <div class="col-sm-5">
+        <div class="form-group">
+          <label for="UnterhaltsgebenderEhe">{{getFragen().C_FrageJaEhe}}</label>
+          <input id="UnterhaltsgebenderEhe" type="text" class="form-control"
+                 [(ngModel)]="formC.unterhaltsverpflichteter[0].name" placeholder="Pflicht">
+        </div>
+      </div>
+    </div>
+  </ng-container>
+
   <div class="row">
-    <div class="col-sm-5">
-      <div class="form-group">
-        <label for="UnterhaltsgebenderEhe">{{getFragen().C_FrageJaEhe}}</label>
-        <input id="UnterhaltsgebenderEhe" type="text" class="form-control" [(ngModel)]="formC.unterhaltsverpflichteter[0]" placeholder="Pflicht">
+    <div class="col-sm-2">
+      <div class="radio">
+        <label class="radio-inline" for="Unterhaltsanspruch_ja"><input type="radio" id="Unterhaltsanspruch_ja"
+                                                                       name="Unterhaltsanspruch"
+                                                                       [(ngModel)]="formC.hatUnterhaltsanspruch"
+                                                                       [value]="true">Ja</label>
+        <label class="radio-inline" for="Unterhaltsanspruch_nein"><input type="radio" id="Unterhaltsanspruch_nein"
+                                                                         name="Unterhaltsanspruch"
+                                                                         [(ngModel)]="formC.hatUnterhaltsanspruch"
+                                                                         [value]="false">Nein</label>
       </div>
     </div>
   </div>
-</ng-container>
 
-<div class="row">
-  <div class="col-sm-2">
-    <div class="radio">
-      <label class="radio-inline" for="Unterhaltsanspruch_ja"><input type="radio" id="Unterhaltsanspruch_ja" name="Unterhaltsanspruch" [(ngModel)]="formC.hatUnterhaltsanspruch" [value]="true">Ja</label>
-      <label class="radio-inline" for="Unterhaltsanspruch_nein"><input type="radio" id="Unterhaltsanspruch_nein" name="Unterhaltsanspruch" [(ngModel)]="formC.hatUnterhaltsanspruch" [value]="false">Nein</label>
-    </div>
-  </div>
-</div>
-
-  <ng-container *ngIf="formC.hatUnterhaltsanspruch">
+  <!--<ng-container >
     <div class="row">
       <div class="col-sm-5">
         <div class="form-group">
@@ -48,14 +56,26 @@
           </div>
       </div>
 
-  </ng-container>
-  <!-- <ng-container *ngFor="let u of formC.unterhaltsverpflichteter">
-    <div class="row">
-      <div class="col-sm-5">
-        <input type="text" class="form-control" [(ngModel)]="u" placeholder="Test">
+  </ng-container >-->
+  <div class="row">
+    <div class="col-sm-5">
+      <div class="form-group">
+        <label>{{getFragen().C_FrageJa}}</label>
       </div>
     </div>
-  </ng-container> -->
+  </div>
+  <!-- TODO: Abstrand zwischen den neuen Einträgen etwas erhöhen -->
+  <ng-container *ngIf="formC.hatUnterhaltsanspruch">
+    <div class="row" *ngFor="let person of formC.unterhaltsverpflichteter">
+      <div class="col-sm-5">
+        <input type="text" class="form-control" [(ngModel)]="person.name" placeholder="Pflicht">
+      </div>
+      <div class="col-sm-1"> <!-- TODO: Mit *ngIf="" dafür sorgen, dass der Button nur beim ersten oder letzten Eintrag angezeigt wird. -->
+        <button class="btn btn-group-md btn-primary" (click)="fuegeUnterhaltHinzu()"><span class="glyphicon glyphicon-plus"></span></button>
+      </div>
+    </div>
+
+  </ng-container>
 
 
 </div>
