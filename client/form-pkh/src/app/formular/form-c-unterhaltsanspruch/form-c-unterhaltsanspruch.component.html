@@ -25,7 +25,7 @@
   </ng-container>
 
   <div class="row">
-    <div class="col-sm-2">
+    <div class="col-sm-4">
       <div class="radio">
         <label class="radio-inline" for="Unterhaltsanspruch_ja"><input type="radio" id="Unterhaltsanspruch_ja"
                                                                        name="Unterhaltsanspruch"
@@ -37,6 +37,15 @@
                                                                          [value]="false">Nein</label>
       </div>
     </div>
+    <ng-container *ngIf="formC.hatUnterhaltsanspruch">
+      <div class="col-sm-1">
+        <button class="btn btn-group-md btn-primary" (click)="fuegeUnterhaltHinzu()"><span class="glyphicon glyphicon-plus"></span></button>
+      </div>
+      <div class="col-sm-1">
+        <button class="btn btn-group-md btn-primary" (click)="entferneUnterhalt()"><span class="glyphicon glyphicon-minus"></span></button>
+      </div>
+    </ng-container>
+
   </div>
 
   <!--<ng-container >
@@ -56,7 +65,7 @@
           </div>
       </div>
 
-  </ng-container >-->
+  </ng-container >
   <div class="row">
     <div class="col-sm-5">
       <div class="form-group">
@@ -64,18 +73,19 @@
       </div>
     </div>
   </div>
+  -->
   <!-- TODO: Abstrand zwischen den neuen Einträgen etwas erhöhen -->
   <ng-container *ngIf="formC.hatUnterhaltsanspruch">
-    <div class="row" *ngFor="let person of formC.unterhaltsverpflichteter">
-      <div class="col-sm-5">
-        <input type="text" class="form-control" [(ngModel)]="person.name" placeholder="Pflicht">
-      </div>
-      <div class="col-sm-1"> <!-- TODO: Mit *ngIf="" dafür sorgen, dass der Button nur beim ersten oder letzten Eintrag angezeigt wird. -->
-        <button class="btn btn-group-md btn-primary" (click)="fuegeUnterhaltHinzu()"><span class="glyphicon glyphicon-plus"></span></button>
+    <div class="row" >
+      <div *ngFor="let person of formC.unterhaltsverpflichteter">
+        <div class="col-sm-7">
+          <label>{{getFragen().C_FrageJa}}</label>
+          <input type="text" class="form-control" [(ngModel)]="person.name" placeholder="...">
+        </div>
       </div>
     </div>
 
-  </ng-container>
 
+  </ng-container>
 
 </div>

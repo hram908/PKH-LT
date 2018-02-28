@@ -3,6 +3,7 @@ import {Untertitel} from '../../common/untertitel';
 import {IFormComponentBase} from '../../common/i-form-component-base';
 import {FormDMaterial} from '../../formulardaten/form-d/form-d-material';
 import {Fragen} from '../../common/fragen';
+import {NaturalunterhaltRow} from '../../formulardaten/form-d/naturalunterhalt-row';
 
 @Component({
   selector: 'app-form-d-gewaehrter-unterhalt',
@@ -18,5 +19,11 @@ export class FormDGewaehrterUnterhaltComponent implements IFormComponentBase {
   }
   getFragen() {
     return Fragen;
+  }
+  fuegeUnterhaltHinzu() {
+    this.formD.naturalunterhalt.push(new NaturalunterhaltRow());
+  }
+  entferneUnterhalt() {
+    this.formD.naturalunterhalt.pop();
   }
 }

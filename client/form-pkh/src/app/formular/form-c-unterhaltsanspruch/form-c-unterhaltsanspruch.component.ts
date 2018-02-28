@@ -20,13 +20,14 @@ export class FormCUnterhaltsanspruchComponent implements IFormComponentBase {
   getUntertitel(): string {
     return Untertitel.C;
   }
-
   getFragen() {
     return Fragen;
   }
-
   fuegeUnterhaltHinzu() {
     this.formC.unterhaltsverpflichteter.push(new Unterhaltsverpflichteter());
+  }
+  entferneUnterhalt() {
+    this.formC.unterhaltsverpflichteter.pop();
   }
 }
 

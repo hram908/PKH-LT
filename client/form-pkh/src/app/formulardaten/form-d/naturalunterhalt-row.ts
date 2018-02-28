@@ -10,7 +10,7 @@ export class NaturalunterhaltRow {
   ort = '';
   geburtsdatum = '';
   verhaeltnis = '';
-  monatsbeitrag = 0;
+  monatsbetrag = 0;
   hatAngehoerigerEinnahmen = false;
   einnahmenAngehoeriger = 0;
 }

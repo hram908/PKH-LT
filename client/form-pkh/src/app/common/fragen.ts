@@ -44,11 +44,16 @@ export class Fragen {
 
   // Formularabschnitt D
   public static readonly D_Frage = 'Gewähren die Angehörigen Bar- oder Naturalunterhalt?';
-  public static readonly D_Name = 'Nachname';
-  public static readonly D_Vorname = 'Vorname';
+  public static readonly D_Name = 'vollständiger Name';
   public static readonly D_Geburtsdatum = 'Geburtsdatum';
-  public static readonly D_Anschrift = 'Anschrift';
-  public static readonly D_Angehoerige = '';
+  public static readonly D_Strasse = 'Strasse';
+  public static readonly D_Hausnummer = 'Hausnummer';
+  public static readonly D_PLZ = 'PLZ';
+  public static readonly D_Ort = 'Ort';
+  public static readonly D_Verhaeltnis = 'Verhältnis';
+  public static readonly D_Monatsbetrag = 'Monatsbetrag';
+  public static readonly D_FrageAngehoeriger = 'Hat dieser Angehöriger eigene Einnahmen?';
+  public static readonly D_einnahmenAngehoeriger = 'Einnahmen des Angehörigen';
 
   // Formularabschnitt E
 
