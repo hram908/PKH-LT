@@ -6,5 +6,5 @@ import {Einnahmen} from './einnahmen';
 
 export class FormEMaterial {
   antragsteller: Einnahmen;
-  ehegatte: Einnahmen;
+  ehepartner: Einnahmen;
 }

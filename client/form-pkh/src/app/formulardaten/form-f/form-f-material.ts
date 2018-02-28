@@ -5,5 +5,5 @@ import {TypAbzuege} from './typ-abzuege';
 
 export class FormFMaterial {
   antragsteller: TypAbzuege;
-  ehegatte: TypAbzuege;
+  ehepartner: TypAbzuege;
 }
