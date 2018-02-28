@@ -1,3 +1,177 @@
 <div id="formularUeberschrift">
   <h2>{{getUntertitel()}}</h2>
 </div>
+
+<!-- Abschnitt für Steuern/Solidaritätszuschlag -->
+<div class="row">
+  <div class="col-sm-4">
+    <div class="form-group">
+      <label for="steuernBezeichnung">{{getFragen().F_steuernBezeichnung}} </label>
+      <input id="steuernBezeichnung" type="text" class="form-control" placeholder="optional" [(ngModel)]="formF.steuernBezeichnung">
+    </div>
+  </div>
+    <div class="col-sm-4">
+      <div class="form-group">
+        <label for="F_steuernBetrag">{{getFragen().F_steuernBetrag}} </label>
+        <input id="F_steuernBetrag" type="text" class="form-control" placeholder=" " [(ngModel)]="formF.steuernBetrag">
+      </div>
+    </div>
+</div>
+<!-- ENDE Abschnitt Steuern/Solidaritätszuschlag -->
+<!-- Abschnitt für Sozialversicherungsbeiträge -->
+<div class="row">
+  <div class="col-sm-4">
+    <div class="form-group">
+      <label for="sozialversicherungsbeitreageBezeichnung">{{getFragen().F_sozialversicherungsbeitreageBezeichnung}} </label>
+      <input id="sozialversicherungsbeitreageBezeichnung" type="text" class="form-control" placeholder="optional" [(ngModel)]="formF.sozialversicherungsbeitreageBezeichnung">
+    </div>
+  </div>
+  <div class="col-sm-4">
+    <div class="form-group">
+      <label for="sozialversicherungsbeitreageBetrag">{{getFragen().F_sozialversicherungsbeitreageBetrag}} </label>
+      <input id="sozialversicherungsbeitreageBetrag" type="text" class="form-control" placeholder=" " [(ngModel)]="formF.sozialversicherungsbeitreageBetrag">
+    </div>
+  </div>
+</div>
+<!-- ENDE Abschnitt Sozialversicherungsbeiträge -->
+<!-- Abschnitt für den Sonstige Versicherungen -->
+<div class="row">
+  <div class="col-sm-4">
+    <div class="form-group">
+      <label for="sonsVersicherungBezeichnung">{{getFragen().F_sonsVersicherungBezeichnung}} </label>
+      <input id="sonsVersicherungBezeichnung" type="text" class="form-control" placeholder="optional" [(ngModel)]="formF.sonsVersicherungBezeichnung">
+    </div>
+  </div>
+  <div class="col-sm-4">
+    <div class="form-group">
+      <label for="sonsVersicherungBetrag">{{getFragen().F_sonsVersicherungBetrag}} </label>
+      <input id="sonsVersicherungBetrag" type="text" class="form-control" placeholder=" " [(ngModel)]="formF.sonsVersicherungBetrag">
+    </div>
+  </div>
+</div>
+<!-- ENDE Abschnitt Sonstige Versicherungen -->
+<!-- Abschnitt für Fahrt zur Arbeit -->
+<div class="row">
+  <div class="col-sm-4">
+    <div class="form-group">
+      <label for="fahrtZurArbeitBezeichnung">{{getFragen().F_fahrtZurArbeitBezeichnung}} </label>
+      <input id="fahrtZurArbeitBezeichnung" type="text" class="form-control" placeholder="optional" [(ngModel)]="formF.fahrtZurArbeitBezeichnung">
+    </div>
+  </div>
+  <div class="col-sm-4">
+    <div class="form-group">
+      <label for="fahrtZurArbeitBetrag">{{getFragen().F_fahrtZurArbeitBetrag}} </label>
+      <input id="fahrtZurArbeitBetrag" type="text" class="form-control" placeholder=" " [(ngModel)]="formF.fahrtZurArbeitBetrag">
+    </div>
+  </div>
+</div>
+<!-- ENDE Abschnitt Fahrt zur Arbeit -->
+<!-- Abschnitt für den Sonstige Webungskosten/Betirbsausgaben -->
+<div class="row">
+  <div class="col-sm-4">
+    <div class="form-group">
+      <label for="werbeUndBetriebskostenBezichnung">{{getFragen().F_werbeUndBetriebskostenBezichnung}} </label>
+      <input id="werbeUndBetriebskostenBezichnung" type="text" class="form-control" placeholder="optional" [(ngModel)]="formF.werbeUndBetriebskostenBezichnung">
+    </div>
+  </div>
+  <div class="col-sm-4">
+    <div class="form-group">
+      <label for="werbeUndBetriebskostenBetrag">{{getFragen().F_werbeUndBetriebskostenBetrag}} </label>
+      <input id="werbeUndBetriebskostenBetrag" type="text" class="form-control" placeholder=" " [(ngModel)]="formF.werbeUndBetriebskostenBetrag">
+    </div>
+  </div>
+</div>
+<!-- ENDE Abschnitt Sonstige Webungskosten/Betirbsausgaben -->
+
+<!-- Abschnitt Frage F für Ehepartner -->
+<label class="form-check-inline">Haben sie einen Ehepartner/eingetragenen Lebenspartner?</label>
+<div class="row">
+  <div class="col-sm-6">
+    <div class="radio">
+      <label class="radio-inline" for="ehepartnerF_ja"><input type="radio" id="ehepartnerF_ja" name="ehepartnerF" [(ngModel)]="formF.fragenFuerEhepartner" [value]="true">Ja</label>
+      <label class="radio-inline" for="ehepartnerF_nein"><input type="radio" id="ehepartnerF_nein" name="ehepartnerF" [(ngModel)]="formF.fragenFuerEhepartner" [value]="false">Nein</label>
+    </div>
+  </div>
+</div>
+<!-- ENDE Abschnitt Frage F für Ehepartner -->
+<ng-container *ngIf="formF.fragenFuerEhepartner">
+<!-- Abschnitt für Steuern/Solidaritätszuschlag -->
+<div class="row">
+  <div class="col-sm-4">
+    <div class="form-group">
+      <label for="steuernBezeichnung1">{{getFragen().F_steuernBezeichnung}} </label>
+      <input id="steuernBezeichnung1" type="text" class="form-control" placeholder="Pflicht" [(ngModel)]="formF.steuernBezeichnung1" required="required">
+    </div>
+  </div>
+  <div class="col-sm-4">
+    <div class="form-group">
+      <label for="F_steuernBetrag1">{{getFragen().F_steuernBetrag}} </label>
+      <input id="F_steuernBetrag1" type="text" class="form-control" placeholder="Pflicht" [(ngModel)]="formF.steuernBetrag1" required="required">
+    </div>
+  </div>
+</div>
+<!-- ENDE Abschnitt Steuern/Solidaritätszuschlag -->
+<!-- Abschnitt für Sozialversicherungsbeiträge -->
+<div class="row">
+  <div class="col-sm-4">
+    <div class="form-group">
+      <label for="sozialversicherungsbeitreageBezeichnung1">{{getFragen().F_sozialversicherungsbeitreageBezeichnung}} </label>
+      <input id="sozialversicherungsbeitreageBezeichnung1" type="text" class="form-control" placeholder="Pflicht" [(ngModel)]="formF.sozialversicherungsbeitreageBezeichnung1" required="required">
+    </div>
+  </div>
+  <div class="col-sm-4">
+    <div class="form-group">
+      <label for="sozialversicherungsbeitreageBetrag1">{{getFragen().F_sozialversicherungsbeitreageBetrag}} </label>
+      <input id="sozialversicherungsbeitreageBetrag1" type="text" class="form-control" placeholder="Pflicht" [(ngModel)]="formF.sozialversicherungsbeitreageBetrag1" required="required">
+    </div>
+  </div>
+</div>
+<!-- ENDE Abschnitt Sozialversicherungsbeiträge -->
+<!-- Abschnitt für den Sonstige Versicherungen -->
+<div class="row">
+  <div class="col-sm-4">
+    <div class="form-group">
+      <label for="sonsVersicherungBezeichnung1">{{getFragen().F_sonsVersicherungBezeichnung}} </label>
+      <input id="sonsVersicherungBezeichnung1" type="text" class="form-control" placeholder="Pflicht" [(ngModel)]="formF.sonsVersicherungBezeichnung1" required="required">
+    </div>
+  </div>
+  <div class="col-sm-4">
+    <div class="form-group">
+      <label for="sonsVersicherungBetrag1">{{getFragen().F_sonsVersicherungBetrag}} </label>
+      <input id="sonsVersicherungBetrag1" type="text" class="form-control" placeholder="Pflicht" [(ngModel)]="formF.sonsVersicherungBetrag1" required="required">
+    </div>
+  </div>
+</div>
+<!-- ENDE Abschnitt Sonstige Versicherungen -->
+<!-- Abschnitt für Fahrt zur Arbeit -->
+<div class="row">
+  <div class="col-sm-4">
+    <div class="form-group">
+      <label for="fahrtZurArbeitBezeichnung1">{{getFragen().F_fahrtZurArbeitBezeichnung}} </label>
+      <input id="fahrtZurArbeitBezeichnung1" type="text" class="form-control" placeholder="Pflicht" [(ngModel)]="formF.fahrtZurArbeitBezeichnung1" required="required">
+    </div>
+  </div>
+  <div class="col-sm-4">
+    <div class="form-group">
+      <label for="fahrtZurArbeitBetrag1">{{getFragen().F_fahrtZurArbeitBetrag}} </label>
+      <input id="fahrtZurArbeitBetrag1" type="text" class="form-control" placeholder="Pflicht" [(ngModel)]="formF.fahrtZurArbeitBetrag1" required="required">
+    </div>
+  </div>
+</div>
+<!-- ENDE Abschnitt Fahrt zur Arbeit -->
+<!-- Abschnitt für den Sonstige Webungskosten/Betirbsausgaben -->
+<div class="row">
+  <div class="col-sm-4">
+    <div class="form-group">
+      <label for="werbeUndBetriebskostenBezichnung1">{{getFragen().F_werbeUndBetriebskostenBezichnung}} </label>
+      <input id="werbeUndBetriebskostenBezichnung1" type="text" class="form-control" placeholder="Pflicht" [(ngModel)]="formF.werbeUndBetriebskostenBezichnung1" required="required">
+    </div>
+  </div>
+  <div class="col-sm-4">
+    <div class="form-group">
+      <label for="werbeUndBetriebskostenBetrag1">{{getFragen().F_werbeUndBetriebskostenBetrag}} </label>
+      <input id="werbeUndBetriebskostenBetrag1" type="text" class="form-control" placeholder="Pflicht" [(ngModel)]="formF.werbeUndBetriebskostenBetrag1" required="required">
+    </div>
+  </div>
+</div>
+<!-- ENDE Abschnitt Sonstige Webungskosten/Betirbsausgaben -->
