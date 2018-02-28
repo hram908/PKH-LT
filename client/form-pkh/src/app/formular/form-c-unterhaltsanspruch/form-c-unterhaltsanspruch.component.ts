@@ -27,7 +27,9 @@ export class FormCUnterhaltsanspruchComponent implements IFormComponentBase {
     this.formC.unterhaltsverpflichteter.push(new Unterhaltsverpflichteter());
   }
   entferneUnterhalt() {
-    this.formC.unterhaltsverpflichteter.pop();
+    if (this.formC.unterhaltsverpflichteter.length !== 1) {
+      this.formC.unterhaltsverpflichteter.pop();
+    }
   }
 }
 

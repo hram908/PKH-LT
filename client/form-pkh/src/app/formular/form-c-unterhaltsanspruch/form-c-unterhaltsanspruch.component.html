@@ -30,7 +30,7 @@
         <label class="radio-inline" for="Unterhaltsanspruch_ja"><input type="radio" id="Unterhaltsanspruch_ja"
                                                                        name="Unterhaltsanspruch"
                                                                        [(ngModel)]="formC.hatUnterhaltsanspruch"
-                                                                       [value]="true">Ja</label>
+                                                                       [value]="true" (click)="fuegeUnterhaltHinzu()">Ja</label>
         <label class="radio-inline" for="Unterhaltsanspruch_nein"><input type="radio" id="Unterhaltsanspruch_nein"
                                                                          name="Unterhaltsanspruch"
                                                                          [(ngModel)]="formC.hatUnterhaltsanspruch"
@@ -47,38 +47,10 @@
     </ng-container>
 
   </div>
-
-  <!--<ng-container >
-    <div class="row">
-      <div class="col-sm-5">
-        <div class="form-group">
-        <label for="Unterhaltsgebender">{{getFragen().C_FrageJa}}</label>
-        </div>
-      </div>
-    </div>
-      <div class="row">
-        <div class="col-sm-5">
-          <input id="Unterhaltsgebender" type="text" class="form-control" [(ngModel)]="formC.unterhaltsverpflichteter[1]" placeholder="Optional">
-        </div>
-          <div class="col-sm-1">
-          <button class="btn btn-group-md btn-primary" (onclick)="fuegeUnterhaltHinzu()"><span class="glyphicon glyphicon-plus"></span></button>
-          </div>
-      </div>
-
-  </ng-container >
-  <div class="row">
-    <div class="col-sm-5">
-      <div class="form-group">
-        <label>{{getFragen().C_FrageJa}}</label>
-      </div>
-    </div>
-  </div>
-  -->
-  <!-- TODO: Abstrand zwischen den neuen Einträgen etwas erhöhen -->
   <ng-container *ngIf="formC.hatUnterhaltsanspruch">
     <div class="row" >
-      <div *ngFor="let person of formC.unterhaltsverpflichteter">
-        <div class="col-sm-7">
+      <div *ngFor="let person of formC.unterhaltsverpflichteter; let i = index">
+        <div class="col-sm-5" *ngIf="i != 0">
           <label>{{getFragen().C_FrageJa}}</label>
           <input type="text" class="form-control" [(ngModel)]="person.name" placeholder="...">
         </div>

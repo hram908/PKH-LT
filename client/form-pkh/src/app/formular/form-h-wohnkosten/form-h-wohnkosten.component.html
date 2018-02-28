@@ -155,7 +155,7 @@
     <label class="form-check-inline"> 6. Haben Sie Belastungen aus Fremdmitteln als (Mit-)Eigentümer? (z.B.
       Dahrlensverträge, Kredite)</label>
     <div class="row">
-      <div class="col-sm-6">
+      <div class="col-sm-2">
         <div class="radio">
           <label class="radio-inline" for="dahrlen_ja"><input type="radio" id="dahrlen_ja" name="belastung"
                                                               [(ngModel)]="formH.eigentumsDaten.hatBelastungAusFremdmitteln"
@@ -165,21 +165,17 @@
                                                                 [value]="false">Nein</label>
         </div>
       </div>
+
+      <div class="col-sm-2" *ngIf="formH.eigentumsDaten.hatBelastungAusFremdmitteln">
+        <button class="btn btn-group-md btn-primary" (click)="fuegeBelastungHinzu()"><span
+          class="glyphicon glyphicon-plus"></span></button>
+        <button class="btn btn-group-md btn-primary" (click)="entferneBelastung()"><span
+          class="glyphicon glyphicon-minus"></span></button>
+      </div>
     </div>
     <!-- ENDE Abschnitt Frage nach Wohnung 6 -->
     <!-- Abschnitt Daten für Wohnung 6-->
     <ng-container *ngIf="formH.eigentumsDaten.hatBelastungAusFremdmitteln">
-      <div class="row">
-        <div class="col-sm-1">
-          <button class="btn btn-group-md btn-primary" (click)="fuegeBelastungHinzu()"><span
-            class="glyphicon glyphicon-plus"></span></button>
-        </div>
-        <div class="col-sm-1">
-          <button class="btn btn-group-md btn-primary" (click)="entferneBelastung()"><span
-            class="glyphicon glyphicon-minus"></span></button>
-        </div>
-      </div>
-
       <!-- Abschnitt für Wohnung 5 -->
       <div *ngFor="let belastung of formH.eigentumsDaten.belastungAusFremdmitteln; let i = index">
         <div class="row">
