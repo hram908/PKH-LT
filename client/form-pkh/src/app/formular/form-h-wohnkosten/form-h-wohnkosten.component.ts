@@ -14,6 +14,7 @@ export class FormHWohnkostenComponent implements IFormComponentBase {
   constructor(public formH: FormHMaterial) {
   }
 
+  // tslint:disable-next-line
   getFragen() {
     return Fragen;
   }
@@ -23,11 +24,15 @@ export class FormHWohnkostenComponent implements IFormComponentBase {
   }
 
   fuegeBelastungHinzu() {
-    this.formH.eigentumsDaten.belastungAusFremdmitteln.push(new FremdmittelBelastung());
+    if (this.formH.eigentumsDaten.belastungAusFremdmitteln.length < 9) {
+      this.formH.eigentumsDaten.belastungAusFremdmitteln.push(new FremdmittelBelastung());
+    }
   }
 
   entferneBelastung() {
-    this.formH.eigentumsDaten.belastungAusFremdmitteln.pop();
+    if (this.formH.eigentumsDaten.belastungAusFremdmitteln.length > 1) {
+      this.formH.eigentumsDaten.belastungAusFremdmitteln.pop();
+    }
   }
 }
 

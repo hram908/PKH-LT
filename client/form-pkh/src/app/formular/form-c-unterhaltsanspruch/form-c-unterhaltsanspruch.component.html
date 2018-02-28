@@ -38,22 +38,20 @@
       </div>
     </div>
     <ng-container *ngIf="formC.hatUnterhaltsanspruch">
-      <div class="col-sm-1">
-        <button class="btn btn-group-md btn-primary" (click)="fuegeUnterhaltHinzu()"><span class="glyphicon glyphicon-plus"></span></button>
-      </div>
-      <div class="col-sm-1">
-        <button class="btn btn-group-md btn-primary" (click)="entferneUnterhalt()"><span class="glyphicon glyphicon-minus"></span></button>
+      <div class="col-sm-2">
+        <button class="btn btn-group-md btn-primary" [disabled]="formC.unterhaltsverpflichteter.length > 6" (click)="fuegeUnterhaltHinzu()"><span
+          class="glyphicon glyphicon-plus"></span></button>
+        <button class="btn btn-group-md btn-primary" [disabled]="formC.unterhaltsverpflichteter.length <= 1" (click)="entferneUnterhalt()"><span
+          class="glyphicon glyphicon-minus"></span></button>
       </div>
     </ng-container>
 
   </div>
   <ng-container *ngIf="formC.hatUnterhaltsanspruch">
-    <div class="row" >
-      <div *ngFor="let person of formC.unterhaltsverpflichteter; let i = index">
-        <div class="col-sm-5" *ngIf="i != 0">
-          <label>{{getFragen().C_FrageJa}}</label>
-          <input type="text" class="form-control" [(ngModel)]="person.name" placeholder="...">
-        </div>
+    <div class="row" *ngFor="let person of formC.unterhaltsverpflichteter; let i = index">
+      <div class="col-sm-5" *ngIf="i != 0">
+        <label>{{getFragen().C_FrageJa}}</label>
+        <input type="text" class="form-control" [(ngModel)]="person.name" placeholder="...">
       </div>
     </div>
 

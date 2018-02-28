@@ -153,25 +153,27 @@
 
     <!-- Abschnitt Frage nach Wohnung 6 -->
     <label class="form-check-inline"> 6. Haben Sie Belastungen aus Fremdmitteln als (Mit-)Eigentümer? (z.B.
-      Dahrlensverträge, Kredite)</label>
+      Darlehensverträge, Kredite)</label>
     <div class="row">
       <div class="col-sm-2">
         <div class="radio">
           <label class="radio-inline" for="dahrlen_ja"><input type="radio" id="dahrlen_ja" name="belastung"
                                                               [(ngModel)]="formH.eigentumsDaten.hatBelastungAusFremdmitteln"
-                                                              [value]="true">Ja</label>
+                                                              [value]="true" (click)="fuegeBelastungHinzu()">Ja</label>
           <label class="radio-inline" for="dahrlen_nein"><input type="radio" id="dahrlen_nein" name="belastung"
                                                                 [(ngModel)]="formH.eigentumsDaten.hatBelastungAusFremdmitteln"
                                                                 [value]="false">Nein</label>
         </div>
       </div>
 
-      <div class="col-sm-2" *ngIf="formH.eigentumsDaten.hatBelastungAusFremdmitteln">
-        <button class="btn btn-group-md btn-primary" (click)="fuegeBelastungHinzu()"><span
-          class="glyphicon glyphicon-plus"></span></button>
-        <button class="btn btn-group-md btn-primary" (click)="entferneBelastung()"><span
-          class="glyphicon glyphicon-minus"></span></button>
-      </div>
+      <ng-container *ngIf="formH.eigentumsDaten.hatBelastungAusFremdmitteln">
+        <div class="col-sm-2">
+          <button class="btn btn-group-md btn-primary" [disabled]="formH.eigentumsDaten.belastungAusFremdmitteln.length > 8" (click)="fuegeBelastungHinzu()"><span
+            class="glyphicon glyphicon-plus"></span></button>
+          <button class="btn btn-group-md btn-primary" [disabled]="formH.eigentumsDaten.belastungAusFremdmitteln.length <= 1" (click)="entferneBelastung()"><span
+            class="glyphicon glyphicon-minus"></span></button>
+        </div>
+      </ng-container>
     </div>
     <!-- ENDE Abschnitt Frage nach Wohnung 6 -->
     <!-- Abschnitt Daten für Wohnung 6-->

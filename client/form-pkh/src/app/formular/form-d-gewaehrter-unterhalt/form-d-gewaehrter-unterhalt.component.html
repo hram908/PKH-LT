@@ -21,10 +21,10 @@
      </div>
       <ng-container *ngIf="formD.gewaehrtNaturalunterhalt">
         <div class="col-sm-3">
-          <button class="btn btn-group-md btn-primary" (click)="fuegeUnterhaltHinzu()">weiteren Angehörigen hinzufügen</button>
+          <button class="btn btn-group-md btn-primary" (click)="fuegeUnterhaltHinzu()">Angehörigen hinzufügen</button>
         </div>
         <div class="col-sm-2">
-          <button class="btn btn-group-md btn-primary" (click)="entferneUnterhalt()">entfernen</button>
+          <button class="btn btn-group-md btn-primary" (click)="entferneUnterhalt()">Angehörigen entfernen</button>
         </div>
       </ng-container>
 
@@ -96,20 +96,21 @@
         <div class="row">
           <div class="col-sm-6">
             <div class="form-group">
-              <label for="angehoerigenEinnahmen_ja_{{i}}">{{getFragen().D_FrageAngehoeriger}}</label>
+
             </div>
           </div>
         </div>
 
         <div class="row">
-          <div class="col-sm-2">
+          <div class="col-sm-4">
+            <label for="angehoerigenEinnahmen_ja_{{i}}">{{getFragen().D_FrageAngehoeriger}}</label>
             <div class="radio">
-              <label class="radio-inline" for="angehoerigenEinnahmen_ja_{{i}}"><input type="radio" id="angehoerigenEinnahmen_ja_{{i}}" name="angehoerigenEinnahmen" [(ngModel)]="naturalunterhalt.hatAngehoerigerEinnahmen" [value]="true">Ja</label>
-              <label class="radio-inline" for="angehoerigenEinnamen_nein_{{i}}"><input type="radio" id="angehoerigenEinnamen_nein_{{i}}" name="angehörigenEinnahmen" [(ngModel)]="naturalunterhalt.hatAngehoerigerEinnahmen" [value]="false">Nein</label>
+              <label class="radio-inline" for="angehoerigenEinnahmen_ja_{{i}}"><input type="radio" id="angehoerigenEinnahmen_ja_{{i}}" name="angehoerigenEinnahmen_{{i}}" [(ngModel)]="naturalunterhalt.hatAngehoerigerEinnahmen" [value]="true">Ja</label>
+              <label class="radio-inline" for="angehoerigenEinnamen_nein_{{i}}"><input type="radio" id="angehoerigenEinnamen_nein_{{i}}" name="angehörigenEinnahmen_{{i}}" [(ngModel)]="naturalunterhalt.hatAngehoerigerEinnahmen" [value]="false">Nein</label>
             </div>
           </div>
           <ng-container *ngIf="naturalunterhalt.hatAngehoerigerEinnahmen">
-            <div class="col-sm-2">
+            <div class="col-sm-4">
               <div class="form-group">
                 <label for="angehoerigenEinnahmen_{{i}}">{{getFragen().D_einnahmenAngehoeriger}} </label>
                 <input id="angehoerigenEinnahmen_{{i}}" type="text" class="form-control" placeholder="..." [(ngModel)]="naturalunterhalt.einnahmenAngehoeriger">

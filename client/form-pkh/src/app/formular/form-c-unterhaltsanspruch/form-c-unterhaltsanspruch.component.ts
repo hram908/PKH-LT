@@ -20,14 +20,20 @@ export class FormCUnterhaltsanspruchComponent implements IFormComponentBase {
   getUntertitel(): string {
     return Untertitel.C;
   }
+
+  // tslint:disable-next-line
   getFragen() {
     return Fragen;
   }
+
   fuegeUnterhaltHinzu() {
-    this.formC.unterhaltsverpflichteter.push(new Unterhaltsverpflichteter());
+    if (this.formC.unterhaltsverpflichteter.length < 6) {
+      this.formC.unterhaltsverpflichteter.push(new Unterhaltsverpflichteter());
+    }
   }
+
   entferneUnterhalt() {
-    if (this.formC.unterhaltsverpflichteter.length !== 1) {
+    if (this.formC.unterhaltsverpflichteter.length > 1) {
       this.formC.unterhaltsverpflichteter.pop();
     }
   }
