@@ -3,6 +3,8 @@ package pkh.form.common;
 import com.google.common.base.Charsets;
 import com.google.common.io.Resources;
 import com.ibm.watson.developer_cloud.conversation.v1.Conversation;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 import java.io.IOException;
@@ -12,6 +14,7 @@ import java.util.List;
 
 @Service
 public class WatsonConversationPropertyService {
+    private final Logger Log = LoggerFactory.getLogger(WatsonConversationPropertyService.class);
 
     private static final String WATSON_CONVERSATION_CREDENTIAL_PATH = "watson-conversation-credentials.txt";
 
@@ -46,10 +49,10 @@ public class WatsonConversationPropertyService {
                 }
             }
 
-            System.out.println("workspaceid: " + workspaceId + " username: " + username + " password: " + password + " date: " + versionDate);
         } catch (IOException e) {
-            e.printStackTrace();
+            Log.error("Couldn't create watson conversation properties from file. Probably couldn't find file in resources. Stacktrace: " + e.getStackTrace());
         }
+        Log.info("Finished reading watson conversation credentials from file.");
     }
 
     public String getWorkspaceId() {
