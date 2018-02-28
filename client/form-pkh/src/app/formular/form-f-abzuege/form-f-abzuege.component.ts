@@ -10,6 +10,7 @@ import {FormAMaterial} from '../../formulardaten/form-a/form-a-material';
   templateUrl: './form-f-abzuege.component.html',
   styleUrls: ['./form-f-abzuege.component.css']
 })
+
 export class FormFAbzuegeComponent implements IFormComponentBase {
   constructor(public formF: FormFMaterial, public formA: FormAMaterial) {
   }

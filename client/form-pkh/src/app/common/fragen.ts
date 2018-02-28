@@ -67,6 +67,7 @@ export class Fragen {
   public static readonly E_Unterhalt = 'Unterhalt?';
   public static readonly E_Rente = 'Rente/Pension?';
   public static readonly E_Arbeitslosengeld1 = 'Arbeitslosengeld1?';
+
   // Formularabschnitt F
   public static readonly F_steuernBezeichnung = 'Steuern/Solidaritätszuschlag';
   public static readonly F_steuernBetrag = 'Betrag in EUR pro Monat';
@@ -74,8 +75,7 @@ export class Fragen {
   public static readonly F_sozialversicherungsbeitreageBetrag = 'Betrag in EUR pro Monat';
   public static readonly F_sonsVersicherungBezeichnung = 'Sonstige Versicherungen';
   public static readonly F_sonsVersicherungBetrag = 'Betrag in EUR pro Monat';
-  public static readonly F_fahrtZurArbeitBezeichnung = 'Fahrt zur Arbeit' +
-    '(Kosten für öffentliche Verkehrsmittel oder einfache Entfernung bei der KFZ-Nutzung';
+  public static readonly F_fahrtZurArbeitBezeichnung = 'Fahrt zur Arbeit';
   public static readonly F_fahrtZurArbeitBetrag = 'Betrag in EUR pro Monat';
   public static readonly F_werbeUndBetriebskostenBezichnung = 'Sonstige Werbekosten/Betirebskosten';
   public static readonly werbeUndBetriebskostenBetrag = 'Betrag in EUR pro Monat';
