@@ -33,7 +33,6 @@ dependencies {
     compile ("org.apache.pdfbox:pdfbox:2.0.8")
 
     compile("com.ibm.watson.developer_cloud:conversation:4.2.1")
-    compile ("com.ibm.watson.developer_cloud:watson-spring-boot-starter:0.1.0")
 
     testCompile('org.springframework.boot:spring-boot-starter-test')
 }

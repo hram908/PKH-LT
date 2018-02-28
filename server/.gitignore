@@ -11,5 +11,5 @@ gradlew.bat
 # Build files
 **/build/
 
-# generated
+# Resources
 **/resources
