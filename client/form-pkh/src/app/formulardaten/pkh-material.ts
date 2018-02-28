@@ -9,12 +9,13 @@ import {FormHMaterial} from './form-h/form-h-material';
 import {FormIMaterial} from './form-i/form-i-material';
 import {FormJMaterial} from './form-j/form-j-material';
 import {Injectable} from '@angular/core';
+import {Notiz} from './notiz';
 
 /**
  * @author Isabella
  **/
 @Injectable()
-export class PkhFormMaterial {
+export class PkhMaterial {
   constructor(public abschnittA: FormAMaterial,
               public abschnittB: FormBMaterial,
               public abschnittC: FormCMaterial,
@@ -24,6 +25,7 @@ export class PkhFormMaterial {
               public abschnittG: FormGMaterial,
               public abschnittH: FormHMaterial,
               public abschnittI: FormIMaterial,
-              public abschnittJ: FormJMaterial) {
+              public abschnittJ: FormJMaterial,
+              public notiz: Notiz) {
   }
 }

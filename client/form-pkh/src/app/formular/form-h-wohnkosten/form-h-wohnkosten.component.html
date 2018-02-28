@@ -45,15 +45,15 @@
   <div class="col-sm-6">
     <div class="radio">
       <label class="radio-inline" for="mieter_ja"><input type="radio" id="mieter_ja" name="mieter"
-                                                         [(ngModel)]="formH.mieter" [value]="true">Ja</label>
+                                                         [(ngModel)]="formH.istMieter" [value]="true">Ja</label>
       <label class="radio-inline" for="mieter_nein"><input type="radio" id="mieter_nein" name="mieter"
-                                                           [(ngModel)]="formH.mieter" [value]="false">Nein</label>
+                                                           [(ngModel)]="formH.istMieter" [value]="false">Nein</label>
     </div>
   </div>
 </div>
 <!-- ENDE Abschnitt Frage nach Wohnung 4 -->
 <!-- Abschnitt Daten für Wohnung 4-->
-<ng-container *ngIf="formH.mieter">
+<ng-container *ngIf="formH.istMieter">
   <!-- Abschnitt für Wohnung 4 -->
   <div class="row">
     <div class="col-sm-2">
@@ -100,17 +100,17 @@
     <div class="col-sm-6">
       <div class="radio">
         <label class="radio-inline" for="eigentuemer_ja"><input type="radio" id="eigentuemer_ja" name="eigentum"
-                                                                [(ngModel)]="formH.eigentuemer"
+                                                                [(ngModel)]="formH.istEigentuemer"
                                                                 [value]="true">Ja</label>
         <label class="radio-inline" for="eigentuemer_nein"><input type="radio" id="eigentuemer_nein" name="eigentum"
-                                                                  [(ngModel)]="formH.eigentuemer"
+                                                                  [(ngModel)]="formH.istEigentuemer"
                                                                   [value]="false">Nein</label>
       </div>
     </div>
   </div>
   <!-- ENDE Abschnitt Frage nach Wohnung 5 -->
   <!-- Abschnitt Daten für Wohnung 5-->
-  <ng-container *ngIf="formH.eigentuemer">
+  <ng-container *ngIf="formH.istEigentuemer">
     <!-- Abschnitt für Wohnung 5 -->
     <div class="row">
       <div class="col-sm-2">

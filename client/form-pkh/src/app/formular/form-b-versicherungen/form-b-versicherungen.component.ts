@@ -3,6 +3,7 @@ import {Untertitel} from '../../common/untertitel';
 import {IFormComponentBase} from '../../common/i-form-component-base';
 import {FormBMaterial} from '../../formulardaten/form-b/form-b-material';
 import {Fragen} from '../../common/fragen';
+import {Notiz} from '../../formulardaten/notiz';
 
 @Component({
   selector: 'app-form-b-versicherungen',
@@ -10,7 +11,7 @@ import {Fragen} from '../../common/fragen';
   styleUrls: ['./form-b-versicherungen.component.css']
 })
 export class FormBVersicherungenComponent implements IFormComponentBase {
-  constructor(public formB: FormBMaterial) {
+  constructor(public formB: FormBMaterial, public notiz: Notiz) {
   }
 
   getUntertitel(): string {
@@ -22,7 +23,7 @@ export class FormBVersicherungenComponent implements IFormComponentBase {
   }
 
   private setNotiz() {
-    this.formB.notiz = 'Möglichte Kostenträger prüfen.';
-    console.log(this.formB.notiz);
+    this.notiz.B.notiz = 'Möglichte Kostenträger prüfen.';
+    console.log(this.notiz.B.notiz);
   }
 }

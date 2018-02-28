@@ -14,6 +14,9 @@ import {FormAMaterial} from '../../formulardaten/form-a/form-a-material';
 export class FormCUnterhaltsanspruchComponent implements IFormComponentBase {
   constructor(public formC: FormCMaterial,
               public formA: FormAMaterial) {
+    if (formA.antragsteller.familienstand === 'Eingetragene Partnerschaft' || formA.antragsteller.familienstand === 'Verheiratet') {
+      this.fuegeUnterhaltHinzu();
+    }
   }
 
   getUntertitel(): string {
@@ -24,6 +27,9 @@ export class FormCUnterhaltsanspruchComponent implements IFormComponentBase {
     return Fragen;
   }
 
+  fuegeUnterhaltHinzu() {
+    this.formC.unterhaltsverpflichteter.push('');
+  }
 }
 
 

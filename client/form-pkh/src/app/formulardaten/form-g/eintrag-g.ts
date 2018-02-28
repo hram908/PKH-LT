@@ -3,6 +3,6 @@
  **/
 
 export class EintragG {
-  art = '';
+  detailEingabe = '';
   vermoegen = '';
 }

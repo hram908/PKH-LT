@@ -5,5 +5,5 @@ import {NaturalunterhaltRow} from './naturalunterhalt-row';
 
 export class FormDMaterial {
   gewaehrtNaturalunterhalt = false;
-  naturalunterhalt: NaturalunterhaltRow[];
+  naturalunterhalt: NaturalunterhaltRow[] = [new NaturalunterhaltRow()];
 }

@@ -3,8 +3,8 @@
  **/
 
 export class EintragI {
-  beschreibung: string;
-  restschuld: number;
-  gesamtbelastungMtl: number;
-  einigeZahlung: number;
+  beschreibung = '';
+  restschuld = 0;
+  gesamtbelastungMtl = 0;
+  alleinigeZahlung = 0;
 }

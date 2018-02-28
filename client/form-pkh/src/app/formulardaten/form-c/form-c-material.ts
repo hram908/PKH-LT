@@ -4,6 +4,5 @@
 
 export class FormCMaterial {
   hatUnterhaltsanspruch = false;
-  UnterhaltsgebenderEhe = '';
-  Unterhaltsgebender = '';
+  unterhaltsverpflichteter: string[] = ['test1', 'test2'];
 }

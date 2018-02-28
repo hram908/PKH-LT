@@ -4,10 +4,16 @@ import {EintragG} from './eintrag-g';
  **/
 
 export class FormGMaterial {
-  konto: EintragG;
-  gruneigentum: EintragG[];
+  hatKonto = true;
+  konto: EintragG[];
+  hatGrundeigentum = false;
+  grundeigentum: EintragG[];
+  hatKraftfahrzeug = false;
   kraftfahrzeuge: EintragG[];
+  hatWertgegenstaende = false;
   wertgegenstaende: EintragG[];
+  hatVersicherung = false;
   versicherung: EintragG[];
+  hatSonstige = false;
   sonstige: EintragG[];
 }
