@@ -166,30 +166,30 @@
     </div>
     <!-- ENDE Abschnitt Frage nach Wohnung 6 -->
     <!-- Abschnitt Daten für Wohnung 6-->
-    <ng-container *ngIf="formH.dahrlen">
-      <!-- Abschnitt für Wohnung 5 -->
-      <div class="row">
-        <div class="col-sm-4">
-          <div class="form-group">
-            <label for="ZinsenUndTilgung2">{{getFragen().H_bezeichnung}} </label>
-            <input id="ZinsenUndTilgung2" type="text" class="form-control" placeholder="Pflicht"
-                   [(ngModel)]="formH.zinsenUndTilgung" required="required">
+        <ng-container *ngIf="formH.dahrlen">
+          <!-- Abschnitt für Wohnung 5 -->
+          <div class="row">
+            <div class="col-sm-4">
+              <div class="form-group">
+                <label for="ZinsenUndTilgung2">{{getFragen().H_bezeichnung}} </label>
+                <input id="ZinsenUndTilgung2" type="text" class="form-control" placeholder="Pflicht"
+                       [(ngModel)]="formH.zinsenUndTilgung" required="required">
+              </div>
+            </div>
+            <div class="col-sm-3">
+              <div class="form-group">
+                <label for="Heizungskosten2">{{getFragen().H_dahrlenRestschuld}}</label>
+                <input id="Heizungskosten2" type="text" class="form-control" placeholder="Pflicht"
+                       [(ngModel)]="formH.heizungskosten" required="required">
+              </div>
+            </div>
+            <div class="col-sm-3">
+              <div class="form-group">
+                <label for="uebNebenkosten2">{{getFragen().H_dahrlenZinsenUndTilgung}} </label>
+                <input id="uebNebenkosten2" type="text" class="form-control" placeholder="Pflicht"
+                       [(ngModel)]="formH.uebrigeNebenkosten" required="required">
+              </div>
+            </div>
           </div>
-        </div>
-        <div class="col-sm-3">
-          <div class="form-group">
-            <label for="Heizungskosten2">{{getFragen().H_dahrlenRestschuld}}</label>
-            <input id="Heizungskosten2" type="text" class="form-control" placeholder="Pflicht"
-                   [(ngModel)]="formH.heizungskosten" required="required">
-          </div>
-        </div>
-        <div class="col-sm-3">
-          <div class="form-group">
-            <label for="uebNebenkosten2">{{getFragen().H_dahrlenZinsenUndTilgung}} </label>
-            <input id="uebNebenkosten2" type="text" class="form-control" placeholder="Pflicht"
-                   [(ngModel)]="formH.uebrigeNebenkosten" required="required">
-          </div>
-        </div>
-      </div>
-    </ng-container>
-    <!-- ENDE Abschnitt Frage nach Wohnung 6-->
+        </ng-container>
+        <!-- ENDE Abschnitt Frage nach Wohnung 6-->

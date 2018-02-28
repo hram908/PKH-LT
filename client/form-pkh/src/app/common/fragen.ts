@@ -50,6 +50,9 @@ export class Fragen {
   // Formularabschnitt F
 
   // Formularabschnitt G
+  public static readonly G_bankkonto = '2. Anzahl der Zimmer';
+  public static readonly G_bankkontoStand = '2. Anzahl der Zimmer';
+
 
   // Formularabschnitt H
   public static readonly H_gesamtgroesseWohnung = ' 1. Gesamtgröße des Wohnraums, den Sie ' +
