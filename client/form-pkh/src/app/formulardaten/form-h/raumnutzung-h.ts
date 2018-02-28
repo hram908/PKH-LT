@@ -11,6 +11,7 @@ export class RaumnutzungH {
   gesamtbetrag: number;
   alleinigeZahlung: number;
 
-  belastungAusFremdmitteln: FremdmittelBelastung[];
+  hatBelastungAusFremdmitteln = false;
+  belastungAusFremdmitteln: FremdmittelBelastung[] = [new FremdmittelBelastung()];
 }
 

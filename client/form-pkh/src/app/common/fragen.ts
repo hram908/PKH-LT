@@ -80,6 +80,18 @@ export class Fragen {
   public static readonly G_sonstigeBetrag = 'Betrag in EUR';
 
   // Formularabschnitt H
+  public static readonly H = {
+    'groesseWohnung': {
+      'WHG_KRZ': '1. Größe der Wohnung',
+      'WHG_LNG': 'Gesamtgröße des Wohnraums, den Sie \' +\n' +
+      '    \'allein oder gemeinsam mit anderen Personen bewohnen',
+    },
+    'anzahlZimmer': '2. Anzahl der Zimmer',
+    'anzahlPersonen': {
+      'PER_KRZ': '3. Anzahl der Personen',
+      'PER_LNG': 'Anzahl der Personen, die diese Wohnraum bewohnen',
+    },
+  };
   public static readonly H_gesamtgroesseWohnung = ' 1. Gesamtgröße des Wohnraums, den Sie ' +
     'allein oder gemeinsam mit anderen Personen bewohnen';
   public static readonly H_anzahlZimmer = '2. Anzahl der Zimmer';

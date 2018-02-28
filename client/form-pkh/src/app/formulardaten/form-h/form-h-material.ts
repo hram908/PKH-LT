@@ -10,8 +10,8 @@ export class FormHMaterial {
   personenImWohnraum = 0;
 
   istMieter = false;
-  mietDaten: RaumnutzungH;
+  mietDaten: RaumnutzungH = new RaumnutzungH();
 
   istEigentuemer = false;
-  eigentumsDaten: RaumnutzungH;
+  eigentumsDaten: RaumnutzungH = new RaumnutzungH();
 }
