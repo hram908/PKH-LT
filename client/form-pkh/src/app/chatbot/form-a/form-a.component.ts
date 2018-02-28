@@ -20,7 +20,5 @@ export class FormAComponent {
   }
 
   public onUserInput() {
-    this.showUserInput = true;
-    this.chatbotText = this.chatbotService.generateAnswer(this.lastUserInput);
-  }
+   }
 }
