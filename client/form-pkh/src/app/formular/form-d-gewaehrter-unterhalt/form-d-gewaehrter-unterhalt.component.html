@@ -1,3 +1,44 @@
 <div id="formularUeberschrift">
   <h2>{{getUntertitel()}}</h2>
+
+
+<div class="controls">
+
+  <div class="row">
+    <div class="col-sm-6">
+      <div class="form-group">
+        <label for="Unterhaltszahlung_ja">{{getFragen().D_Frage}}</label>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-2">
+      <div class="radio">
+        <label class="radio-inline" for="Unterhaltszahlung_ja"><input type="radio" id="Unterhaltszahlung_ja" name="Unterhaltszahlung" [(ngModel)]="formD.gewaehrtNaturalunterhalt" [value]="true">Ja</label>
+        <label class="radio-inline" for="Unterhaltszahlung_nein"><input type="radio" id="Unterhaltszahlung_nein" name="Unterhaltszahlung" [(ngModel)]="formD.gewaehrtNaturalunterhalt" [value]="false">Nein</label>
+      </div>
+    </div>
+  </div>
+
+  <ng-container *ngIf="formD.gewaehrtNaturalunterhalt">
+    <div class="row">
+      <div class="col-sm-3">
+        <div class="form-group">
+          <label for="named">{{getFragen().D_Name}}</label>
+          <input id="named" type="text" class="form-control" placeholder="Pflicht" [(ngModel)]="formDNat.vollstaendigerName"
+                 required="required" data-error="Der Vorname ist notwendig.">
+        </div>
+      </div>
+
+      <div class="col-sm-3">
+        <div class="form-group">
+          <label for="geburtsdatumd">{{getFragen().D_Geburtsdatum}} *</label>
+          <input id="geburtsdatumd" type="text" class="form-control" placeholder="Pflicht" [(ngModel)]="formDNat.vollstaendigerName"
+                 required="required" data-error="Der Vorname ist notwendig.">
+        </div>
+      </div>
+    </div>
+  </ng-container>
+
+</div>
 </div>

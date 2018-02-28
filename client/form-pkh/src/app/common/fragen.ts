@@ -43,6 +43,11 @@ export class Fragen {
     'wirtschaftlichen Verhältnisse an, sofern diese nicht bereits vollständig aus den folgenden Abschnitten ersichtlich sind.';
 
   // Formularabschnitt D
+  public static readonly D_Frage = 'Gewähren die Angehörigen Bar- oder Naturalunterhalt?';
+  public static readonly D_Name = 'Nachname';
+  public static readonly D_Vorname = 'Vorname';
+  public static readonly D_Geburtsdatum = 'Geburtsdatum';
+  public static readonly D_Anschrift = 'Anschrift';
   public static readonly D_Angehoerige = '';
 
   // Formularabschnitt E
