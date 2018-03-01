@@ -90,142 +90,146 @@
       </div>
     </div>
   </div>
-  <!-- ENDE Abschnitt Frage nach Wohnung 4-->
+</ng-container>
+<!-- ENDE Abschnitt Frage nach Wohnung 4-->
 
-  <!-- Abschnitt Frage nach Wohnung 5 -->
-  <label class="form-check-inline"> 5. Nutzen Sie den Raum als Eigentümer, Miteigentümer oder
-    Erbbauberechtigter?</label>
-  <div class="row">
-    <div class="col-sm-6">
-      <div class="radio">
-        <label class="radio-inline" for="eigentuemer_ja"><input type="radio" id="eigentuemer_ja" name="eigentum"
+<!-- Abschnitt Frage nach Wohnung 5 -->
+<label class="form-check-inline"> 5. Nutzen Sie den Raum als Eigentümer, Miteigentümer oder
+  Erbbauberechtigter?</label>
+<div class="row">
+  <div class="col-sm-6">
+    <div class="radio">
+      <label class="radio-inline" for="eigentuemer_ja"><input type="radio" id="eigentuemer_ja" name="eigentum"
+                                                              [(ngModel)]="formH.istEigentuemer"
+                                                              [value]="true">Ja</label>
+      <label class="radio-inline" for="eigentuemer_nein"><input type="radio" id="eigentuemer_nein" name="eigentum"
                                                                 [(ngModel)]="formH.istEigentuemer"
-                                                                [value]="true">Ja</label>
-        <label class="radio-inline" for="eigentuemer_nein"><input type="radio" id="eigentuemer_nein" name="eigentum"
-                                                                  [(ngModel)]="formH.istEigentuemer"
-                                                                  [value]="false">Nein</label>
+                                                                [value]="false">Nein</label>
+    </div>
+  </div>
+</div>
+<!-- ENDE Abschnitt Frage nach Wohnung 5 -->
+<!-- Abschnitt Daten für Wohnung 5-->
+<ng-container *ngIf="formH.istEigentuemer">
+  <!-- Abschnitt für Wohnung 5 -->
+  <div class="row">
+    <div class="col-sm-2">
+      <div class="form-group">
+        <label for="ZinsenUndTilgung">{{getFragen().H_zinsenUndTilgung}} </label>
+        <input id="ZinsenUndTilgung" type="text" class="form-control" placeholder="Pflicht"
+               [(ngModel)]="formH.eigentumsDaten.mieteOderZinsen" required="required">
+      </div>
+    </div>
+    <div class="col-sm-2">
+      <div class="form-group">
+        <label for="Heizungskosten">{{getFragen().H_heizungskosten}}</label>
+        <input id="Heizungskosten" type="text" class="form-control" placeholder="Pflicht"
+               [(ngModel)]="formH.eigentumsDaten.heizungskosten" required="required">
+      </div>
+    </div>
+    <div class="col-sm-2">
+      <div class="form-group">
+        <label for="uebNebenkosten">{{getFragen().H_uebrigeNebenkosten}} </label>
+        <input id="uebNebenkosten" type="text" class="form-control" placeholder="Pflicht"
+               [(ngModel)]="formH.eigentumsDaten.uebrigeNebenkosten" required="required">
+      </div>
+    </div>
+    <div class="col-sm-2">
+      <div class="form-group">
+        <label for="gesBetrag">{{getFragen().H_gesamtBetrag}} </label>
+        <input id="gesBetrag" type="text" class="form-control" placeholder="Pflicht"
+               [(ngModel)]="formH.eigentumsDaten.gesamtbetrag"
+               required="required">
+      </div>
+    </div>
+    <div class="col-sm-2">
+      <div class="form-group">
+        <label for="ZahleAllein">{{getFragen().H_zahleAlleine}} </label>
+        <input id="ZahleAllein" type="text" class="form-control" placeholder="Pflicht"
+               [(ngModel)]="formH.eigentumsDaten.alleinigeZahlung" required="required">
       </div>
     </div>
   </div>
-  <!-- ENDE Abschnitt Frage nach Wohnung 5 -->
-  <!-- Abschnitt Daten für Wohnung 5-->
-  <ng-container *ngIf="formH.istEigentuemer">
-    <!-- Abschnitt für Wohnung 5 -->
+</ng-container>
+<!-- ENDE Abschnitt Frage nach Wohnung 5-->
+
+<!-- Abschnitt Frage nach Wohnung 6 -->
+<label class="form-check-inline"> 6. Haben Sie Belastungen aus Fremdmitteln als (Mit-)Eigentümer? (z.B.
+  Darlehensverträge, Kredite)</label>
+<div class="row">
+  <div class="col-sm-2">
+    <div class="radio">
+      <label class="radio-inline" for="dahrlen_ja"><input type="radio" id="dahrlen_ja" name="belastung"
+                                                          [(ngModel)]="formH.eigentumsDaten.hatBelastungAusFremdmitteln"
+                                                          [value]="true">Ja</label>
+      <label class="radio-inline" for="dahrlen_nein"><input type="radio" id="dahrlen_nein" name="belastung"
+                                                            [(ngModel)]="formH.eigentumsDaten.hatBelastungAusFremdmitteln"
+                                                            [value]="false">Nein</label>
+    </div>
+  </div>
+
+  <ng-container *ngIf="formH.eigentumsDaten.hatBelastungAusFremdmitteln">
+    <div class="col-sm-2">
+      <button class="btn btn-group-md btn-primary" [disabled]="formH.eigentumsDaten.belastungAusFremdmitteln.length > 8"
+              (click)="fuegeBelastungHinzu()"><span
+        class="glyphicon glyphicon-plus"></span></button>
+      <button class="btn btn-group-md btn-primary"
+              [disabled]="formH.eigentumsDaten.belastungAusFremdmitteln.length <= 1" (click)="entferneBelastung()"><span
+        class="glyphicon glyphicon-minus"></span></button>
+    </div>
+  </ng-container>
+</div>
+<!-- ENDE Abschnitt Frage nach Wohnung 6 -->
+<!-- Abschnitt Daten für Wohnung 6-->
+<ng-container *ngIf="formH.eigentumsDaten.hatBelastungAusFremdmitteln">
+  <!-- Abschnitt für Wohnung 5 -->
+  <div *ngFor="let belastung of formH.eigentumsDaten.belastungAusFremdmitteln; let i = index">
     <div class="row">
-      <div class="col-sm-2">
+      <div class="col-sm-4">
         <div class="form-group">
-          <label for="ZinsenUndTilgung">{{getFragen().H_zinsenUndTilgung}} </label>
-          <input id="ZinsenUndTilgung" type="text" class="form-control" placeholder="Pflicht"
-                 [(ngModel)]="formH.eigentumsDaten.mieteOderZinsen" required="required">
+          <label for="darlehensnehmer_{{i}}">{{getFragen().H_bezeichnung}} </label>
+          <input id="darlehensnehmer_{{i}}" type="text" class="form-control" placeholder="Pflicht"
+                 [(ngModel)]="belastung.darlehensNehmer" required="required">
         </div>
       </div>
-      <div class="col-sm-2">
+      <div class="col-sm-4">
         <div class="form-group">
-          <label for="Heizungskosten">{{getFragen().H_heizungskosten}}</label>
-          <input id="Heizungskosten" type="text" class="form-control" placeholder="Pflicht"
-                 [(ngModel)]="formH.eigentumsDaten.heizungskosten" required="required">
-        </div>
-      </div>
-      <div class="col-sm-2">
-        <div class="form-group">
-          <label for="uebNebenkosten">{{getFragen().H_uebrigeNebenkosten}} </label>
-          <input id="uebNebenkosten" type="text" class="form-control" placeholder="Pflicht"
-                 [(ngModel)]="formH.eigentumsDaten.uebrigeNebenkosten" required="required">
-        </div>
-      </div>
-      <div class="col-sm-2">
-        <div class="form-group">
-          <label for="gesBetrag">{{getFragen().H_gesamtBetrag}} </label>
-          <input id="gesBetrag" type="text" class="form-control" placeholder="Pflicht"
-                 [(ngModel)]="formH.eigentumsDaten.gesamtbetrag"
-                 required="required">
-        </div>
-      </div>
-      <div class="col-sm-2">
-        <div class="form-group">
-          <label for="ZahleAllein">{{getFragen().H_zahleAlleine}} </label>
-          <input id="ZahleAllein" type="text" class="form-control" placeholder="Pflicht"
-                 [(ngModel)]="formH.eigentumsDaten.alleinigeZahlung" required="required">
+          <label for="kreditinstitut_{{i}}">{{getFragen().H_bezeichnung}} </label>
+          <input id="kreditinstitut_{{i}}" type="text" class="form-control" placeholder="Pflicht"
+                 [(ngModel)]="belastung.kreditinstitut" required="required">
         </div>
       </div>
     </div>
-    <!-- ENDE Abschnitt Frage nach Wohnung 5-->
-
-    <!-- Abschnitt Frage nach Wohnung 6 -->
-    <label class="form-check-inline"> 6. Haben Sie Belastungen aus Fremdmitteln als (Mit-)Eigentümer? (z.B.
-      Darlehensverträge, Kredite)</label>
     <div class="row">
       <div class="col-sm-2">
-        <div class="radio">
-          <label class="radio-inline" for="dahrlen_ja"><input type="radio" id="dahrlen_ja" name="belastung"
-                                                              [(ngModel)]="formH.eigentumsDaten.hatBelastungAusFremdmitteln"
-                                                              [value]="true">Ja</label>
-          <label class="radio-inline" for="dahrlen_nein"><input type="radio" id="dahrlen_nein" name="belastung"
-                                                                [(ngModel)]="formH.eigentumsDaten.hatBelastungAusFremdmitteln"
-                                                                [value]="false">Nein</label>
+        <div class="form-group">
+          <label for="endeAm_{{i}}">{{getFragen().H_bezeichnung}} </label>
+          <input id="endeAm_{{i}}" type="text" class="form-control" placeholder="Pflicht"
+                 [(ngModel)]="belastung.zahlungsende" required="required">
         </div>
       </div>
-
-      <ng-container *ngIf="formH.eigentumsDaten.hatBelastungAusFremdmitteln">
-        <div class="col-sm-2">
-          <button class="btn btn-group-md btn-primary" [disabled]="formH.eigentumsDaten.belastungAusFremdmitteln.length > 8" (click)="fuegeBelastungHinzu()"><span
-            class="glyphicon glyphicon-plus"></span></button>
-          <button class="btn btn-group-md btn-primary" [disabled]="formH.eigentumsDaten.belastungAusFremdmitteln.length <= 1" (click)="entferneBelastung()"><span
-            class="glyphicon glyphicon-minus"></span></button>
+      <div class="col-sm-2">
+        <div class="form-group">
+          <label for="datum_{{i}}">{{getFragen().H_bezeichnung}} </label>
+          <input id="datum_{{i}}" type="text" class="form-control" placeholder="Pflicht"
+                 [(ngModel)]="belastung.datumDesVertrages" required="required">
         </div>
-      </ng-container>
+      </div>
+      <div class="col-sm-2">
+        <div class="form-group">
+          <label for="Heizungskosten_{{i}}">{{getFragen().H_dahrlenRestschuld}}</label>
+          <input id="Heizungskosten_{{i}}" type="text" class="form-control" placeholder="Pflicht"
+                 [(ngModel)]="belastung.restschuld" required="required">
+        </div>
+      </div>
+      <div class="col-sm-2">
+        <div class="form-group">
+          <label for="zahlungsende_{{i}}">{{getFragen().H_dahrlenZinsenUndTilgung}} </label>
+          <input id="zahlungsende_{{i}}" type="text" class="form-control" placeholder="Pflicht"
+                 [(ngModel)]="belastung.tilgungMonatlich" required="required">
+        </div>
+      </div>
     </div>
-    <!-- ENDE Abschnitt Frage nach Wohnung 6 -->
-    <!-- Abschnitt Daten für Wohnung 6-->
-    <ng-container *ngIf="formH.eigentumsDaten.hatBelastungAusFremdmitteln">
-      <!-- Abschnitt für Wohnung 5 -->
-      <div *ngFor="let belastung of formH.eigentumsDaten.belastungAusFremdmitteln; let i = index">
-        <div class="row">
-          <div class="col-sm-4">
-            <div class="form-group">
-              <label for="darlehensnehmer_{{i}}">{{getFragen().H_bezeichnung}} </label>
-              <input id="darlehensnehmer_{{i}}" type="text" class="form-control" placeholder="Pflicht"
-                     [(ngModel)]="belastung.darlehensNehmer" required="required">
-            </div>
-          </div>
-          <div class="col-sm-4">
-            <div class="form-group">
-              <label for="kreditinstitut_{{i}}">{{getFragen().H_bezeichnung}} </label>
-              <input id="kreditinstitut_{{i}}" type="text" class="form-control" placeholder="Pflicht"
-                     [(ngModel)]="belastung.kreditinstitut" required="required">
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-sm-2">
-            <div class="form-group">
-              <label for="endeAm_{{i}}">{{getFragen().H_bezeichnung}} </label>
-              <input id="endeAm_{{i}}" type="text" class="form-control" placeholder="Pflicht"
-                     [(ngModel)]="belastung.zahlungsende" required="required">
-            </div>
-          </div>
-          <div class="col-sm-2">
-            <div class="form-group">
-              <label for="datum_{{i}}">{{getFragen().H_bezeichnung}} </label>
-              <input id="datum_{{i}}" type="text" class="form-control" placeholder="Pflicht"
-                     [(ngModel)]="belastung.datumDesVertrages" required="required">
-            </div>
-          </div>
-          <div class="col-sm-2">
-            <div class="form-group">
-              <label for="Heizungskosten_{{i}}">{{getFragen().H_dahrlenRestschuld}}</label>
-              <input id="Heizungskosten_{{i}}" type="text" class="form-control" placeholder="Pflicht"
-                     [(ngModel)]="belastung.restschuld" required="required">
-            </div>
-          </div>
-          <div class="col-sm-2">
-            <div class="form-group">
-              <label for="zahlungsende_{{i}}">{{getFragen().H_dahrlenZinsenUndTilgung}} </label>
-              <input id="zahlungsende_{{i}}" type="text" class="form-control" placeholder="Pflicht"
-                     [(ngModel)]="belastung.tilgungMonatlich" required="required">
-            </div>
-          </div>
-        </div>
-      </div>
-    </ng-container>
-    <!-- ENDE Abschnitt Frage nach Wohnung 6-->
+  </div>
+</ng-container>
+<!-- ENDE Abschnitt Frage nach Wohnung 6-->
