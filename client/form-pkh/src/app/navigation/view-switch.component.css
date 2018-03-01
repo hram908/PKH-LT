@@ -4,6 +4,16 @@
   top: 50px;
 }
 
+.sidenav-button{
+background: #51bfff;
+color: white;
+}
+
+.sidenav-button-checked{
+background: white;
+  color: #51bfff;
+}
+
 .back-forward-buttons {
   bottom: 50px;
 }
