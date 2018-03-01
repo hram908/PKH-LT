@@ -36,6 +36,15 @@ import {PkhFormMaterial} from './formulardaten/pkh-form-material';
 import {RestService} from './rest-api/rest-service';
 import {HttpClientModule} from '@angular/common/http';
 import {Fragen} from './common/fragen';
+import { ChatbotFormBComponent } from './chatbot/chatbot-form-b/chatbot-form-b.component';
+import { ChatbotFormCComponent } from './chatbot/chatbot-form-c/chatbot-form-c.component';
+import { ChatbotFormDComponent } from './chatbot/chatbot-form-d/chatbot-form-d.component';
+import { ChatbotFormEComponent } from './chatbot/chatbot-form-e/chatbot-form-e.component';
+import { ChatbotFormFComponent } from './chatbot/chatbot-form-f/chatbot-form-f.component';
+import { ChatbotFormGComponent } from './chatbot/chatbot-form-g/chatbot-form-g.component';
+import { ChatbotFormHComponent } from './chatbot/chatbot-form-h/chatbot-form-h.component';
+import { ChatbotFormIComponent } from './chatbot/chatbot-form-i/chatbot-form-i.component';
+import { ChatbotFormJComponent } from './chatbot/chatbot-form-j/chatbot-form-j.component';
 
 
 
@@ -58,7 +67,16 @@ import {Fragen} from './common/fragen';
     FormISonstigeVerpflichtungenComponent,
     FormJBesondereBelastungenComponent,
     AppDirective,
-    ViewSwitchComponent
+    ViewSwitchComponent,
+    ChatbotFormBComponent,
+    ChatbotFormCComponent,
+    ChatbotFormDComponent,
+    ChatbotFormEComponent,
+    ChatbotFormFComponent,
+    ChatbotFormGComponent,
+    ChatbotFormHComponent,
+    ChatbotFormIComponent,
+    ChatbotFormJComponent
   ],
   imports: [
     BrowserModule,

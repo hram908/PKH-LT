@@ -1,6 +1,32 @@
 <button class="btn btn-primary bot-button" (click)="toggleBot()" [class.bot-button-pushed]="botIsActive">Bot</button>
 
 <div class="bot-side-menu" [class.bot-side-menu-pushed]="botIsActive">
-    <app-form-a></app-form-a>
+  <h2>Der PKH-Helfer</h2>
+  <br><br><br>
+  <div class="row">
+    <div class="col">
+      <label class="label label-default chatbot-input">{{chatbotText}}</label>
+      <br>
+      <!--
+        <div class="container">
+          <ul class="list-group" *ngFor="let abschnittAntwort in abschnittAntworten ">
+            <li class="list-group-item">{{abschnittAntwort}}</li>
+          </ul>
+        </div>
+        -->
+      <button type="button" class="btn btn-default user-button" (click)="askWatson('Hello')">
+        Rechtsschutzversicherung
+      </button>
+    </div>
+  </div>
+
+  <br>
+  <!-- Watson response -->
+    <div class="container" *ngFor="let watsonResponse of watsonResponses">
+      <label class="label label-default chatbot-input">{{watsonResponse}}</label>
+    </div>
+  <!--  TODO in milestone 3
+
+  <ng-template #chatbotForm></ng-template> -->
 </div>
 

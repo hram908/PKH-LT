@@ -8,10 +8,10 @@ import com.ibm.watson.developer_cloud.conversation.v1.model.MessageResponse;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import pkh.form.common.WatsonConversationPropertyService;
+
+import java.util.List;
 
 @RestController
 @EnableAutoConfiguration
@@ -24,9 +24,10 @@ public class ChatbotController {
         this.service = service;
     }
 
+    @CrossOrigin(origins = "*", allowedHeaders = "*", methods = RequestMethod.POST)
     @PostMapping(path = "/chatbot")
-    public MessageResponse askWatsonConversation(@RequestBody String inputText){
-       return service.sendMessageToWatson(inputText);
+    public List<String> askWatsonConversation(@RequestBody String inputText) {
+        MessageResponse response =  service.sendMessageToWatson(inputText);
+        return response.getOutput().getText();
     }
-
 }

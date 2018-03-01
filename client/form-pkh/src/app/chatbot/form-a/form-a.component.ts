@@ -1,5 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import {ChatbotService} from '../chatbot-service';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-form-a',
@@ -12,15 +11,9 @@ export class FormAComponent {
 
   public chatbotText: string;
   public lastUserInput: string;
-  public showUserInput: boolean;
 
-  constructor(private chatbotService: ChatbotService) {
+  constructor() {
     this.chatbotText = this.DefaultText;
     this.lastUserInput = '';
-  }
-
-  public onUserInput() {
-    this.showUserInput = true;
-    this.chatbotText = this.chatbotService.generateAnswer(this.lastUserInput);
   }
 }
