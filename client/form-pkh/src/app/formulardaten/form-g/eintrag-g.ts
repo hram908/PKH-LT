@@ -1,8 +1,8 @@
 /**
- * @author: Isabella, Thomas
+ * @author: Isabella, Thomas, Jana
  **/
 
 export class EintragG {
-  art = '';
+  detailEingabe = '';
   vermoegen = '';
 }

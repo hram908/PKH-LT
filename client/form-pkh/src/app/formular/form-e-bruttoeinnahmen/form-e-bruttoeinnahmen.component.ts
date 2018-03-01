@@ -1,6 +1,8 @@
 import {Component} from '@angular/core';
-import {Untertitel} from '../../common/untertitel';
 import {IFormComponentBase} from '../../common/i-form-component-base';
+import {FormEMaterial} from '../../formulardaten/form-e/form-e-material';
+import {Fragen} from '../../common/fragen';
+import {Untertitel} from '../../common/untertitel';
 
 @Component({
   selector: 'app-form-e-bruttoeinnahmen',
@@ -8,7 +10,11 @@ import {IFormComponentBase} from '../../common/i-form-component-base';
   styleUrls: ['./form-e-bruttoeinnahmen.component.css']
 })
 export class FormEBruttoeinnahmenComponent implements IFormComponentBase {
-  constructor() {
+  constructor(public formE: FormEMaterial) {
+  }
+
+  getFragen() {
+    return Fragen;
   }
 
   getUntertitel(): string {

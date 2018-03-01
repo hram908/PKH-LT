@@ -1,6 +1,7 @@
 import {FremdmittelBelastung} from './fremdmittel-belastung';
+
 /**
- * @author: Isabella
+ * @author: Isabella, Jana
  **/
 
 export class RaumnutzungH {
@@ -10,6 +11,7 @@ export class RaumnutzungH {
   gesamtbetrag: number;
   alleinigeZahlung: number;
 
-  belastungAusFremdmitteln: FremdmittelBelastung[];
+  hatBelastungAusFremdmitteln = false;
+  belastungAusFremdmitteln: FremdmittelBelastung[] = [new FremdmittelBelastung()];
 }
 

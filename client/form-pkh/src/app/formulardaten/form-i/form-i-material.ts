@@ -1,17 +1,10 @@
 import {EintragI} from './eintrag-i';
+
 /**
- * @author: Isabella
+ * @author: Isabella, Thomas, Jana
  **/
 
 export class FormIMaterial {
-  zahlungsverpflichtungen: EintragI[];
-  sonstigeVerpflichtungen = '';
-  sonstigeVerpflichtungRestschuld = '';
-  sonstigeVerpflichtungGesamt = '';
-  sonstigeVerpflichtungAlleine = '';
-  sonstigeVerpflichtungBezeichung1 = '';
-  sonstigeVerpflichtungRestschuld1 = '';
-  sonstigeVerpflichtungGesamt1 = '';
-  sonstigeVerpflichtungAlleine1 = '';
-  sonstigeVerpflichtungBezeichnung = '';
+  hatZahlungsverpflichtungen = false;
+  zahlungsverpflichtungen: EintragI[] = [new EintragI()];
 }

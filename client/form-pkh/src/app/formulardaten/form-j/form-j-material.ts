@@ -1,12 +1,10 @@
 import {EintragJ} from './eintrag-j';
+
 /**
- * @author: Isabella
+ * @author: Isabella, Thomas, Jana
  **/
 
 export class FormJMaterial {
-  besondereBelastungen: EintragJ[];
-  besondereBelastungBezeichnung = '';
-  besondereBelastungAlleine = '';
-  besondereBelastungBezeichnung1 = '';
-  besondereBelastungAlleine1 = '';
+  hatBesondereBelastungen = false;
+  besondereBelastungen: EintragJ[] = [new EintragJ()];
 }

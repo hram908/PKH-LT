@@ -3,6 +3,7 @@ import {Untertitel} from '../../common/untertitel';
 import {IFormComponentBase} from '../../common/i-form-component-base';
 import {FormIMaterial} from '../../formulardaten/form-i/form-i-material';
 import {Fragen} from '../../common/fragen';
+import {EintragI} from '../../formulardaten/form-i/eintrag-i';
 
 @Component({
   selector: 'app-form-i-sonstige-verpflichtungen',
@@ -19,5 +20,17 @@ export class FormISonstigeVerpflichtungenComponent implements IFormComponentBase
 
   getFragen() {
     return Fragen;
+  }
+
+  fuegeHinzuVerpflichtung() {
+    if (this.formI.zahlungsverpflichtungen.length < 8) {
+      this.formI.zahlungsverpflichtungen.push(new EintragI());
+    }
+  }
+
+  entferneVerpflichtung() {
+    if (this.formI.zahlungsverpflichtungen.length > 1) {
+      this.formI.zahlungsverpflichtungen.pop();
+    }
   }
 }

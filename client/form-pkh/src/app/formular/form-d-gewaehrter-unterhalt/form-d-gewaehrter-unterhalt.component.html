@@ -1,3 +1,128 @@
 <div id="formularUeberschrift">
   <h2>{{getUntertitel()}}</h2>
 </div>
+
+
+  <div class="controls">
+
+    <div class="row">
+      <div class="col-sm-6">
+        <div class="form-group">
+          <label for="Unterhaltszahlung_ja">{{getFragen().D_Frage}}</label>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+     <div class="col-sm-2">
+      <div class="radio">
+        <label class="radio-inline" for="Unterhaltszahlung_ja"><input type="radio" id="Unterhaltszahlung_ja" name="Unterhaltszahlung" [(ngModel)]="formD.gewaehrtNaturalunterhalt" [value]="true">Ja</label>
+        <label class="radio-inline" for="Unterhaltszahlung_nein"><input type="radio" id="Unterhaltszahlung_nein" name="Unterhaltszahlung" [(ngModel)]="formD.gewaehrtNaturalunterhalt" [value]="false">Nein</label>
+      </div>
+     </div>
+      <ng-container *ngIf="formD.gewaehrtNaturalunterhalt">
+        <div class="col-sm-3">
+          <button class="btn btn-group-md btn-primary" (click)="fuegeUnterhaltHinzu()">Angehörigen hinzufügen</button>
+        </div>
+        <div class="col-sm-2">
+          <button class="btn btn-group-md btn-primary" (click)="entferneUnterhalt()">Angehörigen entfernen</button>
+        </div>
+      </ng-container>
+
+    </div>
+
+
+
+    <ng-container *ngIf="formD.gewaehrtNaturalunterhalt">
+      <div *ngFor="let naturalunterhalt of formD.naturalunterhalt let i = index">
+
+        <div class="row" >
+          <div class="col-sm-3">
+            <div class="form-group">
+              <label for="name_{{i}}">{{getFragen().D_Name}}</label>
+              <input id="name_{{i}}" type="text" class="form-control" placeholder="..." [(ngModel)]="naturalunterhalt.vollstaendigerName">
+            </div>
+          </div>
+          <div class="col-sm-3">
+            <div class="form-group">
+              <label for="strasse_{{i}}">{{getFragen().D_Strasse}}</label>
+              <input id="strasse_{{i}}" type="text" class="form-control" placeholder="..." [(ngModel)]="naturalunterhalt.strasse">
+            </div>
+          </div>
+          <div class="col-sm-2">
+            <div class="form-group">
+              <label for="hausnummer_{{i}}">{{getFragen().D_Hausnummer}}</label>
+              <input id="hausnummer_{{i}}" type="text" class="form-control" placeholder="..." [(ngModel)]="naturalunterhalt.hausnummer">
+            </div>
+          </div>
+        </div>
+
+        <div class="row" >
+          <div class="col-sm-2">
+            <div class="form-group">
+              <label for="plz_{{i}}">{{getFragen().D_PLZ}}</label>
+              <input id="plz_{{i}}" type="text" class="form-control" placeholder="..." [(ngModel)]="naturalunterhalt.plz">
+            </div>
+          </div>
+          <div class="col-sm-3">
+            <div class="form-group">
+              <label for="ort_{{i}}">{{getFragen().D_Ort}}</label>
+              <input id="ort_{{i}}" type="text" class="form-control" placeholder="..." [(ngModel)]="naturalunterhalt.ort">
+            </div>
+          </div>
+          <div class="col-sm-3">
+            <div class="form-group">
+              <label for="geburtsdatum_{{i}}">{{getFragen().D_Geburtsdatum}} </label>
+              <input id="geburtsdatum_{{i}}" type="text" class="form-control" placeholder="..." [(ngModel)]="naturalunterhalt.geburtsdatum">
+            </div>
+          </div>
+        </div>
+
+
+        <div class="row" >
+          <div class="col-sm-3">
+            <div class="form-group">
+              <label for="verhaeltnis_{{i}}">{{getFragen().D_Verhaeltnis}} </label>
+              <input id="verhaeltnis_{{i}}" type="text" class="form-control" placeholder="..." [(ngModel)]="naturalunterhalt.verhaeltnis">
+            </div>
+          </div>
+          <div class="col-sm-3">
+            <div class="form-group">
+              <label for="monatsbetrag_{{i}}">{{getFragen().D_Monatsbetrag}} </label>
+              <input id="monatsbetrag_{{i}}" type="text" class="form-control" placeholder="..." [(ngModel)]="naturalunterhalt.monatsbetrag">
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-sm-6">
+            <div class="form-group">
+
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-sm-4">
+            <label for="angehoerigenEinnahmen_ja_{{i}}">{{getFragen().D_FrageAngehoeriger}}</label>
+            <div class="radio">
+              <label class="radio-inline" for="angehoerigenEinnahmen_ja_{{i}}"><input type="radio" id="angehoerigenEinnahmen_ja_{{i}}" name="angehoerigenEinnahmen_{{i}}" [(ngModel)]="naturalunterhalt.hatAngehoerigerEinnahmen" [value]="true">Ja</label>
+              <label class="radio-inline" for="angehoerigenEinnamen_nein_{{i}}"><input type="radio" id="angehoerigenEinnamen_nein_{{i}}" name="angehörigenEinnahmen_{{i}}" [(ngModel)]="naturalunterhalt.hatAngehoerigerEinnahmen" [value]="false">Nein</label>
+            </div>
+          </div>
+          <ng-container *ngIf="naturalunterhalt.hatAngehoerigerEinnahmen">
+            <div class="col-sm-4">
+              <div class="form-group">
+                <label for="angehoerigenEinnahmen_{{i}}">{{getFragen().D_einnahmenAngehoeriger}} </label>
+                <input id="angehoerigenEinnahmen_{{i}}" type="text" class="form-control" placeholder="..." [(ngModel)]="naturalunterhalt.einnahmenAngehoeriger">
+              </div>
+            </div>
+          </ng-container>
+
+        </div>
+      </div>
+
+
+  </ng-container>
+
+</div>
+

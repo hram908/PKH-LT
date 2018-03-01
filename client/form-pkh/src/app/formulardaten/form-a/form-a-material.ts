@@ -1,27 +1,10 @@
+import {Antragsteller} from './antragsteller';
+import {GesetzVertreter} from './gesetz-vertreter';
+
 /**
- * @author: Thomas, Isabella
+ * @author: Thomas, Isabella, Jana
  **/
-
 export class FormAMaterial {
-  vorname = '';
-  nachname = '';
-  geburtsname = '';
-  berufstyp = '';
-  beruf = '';
-  geburtstag = '';
-  familienstand = '';
-  telefon = '';
-  strasse = '';
-  hausnummer = '';
-  plz = '';
-  ort = '';
-
-  hatGesetzlicherVertreter = false;
-  vertreterName = '';
-  vertreterVorname = '';
-  vertreterStrasse = '';
-  vertreterHausnummer = '';
-  vertreterPlz = '';
-  vertreterOrt = '';
-  vertreterTelefon = '';
+  antragsteller: Antragsteller = new Antragsteller();
+  gesetzVertreter: GesetzVertreter = new GesetzVertreter();
 }

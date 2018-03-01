@@ -1,13 +1,20 @@
 import {EintragG} from './eintrag-g';
+
 /**
- * @author: Isabella
+ * @author: Isabella, Thomas, Jana
  **/
 
 export class FormGMaterial {
-  konto: EintragG;
-  gruneigentum: EintragG[];
-  kraftfahrzeuge: EintragG[];
-  wertgegenstaende: EintragG[];
-  versicherung: EintragG[];
-  sonstige: EintragG[];
+  hatKonto = true;
+  konto: EintragG[] = [new EintragG()];
+  hatGrundeigentum = false;
+  grundeigentum: EintragG[] = [new EintragG()];
+  hatKraftfahrzeug = false;
+  kraftfahrzeuge: EintragG[] = [new EintragG()];
+  hatWertgegenstaende = false;
+  wertgegenstaende: EintragG[] = [new EintragG()];
+  hatVersicherung = false;
+  versicherung: EintragG[] = [new EintragG()];
+  hatSonstige = false;
+  sonstige: EintragG[] = [new EintragG()];
 }

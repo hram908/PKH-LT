@@ -1,87 +1,321 @@
 <div id="formularUeberschrift">
   <h2>{{getUntertitel()}}</h2>
 </div>
-
-  <!-- Abschnitt Frage nach Bankkonto/Grundeigentum/etc. -->
-  <label class="form-check-inline"> 1. Verfügen Sie oder Ihr Ehepartner/eingetragener Lebenspartner über Bank-, Giro-, Sparkonten oder ähnliches? (Angaben auch bei fehlendem Guthaben erforderlich)</label>
-  <div class="row">
-    <div class="col-sm-6">
-      <div class="radio">
-        <label class="radio-inline" for="bank_ja"><input type="radio" id="bank_ja" name="bank"
-                                                         [(ngModel)]="formG.bank" [value]="true">Ja</label>
-        <label class="radio-inline" for="bank_nein"><input type="radio" id="bank_nein" name="bank"
-                                                           [(ngModel)]="formG.bank" [value]="false">Nein</label>
+<!-- Abschnitt Frage nach Bankkonto/Grundeigentum/etc. -->
+<label class="form-check-inline"> 1. Verfügen Sie oder Ihr Ehepartner/eingetragener Lebenspartner über Bank-, Giro-,
+  Sparkonten oder ähnliches? (Angaben auch bei fehlendem Guthaben erforderlich)</label>
+<div class="row">
+  <div class="col-sm-2">
+    <div class="radio">
+      <label class="radio-inline" for="hatKonto_ja"><input type="radio" id="hatKonto_ja" name="hatKonto"
+                                                           [(ngModel)]="formG.hatKonto" [value]="true">Ja</label>
+      <label class="radio-inline" for="hatKonto_nein"><input type="radio" id="hatKonto_nein" name="hatKonto"
+                                                             [(ngModel)]="formG.hatKonto" [value]="false">Nein</label>
+    </div>
+  </div>
+  <ng-container *ngIf="formG.hatKonto">
+    <div class="col-sm-2">
+      <button class="btn btn-group-md btn-primary" [disabled]="formG.konto.length > 4"
+              (click)="fuegeHinzuKonto()"><span
+        class="glyphicon glyphicon-plus"></span></button>
+      <button class="btn btn-group-md btn-primary"
+              [disabled]="formG.konto.length <= 1" (click)="entferneKonto()"><span
+        class="glyphicon glyphicon-minus"></span></button>
+    </div>
+  </ng-container>
+</div>
+<!-- ENDE Abschnitt Frage nach Bankkonto/Grundeigentum/etc -->
+<!-- Abschnitt Daten für Bankkonto/Grundeigentum/etc-->
+<ng-container *ngIf="formG.hatKonto">
+  <!-- Abschnitt für Bankkonto/Grundeigentum/etcn -->
+  <div *ngFor="let konto of formG.konto; let i = index">
+    <div class="row">
+      <div class="col-sm-4">
+        <div class="form-group">
+          <label for="kontoBezeichnung_{{i}}">{{getFragen().G_kontoBezeichnung}}</label>
+          <input id="kontoBezeichnung_{{i}}" type="text" class="form-control" placeholder="Pflicht"
+                 [(ngModel)]="konto.detailEingabe"
+                 required="required">
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <div class="form-group">
+          <label for="kontoBetrag_{{i}}">{{getFragen().G_kontoBetrag}} </label>
+          <input id="kontoBetrag_{{i}}" type="text" class="form-control" placeholder="Pflicht"
+                 [(ngModel)]="konto.vermoegen"
+                 required="required">
+        </div>
       </div>
     </div>
   </div>
-  <!-- ENDE Abschnitt Frage nach Bankkonto/Grundeigentum/etc -->
+</ng-container>
+<!-- ENDE Abschnitt Frage nach Bankkonto/Grundeigentum/etc-->
 
-  <!-- Abschnitt Frage nach Grundeigentum. -->
-  <label class="form-check-inline"> 2. Verfügen Sie oder Ihr Ehepartner/eingetragener Lebenspartner über Grundeigentum? (z.B. Grundstück, Haus, Wohnung)</label>
-  <div class="row">
-    <div class="col-sm-6">
-      <div class="radio">
-        <label class="radio-inline" for="eigentum_ja"><input type="radio" id="eigentum_ja" name="grundeigentum"
-                                                             [(ngModel)]="formG.eigentum" [value]="true">Ja</label>
-        <label class="radio-inline" for="eigentum_nein"><input type="radio" id="eigentum_nein" name="grundeigentum"
-                                                               [(ngModel)]="formG.eigentum" [value]="false">Nein</label>
+<!-- Abschnitt Frage nach Grundeigentum. -->
+<label class="form-check-inline"> 2. Verfügen Sie oder Ihr Ehepartner/eingetragener Lebenspartner über Grundeigentum?
+  (z.B. Grundstück, Haus, Wohnung)</label>
+<div class="row">
+  <div class="col-sm-2">
+    <div class="radio">
+      <label class="radio-inline" for="hatGrundeigentum_ja"><input type="radio" id="hatGrundeigentum_ja"
+                                                                   name="hatGrundeigentum"
+                                                                   [(ngModel)]="formG.hatGrundeigentum"
+                                                                   [value]="true">Ja</label>
+      <label class="radio-inline" for="hatGrundeigentum_nein"><input type="radio" id="hatGrundeigentum_nein"
+                                                                     name="hatGrundeigentum"
+                                                                     [(ngModel)]="formG.hatGrundeigentum"
+                                                                     [value]="false">Nein</label>
+    </div>
+  </div>
+  <ng-container *ngIf="formG.hatGrundeigentum">
+    <div class="col-sm-2">
+      <button class="btn btn-group-md btn-primary"
+              [disabled]="formG.grundeigentum.length > 4"
+              (click)="fuegeHinzuGrundeigentum()"><span
+        class="glyphicon glyphicon-plus"></span></button>
+      <button class="btn btn-group-md btn-primary"
+              [disabled]="formG.grundeigentum.length <= 1"
+              (click)="entferneGrundeigentum()"><span
+        class="glyphicon glyphicon-minus"></span></button>
+    </div>
+  </ng-container>
+</div>
+<!-- ENDE Abschnitt Frage nach Grundeigentum -->
+<!-- Abschnitt Daten für Grundeigentum -->
+<ng-container *ngIf="formG.hatGrundeigentum">
+  <!-- Abschnitt für Grundeigentum -->
+  <div *ngFor="let grundeigentum of formG.grundeigentum; let i = index">
+    <div class="row">
+      <div class="col-sm-4">
+        <div class="form-group">
+          <label for="grundeigentumBezeichnung_{{i}}">{{getFragen().G_grundeigentumBezeichnung}}</label>
+          <input id="grundeigentumBezeichnung_{{i}}" type="text" class="form-control" placeholder="Pflicht"
+                 [(ngModel)]="grundeigentum.detailEingabe" required="required">
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <div class="form-group">
+          <label for="grundeigentumBetrag_{{i}}">{{getFragen().G_grundeigentumBetrag}} </label>
+          <input id="grundeigentumBetrag_{{i}}" type="text" class="form-control" placeholder="Pflicht"
+                 [(ngModel)]="grundeigentum.vermoegen" required="required">
+        </div>
       </div>
     </div>
   </div>
-  <!-- ENDE Abschnitt Frage nach Grundeigentum -->
+</ng-container>
+<!-- ENDE Abschnitt Frage nach Grundeigentum-->
 
-  <!-- Abschnitt Frage nach Kraftfahrzeug. -->
-  <label class="form-check-inline"> 3. Verfügen Sie oder Ihr Ehepartner/eingetragener Lebenspartner über Kraftfahrzeuge?</label>
-  <div class="row">
-    <div class="col-sm-6">
-      <div class="radio">
-        <label class="radio-inline" for="kraftfahrzeug_ja"><input type="radio" id="kraftfahrzeug_ja" name="kraftfahrzeug"
-                                                                  [(ngModel)]="formG.kraftfahrzeug" [value]="true">Ja</label>
-        <label class="radio-inline" for="kraftfahrzeug_nein"><input type="radio" id="kraftfahrzeug_nein" name="kraftfahrzeug"
-                                                                    [(ngModel)]="formG.kraftfahrzeug" [value]="false">Nein</label>
+<!-- Abschnitt Frage nach Kraftfahrzeug. -->
+<label class="form-check-inline"> 3. Verfügen Sie oder Ihr Ehepartner/eingetragener Lebenspartner über
+  Kraftfahrzeuge?</label>
+<div class="row">
+  <div class="col-sm-2">
+    <div class="radio">
+      <label class="radio-inline" for="hatKraftfahrzeug_ja"><input type="radio" id="hatKraftfahrzeug_ja"
+                                                                   name="hatKraftfahrzeug"
+                                                                   [(ngModel)]="formG.hatKraftfahrzeug"
+                                                                   [value]="true">Ja</label>
+      <label class="radio-inline" for="hatKraftfahrzeug_nein"><input type="radio" id="hatKraftfahrzeug_nein"
+                                                                     name="hatKraftfahrzeug"
+                                                                     [(ngModel)]="formG.hatKraftfahrzeug"
+                                                                     [value]="false">Nein</label>
+    </div>
+  </div>
+  <ng-container *ngIf="formG.hatKraftfahrzeug">
+    <div class="col-sm-2">
+      <button class="btn btn-group-md btn-primary"
+              [disabled]="formG.kraftfahrzeuge.length > 4"
+              (click)="fuegeHinzuKfz()"><span
+        class="glyphicon glyphicon-plus"></span></button>
+      <button class="btn btn-group-md btn-primary"
+              [disabled]="formG.kraftfahrzeuge.length <= 1"
+              (click)="entferneKfz()"><span
+        class="glyphicon glyphicon-minus"></span></button>
+    </div>
+  </ng-container>
+</div>
+<!-- ENDE Abschnitt Frage nach Kraftfahrzeug -->
+<!-- Abschnitt Daten für Grundeigentum -->
+<ng-container *ngIf="formG.hatKraftfahrzeug">
+  <!-- Abschnitt für Grundeigentum -->
+  <div *ngFor="let kfz of formG.kraftfahrzeuge; let i = index">
+    <div class="row">
+      <div class="col-sm-4">
+        <div class="form-group">
+          <label for="kraftfahrzeugeBezeichnung_{{i}}">{{getFragen().G_kraftfahrzeugeBezeichnung}}</label>
+          <input id="kraftfahrzeugeBezeichnung_{{i}}" type="text" class="form-control" placeholder="Pflicht"
+                 [(ngModel)]="kfz.detailEingabe" required="required">
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <div class="form-group">
+          <label for="kraftfahrzeugeBetrag_{{i}}">{{getFragen().G_kraftfahrzeugeBetrag}} </label>
+          <input id="kraftfahrzeugeBetrag_{{i}}" type="text" class="form-control" placeholder="Pflicht"
+                 [(ngModel)]="kfz.vermoegen" required="required">
+        </div>
       </div>
     </div>
   </div>
-  <!-- ENDE Abschnitt Frage nach Kraftfahrzeug -->
+</ng-container>
+<!-- ENDE Abschnitt Frage nach Grundeigentum-->
 
-  <!-- Abschnitt Frage nach Bargeld etc.-->
-  <label class="form-check-inline"> 4. Verfügen Sie oder Ihr Ehepartner/eingetragener Lebenspartner über Bargeld oder Wertgegenstände (z.B. Schmuck, Antiquitäten, elektronische Geräte)?</label>
-  <div class="row">
-    <div class="col-sm-6">
-      <div class="radio">
-        <label class="radio-inline" for="bargeld_ja"><input type="radio" id="bargeld_ja" name="bargeld"
-                                                            [(ngModel)]="formG.bargeld" [value]="true">Ja</label>
-        <label class="radio-inline" for="bargeld_nein"><input type="radio" id="bargeld_nein" name="bargeld"
-                                                              [(ngModel)]="formG.bargeld" [value]="false">Nein</label>
+<!-- Abschnitt Frage nach Bargeld etc.-->
+<label class="form-check-inline"> 4. Verfügen Sie oder Ihr Ehepartner/eingetragener Lebenspartner über Bargeld
+  oder Wertgegenstände (z.B. Schmuck, Antiquitäten, elektronische Geräte)?</label>
+<div class="row">
+  <div class="col-sm-2">
+    <div class="radio">
+      <label class="radio-inline" for="hatWertgegenstaende_ja"><input type="radio" id="hatWertgegenstaende_ja"
+                                                                      name="hatWertgegenstaende"
+                                                                      [(ngModel)]="formG.hatWertgegenstaende"
+                                                                      [value]="true">Ja</label>
+      <label class="radio-inline" for="hatWertgegenstaende_nein"><input type="radio" id="hatWertgegenstaende_nein"
+                                                                        name="hatWertgegenstaende"
+                                                                        [(ngModel)]="formG.hatWertgegenstaende"
+                                                                        [value]="false">Nein</label>
+    </div>
+  </div>
+  <ng-container *ngIf="formG.hatWertgegenstaende">
+    <div class="col-sm-2">
+      <button class="btn btn-group-md btn-primary"
+              [disabled]="formG.wertgegenstaende.length > 4"
+              (click)="fuegeHinzuWertgegenstaende()"><span
+        class="glyphicon glyphicon-plus"></span></button>
+      <button class="btn btn-group-md btn-primary"
+              [disabled]="formG.wertgegenstaende.length <= 1"
+              (click)="entferneWertgegenstaende()"><span
+        class="glyphicon glyphicon-minus"></span></button>
+    </div>
+  </ng-container>
+</div>
+<!-- ENDE Abschnitt Frage nach Bargeld etc.-->
+<!-- Abschnitt Daten für Bargeld etc -->
+<ng-container *ngIf="formG.hatWertgegenstaende">
+  <!-- Abschnitt für Bargeld etc -->
+  <div *ngFor="let wertgegenstand of formG.wertgegenstaende; let i = index">
+    <div class="row">
+      <div class="col-sm-4">
+        <div class="form-group">
+          <label for="wertgegenstaendeBezeichnung_{{i}}">{{getFragen().G_wertgegenstaendeBezeichnung}}</label>
+          <input id="wertgegenstaendeBezeichnung_{{i}}" type="text" class="form-control" placeholder="Pflicht"
+                 [(ngModel)]="wertgegenstand.detailEingabe" required="required">
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <div class="form-group">
+          <label for="wertgegenstaendeBetrag_{{i}}">{{getFragen().G_wertgegenstaendeBetrag}} </label>
+          <input id="wertgegenstaendeBetrag_{{i}}" type="text" class="form-control" placeholder="Pflicht"
+                 [(ngModel)]="wertgegenstand.vermoegen" required="required">
+        </div>
       </div>
     </div>
   </div>
-  <!-- ENDE Abschnitt Frage nach Bargeld etc.-->
+</ng-container>
+<!-- ENDE Abschnitt Frage für Bargeld etc -->
 
-  <!-- Abschnitt Frage nach Lebens- und Rentenversicherungen. -->
-  <label class="form-check-inline"> 5. Verfügen Sie oder Ihr Ehepartner/eingetragener Lebenspartner über Lebens- oder Rentenversicherungen?</label>
-  <div class="row">
-    <div class="col-sm-6">
-      <div class="radio">
-        <label class="radio-inline" for="lebenVer_ja"><input type="radio" id="lebenVer_ja" name="lebenVer"
-                                                             [(ngModel)]="formG.lebenVer" [value]="true">Ja</label>
-        <label class="radio-inline" for="lebenVer_nein"><input type="radio" id="lebenVer_nein" name="lebenVer"
-                                                               [(ngModel)]="formG.lebenVer" [value]="false">Nein</label>
+<!-- Abschnitt Frage nach Lebens- und Rentenversicherungen. -->
+<label class="form-check-inline"> 4. Verfügen Sie oder Ihr Ehepartner/eingetragener Lebenspartner über Lebens-
+  oder Rentenversicherungen?</label>
+<div class="row">
+  <div class="col-sm-2">
+    <div class="radio">
+      <label class="radio-inline" for="hatVersicherung_ja"><input type="radio" id="hatVersicherung_ja"
+                                                                  name="hatVersicherung"
+                                                                  [(ngModel)]="formG.hatVersicherung"
+                                                                  [value]="true">Ja</label>
+      <label class="radio-inline" for="hatVersicherung_nein"><input type="radio" id="hatVersicherung_nein"
+                                                                    name="hatVersicherung"
+                                                                    [(ngModel)]="formG.hatVersicherung"
+                                                                    [value]="false">Nein</label>
+    </div>
+  </div>
+  <ng-container *ngIf="formG.hatVersicherung">
+    <div class="col-sm-2">
+      <button class="btn btn-group-md btn-primary"
+              [disabled]="formG.versicherung.length > 4"
+              (click)="fuegeHinzuVersicherung()"><span
+        class="glyphicon glyphicon-plus"></span></button>
+      <button class="btn btn-group-md btn-primary"
+              [disabled]="formG.versicherung.length <= 1"
+              (click)="entferneVersicherung()"><span
+        class="glyphicon glyphicon-minus"></span></button>
+    </div>
+  </ng-container>
+</div>
+<!-- ENDE Abschnitt Frage nach Lebens- und Rentenversicherungen. -->
+<!-- Abschnitt Daten für Lebens- und Rentenversicherungen. -->
+<ng-container *ngIf="formG.hatVersicherung">
+  <!-- Abschnitt für Lebens- und Rentenversicherungen. -->
+  <div *ngFor="let versicherung of formG.versicherung; let i = index">
+    <div class="row">
+      <div class="col-sm-4">
+        <div class="form-group">
+          <label for="versicherungBezeichnung_{{i}}">{{getFragen().G_versicherungBezeichnung}}</label>
+          <input id="versicherungBezeichnung_{{i}}" type="text" class="form-control" placeholder="Pflicht"
+                 [(ngModel)]="versicherung.detailEingabe" required="required">
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <div class="form-group">
+          <label for="versicherungBetrag_{{i}}">{{getFragen().G_versicherungBetrag}} </label>
+          <input id="versicherungBetrag_{{i}}" type="text" class="form-control" placeholder="Pflicht"
+                 [(ngModel)]="versicherung.vermoegen" required="required">
+        </div>
       </div>
     </div>
   </div>
-  <!-- ENDE Abschnitt Frage nach Lebens- und Rentenversicherungen. -->
+</ng-container>
+<!-- ENDE Abschnitt Frage für Lebens- und Rentenversicherungen. -->
 
-  <!-- Abschnitt Frage nach sonstigem Vermögen. -->
-  <label class="form-check-inline"> 6. Verfügen Sie oder Ihr Ehepartner/eingetragener Lebenspartner über sonstige Vermögenswerte ?(z.B. Bausparvertrag, Wertpapiere, Beteiligungen</label>
-  <div class="row">
-    <div class="col-sm-6">
-      <div class="radio">
-        <label class="radio-inline" for="sonsVermoegen_ja"><input type="radio" id="sonsVermoegen_ja" name="sonsVermoegen"
-                                                                  [(ngModel)]="formG.sonsVermoegen" [value]="true">Ja</label>
-        <label class="radio-inline" for="sonsVermoegen_nein"><input type="radio" id="sonsVermoegen_nein" name="sonsVermoegen"
-                                                                    [(ngModel)]="formG.sonsVermoegen" [value]="false">Nein</label>
+<!-- Abschnitt Frage nach sonstigem Vermögen. -->
+<label class="form-check-inline"> 6. Verfügen Sie oder Ihr Ehepartner/eingetragener Lebenspartner über
+  sonstige Vermögenswerte ?(z.B. Bausparvertrag, Wertpapiere, Beteiligungen</label>
+<div class="row">
+  <div class="col-sm-2">
+    <div class="radio">
+      <label class="radio-inline" for="hatSonstige_ja"><input type="radio" id="hatSonstige_ja"
+                                                              name="hatSonstige"
+                                                              [(ngModel)]="formG.hatSonstige" [value]="true">Ja</label>
+      <label class="radio-inline" for="hatSonstige_nein"><input type="radio" id="hatSonstige_nein"
+                                                                name="hatSonstige"
+                                                                [(ngModel)]="formG.hatSonstige"
+                                                                [value]="false">Nein</label>
+    </div>
+  </div>
+  <ng-container *ngIf="formG.hatSonstige">
+    <div class="col-sm-2">
+      <button class="btn btn-group-md btn-primary"
+              [disabled]="formG.sonstige.length > 4"
+              (click)="fuegeHinzuSonstiges()"><span
+        class="glyphicon glyphicon-plus"></span></button>
+      <button class="btn btn-group-md btn-primary"
+              [disabled]="formG.sonstige.length <= 1"
+              (click)="entferneSonstiges()"><span
+        class="glyphicon glyphicon-minus"></span></button>
+    </div>
+  </ng-container>
+</div>
+<!-- ENDE Abschnitt Frage nach sonstigem Vermögen. -->
+<!-- Abschnitt Daten für Lebens- und Rentenversicherungen. -->
+<ng-container *ngIf="formG.hatSonstige">
+  <!-- Abschnitt für Lebens- und Rentenversicherungen. -->
+  <div *ngFor="let sonstige of formG.sonstige; let i = index">
+    <div class="row">
+      <div class="col-sm-4">
+        <div class="form-group">
+          <label for="sonstigeBezeichnung_{{i}}">{{getFragen().G_sonstigeBezeichnung}}</label>
+          <input id="sonstigeBezeichnung_{{i}}" type="text" class="form-control" placeholder="Pflicht"
+                 [(ngModel)]="sonstige.detailEingabe" required="required">
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <div class="form-group">
+          <label for="sonstigeBetrag_{{i}}">{{getFragen().G_sonstigeBetrag}} </label>
+          <input id="sonstigeBetrag_{{i}}" type="text" class="form-control" placeholder="Pflicht"
+                 [(ngModel)]="sonstige.vermoegen" required="required">
+        </div>
       </div>
     </div>
   </div>
-  <!-- ENDE Abschnitt Frage nach sonstigem Vermögen. -->
+</ng-container>
+<!-- ENDE Abschnitt Frage für Lebens- und Rentenversicherungen. -->

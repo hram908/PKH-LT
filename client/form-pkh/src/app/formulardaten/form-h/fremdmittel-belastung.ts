@@ -1,14 +1,13 @@
 /**
- * @author: Isabella, Thomas
+ * @author: Isabella, Thomas, Jana
  **/
 
 export class FremdmittelBelastung {
-  // first block
   datumDesVertrages = '';
   darlehensNehmer = '';
   kreditinstitut = '';
   zahlungsende = '';
 
-  restschuld = '';
-  zinsenMonatlich = '';
+  restschuld = 0;
+  tilgungMonatlich = 0;
 }
