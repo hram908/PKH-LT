@@ -1,9 +1,9 @@
+import {Unterhaltsverpflichteter} from './unterhaltsverpflichteter';
 /**
- * @author: Isabella
+ * @author: Isabella, Thomas, Jana
  **/
 
 export class FormCMaterial {
   hatUnterhaltsanspruch = false;
-  UnterhaltsgebenderEhe = '';
-  Unterhaltsgebender = '';
+  unterhaltsverpflichteter: Unterhaltsverpflichteter[] = [new Unterhaltsverpflichteter(), new Unterhaltsverpflichteter()];
 }

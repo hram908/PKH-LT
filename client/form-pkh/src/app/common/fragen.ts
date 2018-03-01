@@ -43,20 +43,76 @@ export class Fragen {
     'wirtschaftlichen Verhältnisse an, sofern diese nicht bereits vollständig aus den folgenden Abschnitten ersichtlich sind.';
 
   // Formularabschnitt D
-  public static readonly D_Angehoerige = '';
+  public static readonly D_Frage = 'Gewähren die Angehörigen Bar- oder Naturalunterhalt?';
+  public static readonly D_Name = 'Vollständiger Name';
+  public static readonly D_Geburtsdatum = 'Geburtsdatum';
+  public static readonly D_Strasse = 'Strasse';
+  public static readonly D_Hausnummer = 'Hausnummer';
+  public static readonly D_PLZ = 'PLZ';
+  public static readonly D_Ort = 'Ort';
+  public static readonly D_Verhaeltnis = 'Verhältnis';
+  public static readonly D_Monatsbetrag = 'Monatsbetrag';
+  public static readonly D_FrageAngehoeriger = 'Hat dieser Angehöriger eigene Einnahmen?';
+  public static readonly D_einnahmenAngehoeriger = 'Einnahmen des Angehörigen';
 
   // Formularabschnitt E
+  public static readonly E_nichtSelbstArbeitBetrag = 'Haben Sie Einnahmen aus nicht selbstständiger Arbeit?';
+  public static readonly E_selbstArbeitBetrag = 'Haben Sie Einnahmen aus selbstständiger Arbeit?';
+  public static readonly E_vermietungUndVerpachtungBetrag = 'Haben Sie Einnahmen aus Vermietung oder Verpachtung?';
+  public static readonly E_kapitalvermoegenBetrag = 'Haben Sie Einnahmen aus Kapitalvermögen?';
+  public static readonly E_kindergeldBetrag = 'Haben Sie Einnahmen aus Kindergeld?';
+  public static readonly E_wohngeldBetrag = 'Haben Sie Einnahmen aus Wohngeld?';
+  public static readonly E_unterhaltBetrag = 'Haben Sie Einnahmen aus Unterhalt';
+  public static readonly E_renteUndPensionBetrag = 'Haben Sie Einnahmen aus Rente und/oder Pension?';
+  public static readonly E_arbeitslosengeldBetrag = 'Haben Sie Einnahmen aus Arbeitslosengeld';
+  public static readonly E_arbeitslosengeld2Betrag = 'Haben Sie Einnahmen aus Arbeitslosengeld 2?';
+  public static readonly E_krankengeldBetrag = 'Haben Sie Einnahmen aus Krankengeld?';
+  public static readonly E_elterngeldBetrag = 'Haben Sie Einnahmen aus Elterngeld?';
 
   // Formularabschnitt F
+  public static readonly F_steuernBezeichnung = 'Steuern/Solidaritätszuschlag';
+  public static readonly F_steuernBetrag = 'Betrag in EUR pro Monat';
+  public static readonly F_sozialversicherungsbeitreageBezeichnung = 'Sozialversicherungsbeiträge';
+  public static readonly F_sozialversicherungsbeitreageBetrag = 'Betrag in EUR pro Monat';
+  public static readonly F_sonsVersicherungBezeichnung = 'Sonstige Versicherungen';
+  public static readonly F_sonsVersicherungBetrag = 'Betrag in EUR pro Monat';
+  public static readonly F_fahrtZurArbeitBezeichnung = 'Fahrt zur Arbeit';
+  public static readonly F_fahrtZurArbeitBetrag = 'Betrag in EUR pro Monat';
+  public static readonly F_werbeUndBetriebskostenBezichnung = 'Sonstige Werbekosten/Betirebskosten';
+  public static readonly werbeUndBetriebskostenBetrag = 'Betrag in EUR pro Monat';
 
   // Formularabschnitt G
+  public static readonly G_kontoBezeichnung = 'Bezeichnung';
+  public static readonly G_kontoBetrag = 'Betrag in EUR';
+  public static readonly G_grundeigentumBezeichnung = 'Bezeichnung';
+  public static readonly G_grundeigentumBetrag = 'Betrag in EUR';
+  public static readonly G_kraftfahrzeugeBezeichnung = 'Bezeichnung';
+  public static readonly G_kraftfahrzeugeBetrag = 'Betrag in EUR';
+  public static readonly G_wertgegenstaendeBezeichnung = 'Bezeichnung';
+  public static readonly G_wertgegenstaendeBetrag = 'Betrag in EUR';
+  public static readonly G_versicherungBezeichnung = 'Bezeichnung';
+  public static readonly G_versicherungBetrag = 'Betrag in EUR';
+  public static readonly G_sonstigeBezeichnung = 'Bezeichnung';
+  public static readonly G_sonstigeBetrag = 'Betrag in EUR';
 
   // Formularabschnitt H
+  public static readonly H = {
+    'groesseWohnung': {
+      'WHG_KRZ': '1. Größe der Wohnung',
+      'WHG_LNG': 'Gesamtgröße des Wohnraums, den Sie \' +\n' +
+      '    \'allein oder gemeinsam mit anderen Personen bewohnen',
+    },
+    'anzahlZimmer': '2. Anzahl der Zimmer',
+    'anzahlPersonen': {
+      'PER_KRZ': '3. Anzahl der Personen',
+      'PER_LNG': 'Anzahl der Personen, die diese Wohnraum bewohnen',
+    },
+  };
   public static readonly H_gesamtgroesseWohnung = ' 1. Gesamtgröße des Wohnraums, den Sie ' +
     'allein oder gemeinsam mit anderen Personen bewohnen';
   public static readonly H_anzahlZimmer = '2. Anzahl der Zimmer';
   public static readonly H_anzahlPersonenWohnraum = '3. Anzahl der Personen, die diese Wohnraum bewohnen';
-  public static readonly H_nebenkosten = 'Kaltiete';
+  public static readonly H_miete = 'Kaltmiete';
   public static readonly H_heizkosten = 'Heizungskosten';
   public static readonly H_sonstNebenkosten = 'sonstige Nebenkosten';
   public static readonly H_gesamtbetrag = 'Gesamtbetrag';

@@ -1,8 +1,8 @@
 /**
- * @author: Isabella
+ * @author: Isabella, Thomas, Jana
  **/
 
 export class EintragJ {
-  beschreibung: string;
-  alleinigeZahlung: number;
+  beschreibung = '';
+  alleinigeZahlung = 0;
 }

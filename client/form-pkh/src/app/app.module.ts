@@ -32,7 +32,7 @@ import {FormEMaterial} from './formulardaten/form-e/form-e-material';
 import {FormFMaterial} from './formulardaten/form-f/form-f-material';
 import {FormGMaterial} from './formulardaten/form-g/form-g-material';
 import {FormHMaterial} from './formulardaten/form-h/form-h-material';
-import {PkhFormMaterial} from './formulardaten/pkh-form-material';
+import {PkhMaterial} from './formulardaten/pkh-material';
 import {RestService} from './rest-api/rest-service';
 import {HttpClientModule} from '@angular/common/http';
 import {Fragen} from './common/fragen';
@@ -45,6 +45,7 @@ import { ChatbotFormGComponent } from './chatbot/chatbot-form-g/chatbot-form-g.c
 import { ChatbotFormHComponent } from './chatbot/chatbot-form-h/chatbot-form-h.component';
 import { ChatbotFormIComponent } from './chatbot/chatbot-form-i/chatbot-form-i.component';
 import { ChatbotFormJComponent } from './chatbot/chatbot-form-j/chatbot-form-j.component';
+import {Notiz} from './formulardaten/notiz';
 
 
 
@@ -94,7 +95,8 @@ import { ChatbotFormJComponent } from './chatbot/chatbot-form-j/chatbot-form-j.c
     FormHMaterial,
     FormIMaterial,
     FormJMaterial,
-    PkhFormMaterial,
+    PkhMaterial,
+    Notiz,
     Fragen,
     AllgemeineDaten,
     RestService,

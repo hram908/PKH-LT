@@ -6,13 +6,16 @@
       <div class="col-sm-4">
         <div class="form-group">
           <label for="name">{{getFragen().A.vorname}} *</label>
-          <input id="name" type="text" class="form-control" placeholder="Pflicht" [(ngModel)]="formA.vorname" required="required" data-error="Der Vorname ist notwendig.">
+          <input id="name" type="text" class="form-control" placeholder="Pflicht"
+                 [(ngModel)]="formA.antragsteller.vorname" required="required" data-error="Der Vorname ist notwendig.">
         </div>
       </div>
       <div class="col-sm-4">
         <div class="form-group">
           <label for="nachname">{{getFragen().A.nachname}} *</label>
-          <input id="nachname" type="text" class="form-control" placeholder="Pflicht" [(ngModel)]="formA.nachname" required="required" data-error="Der Nachname ist notwendig.">
+          <input id="nachname" type="text" class="form-control" placeholder="Pflicht"
+                 [(ngModel)]="formA.antragsteller.nachname" required="required"
+                 data-error="Der Nachname ist notwendig.">
         </div>
       </div>
     </div>
@@ -20,13 +23,15 @@
       <div class="col-sm-4">
         <div class="form-group">
           <label for="geburtsname">{{getFragen().A_Geburtsname}}</label>
-          <input id="geburtsname" type="text" class="form-control" [(ngModel)]="formA.geburtsname" placeholder="Abweichender Geburtsname">
+          <input id="geburtsname" type="text" class="form-control" [(ngModel)]="formA.antragsteller.geburtsname"
+                 placeholder="Abweichender Geburtsname">
         </div>
       </div>
       <div class="col-sm-2">
         <div class="form-group">
           <label for="familienstand">{{getFragen().A_Familienstand}} *</label>
-          <select id="familienstand" class="form-control" [(ngModel)]="formA.familienstand" required="required">
+          <select id="familienstand" class="form-control" [(ngModel)]="formA.antragsteller.familienstand"
+                  required="required">
             <option value="" disabled selected hidden>Pflicht</option>
             <option [value]="'Ledig'">Ledig</option>
             <option [value]="'Verheiratet'">Verheiratet</option>
@@ -39,7 +44,8 @@
       <div class="col-sm-2">
         <div class="form-group">
           <label for="geburtsdatum">{{getFragen().A_Geburtsdatum}} *</label>
-          <input id="geburtsdatum" type="date" class="form-control" [(ngModel)]="formA.geburtstag" required="required">
+          <input id="geburtsdatum" type="date" class="form-control" [(ngModel)]="formA.antragsteller.geburtstag"
+                 required="required">
         </div>
       </div>
     </div>
@@ -50,13 +56,15 @@
       <div class="col-sm-4">
         <div class="form-group">
           <label for="beruf">{{getFragen().A_Beruf}}</label>
-          <input id="beruf" type="text" class="form-control" [(ngModel)]="formA.beruf" placeholder="Optional">
+          <input id="beruf" type="text" class="form-control" [(ngModel)]="formA.antragsteller.beruf"
+                 placeholder="Optional">
         </div>
       </div>
       <div class="col-sm-2">
         <div class="form-group">
           <label for="berufstyp">Erwerbstätigkeit *</label>
-          <select id="berufstyp" class="form-control" [(ngModel)]="formA.berufstyp" required="required">
+          <select id="berufstyp" class="form-control" [(ngModel)]="formA.antragsteller.erwerbstaetigkeit"
+                  required="required">
             <option value="" disabled selected hidden>Pflicht</option>
             <option [value]="'Angestellt'">Angestellt</option>
             <option [value]="'Selbstständig'">Selbstständig</option>
@@ -69,7 +77,8 @@
       <div class="col-sm-2">
         <div class="form-group">
           <label for="telefon">{{getFragen().A.telefon.TEL_KRZ}} *</label>
-          <input id="telefon" type="tel" class="form-control" [(ngModel)]="formA.telefon" placeholder="Pflicht" required="required">
+          <input id="telefon" type="tel" class="form-control" [(ngModel)]="formA.antragsteller.telefon"
+                 placeholder="Optional">
           <label id="sublabel">{{getFragen().A.telefon.TEL_LNG}}</label>
         </div>
       </div>
@@ -82,13 +91,15 @@
       <div class="col-sm-4">
         <div class="form-group">
           <label for="strasse">{{getFragen().A_Strasse}} *</label>
-          <input id="strasse" type="text" class="form-control" [(ngModel)]="formA.strasse" placeholder="Pflicht">
+          <input id="strasse" type="text" class="form-control" [(ngModel)]="formA.antragsteller.strasse"
+                 placeholder="Pflicht">
         </div>
       </div>
       <div class="col-sm-2">
         <div class="form-group">
           <label for="hausnummer">{{getFragen().A_Hausnummer}} *</label>
-          <input id="hausnummer" type="text" class="form-control" [(ngModel)]="formA.hausnummer" placeholder="Pflicht">
+          <input id="hausnummer" type="text" class="form-control" [(ngModel)]="formA.antragsteller.hausnummer"
+                 placeholder="Pflicht">
         </div>
       </div>
     </div>
@@ -96,13 +107,13 @@
       <div class="col-sm-2">
         <div class="form-group">
           <label for="plz">{{getFragen().A_Plz}} *</label>
-          <input id="plz" type="text" class="form-control" [(ngModel)]="formA.plz" placeholder="Pflicht">
+          <input id="plz" type="text" class="form-control" [(ngModel)]="formA.antragsteller.plz" placeholder="Pflicht">
         </div>
       </div>
       <div class="col-sm-4">
         <div class="form-group">
           <label for="ort">{{getFragen().A_Ort}} *</label>
-          <input id="ort" type="text" class="form-control" [(ngModel)]="formA.ort" placeholder="Pflicht">
+          <input id="ort" type="text" class="form-control" [(ngModel)]="formA.antragsteller.ort" placeholder="Pflicht">
         </div>
       </div>
     </div>
@@ -119,33 +130,40 @@
     <div class="row">
       <div class="col-sm-6">
         <div class="radio">
-          <label class="radio-inline" for="vertreter_ja"><input type="radio" id="vertreter_ja" name="gesVertreter" [(ngModel)]="formA.hatGesetzlicherVertreter" [value]="true">Ja</label>
-          <label class="radio-inline" for="vertreter_nein"><input type="radio" id="vertreter_nein" name="gesVertreter" [(ngModel)]="formA.hatGesetzlicherVertreter" [value]="false">Nein</label>
+          <label class="radio-inline" for="vertreter_ja"><input type="radio" id="vertreter_ja" name="gesVertreter"
+                                                                [(ngModel)]="formA.gesetzVertreter.hatGesetzlichenVertreter"
+                                                                [value]="true">Ja</label>
+          <label class="radio-inline" for="vertreter_nein"><input type="radio" id="vertreter_nein" name="gesVertreter"
+                                                                  [(ngModel)]="formA.gesetzVertreter.hatGesetzlichenVertreter"
+                                                                  [value]="false">Nein</label>
         </div>
       </div>
     </div>
     <!-- ENDE Abschnitt Frage nach gesetzlichem Vertreter -->
 
     <!-- Abschnitt Daten des gesetzlichen Vertreters -->
-    <ng-container *ngIf="formA.hatGesetzlicherVertreter">
+    <ng-container *ngIf="formA.gesetzVertreter.hatGesetzlichenVertreter">
       <!-- Abschnitt für den Namen und Telefon -->
       <div class="row">
         <div class="col-sm-3">
           <div class="form-group">
             <label for="nameVertreter">{{getFragen().A_Vorname}} *</label>
-            <input id="nameVertreter" type="text" class="form-control" placeholder="Pflicht *" [(ngModel)]="formA.vertreterVorname" required="required">
+            <input id="nameVertreter" type="text" class="form-control" placeholder="Pflicht *"
+                   [(ngModel)]="formA.gesetzVertreter.vertreterVorname" required="required">
           </div>
         </div>
         <div class="col-sm-3">
           <div class="form-group">
             <label for="nachnameVertreter">{{getFragen().A_Name}} *</label>
-            <input id="nachnameVertreter" type="text" class="form-control" placeholder="Pflicht *" [(ngModel)]="formA.vertreterName" required="required">
+            <input id="nachnameVertreter" type="text" class="form-control" placeholder="Pflicht *"
+                   [(ngModel)]="formA.gesetzVertreter.vertreterName" required="required">
           </div>
         </div>
         <div class="col-sm-2">
           <div class="form-group">
             <label for="telefonVertreter">Telefonnummer *</label>
-            <input id="telefonVertreter" type="tel" class="form-control" [(ngModel)]="formA.vertreterTelefon" placeholder="Pflicht">
+            <input id="telefonVertreter" type="tel" class="form-control"
+                   [(ngModel)]="formA.gesetzVertreter.vertreterTelefon" placeholder="Optional">
           </div>
         </div>
       </div>
@@ -154,17 +172,19 @@
 
       <!-- Abschnitt für die Anschrift -->
       <label>{{getFragen().A_Anschrift}}</label>
-      <div class="row">
+      <div class="row panel-default">
         <div class="col-sm-4">
           <div class="form-group">
             <label for="strasseVertreter">{{getFragen().A_Strasse}}</label>
-            <input id="strasseVertreter" type="text" class="form-control" [(ngModel)]="formA.vertreterStrasse">
+            <input id="strasseVertreter" type="text" class="form-control"
+                   [(ngModel)]="formA.gesetzVertreter.vertreterStrasse" placeholder="Pflicht" required="required">
           </div>
         </div>
         <div class="col-sm-2">
           <div class="form-group">
             <label for="hausnummerVertreter">{{getFragen().A_Hausnummer}}</label>
-            <input id="hausnummerVertreter" type="number" class="form-control" [(ngModel)]="formA.vertreterHausnummer">
+            <input id="hausnummerVertreter" type="text" class="form-control"
+                   [(ngModel)]="formA.gesetzVertreter.vertreterHausnummer" placeholder="Pflicht" required="required">
           </div>
         </div>
       </div>
@@ -172,13 +192,15 @@
         <div class="col-sm-2">
           <div class="form-group">
             <label for="plzVertreter">{{getFragen().A_Plz}}</label>
-            <input id="plzVertreter" type="text" class="form-control" [(ngModel)]="formA.vertreterPlz">
+            <input id="plzVertreter" type="text" class="form-control" [(ngModel)]="formA.gesetzVertreter.vertreterPlz"
+                   placeholder="Pflicht" required="required">
           </div>
         </div>
         <div class="col-sm-4">
           <div class="form-group">
             <label for="ortVertreter">{{getFragen().A_Ort}}</label>
-            <input id="ortVertreter" type="text" class="form-control" [(ngModel)]="formA.vertreterOrt">
+            <input id="ortVertreter" type="text" class="form-control" [(ngModel)]="formA.gesetzVertreter.vertreterOrt"
+                   placeholder="Pflicht" required="required">
           </div>
         </div>
       </div>

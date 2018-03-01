@@ -1,12 +1,10 @@
-import {Abzuege} from './abzuege';
+import {TypAbzuege} from './typ-abzuege';
+
 /**
- * @author: Isabella
+ * @author: Isabella, Thomas, Jana
  **/
 
 export class FormFMaterial {
-  steuern: Abzuege;
-  sozialversicherung: Abzuege;
-  sonstigeVersicherungen: Abzuege;
-  arbeitsfahrtkosten: Abzuege;
-  werbungskosten: Abzuege;
+  antragsteller: TypAbzuege = new TypAbzuege;
+  ehepartner: TypAbzuege = new TypAbzuege;
 }
