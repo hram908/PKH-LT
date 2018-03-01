@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, EventEmitter} from '@angular/core';
 
 @Component({
   selector: 'app-chatbot-form-b',
@@ -11,12 +11,16 @@ export class ChatbotFormBComponent {
   public chatbotText: string;
   public lastUserInput: string;
 
+  public userInput: EventEmitter<string>;
+
   constructor() {
     this.chatbotText = this.DefaultText;
     this.lastUserInput = '';
+
+    this.userInput = new EventEmitter();
   }
 
   public askWatson(userInput: string){
-
+    this.userInput.emit(userInput);
   }
 }

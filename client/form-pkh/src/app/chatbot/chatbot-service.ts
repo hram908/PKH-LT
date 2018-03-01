@@ -10,13 +10,13 @@ import {ChatbotFormGComponent} from './chatbot-form-g/chatbot-form-g.component';
 import {ChatbotFormHComponent} from './chatbot-form-h/chatbot-form-h.component';
 import {ChatbotFormIComponent} from './chatbot-form-i/chatbot-form-i.component';
 import {ChatbotFormJComponent} from './chatbot-form-j/chatbot-form-j.component';
-import {HttpClient} from '@angular/common/http';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Observable} from 'rxjs/Observable';
 
 @Injectable()
 export class ChatbotService {
-  private readonly chatbotUrl: string = 'localhost:4242/chabot';
-  private httpOptions: any;
+  // http://ltdemos.informatik.uni-hamburg.de/pkh-backend/
+  private readonly chatbotUrl: string = 'http://127.0.0.1:4242/chatbot';
   public chatbotAbschnitte: Abschnitt[];
 
   public constructor(private http: HttpClient) {
@@ -25,12 +25,19 @@ export class ChatbotService {
     this.initializeAbschnitte();
   }
 
-
   // TODO parse watson data
-  addHero (userInput: string): Observable<any> {
-    return this.http.post<string>(this.chatbotUrl, userInput, this.httpOptions);
-  }
+  public askWatson(userInput: string): Observable<any> {
 
+    const headers = new HttpHeaders();
+    headers.set('Content-Type', 'text/plain; charset=utf-8');
+
+    let result: Observable<any> = this.http.post<any>(this.chatbotUrl, userInput);
+
+    console.log("send: " + JSON.stringify(userInput));
+    console.log(result.subscribe());
+
+    return result;
+  }
 
   private initializeAbschnitte() {
     this.chatbotAbschnitte.push(new Abschnitt('A', 'Beginn', FormAComponent));
@@ -43,6 +50,5 @@ export class ChatbotService {
     this.chatbotAbschnitte.push(new Abschnitt('H', 'Wohnkosten', ChatbotFormHComponent));
     this.chatbotAbschnitte.push(new Abschnitt('I', 'SonstigeVerpflichtungen', ChatbotFormIComponent));
     this.chatbotAbschnitte.push(new Abschnitt('J', 'BesondereBelastungen', ChatbotFormJComponent));
-
   }
 }

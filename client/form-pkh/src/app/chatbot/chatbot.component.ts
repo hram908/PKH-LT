@@ -1,5 +1,4 @@
 import {Component, ComponentFactoryResolver, ComponentRef, ViewChild, ViewContainerRef} from '@angular/core';
-import {Fragen} from '../common/fragen';
 import {ChatbotFragen} from '../common/chatbot-fragen';
 import {ViewSwitchService} from '../navigation/view-switch-service';
 import {Abschnitt} from '../abschnitt';
@@ -15,10 +14,14 @@ export class ChatbotComponent {
   componentRef: ComponentRef<ComponentFactoryResolver>;
 
   public botIsActive: boolean;
+  public chatbotText: string;
+
+  private readonly DefaultText: string = 'Kann ich Ihnen bei Abschnitt B helfen?';
 
   constructor(private viewSwitchService: ViewSwitchService,
               private chatbotService: ChatbotService,
               private componentFactoryResolver: ComponentFactoryResolver) {
+    this.chatbotText = this.DefaultText;
     this.botIsActive = false;
     viewSwitchService.formChanged.subscribe(this.onFormChanged);
   }
@@ -31,7 +34,6 @@ export class ChatbotComponent {
 
       const factory = this.componentFactoryResolver.resolveComponentFactory(activeComponent);
       this.componentRef = this.container.createComponent(factory);
-
     }
   }
 
@@ -41,5 +43,9 @@ export class ChatbotComponent {
 
   getFragen() {
     return ChatbotFragen;
+  }
+
+  public askWatson(userInput: string){
+    this.chatbotService.askWatson(userInput);
   }
 }
