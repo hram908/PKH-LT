@@ -15,8 +15,8 @@ import {Observable} from 'rxjs/Observable';
 
 @Injectable()
 export class ChatbotService {
-  // http://ltdemos.informatik.uni-hamburg.de/pkh-backend/
-  private readonly chatbotUrl: string = 'http://127.0.0.1:4242/chatbot';
+  // IMPORTANT NOTE: for deployment change url to  'deployed server url'/chatbot
+  private readonly chatbotUrl: string = 'http://127.0.0.1/4242/chatbot';
   public chatbotAbschnitte: Abschnitt[];
 
   public constructor(private http: HttpClient) {
