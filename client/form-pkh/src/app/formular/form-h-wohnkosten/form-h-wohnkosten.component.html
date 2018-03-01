@@ -7,7 +7,7 @@
   <div class="col-sm-2">
     <div class="form-group">
       <label for="groesse">{{getFragen().H.groesseWohnung.WHG_KRZ}}</label>
-      <input id="groesse" type="text" class="form-control" placeholder="Pflicht" [(ngModel)]="formH.groesse"
+      <input id="groesse" type="text" class="form-control" placeholder="Pflicht" [(ngModel)]="formH.wohnraumgroesse"
              required="required" data-error="Die Wohnungsgröße ist notwendig.">
     </div>
   </div>
@@ -28,7 +28,7 @@
     <div class="form-group">
       <label for="anzahlPersonenWohnraum">{{getFragen().H.anzahlPersonen.PER_KRZ}} </label>
       <input id="anzahlPersonenWohnraum" type="text" class="form-control" placeholder="Pflicht"
-             [(ngModel)]="formH.anzahlPersonenWohnraum" required="required"
+             [(ngModel)]="formH.personenImWohnraum" required="required"
              data-error="Die Anzahl der Personen, die die Wohnung bewohnen ist notwendig.">
     </div>
   </div>

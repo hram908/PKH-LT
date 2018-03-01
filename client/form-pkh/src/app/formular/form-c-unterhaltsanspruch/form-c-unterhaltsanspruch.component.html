@@ -39,9 +39,11 @@
     </div>
     <ng-container *ngIf="formC.hatUnterhaltsanspruch">
       <div class="col-sm-2">
-        <button class="btn btn-group-md btn-primary" [disabled]="formC.unterhaltsverpflichteter.length > 6" (click)="fuegeUnterhaltHinzu()"><span
+        <button class="btn btn-group-md btn-primary" [disabled]="formC.unterhaltsverpflichteter.length >= 6"
+                (click)="fuegeUnterhaltHinzu()"><span
           class="glyphicon glyphicon-plus"></span></button>
-        <button class="btn btn-group-md btn-primary" [disabled]="formC.unterhaltsverpflichteter.length <= 1" (click)="entferneUnterhalt()"><span
+        <button class="btn btn-group-md btn-primary" [disabled]="formC.unterhaltsverpflichteter.length <= 1"
+                (click)="entferneUnterhalt()"><span
           class="glyphicon glyphicon-minus"></span></button>
       </div>
     </ng-container>
@@ -54,8 +56,5 @@
         <input type="text" class="form-control" [(ngModel)]="person.name" placeholder="...">
       </div>
     </div>
-
-
   </ng-container>
-
 </div>

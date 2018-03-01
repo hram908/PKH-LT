@@ -26,14 +26,14 @@ export class ChatbotComponent {
     this.botIsActive = false;
     this.watsonResponses = [];
 
-    viewSwitchService.formChanged.subscribe(this.onFormChanged);
+     // viewSwitchService.formChanged.subscribe(this.onFormChanged);
   }
 
   private onFormChanged = (abschnitt: Abschnitt) => {
     if (abschnitt) {
       this.container.clear();
 
-      let activeComponent = this.chatbotService.chatbotAbschnitte.find(a => a.id === abschnitt.id).component;
+      const activeComponent = this.chatbotService.chatbotAbschnitte.find(a => a.id === abschnitt.id).component;
 
       const factory = this.componentFactoryResolver.resolveComponentFactory(activeComponent);
       this.componentRef = this.container.createComponent(factory);
@@ -48,7 +48,7 @@ export class ChatbotComponent {
     return ChatbotFragen;
   }
 
-  public askWatson(userInput: string){
+  public askWatson(userInput: string) {
     this.chatbotService.askWatson(userInput).subscribe(responses => responses.forEach(response => this.watsonResponses.push(response)));
     console.log(this.watsonResponses);
   }
