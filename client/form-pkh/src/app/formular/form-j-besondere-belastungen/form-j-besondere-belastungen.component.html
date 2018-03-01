@@ -18,7 +18,7 @@
     </div>
   </div>
   <ng-container *ngIf="formJ.hatBesondereBelastungen">
-    <div class="col-sm-2">
+    <div class="col-sm-3">
       <button class="btn btn-group-md btn-primary" [disabled]="formJ.besondereBelastungen.length >= 8" (click)="fuegeHinzuBelastung()"><span
         class="glyphicon glyphicon-plus"></span></button>
       <button class="btn btn-group-md btn-primary" [disabled]="formJ.besondereBelastungen.length <= 1" (click)="entferneBelastung()"><span
@@ -32,14 +32,14 @@
 <ng-container *ngIf="formJ.hatBesondereBelastungen">
   <!-- Abschnitt für besondere Belastungen -->
   <div class="row" *ngFor="let belastung of formJ.besondereBelastungen; let i = index">
-    <div class="col-sm-4">
+    <div class="col-sm-3">
       <div class="form-group">
         <label for="besBelastung_{{i}}">{{getFragen().J_belastungBezeichung}}</label>
         <input id="besBelastung_{{i}}" type="text" class="form-control" placeholder="Pflicht"
                [(ngModel)]="belastung.beschreibung" required="required">
       </div>
     </div>
-    <div class="col-sm-4">
+    <div class="col-sm-3">
       <div class="form-group">
         <label for="besBelastungBetrag_{{i}}">{{getFragen().J_ichAlleineZahle}} </label>
         <input id="besBelastungBetrag_{{i}}" type="text" class="form-control" placeholder="Pflicht"

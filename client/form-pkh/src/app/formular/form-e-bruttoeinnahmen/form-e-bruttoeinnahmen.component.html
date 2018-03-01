@@ -7,17 +7,17 @@
   <div class="col-sm-4">
     <div class="form-group">
       <label for="nichtSelbstArbeitBetrag">{{getFragen().E_nichtSelbstArbeitBetrag}} </label>
-      <input id="nichtSelbstArbeitBetrag" type="text" class="form-control" placeholder="optional" [(ngModel)]="formE.nichtSelbstArbeitBetrag">
+      <input id="nichtSelbstArbeitBetrag" type="text" class="form-control" placeholder="optional"
+             [(ngModel)]="formE.antragsteller.nichtselbstarbeit">
     </div>
   </div>
-</div>
 <!-- ENDE Abschnitt ... -->
 <!-- Abschnitt für ... -->
-<div class="row">
   <div class="col-sm-4">
     <div class="form-group">
       <label for="selbstArbeitBetrag">{{getFragen().E_selbstArbeitBetrag}} </label>
-      <input id="selbstArbeitBetrag" type="text" class="form-control" placeholder="optional" [(ngModel)]="formE.selbstArbeitBetrag">
+      <input id="selbstArbeitBetrag" type="text" class="form-control" placeholder="optional"
+             [(ngModel)]="formE.antragsteller.selbstarbeit">
     </div>
   </div>
 </div>
@@ -27,17 +27,17 @@
   <div class="col-sm-4">
     <div class="form-group">
       <label for="vermietungUndVerpachtungBetrag">{{getFragen().E_vermietungUndVerpachtungBetrag}} </label>
-      <input id="vermietungUndVerpachtungBetrag" type="text" class="form-control" placeholder="optional" [(ngModel)]="formE.vermietungUndVerpachtungBetrag">
+      <input id="vermietungUndVerpachtungBetrag" type="text" class="form-control" placeholder="optional"
+             [(ngModel)]="formE.antragsteller.vermietung">
     </div>
   </div>
-</div>
 <!-- ENDE Abschnitt ... -->
 <!-- Abschnitt für ... -->
-<div class="row">
   <div class="col-sm-4">
     <div class="form-group">
       <label for="kapitalvermoegenBetrag">{{getFragen().E_kapitalvermoegenBetrag}} </label>
-      <input id="kapitalvermoegenBetrag" type="text" class="form-control" placeholder="optional" [(ngModel)]="formE.kapitalvermoegenBetrag">
+      <input id="kapitalvermoegenBetrag" type="text" class="form-control" placeholder="optional"
+             [(ngModel)]="formE.antragsteller.kapital">
     </div>
   </div>
 </div>
@@ -46,18 +46,18 @@
 <div class="row">
   <div class="col-sm-4">
     <div class="form-group">
-      <label for="kindergeldBetrag">{{getFragen().E_kindergeldBetrag}} </label>
-      <input id="kindergeldBetrag" type="text" class="form-control" placeholder="optional" [(ngModel)]="formE.kindergeldBetrag">
+      <label for="kindergeldBetrag">{{getFragen().E_kindergeldBetrag}}</label>
+      <input id="kindergeldBetrag" type="text" class="form-control" placeholder="optional"
+             [(ngModel)]="formE.antragsteller.kindergeld">
     </div>
   </div>
-</div>
 <!-- ENDE Abschnitt ... -->
 <!-- Abschnitt für ... -->
-<div class="row">
   <div class="col-sm-4">
     <div class="form-group">
       <label for="wohngeldBetrag">{{getFragen().E_wohngeldBetrag}} </label>
-      <input id="wohngeldBetrag" type="text" class="form-control" placeholder="optional" [(ngModel)]="formE.wohngeldBetrag">
+      <input id="wohngeldBetrag" type="text" class="form-control" placeholder="optional"
+             [(ngModel)]="formE.antragsteller.wohngeld">
     </div>
   </div>
 </div>
@@ -67,17 +67,17 @@
   <div class="col-sm-4">
     <div class="form-group">
       <label for="unterhaltBetrag">{{getFragen().E_unterhaltBetrag}} </label>
-      <input id="unterhaltBetrag" type="text" class="form-control" placeholder="optional" [(ngModel)]="formE.unterhaltBetrag">
+      <input id="unterhaltBetrag" type="text" class="form-control" placeholder="optional"
+             [(ngModel)]="formE.antragsteller.unterhalt">
     </div>
   </div>
-</div>
 <!-- ENDE Abschnitt ... -->
 <!-- Abschnitt für ... -->
-<div class="row">
   <div class="col-sm-4">
     <div class="form-group">
       <label for="renteUndPensionBetrag">{{getFragen().E_renteUndPensionBetrag}} </label>
-      <input id="renteUndPensionBetrag" type="text" class="form-control" placeholder="optional" [(ngModel)]="formE.renteUndPensionBetrag">
+      <input id="renteUndPensionBetrag" type="text" class="form-control" placeholder="optional"
+             [(ngModel)]="formE.antragsteller.rente">
     </div>
   </div>
 </div>
@@ -87,17 +87,17 @@
   <div class="col-sm-4">
     <div class="form-group">
       <label for="arbeitslosengeldBetrag">{{getFragen().E_arbeitslosengeldBetrag}} </label>
-      <input id="arbeitslosengeldBetrag" type="text" class="form-control" placeholder="optional" [(ngModel)]="formE.arbeitslosengeldBetrag">
+      <input id="arbeitslosengeldBetrag" type="text" class="form-control" placeholder="optional"
+             [(ngModel)]="formE.antragsteller.arbeitslosg1">
     </div>
   </div>
-</div>
 <!-- ENDE Abschnitt ... -->
 <!-- Abschnitt für ... -->
-<div class="row">
   <div class="col-sm-4">
     <div class="form-group">
       <label for="arbeitslosengeld2Betrag">{{getFragen().E_arbeitslosengeld2Betrag}} </label>
-      <input id="arbeitslosengeld2Betrag" type="text" class="form-control" placeholder="optional" [(ngModel)]="formE.arbeitslosengeld2Betrag">
+      <input id="arbeitslosengeld2Betrag" type="text" class="form-control" placeholder="optional"
+             [(ngModel)]="formE.antragsteller.arbeitslosg2">
     </div>
   </div>
 </div>
@@ -107,142 +107,143 @@
   <div class="col-sm-4">
     <div class="form-group">
       <label for="krankengeldBetrag">{{getFragen().E_krankengeldBetrag}} </label>
-      <input id="krankengeldBetrag" type="text" class="form-control" placeholder="optional" [(ngModel)]="formE.krankengeldBetrag">
+      <input id="krankengeldBetrag" type="text" class="form-control" placeholder="optional"
+             [(ngModel)]="formE.antragsteller.krankengeld">
     </div>
   </div>
-</div>
 <!-- ENDE Abschnitt ... -->
 <!-- Abschnitt für ... -->
-<div class="row">
   <div class="col-sm-4">
     <div class="form-group">
       <label for="elterngeldBetrag">{{getFragen().E_elterngeldBetrag}} </label>
-      <input id="elterngeldBetrag" type="text" class="form-control" placeholder="optional" [(ngModel)]="formE.elterngeldBetrag">
+      <input id="elterngeldBetrag" type="text" class="form-control" placeholder="optional"
+             [(ngModel)]="formE.antragsteller.elterngeld">
     </div>
   </div>
 </div>
 <!-- ENDE Abschnitt ... -->
 
-  <!-- Abschnitt Ehepartner -->
-  <ng-container *ngIf="formA.antragsteller.familienstand == 'Eingetragene Partnerschaft' || formA.antragsteller.familienstand == 'Verheiratet'">
-    <label>Ehepartner:</label>
-<!-- Abschnitt für ... -->
-<div class="row">
-  <div class="col-sm-4">
-    <div class="form-group">
-      <label for="nichtSelbstArbeitBetrag1">{{getFragen().E_nichtSelbstArbeitBetrag}} </label>
-      <input id="nichtSelbstArbeitBetrag1" type="text" class="form-control" placeholder="optional" [(ngModel)]="formE.nichtSelbstArbeitBetrag1">
+<!-- Abschnitt Ehepartner -->
+<ng-container
+  *ngIf="formA.antragsteller.familienstand == 'Eingetragene Partnerschaft' || formA.antragsteller.familienstand == 'Verheiratet'">
+  <label>Ehepartner:</label>
+  <!-- Abschnitt für ... -->
+  <div class="row">
+    <div class="col-sm-4">
+      <div class="form-group">
+        <label for="nichtSelbstArbeitBetrag1">{{getFragen().E_nichtSelbstArbeitBetrag}} </label>
+        <input id="nichtSelbstArbeitBetrag1" type="text" class="form-control" placeholder="optional"
+               [(ngModel)]="formE.ehepartner.nichtselbstarbeit">
+      </div>
+    </div>
+  <!-- ENDE Abschnitt ... -->
+  <!-- Abschnitt für ... -->
+    <div class="col-sm-4">
+      <div class="form-group">
+        <label for="selbstArbeitBetrag1">{{getFragen().E_selbstArbeitBetrag}} </label>
+        <input id="selbstArbeitBetrag1" type="text" class="form-control" placeholder="optional"
+               [(ngModel)]="formE.ehepartner.selbstarbeit">
+      </div>
     </div>
   </div>
-</div>
-<!-- ENDE Abschnitt ... -->
-<!-- Abschnitt für ... -->
-<div class="row">
-  <div class="col-sm-4">
-    <div class="form-group">
-      <label for="selbstArbeitBetrag1">{{getFragen().E_selbstArbeitBetrag}} </label>
-      <input id="selbstArbeitBetrag1" type="text" class="form-control" placeholder="optional" [(ngModel)]="formE.selbstArbeitBetrag1">
+  <!-- ENDE Abschnitt ... -->
+  <!-- Abschnitt für ... -->
+  <div class="row">
+    <div class="col-sm-4">
+      <div class="form-group">
+        <label for="vermietungUndVerpachtungBetrag1">{{getFragen().E_vermietungUndVerpachtungBetrag}} </label>
+        <input id="vermietungUndVerpachtungBetrag1" type="text" class="form-control" placeholder="optional"
+               [(ngModel)]="formE.ehepartner.vermietung">
+      </div>
+    </div>
+  <!-- ENDE Abschnitt ... -->
+  <!-- Abschnitt für ... -->
+    <div class="col-sm-4">
+      <div class="form-group">
+        <label for="kapitalvermoegenBetrag1">{{getFragen().E_kapitalvermoegenBetrag}} </label>
+        <input id="kapitalvermoegenBetrag1" type="text" class="form-control" placeholder="optional"
+               [(ngModel)]="formE.ehepartner.kapital">
+      </div>
     </div>
   </div>
-</div>
-<!-- ENDE Abschnitt ... -->
-<!-- Abschnitt für ... -->
-<div class="row">
-  <div class="col-sm-4">
-    <div class="form-group">
-      <label for="vermietungUndVerpachtungBetrag1">{{getFragen().E_vermietungUndVerpachtungBetrag}} </label>
-      <input id="vermietungUndVerpachtungBetrag1" type="text" class="form-control" placeholder="optional" [(ngModel)]="formE.vermietungUndVerpachtungBetrag1">
+  <!-- ENDE Abschnitt ... -->
+  <!-- Abschnitt für ... -->
+  <div class="row">
+    <div class="col-sm-4">
+      <div class="form-group">
+        <label for="kindergeldBetrag1">{{getFragen().E_kindergeldBetrag}} </label>
+        <input id="kindergeldBetrag1" type="text" class="form-control" placeholder="optional"
+               [(ngModel)]="formE.ehepartner.kindergeld">
+      </div>
+    </div>
+  <!-- ENDE Abschnitt ... -->
+  <!-- Abschnitt für ... -->
+    <div class="col-sm-4">
+      <div class="form-group">
+        <label for="wohngeldBetrag1">{{getFragen().E_wohngeldBetrag}} </label>
+        <input id="wohngeldBetrag1" type="text" class="form-control" placeholder="optional"
+               [(ngModel)]="formE.ehepartner.wohngeld">
+      </div>
     </div>
   </div>
-</div>
-<!-- ENDE Abschnitt ... -->
-<!-- Abschnitt für ... -->
-<div class="row">
-  <div class="col-sm-4">
-    <div class="form-group">
-      <label for="kapitalvermoegenBetrag1">{{getFragen().E_kapitalvermoegenBetrag}} </label>
-      <input id="kapitalvermoegenBetrag1" type="text" class="form-control" placeholder="optional" [(ngModel)]="formE.kapitalvermoegenBetrag1">
+  <!-- ENDE Abschnitt ... -->
+  <!-- Abschnitt für ... -->
+  <div class="row">
+    <div class="col-sm-4">
+      <div class="form-group">
+        <label for="unterhaltBetrag1">{{getFragen().E_unterhaltBetrag}} </label>
+        <input id="unterhaltBetrag1" type="text" class="form-control" placeholder="optional"
+               [(ngModel)]="formE.ehepartner.unterhalt">
+      </div>
+    </div>
+  <!-- ENDE Abschnitt ... -->
+  <!-- Abschnitt für ... -->
+    <div class="col-sm-4">
+      <div class="form-group">
+        <label for="renteUndPensionBetrag1">{{getFragen().E_renteUndPensionBetrag}} </label>
+        <input id="renteUndPensionBetrag1" type="text" class="form-control" placeholder="optional"
+               [(ngModel)]="formE.ehepartner.rente">
+      </div>
     </div>
   </div>
-</div>
-<!-- ENDE Abschnitt ... -->
-<!-- Abschnitt für ... -->
-<div class="row">
-  <div class="col-sm-4">
-    <div class="form-group">
-      <label for="kindergeldBetrag1">{{getFragen().E_kindergeldBetrag}} </label>
-      <input id="kindergeldBetrag1" type="text" class="form-control" placeholder="optional" [(ngModel)]="formE.kindergeldBetrag1">
+  <!-- ENDE Abschnitt ... -->
+  <!-- Abschnitt für ... -->
+  <div class="row">
+    <div class="col-sm-4">
+      <div class="form-group">
+        <label for="arbeitslosengeldBetrag1">{{getFragen().E_arbeitslosengeldBetrag}} </label>
+        <input id="arbeitslosengeldBetrag1" type="text" class="form-control" placeholder="optional"
+               [(ngModel)]="formE.ehepartner.arbeitslosg1">
+      </div>
+    </div>
+  <!-- ENDE Abschnitt ... -->
+  <!-- Abschnitt für ... -->
+    <div class="col-sm-4">
+      <div class="form-group">
+        <label for="arbeitslosengeld2Betrag1">{{getFragen().E_arbeitslosengeld2Betrag}} </label>
+        <input id="arbeitslosengeld2Betrag1" type="text" class="form-control" placeholder="optional"
+               [(ngModel)]="formE.ehepartner.arbeitslosg2">
+      </div>
     </div>
   </div>
-</div>
-<!-- ENDE Abschnitt ... -->
-<!-- Abschnitt für ... -->
-<div class="row">
-  <div class="col-sm-4">
-    <div class="form-group">
-      <label for="wohngeldBetrag1">{{getFragen().E_wohngeldBetrag}} </label>
-      <input id="wohngeldBetrag1" type="text" class="form-control" placeholder="optional" [(ngModel)]="formE.wohngeldBetrag1">
+  <!-- ENDE Abschnitt ... -->
+  <!-- Abschnitt für ... -->
+  <div class="row">
+    <div class="col-sm-4">
+      <div class="form-group">
+        <label for="krankengeldBetrag1">{{getFragen().E_krankengeldBetrag}} </label>
+        <input id="krankengeldBetrag1" type="text" class="form-control" placeholder="optional"
+               [(ngModel)]="formE.ehepartner.krankengeld">
+      </div>
+    </div>
+  <!-- ENDE Abschnitt ... -->
+  <!-- Abschnitt für ... -->
+    <div class="col-sm-4">
+      <div class="form-group">
+        <label for="elterngeldBetrag1">{{getFragen().E_elterngeldBetrag}} </label>
+        <input id="elterngeldBetrag1" type="text" class="form-control" placeholder="optional"
+               [(ngModel)]="formE.ehepartner.elterngeld">
+      </div>
     </div>
   </div>
-</div>
-<!-- ENDE Abschnitt ... -->
-<!-- Abschnitt für ... -->
-<div class="row">
-  <div class="col-sm-4">
-    <div class="form-group">
-      <label for="unterhaltBetrag1">{{getFragen().E_unterhaltBetrag}} </label>
-      <input id="unterhaltBetrag1" type="text" class="form-control" placeholder="optional" [(ngModel)]="formE.unterhaltBetrag1">
-    </div>
-  </div>
-</div>
-<!-- ENDE Abschnitt ... -->
-<!-- Abschnitt für ... -->
-<div class="row">
-  <div class="col-sm-4">
-    <div class="form-group">
-      <label for="renteUndPensionBetrag1">{{getFragen().E_renteUndPensionBetrag}} </label>
-      <input id="renteUndPensionBetrag1" type="text" class="form-control" placeholder="optional" [(ngModel)]="formE.renteUndPensionBetrag1">
-    </div>
-  </div>
-</div>
-<!-- ENDE Abschnitt ... -->
-<!-- Abschnitt für ... -->
-<div class="row">
-  <div class="col-sm-4">
-    <div class="form-group">
-      <label for="arbeitslosengeldBetrag1">{{getFragen().E_arbeitslosengeldBetrag}} </label>
-      <input id="arbeitslosengeldBetrag1" type="text" class="form-control" placeholder="optional" [(ngModel)]="formE.arbeitslosengeldBetrag1">
-    </div>
-  </div>
-</div>
-<!-- ENDE Abschnitt ... -->
-<!-- Abschnitt für ... -->
-<div class="row">
-  <div class="col-sm-4">
-    <div class="form-group">
-      <label for="arbeitslosengeld2Betrag1">{{getFragen().E_arbeitslosengeld2Betrag}} </label>
-      <input id="arbeitslosengeld2Betrag1" type="text" class="form-control" placeholder="optional" [(ngModel)]="formE.arbeitslosengeld2Betrag1">
-    </div>
-  </div>
-</div>
-<!-- ENDE Abschnitt ... -->
-<!-- Abschnitt für ... -->
-<div class="row">
-  <div class="col-sm-4">
-    <div class="form-group">
-      <label for="krankengeldBetrag1">{{getFragen().E_krankengeldBetrag}} </label>
-      <input id="krankengeldBetrag1" type="text" class="form-control" placeholder="optional" [(ngModel)]="formE.krankengeldBetrag1">
-    </div>
-  </div>
-</div>
-<!-- ENDE Abschnitt ... -->
-<!-- Abschnitt für ... -->
-<div class="row">
-  <div class="col-sm-4">
-    <div class="form-group">
-      <label for="elterngeldBetrag1">{{getFragen().E_elterngeldBetrag}} </label>
-      <input id="elterngeldBetrag1" type="text" class="form-control" placeholder="optional" [(ngModel)]="formE.elterngeldBetrag1">
-    </div>
-  </div>
-</div>
-<!-- ENDE Abschnitt ... -->
+  <!-- ENDE Abschnitt ... -->

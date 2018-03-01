@@ -33,28 +33,28 @@
 <ng-container *ngIf="formI.hatZahlungsverpflichtungen">
   <!-- Abschnitt für sonstige Verpflichtungen  -->
   <div class="row" *ngFor="let zahlungsverpflichtung of formI.zahlungsverpflichtungen; let i = index">
-    <div class="col-sm-5">
+    <div class="col-sm-4">
       <div class="form-group">
         <label for="sonsVerpflichtung_{{i}}">{{getFragen().I_bezeichnung}} </label>
         <input id="sonsVerpflichtung_{{i}}" type="text" class="form-control" placeholder="Pflicht"
                [(ngModel)]="zahlungsverpflichtung.beschreibung" required="required">
       </div>
     </div>
-    <div class="col-sm-1">
+    <div class="col-sm-2">
       <div class="form-group">
         <label for="sonVerpflichtungRestBetrag_{{i}}">{{getFragen().I_restschuld}} </label>
         <input id="sonVerpflichtungRestBetrag_{{i}}" type="text" class="form-control" placeholder="Pflicht"
                [(ngModel)]="zahlungsverpflichtung.restschuld" required="required">
       </div>
     </div>
-    <div class="col-sm-1">
+    <div class="col-sm-2">
       <div class="form-group">
         <label for="sonVerpflichtungGesBelastung_{{i}}">{{getFragen().I_gesamtbelastung}} </label>
         <input id="sonVerpflichtungGesBelastung_{{i}}" type="text" class="form-control" placeholder="Pflicht"
                [(ngModel)]="zahlungsverpflichtung.gesamtbelastungMtl" required="required">
       </div>
     </div>
-    <div class="col-sm-1">
+    <div class="col-sm-2">
       <div class="form-group">
         <label for="sonVerpflichtungEigZahlung_{{i}}">{{getFragen().I_alleineZahlen}} </label>
         <input id="sonVerpflichtungEigZahlung_{{i}}" type="text" class="form-control" placeholder="Pflicht"

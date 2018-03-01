@@ -56,17 +56,18 @@ export class Fragen {
   public static readonly D_einnahmenAngehoeriger = 'Einnahmen des Angehörigen';
 
   // Formularabschnitt E
-  public static readonly E_Frage = 'Haben Sie Einnahmen aus';
-  public static readonly E_FrageEhepartner = 'Hat Ihr Ehepartner/eingetragener Lebenspartner Einnahmen aus';
-  public static readonly E_FrageNichtselbst = 'nichtselbstständiger Arbeit?';
-  public static readonly E_FrageSelbst = 'selbstständiger Arbeit/ Gewerbebetrieb/Land- und Forstwirtschaft?';
-  public static readonly E_FrageVermietung = 'aus Vermietung und Verpachtung?';
-  public static readonly E_Kapital = 'Kapitalvermögen?';
-  public static readonly E_Kindergeld = 'Kindergeld/Kinderzuschlag?';
-  public static readonly E_Wohngeld = 'Wohngeld?';
-  public static readonly E_Unterhalt = 'Unterhalt?';
-  public static readonly E_Rente = 'Rente/Pension?';
-  public static readonly E_Arbeitslosengeld1 = 'Arbeitslosengeld1?';
+  public static readonly E_nichtSelbstArbeitBetrag = 'Haben Sie Einnahmen aus nicht selbstständiger Arbeit?';
+  public static readonly E_selbstArbeitBetrag = 'Haben Sie Einnahmen aus selbstständiger Arbeit?';
+  public static readonly E_vermietungUndVerpachtungBetrag = 'Haben Sie Einnahmen aus Vermietung oder Verpachtung?';
+  public static readonly E_kapitalvermoegenBetrag = 'Haben Sie Einnahmen aus Kapitalvermögen?';
+  public static readonly E_kindergeldBetrag = 'Haben Sie Einnahmen aus Kindergeld?';
+  public static readonly E_wohngeldBetrag = 'Haben Sie Einnahmen aus Wohngeld?';
+  public static readonly E_unterhaltBetrag = 'Haben Sie Einnahmen aus Unterhalt';
+  public static readonly E_renteUndPensionBetrag = 'Haben Sie Einnahmen aus Rente und/oder Pension?';
+  public static readonly E_arbeitslosengeldBetrag = 'Haben Sie Einnahmen aus Arbeitslosengeld';
+  public static readonly E_arbeitslosengeld2Betrag = 'Haben Sie Einnahmen aus Arbeitslosengeld 2?';
+  public static readonly E_krankengeldBetrag = 'Haben Sie Einnahmen aus Krankengeld?';
+  public static readonly E_elterngeldBetrag = 'Haben Sie Einnahmen aus Elterngeld?';
 
   // Formularabschnitt F
   public static readonly F_steuernBezeichnung = 'Steuern/Solidaritätszuschlag';
