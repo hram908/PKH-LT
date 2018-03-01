@@ -1,6 +1,7 @@
 .bot-button {
   position: fixed;
-  background: black;
+  background: #51bfff;
+  border: transparent;
   color: white;
   z-index: 1;
   right: 0;
@@ -21,11 +22,11 @@
 
 .bot-side-menu {
   position: fixed;
-  background: black;
+  background: #51bfff;
   color: white;
   right: -500px;
   padding: 5px;
-  padding-top: 50px;
+  padding-top: 25px;
   margin: 0;
   top: 0;
   height: 100%;
