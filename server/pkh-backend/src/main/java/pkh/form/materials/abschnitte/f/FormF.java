@@ -4,17 +4,11 @@ package pkh.form.materials.abschnitte.f;
  * @author Isabella
  */
 public class FormF {
-    private Abzug steuern;
-    private Abzug sozialversicherung;
-    private Abzug sonstigeVersicherungen;
-    private Abzug arbeitsfahrtkosten;
-    private Abzug werbungskosten;
+    private TypAbzug antragsteller;
+    private TypAbzug ehepartner;
 
-    public FormF(Abzug steuern, Abzug sozialversicherung, Abzug sonstigeVersicherungen, Abzug arbeitsfahrtkosten, Abzug werbungskosten) {
-        this.steuern = steuern;
-        this.sozialversicherung = sozialversicherung;
-        this.sonstigeVersicherungen = sonstigeVersicherungen;
-        this.arbeitsfahrtkosten = arbeitsfahrtkosten;
-        this.werbungskosten = werbungskosten;
+    public FormF(TypAbzug antragsteller, TypAbzug ehepartner) {
+        this.antragsteller = antragsteller;
+        this.ehepartner = ehepartner;
     }
 }

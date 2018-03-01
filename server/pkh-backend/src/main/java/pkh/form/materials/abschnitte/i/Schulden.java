@@ -7,12 +7,12 @@ public class Schulden {
     private String beschreibung;
     private String restschuld;
     private String gesamtbelastungMtl;
-    private String einigeZahlung;
+    private String alleinigeZahlung;
 
-    public Schulden(String beschreibung, String restschuld, String gesamtbelastungMtl, String einigeZahlung) {
+    public Schulden(String beschreibung, String restschuld, String gesamtbelastungMtl, String alleinigeZahlung) {
         this.beschreibung = beschreibung;
         this.restschuld = restschuld;
         this.gesamtbelastungMtl = gesamtbelastungMtl;
-        this.einigeZahlung = einigeZahlung;
+        this.alleinigeZahlung = alleinigeZahlung;
     }
 }

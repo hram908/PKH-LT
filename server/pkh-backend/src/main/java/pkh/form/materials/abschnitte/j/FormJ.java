@@ -1,12 +1,16 @@
 package pkh.form.materials.abschnitte.j;
 
+import java.util.List;
+
 /**
  * @author Isabella
  */
 public class FormJ {
-    private Belastungen besondereBelastungen;
+    private boolean hatBesondereBelastungen;
+    private List<Belastung> besondereBelastungen;
 
-    public FormJ(Belastungen besondereBelastungen) {
+    public FormJ(boolean hatBesondereBelastungen, List<Belastung> besondereBelastungen) {
+        this.hatBesondereBelastungen = hatBesondereBelastungen;
         this.besondereBelastungen = besondereBelastungen;
     }
 }

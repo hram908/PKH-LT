@@ -11,11 +11,8 @@ import pkh.form.materials.abschnitte.h.FormH;
 import pkh.form.materials.abschnitte.i.FormI;
 import pkh.form.materials.abschnitte.j.FormJ;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-
 /**
- * @author Isabella
+ * @author Isabella, Thomas
  */
 public class PkhFormular {
     private long id;
@@ -29,8 +26,9 @@ public class PkhFormular {
     private FormH formH;
     private FormI formI;
     private FormJ formJ;
+    private Notiz notiz;
 
-    public PkhFormular(long id, FormA formA, FormB formB, FormC formC, FormD formD, FormE formE, FormF formF, FormG formG, FormH formH, FormI formI, FormJ formJ) {
+    public PkhFormular(long id, FormA formA, FormB formB, FormC formC, FormD formD, FormE formE, FormF formF, FormG formG, FormH formH, FormI formI, FormJ formJ, Notiz notiz) {
         this.id = id;
         this.formA = formA;
         this.formB = formB;
@@ -42,6 +40,7 @@ public class PkhFormular {
         this.formH = formH;
         this.formI = formI;
         this.formJ = formJ;
+        this.notiz = notiz;
     }
 
     public long getId() {

@@ -6,11 +6,11 @@ import java.util.List;
  * @author Isabella
  */
 public class FormE {
-    private List<String> einnahmen;
-    private List<WeitereEinnahmen> weitereEinnahmen;
+    private List<Einnahmen> antragsteller;
+    private List<Einnahmen> ehepartner;
 
-    public FormE(List<String> einnahmen, List<WeitereEinnahmen> weitereEinnahmen) {
-        this.einnahmen = einnahmen;
-        this.weitereEinnahmen = weitereEinnahmen;
+    public FormE(List<Einnahmen> antragsteller, List<Einnahmen> ehepartner) {
+        this.antragsteller = antragsteller;
+        this.ehepartner = ehepartner;
     }
 }
