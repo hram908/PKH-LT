@@ -114,7 +114,7 @@ ELSE
   <ng-container *ngIf="formB.uebernahme == 0">
     <label class="form-check-inline">Wurde bereits ein Antrag gestellt?</label>
     <div class="row">
-      <div class="col-sm-8">
+      <div class="col-sm-2">
         <div class="radio">
           <label class="radio-inline" for="antragGestellt_ja"><input type="radio" id="antragGestellt_ja"
                                                                      name="antragGestellt"
@@ -126,11 +126,32 @@ ELSE
                                                                        [value]="0" (click)="setNotiz()">Nein</label>
         </div>
       </div>
+      <ng-container *ngIf="formB.antragGestellt == 0">
+        <div class="col-sm-2">
+          <button class="btn btn-group-md btn-primary" [disabled]="formB.versicherung.length > 8"
+                  (click)="fuegeHinzuVersicherung()"><span
+            class="glyphicon glyphicon-plus"></span></button>
+          <button class="btn btn-group-md btn-primary" [disabled]="formB.versicherung.length <= 1"
+                  (click)="entferneVersicherung()"><span
+            class="glyphicon glyphicon-minus"></span></button>
+        </div>
+      </ng-container>
     </div>
-    <div class="row" *ngIf="formB.antragGestellt == 0">
-      <div class="col-sm-8" id="keinAntrag">
-        Sie sollten als erstes Anträge bei ihrem Versicherer und sonstigen Trägern stellen!
+    <ng-container *ngIf="formB.antragGestellt == 0">
+      <div class="row" *ngFor="let versicherung of formB.versicherung; let i = index">
+        <div class="col-sm-4">
+          <div class="form-group">
+            <label for="nameDerInstitution">Name </label>
+            <input id="nameDerInstitution" type="text" class="form-control"
+                   [(ngModel)]="formB.versicherung[i]" placeholder="Pflicht">
+          </div>
+        </div>
       </div>
-    </div>
+      <div class="row">
+        <div class="col-sm-8" id="keinAntrag">
+          Stellen Sie zuerst einen Antrag bei den passenden Trägern.
+        </div>
+      </div>
+    </ng-container>
   </ng-container>
 </div>

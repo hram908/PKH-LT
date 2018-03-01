@@ -4,6 +4,7 @@ import {IFormComponentBase} from '../../common/i-form-component-base';
 import {FormBMaterial} from '../../formulardaten/form-b/form-b-material';
 import {Fragen} from '../../common/fragen';
 import {Notiz} from '../../formulardaten/notiz';
+import {FremdmittelBelastung} from '../../formulardaten/form-h/fremdmittel-belastung';
 
 @Component({
   selector: 'app-form-b-versicherungen',
@@ -25,5 +26,17 @@ export class FormBVersicherungenComponent implements IFormComponentBase {
   setNotiz() {
     this.notiz.B.notiz = 'Mögliche Kostenträger prüfen.';
     console.log(this.notiz.B.notiz);
+  }
+
+  fuegeHinzuVersicherung() {
+    if (this.formB.versicherung.length < 9) {
+      this.formB.versicherung.push('');
+    }
+  }
+
+  entferneVersicherung() {
+    if (this.formB.versicherung.length > 1) {
+      this.formB.versicherung.pop();
+    }
   }
 }
