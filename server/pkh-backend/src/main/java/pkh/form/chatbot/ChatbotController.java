@@ -11,6 +11,8 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.web.bind.annotation.*;
 import pkh.form.common.WatsonConversationPropertyService;
 
+import java.util.List;
+
 @RestController
 @EnableAutoConfiguration
 @Configuration
@@ -24,7 +26,8 @@ public class ChatbotController {
 
     @CrossOrigin(origins = "*", allowedHeaders = "*", methods = RequestMethod.POST)
     @PostMapping(path = "/chatbot")
-    public MessageResponse askWatsonConversation(@RequestBody String inputText) {
-        return service.sendMessageToWatson(inputText);
+    public List<String> askWatsonConversation(@RequestBody String inputText) {
+        MessageResponse response =  service.sendMessageToWatson(inputText);
+        return response.getOutput().getText();
     }
 }

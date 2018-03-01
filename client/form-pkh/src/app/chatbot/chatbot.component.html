@@ -6,7 +6,7 @@
   <div class="row">
     <div class="col">
       <label class="label label-default chatbot-input">{{chatbotText}}</label>
-<br>
+      <br>
       <!--
         <div class="container">
           <ul class="list-group" *ngFor="let abschnittAntwort in abschnittAntworten ">
@@ -19,6 +19,12 @@
       </button>
     </div>
   </div>
+
+  <br>
+  <!-- Watson response -->
+    <div class="container" *ngFor="let watsonResponse of watsonResponses">
+      <label class="label label-default chatbot-input">{{watsonResponse}}</label>
+    </div>
   <!--  TODO in milestone 3
 
   <ng-template #chatbotForm></ng-template> -->

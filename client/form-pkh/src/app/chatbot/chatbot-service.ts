@@ -10,7 +10,7 @@ import {ChatbotFormGComponent} from './chatbot-form-g/chatbot-form-g.component';
 import {ChatbotFormHComponent} from './chatbot-form-h/chatbot-form-h.component';
 import {ChatbotFormIComponent} from './chatbot-form-i/chatbot-form-i.component';
 import {ChatbotFormJComponent} from './chatbot-form-j/chatbot-form-j.component';
-import {HttpClient, HttpHeaders} from '@angular/common/http';
+import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs/Observable';
 
 @Injectable()
@@ -25,18 +25,8 @@ export class ChatbotService {
     this.initializeAbschnitte();
   }
 
-  // TODO parse watson data
-  public askWatson(userInput: string): Observable<any> {
-
-    const headers = new HttpHeaders();
-    headers.set('Content-Type', 'text/plain; charset=utf-8');
-
-    let result: Observable<any> = this.http.post<any>(this.chatbotUrl, userInput);
-
-    console.log("send: " + JSON.stringify(userInput));
-    console.log(result.subscribe());
-
-    return result;
+  public askWatson(userInput: string): Observable<string[]> {
+    return this.http.post<any>(this.chatbotUrl, userInput);
   }
 
   private initializeAbschnitte() {

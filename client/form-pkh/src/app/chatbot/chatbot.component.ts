@@ -15,6 +15,7 @@ export class ChatbotComponent {
 
   public botIsActive: boolean;
   public chatbotText: string;
+  public watsonResponses: string[];
 
   private readonly DefaultText: string = 'Kann ich Ihnen bei Abschnitt B helfen?';
 
@@ -23,6 +24,8 @@ export class ChatbotComponent {
               private componentFactoryResolver: ComponentFactoryResolver) {
     this.chatbotText = this.DefaultText;
     this.botIsActive = false;
+    this.watsonResponses = [];
+
     viewSwitchService.formChanged.subscribe(this.onFormChanged);
   }
 
@@ -46,6 +49,7 @@ export class ChatbotComponent {
   }
 
   public askWatson(userInput: string){
-    this.chatbotService.askWatson(userInput);
+    this.chatbotService.askWatson(userInput).subscribe(responses => responses.forEach(response => this.watsonResponses.push(response)));
+    console.log(this.watsonResponses);
   }
 }
