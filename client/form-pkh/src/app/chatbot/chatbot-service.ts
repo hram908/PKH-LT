@@ -10,15 +10,27 @@ import {ChatbotFormGComponent} from './chatbot-form-g/chatbot-form-g.component';
 import {ChatbotFormHComponent} from './chatbot-form-h/chatbot-form-h.component';
 import {ChatbotFormIComponent} from './chatbot-form-i/chatbot-form-i.component';
 import {ChatbotFormJComponent} from './chatbot-form-j/chatbot-form-j.component';
+import {HttpClient} from '@angular/common/http';
+import {Observable} from 'rxjs/Observable';
 
 @Injectable()
 export class ChatbotService {
+  private readonly chatbotUrl: string = 'localhost:4242/chabot';
+  private httpOptions: any;
   public chatbotAbschnitte: Abschnitt[];
 
-  public constructor() {
+  public constructor(private http: HttpClient) {
     this.chatbotAbschnitte = [];
+
     this.initializeAbschnitte();
   }
+
+
+  // TODO parse watson data
+  addHero (userInput: string): Observable<any> {
+    return this.http.post<string>(this.chatbotUrl, userInput, this.httpOptions);
+  }
+
 
   private initializeAbschnitte() {
     this.chatbotAbschnitte.push(new Abschnitt('A', 'Beginn', FormAComponent));
