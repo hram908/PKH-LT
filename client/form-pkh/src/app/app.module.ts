@@ -8,7 +8,6 @@ import { FormsModule } from '@angular/forms';
 import { AllgemeineDaten } from './allgemeineDaten';
 import { ChatbotComponent } from './chatbot/chatbot.component';
 import {ChatbotService} from './chatbot/chatbot-service';
-import {FormAComponent} from './chatbot/form-a/form-a.component';
 import {StepSpeicher} from './stepSpeicher';
 import { FormCUnterhaltsanspruchComponent } from './formular/form-c-unterhaltsanspruch/form-c-unterhaltsanspruch.component';
 import { FormDGewaehrterUnterhaltComponent } from './formular/form-d-gewaehrter-unterhalt/form-d-gewaehrter-unterhalt.component';
@@ -36,15 +35,6 @@ import {PkhMaterial} from './formulardaten/pkh-material';
 import {RestService} from './rest-api/rest-service';
 import {HttpClientModule} from '@angular/common/http';
 import {Fragen} from './common/fragen';
-import { ChatbotFormBComponent } from './chatbot/chatbot-form-b/chatbot-form-b.component';
-import { ChatbotFormCComponent } from './chatbot/chatbot-form-c/chatbot-form-c.component';
-import { ChatbotFormDComponent } from './chatbot/chatbot-form-d/chatbot-form-d.component';
-import { ChatbotFormEComponent } from './chatbot/chatbot-form-e/chatbot-form-e.component';
-import { ChatbotFormFComponent } from './chatbot/chatbot-form-f/chatbot-form-f.component';
-import { ChatbotFormGComponent } from './chatbot/chatbot-form-g/chatbot-form-g.component';
-import { ChatbotFormHComponent } from './chatbot/chatbot-form-h/chatbot-form-h.component';
-import { ChatbotFormIComponent } from './chatbot/chatbot-form-i/chatbot-form-i.component';
-import { ChatbotFormJComponent } from './chatbot/chatbot-form-j/chatbot-form-j.component';
 import {Notiz} from './formulardaten/notiz';
 
 
@@ -56,7 +46,6 @@ import {Notiz} from './formulardaten/notiz';
     FormAPersonendatenComponent,
     FormBVersicherungenComponent,
     StartfensterComponent,
-    FormAComponent,
     ChatbotComponent,
     FormBVersicherungenComponent,
     FormCUnterhaltsanspruchComponent,
@@ -68,16 +57,7 @@ import {Notiz} from './formulardaten/notiz';
     FormISonstigeVerpflichtungenComponent,
     FormJBesondereBelastungenComponent,
     AppDirective,
-    ViewSwitchComponent,
-    ChatbotFormBComponent,
-    ChatbotFormCComponent,
-    ChatbotFormDComponent,
-    ChatbotFormEComponent,
-    ChatbotFormFComponent,
-    ChatbotFormGComponent,
-    ChatbotFormHComponent,
-    ChatbotFormIComponent,
-    ChatbotFormJComponent
+    ViewSwitchComponent
   ],
   imports: [
     BrowserModule,

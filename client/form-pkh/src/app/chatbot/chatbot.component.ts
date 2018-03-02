@@ -1,4 +1,4 @@
-import {Component, ComponentFactoryResolver, ComponentRef, ViewChild, ViewContainerRef} from '@angular/core';
+import {Component} from '@angular/core';
 import {ChatbotFragen} from '../common/chatbot-fragen';
 import {ViewSwitchService} from '../navigation/view-switch-service';
 import {Abschnitt} from '../abschnitt';
@@ -10,9 +10,6 @@ import {ChatbotService} from './chatbot-service';
   styleUrls: ['./chatbot.component.css']
 })
 export class ChatbotComponent {
-  @ViewChild('chatbotForm', {read: ViewContainerRef}) container;
-  componentRef: ComponentRef<ComponentFactoryResolver>;
-
   public botIsActive: boolean;
   public chatbotText: string;
   public watsonResponses: string[];
@@ -20,8 +17,7 @@ export class ChatbotComponent {
   private readonly DefaultText: string = 'Kann ich Ihnen bei Abschnitt B helfen?';
 
   constructor(private viewSwitchService: ViewSwitchService,
-              private chatbotService: ChatbotService,
-              private componentFactoryResolver: ComponentFactoryResolver) {
+              private chatbotService: ChatbotService) {
     this.chatbotText = this.DefaultText;
     this.botIsActive = false;
     this.watsonResponses = [];
@@ -31,13 +27,15 @@ export class ChatbotComponent {
 
   private onFormChanged = (abschnitt: Abschnitt) => {
     if (abschnitt) {
-      this.container.clear();
 
-      let activeComponent = this.chatbotService.chatbotAbschnitte.find(a => a.id === abschnitt.id).component;
+      //let activeComponent = this.chatbotService.chatbotAbschnitte.find(a => a.id === abschnitt.id).component;
 
-      const factory = this.componentFactoryResolver.resolveComponentFactory(activeComponent);
-      this.componentRef = this.container.createComponent(factory);
     }
+  }
+
+  public get abschnittAntworten(): string[]{
+    //return this.chatbotService.chatbotAbschnitte
+    return [];
   }
 
   public toggleBot() {

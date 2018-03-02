@@ -7,13 +7,14 @@
     <div class="col">
       <label class="label label-default chatbot-input">{{chatbotText}}</label>
       <br>
-      <!--
-        <div class="container">
-          <ul class="list-group" *ngFor="let abschnittAntwort in abschnittAntworten ">
-            <li class="list-group-item">{{abschnittAntwort}}</li>
-          </ul>
-        </div>
-        -->
+
+      <!-- list of user inputs according to section of the form -->
+      <div class="container">
+        <ul class="list-group" *ngFor="let abschnittAntwort of abschnittAntworten">
+          <li class="list-group-item">{{abschnittAntwort}}</li>
+        </ul>
+      </div>
+
       <button type="button" class="btn btn-default user-button" (click)="askWatson('Hello')">
         Rechtsschutzversicherung
       </button>
@@ -22,11 +23,8 @@
 
   <br>
   <!-- Watson response -->
-    <div class="container" *ngFor="let watsonResponse of watsonResponses">
-      <label class="label label-default chatbot-input">{{watsonResponse}}</label>
-    </div>
-  <!--  TODO in milestone 3
-
-  <ng-template #chatbotForm></ng-template> -->
+  <div class="container" *ngFor="let watsonResponse of watsonResponses">
+    <label class="label label-default chatbot-response">{{watsonResponse}}</label>
+  </div>
 </div>
 

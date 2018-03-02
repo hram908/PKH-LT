@@ -53,3 +53,15 @@
 .user-button{
   margin-top: 50px;
 }
+
+.chatbot-response{
+  padding: 25px;
+  right: 300px;
+  background: white;
+  color: black;
+  top: 300px;
+  text-align: center;
+  font-size: 14px;
+  font-weight: normal;
+}
+
