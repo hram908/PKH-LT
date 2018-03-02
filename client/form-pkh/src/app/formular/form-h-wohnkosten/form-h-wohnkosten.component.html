@@ -203,15 +203,15 @@
     <div class="row">
       <div class="col-sm-2">
         <div class="form-group">
-          <label for="endeAm_{{i}}">{{getFragen().H_bezeichnung}} </label>
-          <input id="endeAm_{{i}}" type="text" class="form-control" placeholder="Pflicht"
+          <label for="endeAm_{{i}}"> Datum des Vertrages</label>
+          <input id="endeAm_{{i}}" type="date" class="form-control" placeholder="Pflicht"
                  [(ngModel)]="belastung.zahlungsende" required="required">
         </div>
       </div>
       <div class="col-sm-2">
         <div class="form-group">
-          <label for="datum_{{i}}">{{getFragen().H_bezeichnung}} </label>
-          <input id="datum_{{i}}" type="text" class="form-control" placeholder="Pflicht"
+          <label for="datum_{{i}}"> Zahlungen laufen bis</label>
+          <input id="datum_{{i}}" type="date" class="form-control" placeholder="Pflicht"
                  [(ngModel)]="belastung.datumDesVertrages" required="required">
         </div>
       </div>
