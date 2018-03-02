@@ -5,7 +5,6 @@ import org.slf4j.LoggerFactory;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import pkh.form.materials.PkhFormular;
 
@@ -15,30 +14,24 @@ import pkh.form.materials.PkhFormular;
 @ComponentScan
 public class FormularController {
     private FormularService formService;
+    private PdfConverterService pdfConverterService;
 
     private Logger Log = LoggerFactory.getLogger(FormularController.class);
 
     public FormularController(FormularService formService) {
         this.formService = formService;
+        this.pdfConverterService = new PdfConverterService();
     }
 
     @CrossOrigin(origins = "*", allowedHeaders = "*", methods = RequestMethod.POST)
     @PostMapping("/formular")
-    public String createFormular(@RequestBody PkhFormular formular) {
-        PkhFormular savedForm = formService.create();
-        Log.info("Received Formular" + formular);
-        // ResponseEntity<PkhFormular>
-        //return ResponseEntity.accepted().body(savedForm);
-        return "YEA";
-    }
+    public String erzeugeFormular(@RequestBody String jsonString) {
+        Log.info("Received Formular: " + jsonString);
 
-    @CrossOrigin(origins = "*", allowedHeaders = "*", methods = RequestMethod.POST)
-    @GetMapping("/test")
-    public String getFormular() {
-        // PkhFormular savedForm = formService.create();
-        Log.info("Received Formular");
-        // ResponseEntity<PkhFormular>
-        //return ResponseEntity.accepted().body(savedForm);
-        return "YEA";
+        PkhFormular savedForm = formService.befuellePkhFormular(jsonString);
+
+        pdfConverterService.erzeugePdf(savedForm);
+
+        return "Downloadlink: " + pdfConverterService.getDownloadLink();
     }
 }
