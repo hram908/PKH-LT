@@ -23,7 +23,7 @@ export class AppComponent implements OnDestroy, OnInit {
 
   constructor(private viewSwitchService: ViewSwitchService,
               private componentFactoryResolver: ComponentFactoryResolver,
-              public allgemeineDaten: AllgemeineDaten, public rest: RestService, private notiz: Notiz) {
+              public allgemeineDaten: AllgemeineDaten, private notiz: Notiz) {
     this.viewSwitchService.formChanged.subscribe(this.onFormViewChanged);
   }
 

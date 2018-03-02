@@ -4,14 +4,16 @@ import {Injectable} from '@angular/core';
 
 @Injectable()
 export class RestService {
-  constructor(httpClient: HttpClient, pkhForm: PkhMaterial) {
-    const content: PkhMaterial = pkhForm;
-    const returnContent: string[] = [];
+  constructor(public httpClient: HttpClient) {
+  }
 
-    const anfrage = httpClient.post<any>('http://127.0.0.1:4242/formular', content);
+  sendeFormularAnServer(pkhForm: PkhMaterial): String {
+    const anfrage = this.httpClient.post<any>('http://127.0.0.1:4242/formular', pkhForm);
 
     // TODO: extrahiere den Downloadlink aus dem Rückgabevalue (Isi fragen)
+    const returnContent: string[] = [];
     console.log(anfrage.subscribe(responses => responses.forEach(response => returnContent.push(response))));
     // console.log(returnContent);
+    return 'Hier kommt noch der Link';
   }
 }
