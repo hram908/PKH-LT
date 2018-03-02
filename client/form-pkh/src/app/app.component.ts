@@ -44,36 +44,36 @@ export class AppComponent implements OnDestroy, OnInit {
   setNotiz(abschnitt: Abschnitt) {
     switch (abschnitt.id) {
       case 'A':
-        this.notiz.A.notiz = 'Es fehlen Angaben zur "Person" in Abschnitt A.';
+        this.notiz.a.notiz = 'Es fehlen Angaben zur "Person" in Abschnitt a.';
         break;
       case 'B':
-        this.notiz.B.notiz = 'Es fehlen Angaben zur "Rechtsschutzversicherung/Mitgliedschaft" in Abschnitt B.';
+        this.notiz.b.notiz = 'Es fehlen Angaben zur "Rechtsschutzversicherung/Mitgliedschaft" in Abschnitt b.';
         break;
       case 'C':
-        this.notiz.C.notiz = 'Es fehlen Angaben zu "Unterhaltsanspruch gegenüber anderen Personen" in Abschnitt C.';
+        this.notiz.c.notiz = 'Es fehlen Angaben zu "Unterhaltsanspruch gegenüber anderen Personen" in Abschnitt c.';
         break;
       case 'D':
-        this.notiz.D.notiz = 'Es fehlen Angaben zur "" in Abschnitt D.';
+        this.notiz.d.notiz = 'Es fehlen Angaben zur "" in Abschnitt d.';
         break;
       case 'E':
-        this.notiz.E.notiz = 'Es fehlen Angaben zur "" in Abschnitt E.';
+        this.notiz.e.notiz = 'Es fehlen Angaben zur "" in Abschnitt e.';
         break;
       case 'F':
-        this.notiz.F.notiz = 'Es fehlen Angaben zur "" in Abschnitt F.';
+        this.notiz.f.notiz = 'Es fehlen Angaben zur "" in Abschnitt f.';
         break;
       case 'G':
-        this.notiz.G.notiz = 'Es fehlen Angaben zur "" in Abschnitt G.';
+        this.notiz.g.notiz = 'Es fehlen Angaben zur "" in Abschnitt g.';
         break;
       case 'H':
-        this.notiz.H.notiz = 'Es fehlen Angaben zur "" in Abschnitt H.';
+        this.notiz.h.notiz = 'Es fehlen Angaben zur "" in Abschnitt h.';
         break;
       case 'I':
-        this.notiz.I.notiz = 'Es fehlen Angaben zur "" in Abschnitt I.';
+        this.notiz.i.notiz = 'Es fehlen Angaben zur "" in Abschnitt i.';
         break;
       case 'J':
-        this.notiz.J.notiz = 'Es fehlen Angaben zur "" in Abschnitt J.';
+        this.notiz.j.notiz = 'Es fehlen Angaben zur "" in Abschnitt j.';
         break;
-      default: this.notiz.A.notiz = 'Es gab einen Fehler bei der Meldung zu Abschnitt ' + abschnitt.id;
+      default: this.notiz.a.notiz = 'Es gab einen Fehler bei der Meldung zu Abschnitt ' + abschnitt.id;
     }
   }
 
