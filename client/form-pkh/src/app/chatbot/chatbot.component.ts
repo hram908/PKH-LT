@@ -29,13 +29,9 @@ export class ChatbotComponent {
     this.botIsActive = !this.botIsActive;
   }
 
-  getFragen() {
-    return ChatbotFragen;
-  }
-
   public askWatson(userInput: string) {
-    //this.chatbotService.askWatson(userInput).subscribe(responses => responses.forEach(response => this.watsonResponses.push(response)));
-    //console.log(this.watsonResponses);
+    this.chatbotService.askWatson(userInput).subscribe(responses => responses.forEach(response => this.watsonResponses.push(response)));
+    console.log(this.watsonResponses);
   }
 
   public get activeFragen(): string[]{

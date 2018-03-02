@@ -1,25 +1,29 @@
-<button class="btn btn-primary bot-button" (click)="toggleBot()" [class.bot-button-pushed]="botIsActive" [disabled]="abschnittString.length == 0">Bot</button>
+<button class="btn btn-primary bot-button" (click)="toggleBot()" [class.bot-button-pushed]="botIsActive"
+        [disabled]="abschnittString.length == 0">Bot
+</button>
 
 <div class="bot-side-menu" [class.bot-side-menu-pushed]="botIsActive">
   <h2>Der PKH-Helfer</h2>
-  <br><br>
+  <hr class="divider">
+
+  <!-- Watson response -->
+  <div class="container" *ngFor="let watsonResponse of watsonResponses">
+    <label class="label label-default chatbot-response">{{watsonResponse}}</label>
+  </div>
+
+  <hr class="divider">
+  <br>
+
   <div class="col">
     <label class="label label-default chatbot-input">Kann ich Ihnen beim Abschnitt <b>{{abschnittString}}</b>
       helfen?</label>
 
+    <br><br><br>
+
     <!-- list of user inputs according to section of the form -->
-    <div class="container user-fragen">
-      <ul class="list-group" *ngFor="let frage of activeFragen">
-        <li class="list-group-item einzel-frage" (click)="askWatson('todo')">{{frage}}</li>
-      </ul>
-    </div>
-
-  </div>
-
-  <br>
-  <!-- Watson response -->
-  <div class="container" *ngFor="let watsonResponse of watsonResponses">
-    <label class="label label-default chatbot-response">{{watsonResponse}}</label>
+    <ul class="list-group user-fragen" *ngFor="let frage of activeFragen">
+      <li class="list-group-item einzel-frage" (click)="askWatson(frage)">{{frage}}</li>
+    </ul>
   </div>
 </div>
 

@@ -1,6 +1,6 @@
 export class ChatbotFragen {
   public static readonly A = {
-    A1: 'Was gebe ich an, wenn ich bei X in der Garage Wohne?',
+    A1: 'Was gebe ich an, wenn ich bei jemandem in der Garage wohne?',
     A2: 'Was gebe ich an, wenn ich obdachlos bin?'
   };
 
@@ -9,8 +9,8 @@ export class ChatbotFragen {
   };
 
   public static readonly D = {
-    D1: 'Was ist mir Bar- und/oder Naturalunterhalt gemeint?',
-    D2: 'Wer zählt zu Angehörigen?'
+    D1: 'Was ist mit Bar- oder Naturalunterhalt gemeint?',
+    D2: 'Wer zählt in diesem Fall zu Angehörigen?'
   }
 
   public static readonly E = {
@@ -35,8 +35,7 @@ export class ChatbotFragen {
 
   public static readonly H = {
     H1: 'Was ist, wenn ich obdachlos bin?',
-    H2: 'Was sind Nutzungsverhältnisse?',
-    H3: 'Was ist Erbbauberechtigung?'
+    H2: 'Was ist Erbbauberechtigung?'
   }
 
   public static readonly I = {

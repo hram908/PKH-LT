@@ -8,7 +8,7 @@ import {Abschnitt} from '../abschnitt';
 @Injectable()
 export class ChatbotService {
   // IMPORTANT NOTE: for deployment change url to  'deployed server url'/chatbot
-  private readonly chatbotUrl: string = 'http://127.0.0.1/4242/chatbot';
+  private readonly chatbotUrl: string = 'http://127.0.0.1:4242/chatbot';
   private chatbotFragenMap: Map<string, string[]>;
   private _activeChatbotFragen: string[];
   private _activeAbschnittString: string;
@@ -35,6 +35,7 @@ export class ChatbotService {
     return this.http.post<any>(this.chatbotUrl, userInput);
   }
 
+
   private onFormChanged = (abschnitt: Abschnitt) => {
     if (abschnitt) {
       if (this.chatbotFragenMap.get(abschnitt.id)) {
@@ -53,7 +54,7 @@ export class ChatbotService {
     this.chatbotFragenMap.set('E', [ChatbotFragen.E.E1, ChatbotFragen.E.E2, ChatbotFragen.E.E3, ChatbotFragen.E.E4]);
     this.chatbotFragenMap.set('F', [ChatbotFragen.F.F1, ChatbotFragen.F.F2, ChatbotFragen.F.F3, ChatbotFragen.F.F4]);
     this.chatbotFragenMap.set('G', [ChatbotFragen.G.G1, ChatbotFragen.G.G2, ChatbotFragen.G.G3]);
-    this.chatbotFragenMap.set('H', [ChatbotFragen.H.H1, ChatbotFragen.H.H2, ChatbotFragen.H.H3]);
+    this.chatbotFragenMap.set('H', [ChatbotFragen.H.H1, ChatbotFragen.H.H2]);
     this.chatbotFragenMap.set('I', [ChatbotFragen.I.I1]);
     this.chatbotFragenMap.set('J', [ChatbotFragen.J.J1, ChatbotFragen.J.J2, ChatbotFragen.J.J3]);
   }
