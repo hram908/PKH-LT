@@ -3,36 +3,118 @@ package pkh.form.materials.abschnitte.g;
 import java.util.List;
 
 /**
- * @author Isabella
+ * @author Isabella, Thomas
  */
 public class FormG {
-    private boolean hatkonto;
+    private boolean hatKonto;
     private List<Vermoegen> konto;
-    private boolean hatgrundeigentum;
+    private boolean hatGrundeigentum;
     private List<Vermoegen> grundeigentum;
-    private boolean hatkraftfahrzeuge;
+    private boolean hatKraftfahrzeuge;
     private List<Vermoegen> kraftfahrzeuge;
-    private boolean hatwertgegenstaende;
+    private boolean hatWertgegenstaende;
     private List<Vermoegen> wertgegenstaende;
-    private boolean hatversicherung;
+    private boolean hatVersicherung;
     private List<Vermoegen> versicherung;
-    private boolean hatsonstige;
+    private boolean hatSonstige;
     private List<Vermoegen> sonstige;
 
-    public FormG(boolean hatkonto, List<Vermoegen> konto, boolean hatgrundeigentum, List<Vermoegen> grundeigentum, boolean hatkraftfahrzeuge,
-                 List<Vermoegen> kraftfahrzeuge, boolean hatwertgegenstaende, List<Vermoegen> wertgegenstaende, boolean hatversicherung,
-                 List<Vermoegen> versicherung, boolean hatsonstige, List<Vermoegen> sonstige) {
-        this.hatkonto = hatkonto;
+    public boolean isHatKonto() {
+        return hatKonto;
+    }
+
+    public void setHatKonto(boolean hatKonto) {
+        this.hatKonto = hatKonto;
+    }
+
+    public List<Vermoegen> getKonto() {
+        return konto;
+    }
+
+    public void setKonto(List<Vermoegen> konto) {
         this.konto = konto;
-        this.hatgrundeigentum = hatgrundeigentum;
+    }
+
+    public boolean isHatGrundeigentum() {
+        return hatGrundeigentum;
+    }
+
+    public void setHatGrundeigentum(boolean hatGrundeigentum) {
+        this.hatGrundeigentum = hatGrundeigentum;
+    }
+
+    public List<Vermoegen> getGrundeigentum() {
+        return grundeigentum;
+    }
+
+    public void setGrundeigentum(List<Vermoegen> grundeigentum) {
         this.grundeigentum = grundeigentum;
-        this.hatkraftfahrzeuge = hatkraftfahrzeuge;
+    }
+
+    public boolean isHatKraftfahrzeuge() {
+        return hatKraftfahrzeuge;
+    }
+
+    public void setHatKraftfahrzeuge(boolean hatKraftfahrzeuge) {
+        this.hatKraftfahrzeuge = hatKraftfahrzeuge;
+    }
+
+    public List<Vermoegen> getKraftfahrzeuge() {
+        return kraftfahrzeuge;
+    }
+
+    public void setKraftfahrzeuge(List<Vermoegen> kraftfahrzeuge) {
         this.kraftfahrzeuge = kraftfahrzeuge;
-        this.hatwertgegenstaende = hatwertgegenstaende;
+    }
+
+    public boolean isHatWertgegenstaende() {
+        return hatWertgegenstaende;
+    }
+
+    public void setHatWertgegenstaende(boolean hatWertgegenstaende) {
+        this.hatWertgegenstaende = hatWertgegenstaende;
+    }
+
+    public List<Vermoegen> getWertgegenstaende() {
+        return wertgegenstaende;
+    }
+
+    public void setWertgegenstaende(List<Vermoegen> wertgegenstaende) {
         this.wertgegenstaende = wertgegenstaende;
-        this.hatversicherung = hatversicherung;
+    }
+
+    public boolean isHatVersicherung() {
+        return hatVersicherung;
+    }
+
+    public void setHatVersicherung(boolean hatVersicherung) {
+        this.hatVersicherung = hatVersicherung;
+    }
+
+    public List<Vermoegen> getVersicherung() {
+        return versicherung;
+    }
+
+    public void setVersicherung(List<Vermoegen> versicherung) {
         this.versicherung = versicherung;
-        this.hatsonstige = hatsonstige;
+    }
+
+    public boolean isHatSonstige() {
+        return hatSonstige;
+    }
+
+    public void setHatSonstige(boolean hatSonstige) {
+        this.hatSonstige = hatSonstige;
+    }
+
+    public List<Vermoegen> getSonstige() {
+        return sonstige;
+    }
+
+    public void setSonstige(List<Vermoegen> sonstige) {
         this.sonstige = sonstige;
+    }
+
+    public FormG() {
     }
 }

@@ -15,7 +15,6 @@ import pkh.form.materials.abschnitte.j.FormJ;
  * @author Isabella, Thomas
  */
 public class PkhFormular {
-    private long id;
     private FormA formA;
     private FormB formB;
     private FormC formC;
@@ -28,23 +27,7 @@ public class PkhFormular {
     private FormJ formJ;
     private Notiz notiz;
 
-    public PkhFormular(long id, FormA formA, FormB formB, FormC formC, FormD formD, FormE formE, FormF formF, FormG formG, FormH formH, FormI formI, FormJ formJ, Notiz notiz) {
-        this.id = id;
-        this.formA = formA;
-        this.formB = formB;
-        this.formC = formC;
-        this.formD = formD;
-        this.formE = formE;
-        this.formF = formF;
-        this.formG = formG;
-        this.formH = formH;
-        this.formI = formI;
-        this.formJ = formJ;
-        this.notiz = notiz;
-    }
-
-    public long getId() {
-        return id;
+    public PkhFormular() {
     }
 
     public FormA getFormA() {
@@ -86,4 +69,6 @@ public class PkhFormular {
     public FormJ getFormJ() {
         return formJ;
     }
+
+    public Notiz getNotiz() { return notiz; }
 }

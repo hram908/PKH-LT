@@ -1,16 +1,29 @@
 package pkh.form.materials.abschnitte.e;
 
-import java.util.List;
-
 /**
- * @author Isabella
+ * @author Isabella, Thomas
  */
 public class FormE {
-    private List<Einnahmen> antragsteller;
-    private List<Einnahmen> ehepartner;
+    private Einnahmen antragsteller;
+    private Einnahmen ehepartner;
 
-    public FormE(List<Einnahmen> antragsteller, List<Einnahmen> ehepartner) {
+    public Einnahmen getAntragsteller() {
+        return antragsteller;
+    }
+
+    public void setAntragsteller(Einnahmen antragsteller) {
         this.antragsteller = antragsteller;
+    }
+
+    public Einnahmen getEhepartner() {
+        return ehepartner;
+    }
+
+    public void setEhepartner(Einnahmen ehepartner) {
         this.ehepartner = ehepartner;
+    }
+
+    public FormE() {
+
     }
 }

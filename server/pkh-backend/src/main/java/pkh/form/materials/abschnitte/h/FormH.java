@@ -5,21 +5,71 @@ package pkh.form.materials.abschnitte.h;
  */
 public class FormH {
     private String wohnraumgroesse;
-    private String zimmeranzahl;
+    private String anzahlZimmer;
     private String personenImWohnraum;
-    private boolean istMieter;
-    private Raumnutzung mieterNutzung;
-    private boolean istEigentuemer;
-    private Raumnutzung eigentumsNutzung;
 
-    public FormH(String wohnraumgroesse, String zimmeranzahl, String personenImWohnraum, boolean istMieter,
-                 Raumnutzung mieterNutzung, boolean istEigentuemer, Raumnutzung eigentumsNutzung) {
+    private boolean istMieter;
+    private Raumnutzung mietDaten;
+
+    private boolean istEigentuemer;
+    private Raumnutzung eigentumsDaten;
+
+    public String getWohnraumgroesse() {
+        return wohnraumgroesse;
+    }
+
+    public void setWohnraumgroesse(String wohnraumgroesse) {
         this.wohnraumgroesse = wohnraumgroesse;
-        this.zimmeranzahl = zimmeranzahl;
+    }
+
+    public String getAnzahlZimmer() {
+        return anzahlZimmer;
+    }
+
+    public void setAnzahlZimmer(String anzahlZimmer) {
+        this.anzahlZimmer = anzahlZimmer;
+    }
+
+    public String getPersonenImWohnraum() {
+        return personenImWohnraum;
+    }
+
+    public void setPersonenImWohnraum(String personenImWohnraum) {
         this.personenImWohnraum = personenImWohnraum;
+    }
+
+    public boolean isIstMieter() {
+        return istMieter;
+    }
+
+    public void setIstMieter(boolean istMieter) {
         this.istMieter = istMieter;
-        this.mieterNutzung = mieterNutzung;
+    }
+
+    public Raumnutzung getMietDaten() {
+        return mietDaten;
+    }
+
+    public void setMietDaten(Raumnutzung mietDaten) {
+        this.mietDaten = mietDaten;
+    }
+
+    public boolean isIstEigentuemer() {
+        return istEigentuemer;
+    }
+
+    public void setIstEigentuemer(boolean istEigentuemer) {
         this.istEigentuemer = istEigentuemer;
-        this.eigentumsNutzung = eigentumsNutzung;
+    }
+
+    public Raumnutzung getEigentumsDaten() {
+        return eigentumsDaten;
+    }
+
+    public void setEigentumsDaten(Raumnutzung eigentumsDaten) {
+        this.eigentumsDaten = eigentumsDaten;
+    }
+
+    public FormH() {
     }
 }

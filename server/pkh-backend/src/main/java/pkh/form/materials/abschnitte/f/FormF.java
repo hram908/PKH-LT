@@ -1,14 +1,28 @@
 package pkh.form.materials.abschnitte.f;
 
 /**
- * @author Isabella
+ * @author Isabella, Thomas
  */
 public class FormF {
     private TypAbzug antragsteller;
     private TypAbzug ehepartner;
 
-    public FormF(TypAbzug antragsteller, TypAbzug ehepartner) {
-        this.antragsteller = antragsteller;
+    public FormF() {
+    }
+
+    public TypAbzug getEhepartner() {
+        return ehepartner;
+    }
+
+    public void setEhepartner(TypAbzug ehepartner) {
         this.ehepartner = ehepartner;
+    }
+
+    public TypAbzug getAntragsteller() {
+        return antragsteller;
+    }
+
+    public void setAntragsteller(TypAbzug antragsteller) {
+        this.antragsteller = antragsteller;
     }
 }

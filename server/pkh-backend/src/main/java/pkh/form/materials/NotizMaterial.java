@@ -5,9 +5,17 @@ package pkh.form.materials;
  **/
 
 public class NotizMaterial {
+    public String getNotiz() {
+        return notiz;
+    }
+
+    public void setNotiz(String notiz) {
+        this.notiz = notiz;
+    }
+
     private String notiz;
 
-    public NotizMaterial(String notiz) {
-        this.notiz = notiz;
+    public NotizMaterial() {
+
     }
 }

@@ -1,14 +1,28 @@
 package pkh.form.materials.abschnitte.f;
 
 /**
- * @author Isabella
+ * @author Isabella, Thomas
  */
 public class Abzug {
     private String art;
     private String betrag;
 
-    public Abzug(String art, String betrag) {
-        this.art = art;
+    public Abzug() {
+    }
+
+    public String getBetrag() {
+        return betrag;
+    }
+
+    public void setBetrag(String betrag) {
         this.betrag = betrag;
+    }
+
+    public String getArt() {
+        return art;
+    }
+
+    public void setArt(String art) {
+        this.art = art;
     }
 }
