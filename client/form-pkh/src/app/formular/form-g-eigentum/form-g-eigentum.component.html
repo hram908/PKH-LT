@@ -113,15 +113,15 @@
     <div class="radio">
       <label class="radio-inline" for="hatKraftfahrzeug_ja"><input type="radio" id="hatKraftfahrzeug_ja"
                                                                    name="hatKraftfahrzeug"
-                                                                   [(ngModel)]="formG.hatKraftfahrzeug"
+                                                                   [(ngModel)]="formG.hatKraftfahrzeuge"
                                                                    [value]="true">Ja</label>
       <label class="radio-inline" for="hatKraftfahrzeug_nein"><input type="radio" id="hatKraftfahrzeug_nein"
                                                                      name="hatKraftfahrzeug"
-                                                                     [(ngModel)]="formG.hatKraftfahrzeug"
+                                                                     [(ngModel)]="formG.hatKraftfahrzeuge"
                                                                      [value]="false">Nein</label>
     </div>
   </div>
-  <ng-container *ngIf="formG.hatKraftfahrzeug">
+  <ng-container *ngIf="formG.hatKraftfahrzeuge">
     <div class="col-sm-2">
       <button class="btn btn-group-md btn-primary"
               [disabled]="formG.kraftfahrzeuge.length > 4"
@@ -136,7 +136,7 @@
 </div>
 <!-- ENDE Abschnitt Frage nach Kraftfahrzeug -->
 <!-- Abschnitt Daten für Grundeigentum -->
-<ng-container *ngIf="formG.hatKraftfahrzeug">
+<ng-container *ngIf="formG.hatKraftfahrzeuge">
   <!-- Abschnitt für Grundeigentum -->
   <div *ngFor="let kfz of formG.kraftfahrzeuge; let i = index">
     <div class="row">

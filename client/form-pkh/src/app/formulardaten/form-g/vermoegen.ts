@@ -2,7 +2,7 @@
  * @author: Isabella, Thomas, Jana
  **/
 
-export class EintragG {
+export class Vermoegen {
   detailEingabe = '';
   vermoegen = '';
 }

@@ -16,16 +16,17 @@ import {Notiz} from './notiz';
  **/
 @Injectable()
 export class PkhMaterial {
-  constructor(public abschnittA: FormAMaterial,
-              public abschnittB: FormBMaterial,
-              public abschnittC: FormCMaterial,
-              public abschnittD: FormDMaterial,
-              public abschnittE: FormEMaterial,
-              public abschnittF: FormFMaterial,
-              public abschnittG: FormGMaterial,
-              public abschnittH: FormHMaterial,
-              public abschnittI: FormIMaterial,
-              public abschnittJ: FormJMaterial,
+  constructor(public formA: FormAMaterial,
+              public formB: FormBMaterial,
+              public formC: FormCMaterial,
+              public formD: FormDMaterial,
+              public formE: FormEMaterial,
+              public formF: FormFMaterial,
+              public formG: FormGMaterial,
+              public formH: FormHMaterial,
+              public formI: FormIMaterial,
+              public formJ: FormJMaterial,
               public notiz: Notiz) {
+
   }
 }

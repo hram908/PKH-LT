@@ -24,8 +24,8 @@ export class FormBVersicherungenComponent implements IFormComponentBase {
   }
 
   setNotiz() {
-    this.notiz.B.notiz = 'Mögliche Kostenträger prüfen.';
-    console.log(this.notiz.B.notiz);
+    this.notiz.b.notiz = 'Mögliche Kostenträger prüfen.';
+    console.log(this.notiz.b.notiz);
   }
 
   fuegeHinzuVersicherung() {

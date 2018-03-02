@@ -3,7 +3,7 @@ import {Untertitel} from '../../common/untertitel';
 import {IFormComponentBase} from '../../common/i-form-component-base';
 import {FormGMaterial} from '../../formulardaten/form-g/form-g-material';
 import {Fragen} from '../../common/fragen';
-import {EintragG} from '../../formulardaten/form-g/eintrag-g';
+import {Vermoegen} from '../../formulardaten/form-g/vermoegen';
 
 @Component({
   selector: 'app-form-g-eigentum',
@@ -24,7 +24,7 @@ export class FormGEigentumComponent implements IFormComponentBase {
 
   fuegeHinzuKonto() {
     if (this.formG.konto.length <= 4) {
-      this.formG.konto.push(new EintragG());
+      this.formG.konto.push(new Vermoegen());
     }
   }
 
@@ -36,7 +36,7 @@ export class FormGEigentumComponent implements IFormComponentBase {
 
   fuegeHinzuGrundeigentum() {
     if (this.formG.grundeigentum.length <= 4) {
-      this.formG.grundeigentum.push(new EintragG());
+      this.formG.grundeigentum.push(new Vermoegen());
     }
   }
 
@@ -48,7 +48,7 @@ export class FormGEigentumComponent implements IFormComponentBase {
 
   fuegeHinzuKfz() {
     if (this.formG.kraftfahrzeuge.length <= 4) {
-      this.formG.kraftfahrzeuge.push(new EintragG());
+      this.formG.kraftfahrzeuge.push(new Vermoegen());
     }
   }
 
@@ -60,7 +60,7 @@ export class FormGEigentumComponent implements IFormComponentBase {
 
   fuegeHinzuWertgegenstaende() {
     if (this.formG.wertgegenstaende.length <= 4) {
-      this.formG.wertgegenstaende.push(new EintragG());
+      this.formG.wertgegenstaende.push(new Vermoegen());
     }
   }
 
@@ -72,7 +72,7 @@ export class FormGEigentumComponent implements IFormComponentBase {
 
   fuegeHinzuVersicherung() {
     if (this.formG.versicherung.length <= 4) {
-      this.formG.versicherung.push(new EintragG());
+      this.formG.versicherung.push(new Vermoegen());
     }
   }
 
@@ -84,7 +84,7 @@ export class FormGEigentumComponent implements IFormComponentBase {
 
   fuegeHinzuSonstiges() {
     if (this.formG.sonstige.length <= 4) {
-      this.formG.sonstige.push(new EintragG());
+      this.formG.sonstige.push(new Vermoegen());
     }
   }
 

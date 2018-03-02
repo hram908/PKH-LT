@@ -2,8 +2,8 @@ export class GesetzVertreter {
   hatGesetzlichenVertreter = false;
   vertreterName = '';
   vertreterVorname = '';
-  vertreterStrasse = '';
   vertreterTelefon = '';
+  vertreterStrasse = '';
   vertreterHausnummer = '';
   vertreterPlz = '';
   vertreterOrt = '';

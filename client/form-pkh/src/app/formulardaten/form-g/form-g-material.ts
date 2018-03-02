@@ -1,4 +1,4 @@
-import {EintragG} from './eintrag-g';
+import {Vermoegen} from './vermoegen';
 
 /**
  * @author: Isabella, Thomas, Jana
@@ -6,15 +6,15 @@ import {EintragG} from './eintrag-g';
 
 export class FormGMaterial {
   hatKonto = true;
-  konto: EintragG[] = [new EintragG()];
+  konto: Vermoegen[] = [new Vermoegen()];
   hatGrundeigentum = false;
-  grundeigentum: EintragG[] = [new EintragG()];
-  hatKraftfahrzeug = false;
-  kraftfahrzeuge: EintragG[] = [new EintragG()];
+  grundeigentum: Vermoegen[] = [new Vermoegen()];
+  hatKraftfahrzeuge = false;
+  kraftfahrzeuge: Vermoegen[] = [new Vermoegen()];
   hatWertgegenstaende = false;
-  wertgegenstaende: EintragG[] = [new EintragG()];
+  wertgegenstaende: Vermoegen[] = [new Vermoegen()];
   hatVersicherung = false;
-  versicherung: EintragG[] = [new EintragG()];
+  versicherung: Vermoegen[] = [new Vermoegen()];
   hatSonstige = false;
-  sonstige: EintragG[] = [new EintragG()];
+  sonstige: Vermoegen[] = [new Vermoegen()];
 }
