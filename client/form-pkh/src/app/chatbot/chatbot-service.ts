@@ -17,17 +17,17 @@ export class ChatbotService {
   public constructor(private http: HttpClient,
                      private viewSwitchService: ViewSwitchService) {
     this.chatbotFragenMap = new Map();
-
+    this._activeAbschnittString = '';
     this.initializeAbschnitte();
 
     this.viewSwitchService.formChanged.subscribe(this.onFormChanged);
   }
 
-  public get activeChatbotFragen(): string[]{
+  public get activeChatbotFragen(): string[] {
     return this._activeChatbotFragen;
   }
 
-  public get activeAbschnittString(): string{
+  public get activeAbschnittString(): string {
     return this._activeAbschnittString;
   }
 
@@ -37,8 +37,12 @@ export class ChatbotService {
 
   private onFormChanged = (abschnitt: Abschnitt) => {
     if (abschnitt) {
-      this._activeChatbotFragen = this.chatbotFragenMap.get(abschnitt.id);
-      this._activeAbschnittString = abschnitt.ueberschrift;
+      if (this.chatbotFragenMap.get(abschnitt.id)) {
+        this._activeChatbotFragen = this.chatbotFragenMap.get(abschnitt.id);
+        this._activeAbschnittString = abschnitt.ueberschrift;
+      } else {
+        this._activeAbschnittString = '';
+      }
     }
   }
 
