@@ -79,7 +79,7 @@ export class Fragen {
   public static readonly F_fahrtZurArbeitBezeichnung = 'Fahrt zur Arbeit';
   public static readonly F_fahrtZurArbeitBetrag = 'Betrag in EUR pro Monat';
   public static readonly F_werbeUndBetriebskostenBezichnung = 'Sonstige Werbekosten/Betirebskosten';
-  public static readonly werbeUndBetriebskostenBetrag = 'Betrag in EUR pro Monat';
+  public static readonly F_werbeUndBetriebskostenBetrag = 'Betrag in EUR pro Monat';
 
   // Formularabschnitt G
   public static readonly G_kontoBezeichnung = 'Bezeichnung';
