@@ -45,6 +45,8 @@ export class ChatbotService {
 
   private onFormChanged = (abschnitt: Abschnitt) => {
     if (abschnitt) {
+      this._watsonResponse = [];
+
       if (this.chatbotFragenMap.get(abschnitt.id)) {
         this._activeChatbotFragen = this.chatbotFragenMap.get(abschnitt.id);
         this._activeAbschnittString = abschnitt.ueberschrift;
@@ -57,11 +59,12 @@ export class ChatbotService {
   private initializeAbschnitte() {
     this.chatbotFragenMap.set('A', [ChatbotFragen.A.A1, ChatbotFragen.A.A2]);
     this.chatbotFragenMap.set('B', [ChatbotFragen.B.B1]);
+    this.chatbotFragenMap.set('C', [ChatbotFragen.C.C1])
     this.chatbotFragenMap.set('D', [ChatbotFragen.D.D1, ChatbotFragen.D.D2]);
     this.chatbotFragenMap.set('E', [ChatbotFragen.E.E1, ChatbotFragen.E.E2, ChatbotFragen.E.E3, ChatbotFragen.E.E4]);
     this.chatbotFragenMap.set('F', [ChatbotFragen.F.F1, ChatbotFragen.F.F2, ChatbotFragen.F.F3, ChatbotFragen.F.F4]);
     this.chatbotFragenMap.set('G', [ChatbotFragen.G.G1, ChatbotFragen.G.G2, ChatbotFragen.G.G3]);
-    this.chatbotFragenMap.set('H', [ChatbotFragen.H.H1, ChatbotFragen.H.H2]);
+    this.chatbotFragenMap.set('H', [ChatbotFragen.H.H1]);
     this.chatbotFragenMap.set('I', [ChatbotFragen.I.I1]);
     this.chatbotFragenMap.set('J', [ChatbotFragen.J.J1, ChatbotFragen.J.J2, ChatbotFragen.J.J3]);
   }

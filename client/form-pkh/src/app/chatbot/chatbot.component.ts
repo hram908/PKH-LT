@@ -33,7 +33,12 @@ export class ChatbotComponent {
   }
 
   public get activeFragen(): string[]{
-    return this.chatbotService.activeChatbotFragen;
+    let activeFragen: string[] = this.chatbotService.activeChatbotFragen;
+    if(activeFragen){
+      return activeFragen;
+    }else{
+      this.botIsActive = false;
+    }
   }
 
   public get watsonResponse(): string[]{

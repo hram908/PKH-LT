@@ -8,6 +8,10 @@ export class ChatbotFragen {
     B1: 'Woher weiß ich, dass ich eine Rechtsschutzversicherung habe?'
   };
 
+  public static readonly C = {
+    C1: 'Was muss ich hier angeben?',
+  }
+
   public static readonly D = {
     D1: 'Was ist mit Bar- oder Naturalunterhalt gemeint?',
     D2: 'Wer zählt in diesem Fall zu Angehörigen?'
@@ -34,8 +38,7 @@ export class ChatbotFragen {
   }
 
   public static readonly H = {
-    H1: 'Was ist, wenn ich obdachlos bin?',
-    H2: 'Was ist Erbbauberechtigung?'
+    H1: 'Was ist Erbbauberechtigung?'
   }
 
   public static readonly I = {
