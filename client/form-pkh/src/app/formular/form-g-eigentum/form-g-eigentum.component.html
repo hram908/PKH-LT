@@ -32,7 +32,7 @@
     <div class="row">
       <div class="col-sm-4">
         <div class="form-group">
-          <label for="kontoBezeichnung_{{i}}">{{getFragen().G_kontoBezeichnung}}</label>
+          <label for="kontoBezeichnung_{{i}}">{{getFragen().G_kontoBezeichnung}} *</label>
           <input id="kontoBezeichnung_{{i}}" type="text" class="form-control" placeholder="Pflicht"
                  [(ngModel)]="konto.detailEingabe"
                  required="required">
@@ -40,7 +40,7 @@
       </div>
       <div class="col-sm-4">
         <div class="form-group">
-          <label for="kontoBetrag_{{i}}">{{getFragen().G_kontoBetrag}} </label>
+          <label for="kontoBetrag_{{i}}">{{getFragen().G_kontoBetrag}} *</label>
           <input id="kontoBetrag_{{i}}" type="text" class="form-control" placeholder="Pflicht"
                  [(ngModel)]="konto.vermoegen"
                  required="required">
@@ -88,14 +88,14 @@
     <div class="row">
       <div class="col-sm-4">
         <div class="form-group">
-          <label for="grundeigentumBezeichnung_{{i}}">{{getFragen().G_grundeigentumBezeichnung}}</label>
+          <label for="grundeigentumBezeichnung_{{i}}">{{getFragen().G_grundeigentumBezeichnung}} *</label>
           <input id="grundeigentumBezeichnung_{{i}}" type="text" class="form-control" placeholder="Pflicht"
                  [(ngModel)]="grundeigentum.detailEingabe" required="required">
         </div>
       </div>
       <div class="col-sm-4">
         <div class="form-group">
-          <label for="grundeigentumBetrag_{{i}}">{{getFragen().G_grundeigentumBetrag}} </label>
+          <label for="grundeigentumBetrag_{{i}}">{{getFragen().G_grundeigentumBetrag}} *</label>
           <input id="grundeigentumBetrag_{{i}}" type="text" class="form-control" placeholder="Pflicht"
                  [(ngModel)]="grundeigentum.vermoegen" required="required">
         </div>
@@ -142,14 +142,14 @@
     <div class="row">
       <div class="col-sm-4">
         <div class="form-group">
-          <label for="kraftfahrzeugeBezeichnung_{{i}}">{{getFragen().G_kraftfahrzeugeBezeichnung}}</label>
+          <label for="kraftfahrzeugeBezeichnung_{{i}}">{{getFragen().G_kraftfahrzeugeBezeichnung}} *</label>
           <input id="kraftfahrzeugeBezeichnung_{{i}}" type="text" class="form-control" placeholder="Pflicht"
                  [(ngModel)]="kfz.detailEingabe" required="required">
         </div>
       </div>
       <div class="col-sm-4">
         <div class="form-group">
-          <label for="kraftfahrzeugeBetrag_{{i}}">{{getFragen().G_kraftfahrzeugeBetrag}} </label>
+          <label for="kraftfahrzeugeBetrag_{{i}}">{{getFragen().G_kraftfahrzeugeBetrag}} *</label>
           <input id="kraftfahrzeugeBetrag_{{i}}" type="text" class="form-control" placeholder="Pflicht"
                  [(ngModel)]="kfz.vermoegen" required="required">
         </div>
@@ -196,14 +196,14 @@
     <div class="row">
       <div class="col-sm-4">
         <div class="form-group">
-          <label for="wertgegenstaendeBezeichnung_{{i}}">{{getFragen().G_wertgegenstaendeBezeichnung}}</label>
+          <label for="wertgegenstaendeBezeichnung_{{i}}">{{getFragen().G_wertgegenstaendeBezeichnung}} *</label>
           <input id="wertgegenstaendeBezeichnung_{{i}}" type="text" class="form-control" placeholder="Pflicht"
                  [(ngModel)]="wertgegenstand.detailEingabe" required="required">
         </div>
       </div>
       <div class="col-sm-4">
         <div class="form-group">
-          <label for="wertgegenstaendeBetrag_{{i}}">{{getFragen().G_wertgegenstaendeBetrag}} </label>
+          <label for="wertgegenstaendeBetrag_{{i}}">{{getFragen().G_wertgegenstaendeBetrag}} *</label>
           <input id="wertgegenstaendeBetrag_{{i}}" type="text" class="form-control" placeholder="Pflicht"
                  [(ngModel)]="wertgegenstand.vermoegen" required="required">
         </div>
@@ -250,14 +250,14 @@
     <div class="row">
       <div class="col-sm-4">
         <div class="form-group">
-          <label for="versicherungBezeichnung_{{i}}">{{getFragen().G_versicherungBezeichnung}}</label>
+          <label for="versicherungBezeichnung_{{i}}">{{getFragen().G_versicherungBezeichnung}} *</label>
           <input id="versicherungBezeichnung_{{i}}" type="text" class="form-control" placeholder="Pflicht"
                  [(ngModel)]="versicherung.detailEingabe" required="required">
         </div>
       </div>
       <div class="col-sm-4">
         <div class="form-group">
-          <label for="versicherungBetrag_{{i}}">{{getFragen().G_versicherungBetrag}} </label>
+          <label for="versicherungBetrag_{{i}}">{{getFragen().G_versicherungBetrag}} *</label>
           <input id="versicherungBetrag_{{i}}" type="text" class="form-control" placeholder="Pflicht"
                  [(ngModel)]="versicherung.vermoegen" required="required">
         </div>
@@ -303,14 +303,14 @@
     <div class="row">
       <div class="col-sm-4">
         <div class="form-group">
-          <label for="sonstigeBezeichnung_{{i}}">{{getFragen().G_sonstigeBezeichnung}}</label>
+          <label for="sonstigeBezeichnung_{{i}}">{{getFragen().G_sonstigeBezeichnung}} *</label>
           <input id="sonstigeBezeichnung_{{i}}" type="text" class="form-control" placeholder="Pflicht"
                  [(ngModel)]="sonstige.detailEingabe" required="required">
         </div>
       </div>
       <div class="col-sm-4">
         <div class="form-group">
-          <label for="sonstigeBetrag_{{i}}">{{getFragen().G_sonstigeBetrag}} </label>
+          <label for="sonstigeBetrag_{{i}}">{{getFragen().G_sonstigeBetrag}} *</label>
           <input id="sonstigeBetrag_{{i}}" type="text" class="form-control" placeholder="Pflicht"
                  [(ngModel)]="sonstige.vermoegen" required="required">
         </div>

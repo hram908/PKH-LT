@@ -39,6 +39,7 @@ export class Fragen {
   public static readonly C_Zusatz = 'z. B. Mutter, Vater, Ehepartner, eingetragene(r) Lebenspartner/in';
   public static readonly C_FrageJa = 'Name des Unterhaltsverpflichteten';
   public static readonly C_FrageJaEhe = 'Name des Ehepartners';
+  public static readonly C_FrageJaLebenspartner = 'Name des eingetragenen Lebenspartners';
   public static readonly C_Hinweis = 'Bitte geben Sie auf einem weiteren Exemplar dieses Formulars seine persönlichen und ' +
     'wirtschaftlichen Verhältnisse an, sofern diese nicht bereits vollständig aus den folgenden Abschnitten ersichtlich sind.';
 

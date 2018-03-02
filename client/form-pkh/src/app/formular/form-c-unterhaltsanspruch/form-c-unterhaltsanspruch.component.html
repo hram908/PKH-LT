@@ -12,17 +12,31 @@
   </div>
 
   <ng-container
-    *ngIf='formA.antragsteller.familienstand === "Eingetragene Partnerschaft" || formA.antragsteller.familienstand === "Verheiratet"'>
+    *ngIf='formA.antragsteller.familienstand === "Verheiratet"'>
     <div class="row">
       <div class="col-sm-5">
         <div class="form-group">
-          <label for="UnterhaltsgebenderEhe">{{getFragen().C_FrageJaEhe}}</label>
+          <label for="UnterhaltsgebenderEhe">{{getFragen().C_FrageJaEhe}} *</label>
+          <input id="UnterhaltsgebenderEhe" type="text" class="form-control"
+                 [(ngModel)]="formC.unterhaltsverpflichteter[0].name" placeholder="Pflicht">
+        </div>
+      </div>
+    </div>
+
+  </ng-container>
+  <ng-container
+    *ngIf='formA.antragsteller.familienstand === "Eingetragene Partnerschaft"'>
+    <div class="row">
+      <div class="col-sm-5">
+        <div class="form-group">
+          <label for="UnterhaltsgebenderEhe">{{getFragen().C_FrageJaLebenspartner}} *</label>
           <input id="UnterhaltsgebenderEhe" type="text" class="form-control"
                  [(ngModel)]="formC.unterhaltsverpflichteter[0].name" placeholder="Pflicht">
         </div>
       </div>
     </div>
   </ng-container>
+
 
   <div class="row">
     <div class="col-sm-4">

@@ -34,14 +34,14 @@
   <div class="row" *ngFor="let belastung of formJ.besondereBelastungen; let i = index">
     <div class="col-sm-3">
       <div class="form-group">
-        <label for="besBelastung_{{i}}">{{getFragen().J_belastungBezeichung}}</label>
+        <label for="besBelastung_{{i}}">{{getFragen().J_belastungBezeichung}} *</label>
         <input id="besBelastung_{{i}}" type="text" class="form-control" placeholder="Pflicht"
                [(ngModel)]="belastung.beschreibung" required="required">
       </div>
     </div>
     <div class="col-sm-3">
       <div class="form-group">
-        <label for="besBelastungBetrag_{{i}}">{{getFragen().J_ichAlleineZahle}} </label>
+        <label for="besBelastungBetrag_{{i}}">{{getFragen().J_ichAlleineZahle}} *</label>
         <input id="besBelastungBetrag_{{i}}" type="text" class="form-control" placeholder="Pflicht"
                [(ngModel)]="belastung.alleinigeZahlung" required="required">
       </div>

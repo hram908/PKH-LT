@@ -6,7 +6,7 @@
 <div class="row">
   <div class="col-sm-2">
     <div class="form-group">
-      <label for="groesse">{{getFragen().H.groesseWohnung.WHG_KRZ}}</label>
+      <label for="groesse">{{getFragen().H.groesseWohnung.WHG_KRZ}} *</label>
       <input id="groesse" type="text" class="form-control" placeholder="Pflicht" [(ngModel)]="formH.wohnraumgroesse"
              required="required" data-error="Die Wohnungsgröße ist notwendig.">
     </div>
@@ -16,7 +16,7 @@
   <!-- Abschnitt Frage nach Wohnung 2 -->
   <div class="col-sm-2">
     <div class="form-group">
-      <label for="anzahlZimmer">{{getFragen().H.anzahlZimmer}} </label>
+      <label for="anzahlZimmer">{{getFragen().H.anzahlZimmer}} *</label>
       <input id="anzahlZimmer" type="text" class="form-control" placeholder="Pflicht" [(ngModel)]="formH.anzahlZimmer"
              required="required" data-error="Die Zimmerzahl ist notwendig.">
     </div>
@@ -26,7 +26,7 @@
   <!-- Abschnitt Frage nach Wohnung 3 -->
   <div class="col-sm-2">
     <div class="form-group">
-      <label for="anzahlPersonenWohnraum">{{getFragen().H.anzahlPersonen.PER_KRZ}} </label>
+      <label for="anzahlPersonenWohnraum">{{getFragen().H.anzahlPersonen.PER_KRZ}} *</label>
       <input id="anzahlPersonenWohnraum" type="text" class="form-control" placeholder="Pflicht"
              [(ngModel)]="formH.personenImWohnraum" required="required"
              data-error="Die Anzahl der Personen, die die Wohnung bewohnen ist notwendig.">
@@ -54,14 +54,14 @@
   <div class="row">
     <div class="col-sm-2">
       <div class="form-group">
-        <label for="MieteOhneNeben">{{getFragen().H_miete}} </label>
+        <label for="MieteOhneNeben">{{getFragen().H_miete}} *</label>
         <input id="MieteOhneNeben" type="text" class="form-control" placeholder="Pflicht"
                [(ngModel)]="formH.mietDaten.mieteOderZinsen" required="required">
       </div>
     </div>
     <div class="col-sm-2">
       <div class="form-group">
-        <label for="Heizkosten">{{getFragen().H_heizkosten}}</label>
+        <label for="Heizkosten">{{getFragen().H_heizkosten}} *</label>
         <input id="Heizkosten" type="text" class="form-control" placeholder="Pflicht"
                [(ngModel)]="formH.mietDaten.heizungskosten"
                required="required">
@@ -69,14 +69,14 @@
     </div>
     <div class="col-sm-2">
       <div class="form-group">
-        <label for="andNebenkosten">{{getFragen().H_sonstNebenkosten}} </label>
+        <label for="andNebenkosten">{{getFragen().H_sonstNebenkosten}} *</label>
         <input id="andNebenkosten" type="text" class="form-control" placeholder="Pflicht"
                [(ngModel)]="formH.mietDaten.uebrigeNebenkosten" required="required">
       </div>
     </div>
     <div class="col-sm-2">
       <div class="form-group">
-        <label for="WohnungGes">{{getFragen().H_gesamtbetrag}} </label>
+        <label for="WohnungGes">{{getFragen().H_gesamtbetrag}} *</label>
         <input id="WohnungGes" type="text" class="form-control" placeholder="Pflicht"
                [(ngModel)]="formH.mietDaten.gesamtbetrag"
                required="required">
@@ -84,7 +84,7 @@
     </div>
     <div class="col-sm-2">
       <div class="form-group">
-        <label for="WohnungAllein">{{getFragen().H_kostenAlleine}} </label>
+        <label for="WohnungAllein">{{getFragen().H_kostenAlleine}} *</label>
         <input id="WohnungAllein" type="text" class="form-control" placeholder="Pflicht"
                [(ngModel)]="formH.mietDaten.alleinigeZahlung" required="required">
       </div>
@@ -115,28 +115,28 @@
   <div class="row">
     <div class="col-sm-2">
       <div class="form-group">
-        <label for="ZinsenUndTilgung">{{getFragen().H_zinsenUndTilgung}} </label>
+        <label for="ZinsenUndTilgung">{{getFragen().H_zinsenUndTilgung}} *</label>
         <input id="ZinsenUndTilgung" type="text" class="form-control" placeholder="Pflicht"
                [(ngModel)]="formH.eigentumsDaten.mieteOderZinsen" required="required">
       </div>
     </div>
     <div class="col-sm-2">
       <div class="form-group">
-        <label for="Heizungskosten">{{getFragen().H_heizungskosten}}</label>
+        <label for="Heizungskosten">{{getFragen().H_heizungskosten}} *</label>
         <input id="Heizungskosten" type="text" class="form-control" placeholder="Pflicht"
                [(ngModel)]="formH.eigentumsDaten.heizungskosten" required="required">
       </div>
     </div>
     <div class="col-sm-2">
       <div class="form-group">
-        <label for="uebNebenkosten">{{getFragen().H_uebrigeNebenkosten}} </label>
+        <label for="uebNebenkosten">{{getFragen().H_uebrigeNebenkosten}} *</label>
         <input id="uebNebenkosten" type="text" class="form-control" placeholder="Pflicht"
                [(ngModel)]="formH.eigentumsDaten.uebrigeNebenkosten" required="required">
       </div>
     </div>
     <div class="col-sm-2">
       <div class="form-group">
-        <label for="gesBetrag">{{getFragen().H_gesamtBetrag}} </label>
+        <label for="gesBetrag">{{getFragen().H_gesamtBetrag}} *</label>
         <input id="gesBetrag" type="text" class="form-control" placeholder="Pflicht"
                [(ngModel)]="formH.eigentumsDaten.gesamtbetrag"
                required="required">
@@ -144,7 +144,7 @@
     </div>
     <div class="col-sm-2">
       <div class="form-group">
-        <label for="ZahleAllein">{{getFragen().H_zahleAlleine}} </label>
+        <label for="ZahleAllein">{{getFragen().H_zahleAlleine}} *</label>
         <input id="ZahleAllein" type="text" class="form-control" placeholder="Pflicht"
                [(ngModel)]="formH.eigentumsDaten.alleinigeZahlung" required="required">
       </div>
@@ -187,14 +187,14 @@
     <div class="row">
       <div class="col-sm-4">
         <div class="form-group">
-          <label for="darlehensnehmer_{{i}}">{{getFragen().H_bezeichnung}} </label>
+          <label for="darlehensnehmer_{{i}}">{{getFragen().H_bezeichnung}} *</label>
           <input id="darlehensnehmer_{{i}}" type="text" class="form-control" placeholder="Pflicht"
                  [(ngModel)]="belastung.darlehensNehmer" required="required">
         </div>
       </div>
       <div class="col-sm-4">
         <div class="form-group">
-          <label for="kreditinstitut_{{i}}">{{getFragen().H_bezeichnung}} </label>
+          <label for="kreditinstitut_{{i}}">{{getFragen().H_bezeichnung}} *</label>
           <input id="kreditinstitut_{{i}}" type="text" class="form-control" placeholder="Pflicht"
                  [(ngModel)]="belastung.kreditinstitut" required="required">
         </div>
@@ -203,28 +203,28 @@
     <div class="row">
       <div class="col-sm-2">
         <div class="form-group">
-          <label for="endeAm_{{i}}"> Datum des Vertrages</label>
+          <label for="endeAm_{{i}}"> Datum des Vertrages *</label>
           <input id="endeAm_{{i}}" type="date" class="form-control" placeholder="Pflicht"
                  [(ngModel)]="belastung.zahlungsende" required="required">
         </div>
       </div>
       <div class="col-sm-2">
         <div class="form-group">
-          <label for="datum_{{i}}"> Zahlungen laufen bis</label>
+          <label for="datum_{{i}}"> Zahlungen laufen bis *</label>
           <input id="datum_{{i}}" type="date" class="form-control" placeholder="Pflicht"
                  [(ngModel)]="belastung.datumDesVertrages" required="required">
         </div>
       </div>
       <div class="col-sm-2">
         <div class="form-group">
-          <label for="Heizungskosten_{{i}}">{{getFragen().H_dahrlenRestschuld}}</label>
+          <label for="Heizungskosten_{{i}}">{{getFragen().H_dahrlenRestschuld}} *</label>
           <input id="Heizungskosten_{{i}}" type="text" class="form-control" placeholder="Pflicht"
                  [(ngModel)]="belastung.restschuld" required="required">
         </div>
       </div>
       <div class="col-sm-2">
         <div class="form-group">
-          <label for="zahlungsende_{{i}}">{{getFragen().H_dahrlenZinsenUndTilgung}} </label>
+          <label for="zahlungsende_{{i}}">{{getFragen().H_dahrlenZinsenUndTilgung}} *</label>
           <input id="zahlungsende_{{i}}" type="text" class="form-control" placeholder="Pflicht"
                  [(ngModel)]="belastung.tilgungMonatlich" required="required">
         </div>
