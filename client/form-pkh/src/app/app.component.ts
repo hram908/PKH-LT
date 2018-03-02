@@ -5,8 +5,9 @@ import {
 import {AllgemeineDaten} from './allgemeineDaten';
 import {ViewSwitchService} from './navigation/view-switch-service';
 import {Abschnitt} from './abschnitt';
-import {RestService} from './rest-api/rest-service';
 import {Notiz} from './formulardaten/notiz';
+import {RestService} from './rest-api/rest-service';
+import {PkhMaterial} from './formulardaten/pkh-material';
 
 
 @Component({
@@ -23,8 +24,9 @@ export class AppComponent implements OnDestroy, OnInit {
 
   constructor(private viewSwitchService: ViewSwitchService,
               private componentFactoryResolver: ComponentFactoryResolver,
-              public allgemeineDaten: AllgemeineDaten, private notiz: Notiz) {
+              public allgemeineDaten: AllgemeineDaten, private rest: RestService, private notiz: Notiz, pkhForm: PkhMaterial) {
     this.viewSwitchService.formChanged.subscribe(this.onFormViewChanged);
+    rest.sendeFormularAnServer(pkhForm);
   }
 
   ngOnInit() {

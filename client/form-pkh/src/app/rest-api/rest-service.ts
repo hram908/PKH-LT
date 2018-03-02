@@ -1,19 +1,18 @@
 import {HttpClient} from '@angular/common/http';
 import {PkhMaterial} from '../formulardaten/pkh-material';
 import {Injectable} from '@angular/core';
+import {Notiz} from '../formulardaten/notiz';
 
 @Injectable()
 export class RestService {
-  constructor(public httpClient: HttpClient) {
+  constructor(public httpClient: HttpClient, public notiz: Notiz) {
   }
 
-  sendeFormularAnServer(pkhForm: PkhMaterial): String {
-    const anfrage = this.httpClient.post<any>('http://127.0.0.1:4242/formular', pkhForm);
+  async sendeFormularAnServer(pkhForm: PkhMaterial) {
+    const anfrage = this.httpClient.post('http://127.0.0.1:4242/formular', pkhForm, {responseType: 'text'});
 
-    // TODO: extrahiere den Downloadlink aus dem Rückgabevalue (Isi fragen)
-    const returnContent: string[] = [];
-    console.log(anfrage.subscribe(responses => responses.forEach(response => returnContent.push(response))));
-    // console.log(returnContent);
-    return 'Hier kommt noch der Link';
+    await anfrage.subscribe(data => {
+      this.notiz.downloadLink =  data;
+    });
   }
 }
