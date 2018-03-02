@@ -7,7 +7,7 @@ import {Abschnitt} from '../abschnitt';
 
 @Injectable()
 export class ChatbotService {
-  // IMPORTANT NOTE: for deployment change url to  'deployed server url'/chatbot
+  // IMPORTANT NOTE: for deployment delete 4242 port
   private readonly chatbotUrl: string = 'http://127.0.0.1:4242/chatbot';
   private chatbotFragenMap: Map<string, string[]>;
   private _activeChatbotFragen: string[];
