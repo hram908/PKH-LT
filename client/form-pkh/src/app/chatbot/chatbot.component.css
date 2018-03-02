@@ -42,16 +42,12 @@
 .chatbot-input{
   padding: 25px;
   right: 100px;
-  background: white;
+  background: #d1dfff;
   color: black;
-  top: 200px;
+  top: 400px;
   text-align: center;
   font-size: 14px;
   font-weight: normal;
-}
-
-.user-button{
-  margin-top: 50px;
 }
 
 .chatbot-response{
@@ -60,6 +56,24 @@
   background: white;
   color: black;
   top: 300px;
+  text-align: center;
+  font-size: 14px;
+  font-weight: normal;
+}
+
+.user-fragen{
+  text-align: center;
+  margin-top: 30px;
+  right: -300px;
+  bottom: 20px;
+}
+
+.einzel-frage{
+  width: 200px;
+  white-space: normal;
+  height: auto;
+  background: white;
+  color: black;
   text-align: center;
   font-size: 14px;
   font-weight: normal;

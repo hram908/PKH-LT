@@ -2,23 +2,18 @@
 
 <div class="bot-side-menu" [class.bot-side-menu-pushed]="botIsActive">
   <h2>Der PKH-Helfer</h2>
-  <br><br><br>
-  <div class="row">
-    <div class="col">
-      <label class="label label-default chatbot-input">{{chatbotText}}</label>
-      <br>
+  <br><br>
+  <div class="col">
+    <label class="label label-default chatbot-input">Kann ich Ihnen beim Abschnitt <b>{{abschnittString}}</b>
+      helfen?</label>
 
-      <!-- list of user inputs according to section of the form -->
-      <div class="container">
-        <ul class="list-group" *ngFor="let abschnittAntwort of abschnittAntworten">
-          <li class="list-group-item">{{abschnittAntwort}}</li>
-        </ul>
-      </div>
-
-      <button type="button" class="btn btn-default user-button" (click)="askWatson('Hello')">
-        Rechtsschutzversicherung
-      </button>
+    <!-- list of user inputs according to section of the form -->
+    <div class="container user-fragen">
+      <ul class="list-group" *ngFor="let frage of activeFragen">
+        <li class="list-group-item einzel-frage" (click)="askWatson('todo')">{{frage}}</li>
+      </ul>
     </div>
+
   </div>
 
   <br>

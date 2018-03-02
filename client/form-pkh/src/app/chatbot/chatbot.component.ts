@@ -1,7 +1,5 @@
 import {Component} from '@angular/core';
 import {ChatbotFragen} from '../common/chatbot-fragen';
-import {ViewSwitchService} from '../navigation/view-switch-service';
-import {Abschnitt} from '../abschnitt';
 import {ChatbotService} from './chatbot-service';
 
 @Component({
@@ -11,31 +9,20 @@ import {ChatbotService} from './chatbot-service';
 })
 export class ChatbotComponent {
   public botIsActive: boolean;
-  public chatbotText: string;
   public watsonResponses: string[];
 
-  private readonly DefaultText: string = 'Kann ich Ihnen bei Abschnitt B helfen?';
-
-  constructor(private viewSwitchService: ViewSwitchService,
-              private chatbotService: ChatbotService) {
-    this.chatbotText = this.DefaultText;
+  constructor(private chatbotService: ChatbotService) {
     this.botIsActive = false;
     this.watsonResponses = [];
-
-    viewSwitchService.formChanged.subscribe(this.onFormChanged);
-  }
-
-  private onFormChanged = (abschnitt: Abschnitt) => {
-    if (abschnitt) {
-
-      //let activeComponent = this.chatbotService.chatbotAbschnitte.find(a => a.id === abschnitt.id).component;
-
-    }
   }
 
   public get abschnittAntworten(): string[]{
     //return this.chatbotService.chatbotAbschnitte
     return [];
+  }
+
+  public get abschnittString(): string{
+    return this.chatbotService.activeAbschnittString;
   }
 
   public toggleBot() {
@@ -46,8 +33,13 @@ export class ChatbotComponent {
     return ChatbotFragen;
   }
 
-  public askWatson(userInput: string){
+  public askWatson(userInput: string) {
     this.chatbotService.askWatson(userInput).subscribe(responses => responses.forEach(response => this.watsonResponses.push(response)));
     console.log(this.watsonResponses);
   }
+
+  public get activeFragen(): string[]{
+    return this.chatbotService.activeChatbotFragen;
+  }
+
 }
