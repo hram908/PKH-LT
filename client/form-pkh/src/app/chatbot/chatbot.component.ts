@@ -1,7 +1,5 @@
-import {Component, ComponentFactoryResolver, ComponentRef, ViewChild, ViewContainerRef} from '@angular/core';
+import {Component} from '@angular/core';
 import {ChatbotFragen} from '../common/chatbot-fragen';
-import {ViewSwitchService} from '../navigation/view-switch-service';
-import {Abschnitt} from '../abschnitt';
 import {ChatbotService} from './chatbot-service';
 
 @Component({
@@ -10,46 +8,41 @@ import {ChatbotService} from './chatbot-service';
   styleUrls: ['./chatbot.component.css']
 })
 export class ChatbotComponent {
-  @ViewChild('chatbotForm', {read: ViewContainerRef}) container;
-  componentRef: ComponentRef<ComponentFactoryResolver>;
-
   public botIsActive: boolean;
-  public chatbotText: string;
-  public watsonResponses: string[];
 
-  private readonly DefaultText: string = 'Kann ich Ihnen bei Abschnitt B helfen?';
-
-  constructor(private viewSwitchService: ViewSwitchService,
-              private chatbotService: ChatbotService,
-              private componentFactoryResolver: ComponentFactoryResolver) {
-    this.chatbotText = this.DefaultText;
+  constructor(private chatbotService: ChatbotService) {
     this.botIsActive = false;
-    this.watsonResponses = [];
-
-     // viewSwitchService.formChanged.subscribe(this.onFormChanged);
   }
 
-  private onFormChanged = (abschnitt: Abschnitt) => {
-    if (abschnitt) {
-      this.container.clear();
+  public get abschnittAntworten(): string[]{
+    //return this.chatbotService.chatbotAbschnitte
+    return [];
+  }
 
-      const activeComponent = this.chatbotService.chatbotAbschnitte.find(a => a.id === abschnitt.id).component;
-
-      const factory = this.componentFactoryResolver.resolveComponentFactory(activeComponent);
-      this.componentRef = this.container.createComponent(factory);
-    }
+  public get abschnittString(): string{
+    return this.chatbotService.activeAbschnittString;
   }
 
   public toggleBot() {
     this.botIsActive = !this.botIsActive;
   }
 
-  getFragen() {
-    return ChatbotFragen;
+  public askWatson(userInput: string) {
+    this.chatbotService.askWatson(userInput);
+
   }
 
-  public askWatson(userInput: string) {
-    this.chatbotService.askWatson(userInput).subscribe(responses => responses.forEach(response => this.watsonResponses.push(response)));
-    console.log(this.watsonResponses);
+  public get activeFragen(): string[]{
+    let activeFragen: string[] = this.chatbotService.activeChatbotFragen;
+    if(activeFragen){
+      return activeFragen;
+    }else{
+      this.botIsActive = false;
+    }
   }
+
+  public get watsonResponse(): string[]{
+     return this.chatbotService.watsonResponse;
+  }
+
 }

@@ -1,32 +1,33 @@
-<button class="btn btn-primary bot-button" (click)="toggleBot()" [class.bot-button-pushed]="botIsActive">Bot</button>
+<button class="btn btn-primary bot-button" (click)="toggleBot()" [class.bot-button-pushed]="botIsActive"
+        [disabled]="abschnittString.length == 0">Bot
+</button>
 
 <div class="bot-side-menu" [class.bot-side-menu-pushed]="botIsActive">
   <h2>Der PKH-Helfer</h2>
-  <br><br><br>
-  <div class="row">
-    <div class="col">
-      <label class="label label-default chatbot-input">{{chatbotText}}</label>
-      <br>
-      <!--
-        <div class="container">
-          <ul class="list-group" *ngFor="let abschnittAntwort in abschnittAntworten ">
-            <li class="list-group-item">{{abschnittAntwort}}</li>
-          </ul>
-        </div>
-        -->
-      <button type="button" class="btn btn-default user-button" (click)="askWatson('Hello')">
-        Rechtsschutzversicherung
-      </button>
-    </div>
+  <hr class="divider">
+
+  <!-- Watson response -->
+  <div class="chatbot-response-container" *ngIf="watsonResponse.length > 0">
+    <br>
+    <ul *ngFor="let response of watsonResponse">
+      <li class="label label-default chatbot-response">{{response}}</li>
+    </ul>
+    <br><br>
   </div>
 
+  <hr class="divider">
   <br>
-  <!-- Watson response -->
-    <div class="container" *ngFor="let watsonResponse of watsonResponses">
-      <label class="label label-default chatbot-input">{{watsonResponse}}</label>
-    </div>
-  <!--  TODO in milestone 3
 
-  <ng-template #chatbotForm></ng-template> -->
+  <div class="col">
+    <label class="label label-default chatbot-input">Kann ich Ihnen beim Abschnitt <b>{{abschnittString}}</b>
+      helfen?</label>
+
+    <br><br><br>
+
+    <!-- list of user inputs according to section of the form -->
+    <ul class="list-group user-fragen" *ngFor="let frage of activeFragen">
+      <li class="list-group-item einzel-frage" (click)="askWatson(frage)">{{frage}}</li>
+    </ul>
+  </div>
 </div>
 

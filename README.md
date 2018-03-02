@@ -57,8 +57,12 @@
 
 
 ## Build
+### General
+-  Go to *client/form-pkh/src/app/chatbot/chatbot-service.ts*
+-  change the chatbotUrl to the url of your deployed server
+
 **for the war file:**
-- run the *build.bat* on the root directory
+-  run the *build.bat* on the root directory
 
 **for the jar file:**
-- go to *build.gradle* and comment line 10 *apply plugin: 'war'*
+-  go to *build.gradle* and comment line 10 *apply plugin: 'war'*
