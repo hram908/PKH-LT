@@ -12,15 +12,21 @@ export class ChatbotService {
   private chatbotFragenMap: Map<string, string[]>;
   private _activeChatbotFragen: string[];
   private _activeAbschnittString: string;
+  private _watsonResponse: string[];
 
 
   public constructor(private http: HttpClient,
                      private viewSwitchService: ViewSwitchService) {
     this.chatbotFragenMap = new Map();
     this._activeAbschnittString = '';
+    this._watsonResponse = [];
     this.initializeAbschnitte();
 
     this.viewSwitchService.formChanged.subscribe(this.onFormChanged);
+  }
+
+  public get watsonResponse(): string[] {
+    return this._watsonResponse;
   }
 
   public get activeChatbotFragen(): string[] {
@@ -31,10 +37,11 @@ export class ChatbotService {
     return this._activeAbschnittString;
   }
 
-  public askWatson(userInput: string): Observable<string[]> {
-    return this.http.post<any>(this.chatbotUrl, userInput);
-  }
-
+  public askWatson(userInput: string) {
+    let responses: string[] = [];
+    let response: Observable<any> = this.http.post<any>(this.chatbotUrl, userInput);
+    response.subscribe(rs => this._watsonResponse = rs);
+    }
 
   private onFormChanged = (abschnitt: Abschnitt) => {
     if (abschnitt) {

@@ -9,11 +9,9 @@ import {ChatbotService} from './chatbot-service';
 })
 export class ChatbotComponent {
   public botIsActive: boolean;
-  public watsonResponses: string[];
 
   constructor(private chatbotService: ChatbotService) {
     this.botIsActive = false;
-    this.watsonResponses = [];
   }
 
   public get abschnittAntworten(): string[]{
@@ -30,12 +28,16 @@ export class ChatbotComponent {
   }
 
   public askWatson(userInput: string) {
-    this.chatbotService.askWatson(userInput).subscribe(responses => responses.forEach(response => this.watsonResponses.push(response)));
-    console.log(this.watsonResponses);
+    this.chatbotService.askWatson(userInput);
+
   }
 
   public get activeFragen(): string[]{
     return this.chatbotService.activeChatbotFragen;
+  }
+
+  public get watsonResponse(): string[]{
+     return this.chatbotService.watsonResponse;
   }
 
 }

@@ -54,15 +54,21 @@
   font-weight: normal;
 }
 
+.chatbot-response-container {
+  background: #722b70;
+}
+
 .chatbot-response {
+  background: none;
+  right: 100px;
   padding: 25px;
-  right: 300px;
-  background: white;
-  color: black;
-  top: 300px;
+  color: white;
   text-align: center;
   font-size: 14px;
   font-weight: normal;
+  white-space: normal;
+  width: 200px;
+  height: auto;
 }
 
 .user-fragen {
@@ -85,7 +91,7 @@
   background: lightgrey;
 }
 
-.divider{
+.divider {
   width: 90%;
   border-top: 1px solid white;
 }

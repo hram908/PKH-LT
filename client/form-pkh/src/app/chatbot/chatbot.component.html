@@ -7,8 +7,12 @@
   <hr class="divider">
 
   <!-- Watson response -->
-  <div class="container" *ngFor="let watsonResponse of watsonResponses">
-    <label class="label label-default chatbot-response">{{watsonResponse}}</label>
+  <div class="chatbot-response-container" *ngIf="watsonResponse.length > 0">
+    <br>
+    <ul *ngFor="let response of watsonResponse">
+      <li class="label label-default chatbot-response">{{response}}</li>
+    </ul>
+    <br><br>
   </div>
 
   <hr class="divider">
