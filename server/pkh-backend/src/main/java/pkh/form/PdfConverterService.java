@@ -44,9 +44,51 @@ public class PdfConverterService {
             _pdfDocument.addPage(new PDPage());
 
             // System.out.println("Anzahl Seiten: " + _pdfDocument.getNumberOfPages());
-            gebeFeldnamenAus();
-            String test = Felder.getDescriptionByCode("name");
-            erweitereTextInFeld(test, "Testvorname");
+            // gebeFeldnamenAus();
+            String test0 = Felder.getDescriptionByCode("wohnraumgroesse");
+            erweitereTextInFeld(test0, "150");
+            String test1 = Felder.getDescriptionByCode("anzahlzimmer");
+            erweitereTextInFeld(test1, "152");
+            String test2 = Felder.getDescriptionByCode("personenimwohnraum");
+            erweitereTextInFeld(test2, "153");
+            String test3 = Felder.getDescriptionByCode("kaltmiete");
+            erweitereTextInFeld(test3, "156");
+            String test4 = Felder.getDescriptionByCode("heizungskosten");
+            erweitereTextInFeld(test4, "157");
+            String test5 = Felder.getDescriptionByCode("uebrigenebenkosten");
+            erweitereTextInFeld(test5, "158");
+            String test6 = Felder.getDescriptionByCode("gesamtbetrag");
+            erweitereTextInFeld(test6, "159");
+            String test7 = Felder.getDescriptionByCode("alleine");
+            erweitereTextInFeld(test7, "160");
+            String test8 = Felder.getDescriptionByCode("Tilgung");
+            erweitereTextInFeld(test8, "163");
+            String test9 = Felder.getDescriptionByCode("Heizungskosten2");
+            erweitereTextInFeld(test9, "164");
+            String test10 = Felder.getDescriptionByCode("uebrigenebenkosten1");
+            erweitereTextInFeld(test10, "165");
+            String test11 = Felder.getDescriptionByCode("gesamtbetrag1");
+            erweitereTextInFeld(test11, "166");
+            String test12 = Felder.getDescriptionByCode("alleine1");
+            erweitereTextInFeld(test12, "167");
+            String test13 = Felder.getDescriptionByCode("darlehensbezeichnung");
+            erweitereTextInFeld(test13, "169");
+            String test14 = Felder.getDescriptionByCode("restschuld");
+            erweitereTextInFeld(test14, "170");
+            String test15 = Felder.getDescriptionByCode("ZINSEN");
+            erweitereTextInFeld(test15, "171");
+            String test16 = Felder.getDescriptionByCode("darlehensbezeichnung1");
+            erweitereTextInFeld(test16, "173");
+            String test17 = Felder.getDescriptionByCode("restschuld1");
+            erweitereTextInFeld(test17, "174");
+            String test18 = Felder.getDescriptionByCode("ZINSEN1");
+            erweitereTextInFeld(test18, "175");
+
+
+
+
+
+
             // erweitereTextInFeld(test, "Testnachname");
             /*String test = Felder.getDescriptionByCode("vorname");
             System.out.println(" Text1(\"vorname\"): " + test);
@@ -127,8 +169,31 @@ public class PdfConverterService {
 
     public enum Felder {
         // Form A
-        NAME("name", "Text1"),
-        ADRESSE("adresse", "Text5");
+        NAME("name", "Text159"),
+        //ADRESSE("adresse", "Text5");
+         ADRESSE ("adresse", "Text166"),
+
+        //Form H
+        WOHNRAUMGROESSE("wohnraumgroesse", "Text150"),
+        ANZAHLZIMMER ("anzahlzimmer", "Text152"),
+        PERSONEIMWOHNRAUM("personenimwohnraum", "Text153" ),
+        KALTMIETE("kaltmiete", "Text156" ),
+        HEIZUNGSKOSTEN("heizungskosten", "Text157" ),
+        UEBRIGENEBENKOSTEN("uebrigenebenkosten", "Text158" ),
+        GESAMTBETRAG("gesamtbetrag", "Text159" ),
+        ALLEINE("alleine", "Text160" ),
+        TILGUNG("Tilgung", "Text163" ),
+        HEIZUNGSKOSTEN1("heizungskosten2", "Text164" ),
+        UEBRIGENEBENKOSTEN1("uebrigenebenkosten1", "Text165" ),
+        GESAMTBETRAG1("gesamtbetrag1", "Text166" ),
+        ALLEINE1("alleine1", "Text167" ),
+        DAHRLEHENSBEZEICHNUNG("darlehensbezeichnung","Text169"),
+        RESTSCHULD("restschuld", "Text170" ),
+        ZINSEN("ZINSEN", "Text171" ),
+        DAHRLEHENSBEZEICHNUNG1("darlehensbezeichnung1","Text173"),
+        RESTSCHULD1("restschuld1", "Text174" ),
+        ZINSEN1("ZINSEN1", "Text175" );
+
 
 
         private final String code;
