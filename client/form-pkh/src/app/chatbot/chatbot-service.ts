@@ -55,16 +55,14 @@ export class ChatbotService {
   private onFormChanged = (abschnitt: Abschnitt) => {
     if (abschnitt) {
       this._watsonResponse = [];
-      // TODO implement endfenster 'Z' when ready
-      if (abschnitt.id == '0' || abschnitt.id == '9') {
-        this._botIsActive = false;
-        this._activeChatbotFragen = [];
-      }
+
       if (this.chatbotFragenMap.get(abschnitt.id)) {
         this._activeChatbotFragen = this.chatbotFragenMap.get(abschnitt.id);
         this._activeAbschnittString = abschnitt.ueberschrift;
       } else {
         this._activeAbschnittString = '';
+        this._botIsActive = false;
+        this._activeChatbotFragen = [];
       }
     }
   }

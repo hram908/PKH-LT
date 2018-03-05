@@ -1,6 +1,31 @@
 <div class="form-group" id="formularUeberschrift">
   <h2>{{getUntertitel()}}</h2>
-  <p>Überprufen Sie bitte Ihre Einträge bevor Sie die PDF generieren!</p>
-  <button class="btn btn-primary" (click)="sendFormularClicked()">PDF generieren</button>
+  <p>Überprüfen Sie bitte Ihre Einträge bevor Sie die PDF generieren!</p>
+
+  <!-- Button trigger modal -->
+  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+    PDF generieren
+  </button>
+
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Hinweis zur PDF-Generierung</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          Sind Sie sicher, dass Sie alle von Ihnen eingetragenen Felder wahrheitsgemäß ausgefüllt haben?
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Schließen, Formular nochmal überprüfen</button>
+          <button type="button" class="btn btn-primary" (click)="sendFormularToServer()")>Ja, PDF generieren</button>
+        </div>
+      </div>
+    </div>
+  </div>
 
 </div>
