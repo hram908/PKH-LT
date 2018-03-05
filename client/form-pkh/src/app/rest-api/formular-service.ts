@@ -10,8 +10,9 @@ export class FormularService {
 
   async sendeFormularAnServer(pkhForm: PkhMaterial) {
 
-    const anfrage = this.httpClient.post('http://127.0.0.1:4242/formular', pkhForm, {responseType: 'text'});    await anfrage.subscribe(data => {
-      this.notiz.downloadLink =  data;
+    const anfrage = this.httpClient.post('http://127.0.0.1:4242/formular', pkhForm, {responseType: 'text'});
+    await anfrage.subscribe(data => {
+      this.notiz.downloadLink = data;
     });
 
   }

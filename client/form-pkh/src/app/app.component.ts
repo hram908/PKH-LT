@@ -7,7 +7,6 @@ import {ViewSwitchService} from './navigation/view-switch-service';
 import {Abschnitt} from './abschnitt';
 import {FormularService} from './rest-api/formular-service';
 import {Notiz} from './formulardaten/notiz';
-import {RestService} from './rest-api/rest-service';
 import {PkhMaterial} from './formulardaten/pkh-material';
 
 
@@ -26,9 +25,8 @@ export class AppComponent implements OnDestroy, OnInit {
   constructor(private viewSwitchService: ViewSwitchService,
               private componentFactoryResolver: ComponentFactoryResolver,
               public allgemeineDaten: AllgemeineDaten,
-              private notiz: Notiz, pkhForm: PkhMaterial) {
+              private notiz: Notiz) {
     this.viewSwitchService.formChanged.subscribe(this.onFormViewChanged);
-    // rest.sendeFormularAnServer(pkhForm);
   }
 
   ngOnInit() {
@@ -77,7 +75,8 @@ export class AppComponent implements OnDestroy, OnInit {
       case 'J':
         this.notiz.j.notiz = 'Es fehlen Angaben zur "" in Abschnitt j.';
         break;
-      default: this.notiz.a.notiz = 'Es gab einen Fehler bei der Meldung zu Abschnitt ' + abschnitt.id;
+      default:
+        this.notiz.a.notiz = 'Es gab einen Fehler bei der Meldung zu Abschnitt ' + abschnitt.id;
     }
   }
 
