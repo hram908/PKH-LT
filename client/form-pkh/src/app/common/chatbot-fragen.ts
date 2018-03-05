@@ -1,7 +1,6 @@
 export class ChatbotFragen {
   public static readonly A = {
-    A1: 'Was gebe ich an, wenn ich bei jemandem in der Garage wohne?',
-    A2: 'Was gebe ich an, wenn ich obdachlos bin?'
+    A1: 'Was gebe ich an, wenn ich obdachlos bin?'
   };
 
   public static readonly B = {
