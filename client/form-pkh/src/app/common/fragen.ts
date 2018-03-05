@@ -44,7 +44,7 @@ export class Fragen {
     'wirtschaftlichen Verhältnisse an, sofern diese nicht bereits vollständig aus den folgenden Abschnitten ersichtlich sind.';
 
   // Formularabschnitt D
-  public static readonly D_Frage = 'Gewähren die Angehörigen Bar- oder Naturalunterhalt?';
+  public static readonly D_Frage = 'Gewähren Sie Angehörigen Bar- oder Naturalunterhalt?';
   public static readonly D_Name = 'Vollständiger Name';
   public static readonly D_Geburtsdatum = 'Geburtsdatum';
   public static readonly D_Strasse = 'Strasse';
@@ -66,7 +66,7 @@ export class Fragen {
   public static readonly E_unterhaltBetrag = 'Haben Sie Einnahmen aus Unterhalt';
   public static readonly E_renteUndPensionBetrag = 'Haben Sie Einnahmen aus Rente und/oder Pension?';
   public static readonly E_arbeitslosengeldBetrag = 'Haben Sie Einnahmen aus Arbeitslosengeld';
-  public static readonly E_arbeitslosengeld2Betrag = 'Haben Sie Einnahmen aus Arbeitslosengeld 2?';
+  public static readonly E_arbeitslosengeld2Betrag = 'Haben Sie Einnahmen aus Arbeitslosengeld II?';
   public static readonly E_krankengeldBetrag = 'Haben Sie Einnahmen aus Krankengeld?';
   public static readonly E_elterngeldBetrag = 'Haben Sie Einnahmen aus Elterngeld?';
 
@@ -79,7 +79,7 @@ export class Fragen {
   public static readonly F_sonsVersicherungBetrag = 'Betrag in EUR pro Monat';
   public static readonly F_fahrtZurArbeitBezeichnung = 'Fahrt zur Arbeit';
   public static readonly F_fahrtZurArbeitBetrag = 'Betrag in EUR pro Monat';
-  public static readonly F_werbeUndBetriebskostenBezichnung = 'Sonstige Werbekosten/Betirebskosten';
+  public static readonly F_werbeUndBetriebskostenBezichnung = 'Sonstige Werbungskosten/Betriebskosten';
   public static readonly F_werbeUndBetriebskostenBetrag = 'Betrag in EUR pro Monat';
 
   // Formularabschnitt G
@@ -115,7 +115,7 @@ export class Fragen {
   public static readonly H_anzahlPersonenWohnraum = '3. Anzahl der Personen, die diese Wohnraum bewohnen';
   public static readonly H_miete = 'Kaltmiete';
   public static readonly H_heizkosten = 'Heizungskosten';
-  public static readonly H_sonstNebenkosten = 'sonstige Nebenkosten';
+  public static readonly H_sonstNebenkosten = 'sonstige Nebenkosten (kein Strom, Gas, Telefon oder GEZ)';
   public static readonly H_gesamtbetrag = 'Gesamtbetrag';
   public static readonly H_kostenAlleine = 'Ich allein zahle davon';
   public static readonly H_zinsenUndTilgung = 'Zinsen und Tilgung';
@@ -131,11 +131,11 @@ export class Fragen {
   public static readonly I_bezeichnung = 'Bezeichung';
   public static readonly I_restschuld = 'Restschuld';
   public static readonly I_gesamtbelastung = 'Gesamtbelastung';
-  public static readonly I_alleineZahlen = 'Ich allein zahle';
+  public static readonly I_alleineZahlen = 'monatlich zahle ich';
   public static readonly I_bezeichnung1 = 'Bezeichung';
   public static readonly I_restschuld1 = 'Restschuld';
   public static readonly I_gesamtbelastung1 = 'Gesamtbelastung';
-  public static readonly I_alleineZahlen1 = 'Ich allein zahle';
+  public static readonly I_alleineZahlen1 = 'monatlich zahle ich';
 
   // Formularabschnitt J
   public static readonly J_belastungBezeichung = 'Bezeichung';

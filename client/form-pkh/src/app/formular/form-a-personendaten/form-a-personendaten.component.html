@@ -70,7 +70,7 @@
             <option [value]="'Selbstständig'">Selbstständig</option>
             <option [value]="'Schüler'">Schüler</option>
             <option [value]="'Student'">Student</option>
-            <option [value]="'Arbeitssuchend'">Arbeitssuchend</option>
+            <option [value]="'Arbeitssuchend'">Arbeitslos</option>
           </select>
         </div>
       </div>
@@ -148,14 +148,14 @@
         <div class="col-sm-3">
           <div class="form-group">
             <label for="nameVertreter">{{getFragen().A_Vorname}} *</label>
-            <input id="nameVertreter" type="text" class="form-control" placeholder="Pflicht *"
+            <input id="nameVertreter" type="text" class="form-control" placeholder="Pflicht"
                    [(ngModel)]="formA.gesetzVertreter.vertreterVorname" required="required">
           </div>
         </div>
         <div class="col-sm-3">
           <div class="form-group">
             <label for="nachnameVertreter">{{getFragen().A_Name}} *</label>
-            <input id="nachnameVertreter" type="text" class="form-control" placeholder="Pflicht *"
+            <input id="nachnameVertreter" type="text" class="form-control" placeholder="Pflicht"
                    [(ngModel)]="formA.gesetzVertreter.vertreterName" required="required">
           </div>
         </div>

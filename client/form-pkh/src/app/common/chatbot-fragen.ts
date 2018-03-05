@@ -18,7 +18,7 @@ export class ChatbotFragen {
 
   public static readonly E = {
     E1: 'Was bedeutet Verpachtung?',
-    E2: 'Was ist Kapitalvermögen?',
+    E2: 'Was sind Einnahmen aus Kapitalvermögen?',
     E3: 'Ich bekomme Rente und Pension, wie trage ich das ein?',
     E4: 'Was ist mit andere Einnahmen gemeint?'
   }
