@@ -1,22 +1,36 @@
 <div class="form-group" id="formularUeberschrift">
   <h2>{{getUntertitel()}}</h2>
   <div class="radio">
-    <label class="radio-inline" for="antragsteller"><input type="radio" id="antragsteller" name="beantragender" [(ngModel)]="allgemeineDaten.istAntragsteller" [value]="2">Antragsteller</label>
+    <label class="radio-inline" for="antragsteller">
+      <input type="radio" id="antragsteller" name="beantragender" [(ngModel)]="allgemeineDaten.istAntragsteller" [value]="2">
+      <div class="speech-bubble">Antragsteller
+      <span class="speech-bubble-text">jemand, der einen Antrag stellt</span>
+    </div>
+      </label>
+  </div>
+  <div class="radio">
+    <div class="tooltip">Hover over me
+      <span class="tooltiptext">Tooltip text</span>
+    </div>
+  </div>
+
+
+  <div class="radio">
+    <label class="radio-inline" for="berater"><input type="radio" id="berater" name="beantragender"
+                                                     [(ngModel)]="allgemeineDaten.istAntragsteller" [value]="1">Sozialberater</label>
   </div>
 
   <div class="radio">
-    <label class="radio-inline" for="berater"><input type="radio" id="berater" name="beantragender" [(ngModel)]="allgemeineDaten.istAntragsteller" [value]="1">Sozialberater</label>
-  </div>
-
-  <div class="radio">
-    <label class="radio-inline" for="jurist"><input type="radio" id="jurist" name="beantragender" [(ngModel)]="allgemeineDaten.istAntragsteller" [value]="0">Jurist</label>
+    <label class="radio-inline" for="jurist"><input type="radio" id="jurist" name="beantragender"
+                                                    [(ngModel)]="allgemeineDaten.istAntragsteller"
+                                                    [value]="0">Jurist</label>
   </div>
 
   <div class="form-text">
     <br><br><br>Für die vollständige Befüllung dieses Formulars sind voraussichtlich folgende Dokumente notwendig:<br>
-      - aktuelle Lohnbescheinigung, aktueller Steuerbescheid<br>
-      - Mietvertrag, aktuelleste Heizkostenabrechnung, Kontoauszüge<br>
-      - aktuellen Sozialhilfe-Bescheid einschließlich des Berechnungsbogens<br>
+    - aktuelle Lohnbescheinigung, aktueller Steuerbescheid<br>
+    - Mietvertrag, aktuelleste Heizkostenabrechnung, Kontoauszüge<br>
+    - aktuellen Sozialhilfe-Bescheid einschließlich des Berechnungsbogens<br>
   </div>
 </div>
 <br>

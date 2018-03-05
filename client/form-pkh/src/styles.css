@@ -1,5 +1,39 @@
-a, a:visited, a:active, a:hover {
+.speech-bubble {
+  position: relative;
+  display: inline-block;
   color: #f4429b;
-  text-decoration: none;
-  border-bottom: 1px #f4429b dotted;
+  border-bottom: 1px dotted #f4429b ;
+}
+
+.speech-bubble-text {
+  visibility: hidden;
+  width: 120px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -60px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.speech-bubble .speech-bubble-text::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+.speech-bubble:hover .speech-bubble-text {
+  visibility: visible;
+  opacity: 1;
 }
