@@ -5,7 +5,7 @@ import {
 import {AllgemeineDaten} from './allgemeineDaten';
 import {ViewSwitchService} from './navigation/view-switch-service';
 import {Abschnitt} from './abschnitt';
-import {RestService} from './rest-api/rest-service';
+import {FormularService} from './rest-api/formular-service';
 import {Notiz} from './formulardaten/notiz';
 
 
@@ -23,7 +23,8 @@ export class AppComponent implements OnDestroy, OnInit {
 
   constructor(private viewSwitchService: ViewSwitchService,
               private componentFactoryResolver: ComponentFactoryResolver,
-              public allgemeineDaten: AllgemeineDaten, public rest: RestService, private notiz: Notiz) {
+              public allgemeineDaten: AllgemeineDaten,
+              private notiz: Notiz) {
     this.viewSwitchService.formChanged.subscribe(this.onFormViewChanged);
   }
 

@@ -32,7 +32,7 @@ import {FormFMaterial} from './formulardaten/form-f/form-f-material';
 import {FormGMaterial} from './formulardaten/form-g/form-g-material';
 import {FormHMaterial} from './formulardaten/form-h/form-h-material';
 import {PkhMaterial} from './formulardaten/pkh-material';
-import {RestService} from './rest-api/rest-service';
+import {FormularService} from './rest-api/formular-service';
 import {HttpClientModule} from '@angular/common/http';
 import {Fragen} from './common/fragen';
 import {Notiz} from './formulardaten/notiz';
@@ -81,7 +81,7 @@ import {EndfensterComponent} from './formular/endfenster/endfenster.component';
     Notiz,
     Fragen,
     AllgemeineDaten,
-    RestService,
+    FormularService,
     ViewSwitchService,
     ChatbotService,
     StepSpeicher
