@@ -11,6 +11,7 @@ import {FormISonstigeVerpflichtungenComponent} from './formular/form-i-sonstige-
 import {FormEBruttoeinnahmenComponent} from './formular/form-e-bruttoeinnahmen/form-e-bruttoeinnahmen.component';
 import {FormDGewaehrterUnterhaltComponent} from './formular/form-d-gewaehrter-unterhalt/form-d-gewaehrter-unterhalt.component';
 import {FormGEigentumComponent} from './formular/form-g-eigentum/form-g-eigentum.component';
+import {EndfensterComponent} from './formular/endfenster/endfenster.component';
 
 
 /**
@@ -31,5 +32,6 @@ export class StepSpeicher {
     this.abschnitte.push(new Abschnitt('H', 'Wohnkosten', FormHWohnkostenComponent));
     this.abschnitte.push(new Abschnitt('I', 'SonstigeVerpflichtungen', FormISonstigeVerpflichtungenComponent));
     this.abschnitte.push(new Abschnitt('J', 'BesondereBelastungen', FormJBesondereBelastungenComponent));
+    this.abschnitte.push(new Abschnitt('9', 'PDF des Formulars', EndfensterComponent));
   }
 }

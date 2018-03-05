@@ -56,7 +56,7 @@ export class ChatbotService {
     if (abschnitt) {
       this._watsonResponse = [];
       // TODO implement endfenster 'Z' when ready
-      if (abschnitt.id == '0' || abschnitt.id == 'Z') {
+      if (abschnitt.id == '0' || abschnitt.id == '9') {
         this._botIsActive = false;
       }
       if (this.chatbotFragenMap.get(abschnitt.id)) {

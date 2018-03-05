@@ -36,6 +36,7 @@ import {RestService} from './rest-api/rest-service';
 import {HttpClientModule} from '@angular/common/http';
 import {Fragen} from './common/fragen';
 import {Notiz} from './formulardaten/notiz';
+import {EndfensterComponent} from './formular/endfenster/endfenster.component';
 
 
 
@@ -57,7 +58,8 @@ import {Notiz} from './formulardaten/notiz';
     FormISonstigeVerpflichtungenComponent,
     FormJBesondereBelastungenComponent,
     AppDirective,
-    ViewSwitchComponent
+    ViewSwitchComponent,
+    EndfensterComponent
   ],
   imports: [
     BrowserModule,
@@ -86,6 +88,7 @@ import {Notiz} from './formulardaten/notiz';
   ],
   entryComponents: [
     StartfensterComponent,
+    EndfensterComponent,
     FormAPersonendatenComponent,
     FormBVersicherungenComponent,
     FormCUnterhaltsanspruchComponent,
