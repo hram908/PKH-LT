@@ -44,12 +44,15 @@ public class PdfConverterService {
             _pdfDocument.addPage(new PDPage());
 
             // System.out.println("Anzahl Seiten: " + _pdfDocument.getNumberOfPages());
-            // gebeFeldnamenAus();
-            String test = Felder.getDescriptionByCode("vorname");
+            gebeFeldnamenAus();
+            String test = Felder.getDescriptionByCode("name");
+            erweitereTextInFeld(test, "Testvorname");
+            // erweitereTextInFeld(test, "Testnachname");
+            /*String test = Felder.getDescriptionByCode("vorname");
             System.out.println(" Text1(\"vorname\"): " + test);
             // cd cPDPage page = _pdfDocument.getPage(5);
             erweitereTextInFeld("vorname", "Testvorname");
-            erweitereTextInFeld(test, "Testnachname");
+            erweitereTextInFeld(test, "Testnachname");*/
 
 
 
@@ -124,8 +127,7 @@ public class PdfConverterService {
 
     public enum Felder {
         // Form A
-        VORNAME("vorname", "Text1"),
-        NACHNAME("nachname", "Text1"),
+        NAME("name", "Text1"),
         ADRESSE("adresse", "Text5");
 
 
