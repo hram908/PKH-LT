@@ -1,8 +1,12 @@
 <div class="form-group" id="formularUeberschrift">
   <h2>{{getUntertitel()}}</h2>
   <div class="radio">
-    <label class="radio-inline" for="antragsteller"><input type="radio" id="antragsteller" name="beantragender" [(ngModel)]="allgemeineDaten.istAntragsteller" [value]="2">Ich bin Antragsteller und möchte den Antrag selber ausfüllen</label>
-  </div>
+    <label class="radio-inline" for="antragsteller">
+      <input type="radio" id="antragsteller" name="beantragender" [(ngModel)]="allgemeineDaten.istAntragsteller" [value]="2">
+      Ich bin <div class="speech-bubble">Antragsteller
+      <span class="speech-bubble-text">jemand, der den Antrag stellt</span>
+    </div>
+      </label>
 
   <div class="radio">
     <label class="radio-inline" for="berater"><input type="radio" id="berater" name="beantragender" [(ngModel)]="allgemeineDaten.istAntragsteller" [value]="1">Ich bin Sozialberater</label>
@@ -14,9 +18,11 @@
 
   <div class="form-text">
     <br><br><br>Für die vollständige Befüllung dieses Formulars sind voraussichtlich folgende Dokumente notwendig:<br>
-      - aktuelle Lohnbescheinigung, aktueller Steuerbescheid<br>
-      - Mietvertrag, aktuelleste Heizkostenabrechnung, Kontoauszüge<br>
-      - aktuellen Sozialhilfe-Bescheid einschließlich des Berechnungsbogens<br>
+    - aktuelle <div class="speech-bubble">Lohnbescheinigung<span class="speech-bubble-text">erhält einmal im Jahr man vom Arbeitgeber</span>
+  </div>, aktueller <div class="speech-bubble">Steuerbescheid<span class="speech-bubble-text">erhält man einmal im Jahr vom Finanzamt</span>
+  </div><br>
+    - Mietvertrag, aktuelleste Heizkostenabrechnung, Kontoauszüge<br>
+    - aktuellen Sozialhilfe-Bescheid einschließlich des Berechnungsbogens<br>
   </div>
 </div>
 <br>
