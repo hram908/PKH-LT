@@ -1,1 +1,5 @@
-
+a, a:visited, a:active, a:hover {
+  color: #f4429b;
+  text-decoration: none;
+  border-bottom: 1px #f4429b dotted;
+}
