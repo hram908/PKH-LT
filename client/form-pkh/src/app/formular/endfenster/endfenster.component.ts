@@ -1,22 +1,24 @@
-import {Component} from '@angular/core';
-import {Untertitel} from '../../common/untertitel';
+import {Component, EventEmitter} from '@angular/core';
 import {IFormComponentBase} from '../../common/i-form-component-base';
-import {Fragen} from '../../common/fragen';
+import {PkhMaterial} from '../../formulardaten/pkh-material';
+import {FormularService} from '../../rest-api/formular-service';
 
 @Component({
-  selector: 'app-form-a-personendaten',
-  templateUrl: './form-a-personendaten.component.html',
-  styleUrls: ['./form-a-personendaten.component.css']
+  selector: 'app-endfenster',
+  templateUrl: './endfenster.component.html',
+  styleUrls: ['./endfenster.component.css']
 })
-export class FormAPersonendatenComponent implements IFormComponentBase {
-  constructor() {
+export class EndfensterComponent implements IFormComponentBase {
+
+  constructor(private formularService: FormularService,public pkhForm: PkhMaterial) {
   }
 
   getUntertitel(): string {
-    return Untertitel.A;
+    return 'Generieren des PDFs';
   }
 
-  getFragen() {
-    return Fragen;
+  public sendFormularToServer(){
+    // TODO generate download link
+    this.formularService.sendeFormularAnServer(this.pkhForm);
   }
 }
