@@ -1,6 +1,9 @@
 package pkh.form.materials;
 
 public class Notiz {
+    private String rechtsgebiet;
+    private String downloadLink;
+    private String progonose;
     private NotizMaterial A;
     private NotizMaterial B;
     private NotizMaterial C;
@@ -11,6 +14,30 @@ public class Notiz {
     private NotizMaterial H;
     private NotizMaterial I;
     private NotizMaterial J;
+
+    public String getRechtsgebiet() {
+        return rechtsgebiet;
+    }
+
+    public void setRechtsgebiet(String rechtsgebiet) {
+        this.rechtsgebiet = rechtsgebiet;
+    }
+
+    public String getDownloadLink() {
+        return downloadLink;
+    }
+
+    public void setDownloadLink(String downloadLink) {
+        this.downloadLink = downloadLink;
+    }
+
+    public String getProgonose() {
+        return progonose;
+    }
+
+    public void setProgonose(String progonose) {
+        this.progonose = progonose;
+    }
 
     public NotizMaterial getA() {
         return A;

@@ -1,10 +1,13 @@
-import {NotizMaterial} from './notizMaterial';
+import {NotizMaterial} from './notiz-material';
 
 /**
  * @author: Isabella, Thomas, Jana
  **/
 
 export class Notiz {
+  rechtsgebiet = '';
+  downloadLink = '';
+  progonose = '';
   a: NotizMaterial = new NotizMaterial();
   b: NotizMaterial = new NotizMaterial();
   c: NotizMaterial = new NotizMaterial();
