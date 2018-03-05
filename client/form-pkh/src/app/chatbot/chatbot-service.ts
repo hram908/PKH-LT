@@ -13,7 +13,7 @@ export class ChatbotService {
   private _activeChatbotFragen: string[];
   private _activeAbschnittString: string;
   private _watsonResponse: string[];
-
+  private _botIsActive: boolean;
 
   public constructor(private http: HttpClient,
                      private viewSwitchService: ViewSwitchService) {
@@ -21,8 +21,17 @@ export class ChatbotService {
     this._activeAbschnittString = '';
     this._watsonResponse = [];
     this.initializeAbschnitte();
+    this._botIsActive = false;
 
     this.viewSwitchService.formChanged.subscribe(this.onFormChanged);
+  }
+
+  public get botIsActive(): boolean {
+    return this._botIsActive;
+  }
+
+  public set botIsActive(isActive: boolean) {
+    this._botIsActive = isActive;
   }
 
   public get watsonResponse(): string[] {
@@ -41,12 +50,15 @@ export class ChatbotService {
     let responses: string[] = [];
     let response: Observable<any> = this.http.post<any>(this.chatbotUrl, userInput);
     response.subscribe(rs => this._watsonResponse = rs);
-    }
+  }
 
   private onFormChanged = (abschnitt: Abschnitt) => {
     if (abschnitt) {
       this._watsonResponse = [];
-
+      // TODO implement endfenster 'Z' when ready
+      if (abschnitt.id == '0' || abschnitt.id == 'Z') {
+        this._botIsActive = false;
+      }
       if (this.chatbotFragenMap.get(abschnitt.id)) {
         this._activeChatbotFragen = this.chatbotFragenMap.get(abschnitt.id);
         this._activeAbschnittString = abschnitt.ueberschrift;

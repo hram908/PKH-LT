@@ -8,10 +8,12 @@ import {ChatbotService} from './chatbot-service';
   styleUrls: ['./chatbot.component.css']
 })
 export class ChatbotComponent {
-  public botIsActive: boolean;
 
   constructor(private chatbotService: ChatbotService) {
-    this.botIsActive = false;
+  }
+
+  public get botIsActive(): boolean{
+    return this.chatbotService.botIsActive;
   }
 
   public get abschnittAntworten(): string[]{
@@ -24,7 +26,7 @@ export class ChatbotComponent {
   }
 
   public toggleBot() {
-    this.botIsActive = !this.botIsActive;
+    this.chatbotService.botIsActive = !this.chatbotService.botIsActive;
   }
 
   public askWatson(userInput: string) {
@@ -37,7 +39,7 @@ export class ChatbotComponent {
     if(activeFragen){
       return activeFragen;
     }else{
-      this.botIsActive = false;
+      this.chatbotService.botIsActive = false;
     }
   }
 
