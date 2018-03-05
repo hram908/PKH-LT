@@ -37,6 +37,7 @@
   width: 500px;
   transition: 0.7s;
   text-align: center;
+  overflow: auto;
 }
 
 .bot-side-menu-pushed {
