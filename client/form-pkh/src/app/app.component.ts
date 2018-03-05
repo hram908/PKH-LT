@@ -19,7 +19,7 @@ import {Notiz} from './formulardaten/notiz';
 export class AppComponent implements OnDestroy, OnInit {
   @ViewChild('appHost', {read: ViewContainerRef}) container;
   componentRef: ComponentRef<ComponentFactoryResolver>;
-  title = 'Prozesskostenhilfe-Helfer';
+  title = 'Formular für die Prozesskostenhilfe';
 
   constructor(private viewSwitchService: ViewSwitchService,
               private componentFactoryResolver: ComponentFactoryResolver,
