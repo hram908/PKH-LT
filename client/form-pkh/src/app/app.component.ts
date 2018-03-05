@@ -26,7 +26,7 @@ export class AppComponent implements OnDestroy, OnInit {
               private componentFactoryResolver: ComponentFactoryResolver,
               public allgemeineDaten: AllgemeineDaten, private rest: RestService, private notiz: Notiz, pkhForm: PkhMaterial) {
     this.viewSwitchService.formChanged.subscribe(this.onFormViewChanged);
-    rest.sendeFormularAnServer(pkhForm);
+    // rest.sendeFormularAnServer(pkhForm);
   }
 
   ngOnInit() {

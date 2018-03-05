@@ -1,4 +1,4 @@
-import {NotizMaterial} from './notizMaterial';
+import {NotizMaterial} from './notiz-material';
 
 /**
  * @author: Isabella, Thomas, Jana
