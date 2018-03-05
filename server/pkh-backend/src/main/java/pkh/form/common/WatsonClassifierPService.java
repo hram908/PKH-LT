@@ -19,10 +19,10 @@ public class WatsonClassifierPService {
 
     private static final String WATSON_CLASSIFIER_CREDENTIAL_PATH = "watson-classifier-credentials.txt";
 
-    private String workspaceId;
+
     private String username;
     private String password;
-    private String versionDate;
+    private String classifierID;
 
     public WatsonClassifierPService() {
         initializeProperties(WATSON_CLASSIFIER_CREDENTIAL_PATH);
@@ -35,17 +35,15 @@ public class WatsonClassifierPService {
             for (String line : lines) {
                 // look at the first part of the line
                 switch (line.substring(0, line.indexOf('='))) {
-                    case "watson.classifier.workspace-id":
-                        workspaceId = line.substring(line.indexOf('=') + 1, line.length());
-                        break;
+
                     case "watson.classifier.username":
                         username = line.substring(line.indexOf('=') + 1, line.length());
                         break;
                     case "watson.classifier.password":
                         password = line.substring(line.indexOf('=') + 1, line.length());
                         break;
-                    case "watson.classifier.version-date":
-                        versionDate = line.substring(line.indexOf('=') + 1, line.length());
+                    case "watson.classifier.classifierID":
+                        classifierID = line.substring(line.indexOf('=') + 1, line.length());
                         break;
                 }
             }
@@ -56,9 +54,6 @@ public class WatsonClassifierPService {
         Log.info("Finished reading watson conversation credentials from file.");
     }
 
-    public String getWorkspaceId() {
-        return workspaceId;
-    }
 
     public String getUsername() {
         return username;
@@ -68,7 +63,7 @@ public class WatsonClassifierPService {
         return password;
     }
 
-    public String getVersionDate() {
-        return versionDate;
+    public String getClassifierID() {
+        return classifierID;
     }
 }
