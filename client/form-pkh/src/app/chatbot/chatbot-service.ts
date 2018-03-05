@@ -58,6 +58,7 @@ export class ChatbotService {
       // TODO implement endfenster 'Z' when ready
       if (abschnitt.id == '0' || abschnitt.id == '9') {
         this._botIsActive = false;
+        this._activeChatbotFragen = [];
       }
       if (this.chatbotFragenMap.get(abschnitt.id)) {
         this._activeChatbotFragen = this.chatbotFragenMap.get(abschnitt.id);
