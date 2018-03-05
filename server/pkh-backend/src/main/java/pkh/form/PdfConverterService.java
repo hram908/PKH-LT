@@ -83,26 +83,3 @@ public class PdfConverterService {
         return "pkh_formular_" + nachname + "_" + id + ".pdf";
     }
 }
-
-/*
-        //Form H
-        WOHNRAUMGROESSE("wohnraumgroesse", "Text150"),
-        ANZAHLZIMMER ("anzahlzimmer", "Text152"),
-        PERSONEIMWOHNRAUM("personenimwohnraum", "Text153" ),
-        KALTMIETE("kaltmiete", "Text156" ),
-        HEIZUNGSKOSTEN("heizungskosten", "Text157" ),
-        UEBRIGENEBENKOSTEN("uebrigenebenkosten", "Text158" ),
-        GESAMTBETRAG("gesamtbetrag", "Text159" ),
-        ALLEINE("alleine", "Text160" ),
-        TILGUNG("Tilgung", "Text163" ),
-        HEIZUNGSKOSTEN1("heizungskosten2", "Text164" ),
-        UEBRIGENEBENKOSTEN1("uebrigenebenkosten1", "Text165" ),
-        GESAMTBETRAG1("gesamtbetrag1", "Text166" ),
-        ALLEINE1("alleine1", "Text167" ),
-        DAHRLEHENSBEZEICHNUNG("darlehensbezeichnung","Text169"),
-        RESTSCHULD("restschuld", "Text170" ),
-        ZINSEN("ZINSEN", "Text171" ),
-        DAHRLEHENSBEZEICHNUNG1("darlehensbezeichnung1","Text173"),
-        RESTSCHULD1("restschuld1", "Text174" ),
-        ZINSEN1("ZINSEN1", "Text175" );
- */
