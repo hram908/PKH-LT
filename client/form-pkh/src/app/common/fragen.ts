@@ -137,6 +137,10 @@ export class Fragen {
   public static readonly H_bezeichnung = 'Informationen zum Vertrag';
   public static readonly H_dahrlenRestschuld = 'Restschuld in EUR';
   public static readonly H_dahrlenZinsenUndTilgung = 'Zinsen und Tilgung';
+  public static readonly H_nutzungsVerhaeltnisseBeschreibung = 'z.B. Heimwohnen; Untermiete';
+  public static readonly H_erbbauBeschreibung = 'auf einem fremden Grundstück ein Gebäude zu errichten sowie dieses für seine eigenen Zwecke zu nutzen.';
+  public static readonly H_mietNebenkostenBeschreibung = 'auf den Mieter umgelegte Kosten, z.B. Grundsteuer, Wasserversorgung, ' +
+    'Entwässerung, Straßenreinigung, Müllbeseitigung, Schornsteinfeger, Aufzug, Allgemeintrom, Hausreinigung, Gemeinschaftsantenne"';
 
 // Formularabschnitt I
   public static readonly I_bezeichnung = 'Bezeichung';
@@ -147,10 +151,16 @@ export class Fragen {
   public static readonly I_restschuld1 = 'Restschuld';
   public static readonly I_gesamtbelastung1 = 'Gesamtbelastung';
   public static readonly I_alleineZahlen1 = 'monatlich zahle ich';
+  public static readonly I_zahlunsVerpflichtungBeschreibung = 'Hier anrechenbare Versicherungsbeiträge sind z.B.: Lebensversicherung (besitzen Sie mehrere, darf nur eine ' +
+    'angerechnet werden), Sterbegeldversicherung, Hausratversicherung, Haftpflichtversicherung, Glasversicherung, Unfallversicherung, ' +
+    'Gebäudeversicherung, freiwillige Krankenversicherung, freiwillige Rentenversicherung, Riester-Rente, zur aktuellen Tätigkeit notwendige Rechtsschutzversicherung';
 
   // Formularabschnitt J
   public static readonly J_belastungBezeichung = 'Bezeichung';
   public static readonly J_ichAlleineZahle = 'Ich allein zahle davon';
   public static readonly J_belastungBezeichung1 = 'Bezeichung';
   public static readonly J_ichAlleineZahle1 = 'Ich allein zahle davon';
+  public static readonly J_behinderungBeschreibung = 'Ich allein zahle davon';
+  public static readonly J_sgbIIBeschreibung = 'Kosten für aufwändige Ernährung (Intoleranzen), klassischer Mehrbedarf ist Schwangerschaft ';
+  public static readonly J_sgbXIIBeschreibung = 'Mehrbedarf wegen Behinderung';
 }
