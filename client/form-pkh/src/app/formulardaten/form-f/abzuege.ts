@@ -4,5 +4,5 @@
 
 export class Abzuege {
   art = '';
-  betrag = '';
+  betrag = 0;
 }
