@@ -40,11 +40,9 @@ export class Fragen {
   public static readonly C_FrageJa = 'Name des Unterhaltsverpflichteten';
   public static readonly C_FrageJaEhe = 'Name des Ehepartners';
   public static readonly C_FrageJaLebenspartner = 'Name des eingetragenen Lebenspartners';
-  public static readonly C_Hinweis = 'Bitte geben Sie auf einem weiteren Exemplar dieses Formulars seine persönlichen und ' +
-    'wirtschaftlichen Verhältnisse an, sofern diese nicht bereits vollständig aus den folgenden Abschnitten ersichtlich sind.';
+  public static readonly C_Hinweis = 'Falls die Eltern Unterhalt zahlen, müssen diese das Formular auch ausfüllen.';
 
   // Formularabschnitt D
-  public static readonly D_Frage = 'Gewähren Sie Angehörigen Bar- oder Naturalunterhalt?';
   public static readonly D_Name = 'Vollständiger Name';
   public static readonly D_Geburtsdatum = 'Geburtsdatum';
   public static readonly D_Strasse = 'Strasse';
@@ -59,8 +57,8 @@ export class Fragen {
   // Formularabschnitt E
   public static readonly E_nichtSelbstArbeitBetrag = 'Haben Sie Einnahmen aus nicht selbstständiger Arbeit?';
   public static readonly E_selbstArbeitBetrag = 'Haben Sie Einnahmen aus selbstständiger Arbeit?';
-  public static readonly E_vermietungUndVerpachtungBetrag = 'Haben Sie Einnahmen aus Vermietung oder Verpachtung?';
   public static readonly E_kapitalvermoegenBetrag = 'Haben Sie Einnahmen aus Kapitalvermögen?';
+  public static readonly E_vermietungUndVerpachtungBetrag = 'Haben Sie Einnahmen aus Vermietung oder Verpachtung?';
   public static readonly E_kindergeldBetrag = 'Haben Sie Einnahmen aus Kindergeld?';
   public static readonly E_wohngeldBetrag = 'Haben Sie Einnahmen aus Wohngeld?';
   public static readonly E_unterhaltBetrag = 'Haben Sie Einnahmen aus Unterhalt';

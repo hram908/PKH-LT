@@ -69,8 +69,8 @@ export class ChatbotService {
 
   private initializeAbschnitte() {
     this.chatbotFragenMap.set('A', [ChatbotFragen.A.A1]);
-    this.chatbotFragenMap.set('B', [ChatbotFragen.B.B1]);
-    this.chatbotFragenMap.set('C', [ChatbotFragen.C.C1])
+    this.chatbotFragenMap.set('B', [ChatbotFragen.B.B1, ChatbotFragen.B.B2]);
+    this.chatbotFragenMap.set('C', [ChatbotFragen.C.C1, ChatbotFragen.C.C2])
     this.chatbotFragenMap.set('D', [ChatbotFragen.D.D1, ChatbotFragen.D.D2]);
     this.chatbotFragenMap.set('E', [ChatbotFragen.E.E1, ChatbotFragen.E.E2, ChatbotFragen.E.E3, ChatbotFragen.E.E4]);
     this.chatbotFragenMap.set('F', [ChatbotFragen.F.F1, ChatbotFragen.F.F2, ChatbotFragen.F.F3, ChatbotFragen.F.F4]);

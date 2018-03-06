@@ -4,11 +4,13 @@ export class ChatbotFragen {
   };
 
   public static readonly B = {
-    B1: 'Woher weiß ich, dass ich eine Rechtsschutzversicherung habe?'
+    B1: 'Woher weiß ich, dass ich eine Rechtsschutzversicherung habe?',
+    B2: 'Was übernimmt meine Rechtsschutzversicherung?'
   };
 
   public static readonly C = {
     C1: 'Was muss ich hier angeben?',
+    C2: 'Was, wenn die Unterhalt verpflichtende Person das Ausfüllen verweigert?'
   }
 
   public static readonly D = {
