@@ -23,15 +23,10 @@ export class Fragen {
   public static readonly A_Hausnummer = 'Hausnummer';
   public static readonly A_Plz = 'Posttleitzahl';
   public static readonly A_Ort = 'Wohnort';
-  public static readonly A_Telefonnummer = 'Tagsüber tel. erreichbar unter Nummer';
-  public static readonly A_GesetzlicherVertreter = 'Sofern vorhanden: Gesetzlicher Vertreter';
+  public static readonly A_vertreterBeschreibung = 'nicht der Anwalt, sondern ein Betreuer, die Eltern etc.';
 
   // Formularabschnitt B
-  public static readonly B1 = 'Trägt eine Rechtsschutzversicherung oder eine andere Stelle/Person (z. B. Gewerkschaft, ' +
-    'Mieterverein, Sozialverband) die Kosten Ihrer Prozess- oder Verfahrensführung?';
-  public static readonly B2 = 'Wenn nein: Besteht eine Rechtsschutzversicherung oder die Mitgliedschaft in einem Verein/einer ' +
-    'Organisation (z. B. Gewerkschaft, Mieterverein, Sozialverband), der/die die Kosten der beabsichtigten Prozess- oder ' +
-    'Verfahrensführung tragen oder einen Prozessbevollmächtigten stellen könnte?';
+  public static readonly B_rechtsschutzBeschreibung = 'übernimmt die Anwalts- und Verfahrenskosten für viele Rechtsstreitigkeiten und kann für einzelne Rechtsgebiete oder gesamt abgeschlossen werden.';
 
   // Formularabschnitt C
   public static readonly C_Frage = 'Haben Sie Angehörige, die Ihnen gegenüber gesetzlich zur Leistung von Unterhalt verpflichtet ' +
@@ -124,7 +119,7 @@ export class Fragen {
       'PER_LNG': 'Anzahl der Personen, die diese Wohnraum bewohnen',
     },
   };
-    'allein oder gemeinsam mit anderen Personen bewohnen';
+  'allein oder gemeinsam mit anderen Personen bewohnen';
   public static readonly H_miete = 'Kaltmiete';
   public static readonly H_heizkosten = 'Heizungskosten';
   public static readonly H_sonstNebenkosten = 'sonst. Nebenkosten';
@@ -149,8 +144,8 @@ export class Fragen {
   public static readonly I_restschuld = 'Restschuld';
   public static readonly I_gesamtbelastung = 'Gesamtbelastung';
   public static readonly I_alleineZahlen = 'monatlich zahle ich';
-  public static readonly I_zahlunsVerpflichtungBeschreibung = 'Hier anrechenbare Versicherungsbeiträge sind z.B.: Lebensversicherung (besitzen Sie mehrere, darf nur eine ' +
-    'angerechnet werden), Sterbegeldversicherung, Hausratversicherung, Haftpflichtversicherung, Glasversicherung, Unfallversicherung, ' +
+  public static readonly I_zahlunsVerpflichtungBeschreibung = 'anrechenbare Versicherungsbeiträge, z.B.: Lebensversicherung (nur eine ist anrechenbar)' +
+    ', Sterbegeldversicherung, Hausratversicherung, Haftpflichtversicherung, Glasversicherung, Unfallversicherung, ' +
     'Gebäudeversicherung, freiwillige Krankenversicherung, freiwillige Rentenversicherung, Riester-Rente, zur aktuellen Tätigkeit notwendige Rechtsschutzversicherung';
 
   // Formularabschnitt J
