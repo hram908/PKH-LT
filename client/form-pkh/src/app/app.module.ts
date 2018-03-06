@@ -37,6 +37,7 @@ import {HttpClientModule} from '@angular/common/http';
 import {Fragen} from './common/fragen';
 import {Notiz} from './formulardaten/notiz';
 import {EndfensterComponent} from './formular/endfenster/endfenster.component';
+import { NotizComponent } from './notiz/notiz.component';
 
 
 
@@ -59,7 +60,8 @@ import {EndfensterComponent} from './formular/endfenster/endfenster.component';
     FormJBesondereBelastungenComponent,
     AppDirective,
     ViewSwitchComponent,
-    EndfensterComponent
+    EndfensterComponent,
+    NotizComponent
   ],
   imports: [
     BrowserModule,

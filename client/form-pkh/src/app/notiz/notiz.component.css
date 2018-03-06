@@ -1,0 +1,44 @@
+.notiz-button {
+  position: fixed;
+  background: #627A8F;
+  border: transparent;
+  color: white;
+  right: 0;
+  top: 150px;
+  width: 50px;
+  height: 50px;
+  transition: 0.7s;
+  text-align: center;
+}
+
+.notiz-button-pushed {
+  position: fixed;
+  color: white;
+  right: 488px;
+  text-align: center;
+}
+
+.notiz-side-menu {
+  position: fixed;
+  background: #627A8F;
+  color: white;
+  right: -500px;
+  padding: 5px;
+  padding-top: 25px;
+  margin: 0;
+  top: 0;
+  height: 100%;
+  width: 500px;
+  transition: 0.7s;
+  text-align: center;
+  overflow: auto;
+}
+
+.notiz-side-menu-pushed {
+  right: 0;
+}
+
+.note-icon{
+  width: 30px;
+  height: 30px;
+}
