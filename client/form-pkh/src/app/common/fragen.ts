@@ -50,22 +50,23 @@ export class Fragen {
   public static readonly D_einnahmenAngehoeriger = 'Einnahmen des Angehörigen';
 
   // Formularabschnitt E
-  public static readonly E_nichtSelbstArbeitBetrag = 'Haben Sie Einnahmen aus nicht selbstständiger Arbeit?';
-  public static readonly E_selbstArbeitBetrag = 'Haben Sie Einnahmen aus selbstständiger Arbeit?';
-  public static readonly E_kapitalvermoegenBetrag = 'Haben Sie Einnahmen aus Kapitalvermögen?';
-  public static readonly E_vermietungUndVerpachtungBetrag = 'Haben Sie Einnahmen aus Vermietung oder Verpachtung?';
-  public static readonly E_kindergeldBetrag = 'Haben Sie Einnahmen aus Kindergeld?';
-  public static readonly E_wohngeldBetrag = 'Haben Sie Einnahmen aus Wohngeld?';
-  public static readonly E_unterhaltBetrag = 'Haben Sie Einnahmen aus Unterhalt';
-  public static readonly E_renteUndPensionBetrag = 'Haben Sie Einnahmen aus Rente und/oder Pension?';
-  public static readonly E_arbeitslosengeldBetrag = 'Haben Sie Einnahmen aus Arbeitslosengeld';
-  public static readonly E_arbeitslosengeld2Betrag = 'Haben Sie Einnahmen aus Arbeitslosengeld II?';
-  public static readonly E_krankengeldBetrag = 'Haben Sie Einnahmen aus Krankengeld?';
-  public static readonly E_elterngeldBetrag = 'Haben Sie Einnahmen aus Elterngeld?';
+  public static readonly E_defaultFrage = 'Haben Sie Einnahmen aus...'
+  public static readonly E_nichtSelbstArbeitBetrag = 'nicht selbstständiger Arbeit?';
+  public static readonly E_selbstArbeitBetrag = 'selbstständiger Arbeit?';
+  public static readonly E_kapitalvermoegenBetrag = 'Kapitalvermögen?';
+  public static readonly E_vermietungUndVerpachtungBetrag = 'Vermietung oder Verpachtung?';
+  public static readonly E_kindergeldBetrag = 'Kindergeld?';
+  public static readonly E_wohngeldBetrag = 'Wohngeld?';
+  public static readonly E_unterhaltBetrag = 'Unterhalt';
+  public static readonly E_renteUndPensionBetrag = 'Rente und/oder Pension?';
+  public static readonly E_arbeitslosengeldBetrag = 'Arbeitslosengeld';
+  public static readonly E_arbeitslosengeld2Betrag = 'Arbeitslosengeld II?';
+  public static readonly E_krankengeldBetrag = 'Krankengeld?';
+  public static readonly E_elterngeldBetrag = 'Elterngeld?';
   public static readonly E_verpachtungBeschreibung = 'Im Gegensatz zur Miete darf bei einer Verpachtung ein Pächter nicht nur eine Sache nutzen, sondern darüber hinaus auch "Früchte" aus der Sache ziehen – also einen Gewinn erwirtschaften';
   public static readonly E_andereEinnahmenBeschreibung = 'Alle anderen als die oben angegebenen Einnahmen, z.B. Weihnachts/Urlaubsgeld, Steuererstattung jährlich, BAföG mtl.';
   public static readonly E_kapitalBeschreibung = 'Erträge der Vermögensverwaltung erfasst, die Erlöse oder Entgelte für die Überlassung von Kapital darstellen z.B. Aktiengewinn, Dividenden, Sparzinsen';
-  public static readonly E_selstArbeitBeschreibung = '"Wenn man unabjängig von einem Arbeitsgeber auf eigenes Risiko seinen Lebensunterhalt bestreitet"';
+  public static readonly E_selbstArbeitBeschreibung = 'Wenn man unabjängig von einem Arbeitsgeber auf eigenes Risiko seinen Lebensunterhalt bestreitet';
 
   // Formularabschnitt F
   public static readonly F_steuernBezeichnung = 'Steuern';

@@ -2,3 +2,7 @@
   width: 220px;
   font-weight: normal;
 }
+
+.speech-bubble-text::after{
+  left: 35%;
+}
