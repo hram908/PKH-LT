@@ -12,7 +12,7 @@ public class FormB {
     private String uebernahme;
     private String tlwUebernahme;
     private String tlwUebernahmeTyp;
-    private List<String> versicherung;
+    private List<Versicherung> versicherung;
     private String antragGestellt;
 
     public boolean isHatKostentraeger() {
@@ -55,11 +55,11 @@ public class FormB {
         this.tlwUebernahmeTyp = tlwUebernahmeTyp;
     }
 
-    public List<String> getVersicherung() {
+    public List<Versicherung> getVersicherung() {
         return versicherung;
     }
 
-    public void setVersicherung(List<String> versicherung) {
+    public void setVersicherung(List<Versicherung> versicherung) {
         this.versicherung = versicherung;
     }
 

@@ -30,7 +30,7 @@ export class FormBVersicherungenComponent implements IFormComponentBase {
 
   fuegeHinzuVersicherung() {
     if (this.formB.versicherung.length < 9) {
-      this.formB.versicherung.push('');
+      this.formB.versicherung.push({versicherung: ''});
     }
   }
 

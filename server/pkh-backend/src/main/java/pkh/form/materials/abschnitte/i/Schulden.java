@@ -1,12 +1,13 @@
 package pkh.form.materials.abschnitte.i;
 
 /**
- * @author  Isabella
+ * @author Isabella
  */
 public class Schulden {
     private String beschreibung;
     private String restschuld;
     private String gesamtbelastungMtl;
+    private String alleinigeZahlung;
 
     public String getBeschreibung() {
         return beschreibung;
@@ -39,8 +40,6 @@ public class Schulden {
     public void setAlleinigeZahlung(String alleinigeZahlung) {
         this.alleinigeZahlung = alleinigeZahlung;
     }
-
-    private String alleinigeZahlung;
 
     public Schulden() {
     }

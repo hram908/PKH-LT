@@ -14,17 +14,18 @@ public class FormC {
         this.hatUnterhaltsanspruch = hatUnterhaltsanspruch;
     }
 
-    public List<String> getUnterhaltsverpflichteter() {
-        return unterhaltsverpflichteter;
+    public List<Verpflichteter> getVerpflichteter() {
+        return verpflichteter;
     }
 
-    public void setUnterhaltsverpflichteter(List<String> unterhaltsverpflichteter) {
-        this.unterhaltsverpflichteter = unterhaltsverpflichteter;
+    public void setVerpflichteter(List<Verpflichteter> verpflichteter) {
+        this.verpflichteter = verpflichteter;
     }
 
     private boolean hatUnterhaltsanspruch;
-    private List<String> unterhaltsverpflichteter;
+    private List<Verpflichteter> verpflichteter;
 
     public FormC() {
     }
 }
+

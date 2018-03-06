@@ -5,6 +5,9 @@ package pkh.form.materials;
  **/
 
 public class NotizMaterial {
+    private String notiz;
+    private String hinweis;
+
     public String getNotiz() {
         return notiz;
     }
@@ -13,7 +16,13 @@ public class NotizMaterial {
         this.notiz = notiz;
     }
 
-    private String notiz;
+    public String getHinweis() {
+        return hinweis;
+    }
+
+    public void setHinweis(String hinweis) {
+        this.hinweis = hinweis;
+    }
 
     public NotizMaterial() {
 

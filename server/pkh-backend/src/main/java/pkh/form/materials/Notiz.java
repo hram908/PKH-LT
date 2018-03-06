@@ -2,7 +2,7 @@ package pkh.form.materials;
 
 public class Notiz {
     private String downloadLink;
-    private String progonose;
+    private String prognose;
     private NotizMaterial A;
     private NotizMaterial B;
     private NotizMaterial C;
@@ -22,12 +22,12 @@ public class Notiz {
         this.downloadLink = downloadLink;
     }
 
-    public String getProgonose() {
-        return progonose;
+    public String getPrognose() {
+        return prognose;
     }
 
-    public void setProgonose(String progonose) {
-        this.progonose = progonose;
+    public void setPrognose(String prognose) {
+        this.prognose = prognose;
     }
 
     public NotizMaterial getA() {

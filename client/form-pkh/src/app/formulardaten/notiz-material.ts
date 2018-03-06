@@ -4,4 +4,5 @@
 
 export class NotizMaterial {
   notiz = '';
+  hinweis = '';
 }

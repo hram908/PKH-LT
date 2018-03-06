@@ -8,6 +8,6 @@ export class FormBMaterial {
   uebernahme = -1;
   tlwUebernahme = '';
   tlwUebernahmeTyp = 'EUR';
-  versicherung: string[] = [''];
+  versicherung = [{versicherung: ''}];
   antragGestellt = -1;
 }

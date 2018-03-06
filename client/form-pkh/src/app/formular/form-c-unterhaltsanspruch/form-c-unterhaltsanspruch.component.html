@@ -12,33 +12,21 @@
   </div>
 
   <ng-container
-    *ngIf='formA.antragsteller.familienstand === "Verheiratet"'>
+    *ngIf='formA.antragsteller.familienstand === "Verheiratet" || formA.antragsteller.familienstand === "Eingetragene Partnerschaft"'>
     <div class="row">
       <div class="col-sm-5">
         <div class="form-group">
-          <label for="UnterhaltsgebenderEhe">{{getFragen().C_FrageJaEhe}} *</label>
+          <label for="UnterhaltsgebenderEhe" *ngIf='formA.antragsteller.familienstand === "Verheiratet"'>{{getFragen().C_FrageJaEhe}}</label>
+          <label for="UnterhaltsgebenderEhe" *ngIf='formA.antragsteller.familienstand === "Eingetragene Partnerschaft"'>{{getFragen().C_FrageJaLebenspartner}}
+            *</label>
           <input id="UnterhaltsgebenderEhe" type="text" class="form-control"
-                 [(ngModel)]="formC.unterhaltsverpflichteter[0].name" placeholder="Pflicht">
-        </div>
-      </div>
-    </div>
-
-  </ng-container>
-  <ng-container
-    *ngIf='formA.antragsteller.familienstand === "Eingetragene Partnerschaft"'>
-    <div class="row">
-      <div class="col-sm-5">
-        <div class="form-group">
-          <label for="UnterhaltsgebenderEhe">{{getFragen().C_FrageJaLebenspartner}} *</label>
-          <input id="UnterhaltsgebenderEhe" type="text" class="form-control"
-                 [(ngModel)]="formC.unterhaltsverpflichteter[0].name" placeholder="Pflicht">
+                 [(ngModel)]="formC.verpflichteter[0]" placeholder="Pflicht">
         </div>
       </div>
     </div>
   </ng-container>
 
   <p>{{getFragen().C_Hinweis}}</p>
-
 
   <div class="row">
     <div class="col-sm-4">
@@ -55,21 +43,24 @@
     </div>
     <ng-container *ngIf="formC.hatUnterhaltsanspruch">
       <div class="col-sm-2">
-        <button class="btn btn-group-md btn-primary" [disabled]="formC.unterhaltsverpflichteter.length >= 6"
+        <button class="btn btn-group-md btn-primary" [disabled]="formC.verpflichteter.length >= 6"
                 (click)="fuegeUnterhaltHinzu()"><span
           class="glyphicon glyphicon-plus"></span></button>
-        <button class="btn btn-group-md btn-primary" [disabled]="formC.unterhaltsverpflichteter.length <= 1"
+        <button class="btn btn-group-md btn-primary" [disabled]="formC.verpflichteter.length <= 1"
                 (click)="entferneUnterhalt()"><span
           class="glyphicon glyphicon-minus"></span></button>
       </div>
     </ng-container>
-
   </div>
+
   <ng-container *ngIf="formC.hatUnterhaltsanspruch">
-    <div class="row" *ngFor="let person of formC.unterhaltsverpflichteter; let i = index">
-      <div class="col-sm-5" *ngIf="i != 0">
-        <label>{{getFragen().C_FrageJa}}</label>
-        <input type="text" class="form-control" [(ngModel)]="formC.unterhaltsverpflichteter[i]" placeholder="...">
+    <div class="row" *ngFor="let person of formC.verpflichteter; let i = index">
+      <div class="form-group">
+        <div class="col-sm-5" *ngIf="i != 0">
+          <label for="Unterhaltsgebender_{{i}}">{{getFragen().C_FrageJa}}</label>
+          <input id="Unterhaltsgebender_{{i}}" type="text" class="form-control"
+                 [(ngModel)]="person.verpflichteter" placeholder="...">
+        </div>
       </div>
     </div>
   </ng-container>

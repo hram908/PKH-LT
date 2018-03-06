@@ -4,5 +4,5 @@
 
 export class FormCMaterial {
   hatUnterhaltsanspruch = false;
-  unterhaltsverpflichteter: String[] = ['', ''];
+  verpflichteter = [{verpflichteter: ''}, {verpflichteter: ''}];
 }

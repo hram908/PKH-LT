@@ -26,14 +26,14 @@ export class FormCUnterhaltsanspruchComponent implements IFormComponentBase {
   }
 
   fuegeUnterhaltHinzu() {
-    if (this.formC.unterhaltsverpflichteter.length < 6) {
-      this.formC.unterhaltsverpflichteter.push('');
+    if (this.formC.verpflichteter.length < 6) {
+      this.formC.verpflichteter.push({verpflichteter: ''});
     }
   }
 
   entferneUnterhalt() {
-    if (this.formC.unterhaltsverpflichteter.length > 1) {
-      this.formC.unterhaltsverpflichteter.pop();
+    if (this.formC.verpflichteter.length > 1) {
+      this.formC.verpflichteter.pop();
     }
   }
 }
