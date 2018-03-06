@@ -47,7 +47,7 @@ export class ChatbotFragen {
   }
 
   public static readonly J = {
-    J1: 'Ab Was ist eine besondere Belastung?',
+    J1: 'Was ist eine besondere Belastung?',
     J2: 'Was steht in § 21 SGB II ?',
     J3: 'Was steht in § 30 SGB XII?'
   }
