@@ -23,15 +23,10 @@ export class Fragen {
   public static readonly A_Hausnummer = 'Hausnummer';
   public static readonly A_Plz = 'Posttleitzahl';
   public static readonly A_Ort = 'Wohnort';
-  public static readonly A_Telefonnummer = 'Tagsüber tel. erreichbar unter Nummer';
-  public static readonly A_GesetzlicherVertreter = 'Sofern vorhanden: Gesetzlicher Vertreter';
+  public static readonly A_vertreterBeschreibung = 'nicht der Anwalt, sondern ein Betreuer, die Eltern etc.';
 
   // Formularabschnitt B
-  public static readonly B1 = 'Trägt eine Rechtsschutzversicherung oder eine andere Stelle/Person (z. B. Gewerkschaft, ' +
-    'Mieterverein, Sozialverband) die Kosten Ihrer Prozess- oder Verfahrensführung?';
-  public static readonly B2 = 'Wenn nein: Besteht eine Rechtsschutzversicherung oder die Mitgliedschaft in einem Verein/einer ' +
-    'Organisation (z. B. Gewerkschaft, Mieterverein, Sozialverband), der/die die Kosten der beabsichtigten Prozess- oder ' +
-    'Verfahrensführung tragen oder einen Prozessbevollmächtigten stellen könnte?';
+  public static readonly B_rechtsschutzBeschreibung = 'übernimmt die Anwalts- und Verfahrenskosten für viele Rechtsstreitigkeiten und kann für einzelne Rechtsgebiete oder gesamt abgeschlossen werden.';
 
   // Formularabschnitt C
   public static readonly C_Frage = 'Haben Sie Angehörige, die Ihnen gegenüber gesetzlich zur Leistung von Unterhalt verpflichtet ' +
@@ -67,11 +62,14 @@ export class Fragen {
   public static readonly E_arbeitslosengeld2Betrag = 'Haben Sie Einnahmen aus Arbeitslosengeld II?';
   public static readonly E_krankengeldBetrag = 'Haben Sie Einnahmen aus Krankengeld?';
   public static readonly E_elterngeldBetrag = 'Haben Sie Einnahmen aus Elterngeld?';
+  public static readonly E_verpachtungBeschreibung = 'Im Gegensatz zur Miete darf bei einer Verpachtung ein Pächter nicht nur eine Sache nutzen, sondern darüber hinaus auch "Früchte" aus der Sache ziehen – also einen Gewinn erwirtschaften';
+  public static readonly E_andereEinnahmenBeschreibung = 'Alle anderen als die oben angegebenen Einnahmen, z.B. Weihnachts/Urlaubsgeld, Steuererstattung jährlich, BAföG mtl.';
+  public static readonly E_kapitalBeschreibung = 'Erträge der Vermögensverwaltung erfasst, die Erlöse oder Entgelte für die Überlassung von Kapital darstellen z.B. Aktiengewinn, Dividenden, Sparzinsen';
+  public static readonly E_selstArbeitBeschreibung = '"Wenn man unabjängig von einem Arbeitsgeber auf eigenes Risiko seinen Lebensunterhalt bestreitet"';
 
   // Formularabschnitt F
   public static readonly F_steuernBezeichnung = 'Steuern';
-  public static readonly F_steuernBeschreibung = 'Einkommenssteuer, Lohnsteuer, Kirchensteuer, Solidaritätszuschlag. ' +
-    'Nicht jedoch andere Steuern wie Umsatzsteuer und Erbschaftssteuer';
+  public static readonly F_steuernBeschreibung = 'Einkommenssteuer, Lohnsteuer, Kirchensteuer, Solidaritätszuschlag. Nicht jedoch andere Steuern wie Umsatzsteuer und Erbschaftssteuer';
   public static readonly F_solidaritaetBezeichnung = 'Solidarität';
   public static readonly F_solidaritaetBeschreibung = 'Ist auf der Steuerabrechnung angegeben ';
   public static readonly F_steuernBetrag = 'Betrag in EUR pro Monat';
@@ -103,7 +101,10 @@ export class Fragen {
   public static readonly G_versicherungBezeichnung = 'Bezeichnung';
   public static readonly G_versicherungBetrag = 'Betrag in EUR';
   public static readonly G_sonstigeBezeichnung = 'Bezeichnung';
-  public static readonly G_sonstigeBetrag = 'Betrag in EUR';
+  public static readonly G_bargeldBeschreibung = 'Grundsätzlich jeder Betrag';
+  public static readonly G_schmuckBeschreibung = 'ist anzugeben, wenn er den Rahmen des Üblichen übersteigt oder wenn es sich um Gegenstände von höherem Wert handelt';
+  public static readonly G_elektrGeraeteBeschreibung = 'ist anzugeben, wenn er den Rahmen des Üblichen übersteigt oder wenn es sich um Gegenstände von höherem Wert handelt';
+
 
   // Formularabschnitt H
   public static readonly H = {
@@ -118,13 +119,11 @@ export class Fragen {
       'PER_LNG': 'Anzahl der Personen, die diese Wohnraum bewohnen',
     },
   };
-  public static readonly H_gesamtgroesseWohnung = ' 1. Gesamtgröße des Wohnraums, den Sie ' +
-    'allein oder gemeinsam mit anderen Personen bewohnen';
-  public static readonly H_anzahlZimmer = '2. Anzahl der Zimmer';
-  public static readonly H_anzahlPersonenWohnraum = '3. Anzahl der Personen, die diese Wohnraum bewohnen';
+  'allein oder gemeinsam mit anderen Personen bewohnen';
   public static readonly H_miete = 'Kaltmiete';
   public static readonly H_heizkosten = 'Heizungskosten';
-  public static readonly H_sonstNebenkosten = 'sonstige Nebenkosten (kein Strom, Gas, Telefon oder GEZ)';
+  public static readonly H_sonstNebenkosten = 'sonst. Nebenkosten';
+  public static readonly H_sonstNebenkostenZusatz = ' (kein Strom, Gas, Telefon oder GEZ)';
   public static readonly H_gesamtbetrag = 'Gesamtbetrag';
   public static readonly H_kostenAlleine = 'Ich allein zahle davon';
   public static readonly H_zinsenUndTilgung = 'Zinsen und Tilgung';
@@ -135,20 +134,24 @@ export class Fragen {
   public static readonly H_bezeichnung = 'Informationen zum Vertrag';
   public static readonly H_dahrlenRestschuld = 'Restschuld in EUR';
   public static readonly H_dahrlenZinsenUndTilgung = 'Zinsen und Tilgung';
+  public static readonly H_nutzungsVerhaeltnisseBeschreibung = 'z.B. Heimwohnen; Untermiete';
+  public static readonly H_erbbauBeschreibung = 'auf einem fremden Grundstück ein Gebäude zu errichten sowie dieses für seine eigenen Zwecke zu nutzen.';
+  public static readonly H_mietNebenkostenBeschreibung = 'auf den Mieter umgelegte Kosten, z.B. Grundsteuer, Wasserversorgung, ' +
+    'Entwässerung, Straßenreinigung, Müllbeseitigung, Schornsteinfeger, Aufzug, Allgemeintrom, Hausreinigung, Gemeinschaftsantenne"';
 
 // Formularabschnitt I
   public static readonly I_bezeichnung = 'Bezeichung';
   public static readonly I_restschuld = 'Restschuld';
   public static readonly I_gesamtbelastung = 'Gesamtbelastung';
   public static readonly I_alleineZahlen = 'monatlich zahle ich';
-  public static readonly I_bezeichnung1 = 'Bezeichung';
-  public static readonly I_restschuld1 = 'Restschuld';
-  public static readonly I_gesamtbelastung1 = 'Gesamtbelastung';
-  public static readonly I_alleineZahlen1 = 'monatlich zahle ich';
+  public static readonly I_zahlunsVerpflichtungBeschreibung = 'anrechenbare Versicherungsbeiträge, z.B.: Lebensversicherung (nur eine ist anrechenbar)' +
+    ', Sterbegeldversicherung, Hausratversicherung, Haftpflichtversicherung, Glasversicherung, Unfallversicherung, ' +
+    'Gebäudeversicherung, freiwillige Krankenversicherung, freiwillige Rentenversicherung, Riester-Rente, zur aktuellen Tätigkeit notwendige Rechtsschutzversicherung';
 
   // Formularabschnitt J
   public static readonly J_belastungBezeichung = 'Bezeichung';
   public static readonly J_ichAlleineZahle = 'Ich allein zahle davon';
-  public static readonly J_belastungBezeichung1 = 'Bezeichung';
-  public static readonly J_ichAlleineZahle1 = 'Ich allein zahle davon';
+  public static readonly J_behinderungBeschreibung = 'Zeichen G im Ausweis';
+  public static readonly J_sgbIIBeschreibung = 'Kosten für aufwändige Ernährung (Intoleranzen), klassischer Mehrbedarf ist Schwangerschaft ';
+  public static readonly J_sgbXIIBeschreibung = 'Mehrbedarf wegen Behinderung';
 }

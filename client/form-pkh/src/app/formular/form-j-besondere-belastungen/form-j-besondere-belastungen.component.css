@@ -1,0 +1,8 @@
+.speech-bubble-text{
+  font-weight: normal;
+  width: 200px;
+}
+
+.speech-bubble-text::after{
+  left: 35%;
+}
