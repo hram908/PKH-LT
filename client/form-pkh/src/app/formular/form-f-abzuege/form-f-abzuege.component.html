@@ -6,7 +6,14 @@
 <div class="row">
   <div class="col-sm-4">
     <div class="form-group">
-      <label for="steuernBezeichnung">{{getFragen().F_steuernBezeichnung}} </label>
+      <label for="steuernBezeichnung"><div class="speech-bubble">{{getFragen().F_steuernBezeichnung}}
+        <span class="speech-bubble-text">{{getFragen().F_steuernBeschreibung}}</span>
+        </div>
+          /
+        <div class="speech-bubble">{{getFragen().F_solidaritaetBezeichnung}}
+          <span class="speech-bubble-text">{{getFragen().F_solidaritaetBeschreibung}}</span>
+        </div>
+      </label>
       <input id="steuernBezeichnung" type="text" class="form-control" placeholder="optional"
              [(ngModel)]="formF.antragsteller.steuern.art">
     </div>
@@ -25,7 +32,11 @@
   <div class="col-sm-4">
     <div class="form-group">
       <label
-        for="sozialversicherungsbeitreageBezeichnung">{{getFragen().F_sozialversicherungsbeitreageBezeichnung}} </label>
+        for="sozialversicherungsbeitreageBezeichnung">
+        <div class="speech-bubble">{{getFragen().F_sozialversicherungsbeitreageBezeichnung}}
+          <span class="speech-bubble-text">{{getFragen().F_sozialversicherungsbeitreageBeschreibung}}</span>
+        </div>
+      </label>
       <input id="sozialversicherungsbeitreageBezeichnung" type="text" class="form-control" placeholder="optional"
              [(ngModel)]="formF.antragsteller.sozialversicherung.art">
     </div>
@@ -43,7 +54,10 @@
 <div class="row">
   <div class="col-sm-4">
     <div class="form-group">
-      <label for="sonsVersicherungBezeichnung">{{getFragen().F_sonsVersicherungBezeichnung}} </label>
+      <label for="sonsVersicherungBezeichnung"><div class="speech-bubble">{{getFragen().F_sonsVersicherungBezeichnung}}
+        <span class="speech-bubble-text">{{getFragen().F_sonsVersicherungBeschreibung}}</span>
+      </div>
+      </label>
       <input id="sonsVersicherungBezeichnung" type="text" class="form-control" placeholder="optional"
              [(ngModel)]="formF.antragsteller.sonstigeVersicherungen.art">
     </div>
@@ -79,14 +93,18 @@
 <div class="row">
   <div class="col-sm-4">
     <div class="form-group">
-      <label for="werbeUndBetriebskostenBezichnung">{{getFragen().F_werbeUndBetriebskostenBezichnung}} </label>
+      <label for="werbeUndBetriebskostenBezichnung">Sonstige
+        <div class="speech-bubble">Werbungskosten
+          <span class="speech-bubble-text werbungskosten">{{getFragen().F_werbungskostenBeschreibung}}</span>
+        </div>
+        /Betriebskosten</label>
       <input id="werbeUndBetriebskostenBezichnung" type="text" class="form-control" placeholder="optional"
              [(ngModel)]="formF.antragsteller.werbungskosten.art">
     </div>
   </div>
   <div class="col-sm-4">
     <div class="form-group">
-      <label for="werbeUndBetriebskostenBetrag">{{getFragen().F_werbeUndBetriebskostenBezichnung}} </label>
+      <label for="werbeUndBetriebskostenBetrag">{{getFragen().F_werbeUndBetriebskostenBetrag}} </label>
       <input id="werbeUndBetriebskostenBetrag" type="text" class="form-control" placeholder=" "
              [(ngModel)]="formF.antragsteller.werbungskosten.betrag">
     </div>

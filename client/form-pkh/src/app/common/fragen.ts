@@ -69,16 +69,27 @@ export class Fragen {
   public static readonly E_elterngeldBetrag = 'Haben Sie Einnahmen aus Elterngeld?';
 
   // Formularabschnitt F
-  public static readonly F_steuernBezeichnung = 'Steuern/Solidaritätszuschlag';
+  public static readonly F_steuernBezeichnung = 'Steuern';
+  public static readonly F_steuernBeschreibung = 'Einkommenssteuer, Lohnsteuer, Kirchensteuer, Solidaritätszuschlag. ' +
+    'Nicht jedoch andere Steuern wie Umsatzsteuer und Erbschaftssteuer';
+  public static readonly F_solidaritaetBezeichnung = 'Solidarität';
+  public static readonly F_solidaritaetBeschreibung = 'Ist auf der Steuerabrechnung angegeben ';
   public static readonly F_steuernBetrag = 'Betrag in EUR pro Monat';
   public static readonly F_sozialversicherungsbeitreageBezeichnung = 'Sozialversicherungsbeiträge';
+  public static readonly F_sozialversicherungsbeitreageBeschreibung = 'Arbeitnehmerbeiträge zu Renten-, Kranken-, Arbeitslosen und Pflegeversicherung';
   public static readonly F_sozialversicherungsbeitreageBetrag = 'Betrag in EUR pro Monat';
   public static readonly F_sonsVersicherungBezeichnung = 'Sonstige Versicherungen';
+  public static readonly F_sonsVersicherungBeschreibung = 'insbsondere Privathaftpflicht- Hausrat-, Berufsunfähigkeits-, Unfallversicherung, Sterbegedversicherung, freiwillige Kranken- und Pflgegepflichtversicherung';
   public static readonly F_sonsVersicherungBetrag = 'Betrag in EUR pro Monat';
   public static readonly F_fahrtZurArbeitBezeichnung = 'Fahrt zur Arbeit';
   public static readonly F_fahrtZurArbeitBetrag = 'Betrag in EUR pro Monat';
-  public static readonly F_werbeUndBetriebskostenBezichnung = 'Sonstige Werbungskosten/Betriebskosten';
   public static readonly F_werbeUndBetriebskostenBetrag = 'Betrag in EUR pro Monat';
+  public static readonly F_werbungskostenBeschreibung = 'Betrifft Arbeitnehmer. Man kann nicht viel falsch machen wenn' +
+    'man da was reinschreibt, wovon man das Gefühl hat, dass es eine Belastung darstellt.' +
+    'Jede Belastung, die mit der Wahrnehmung des Jobs zusammenhängt. Berlin Wohnsitz, Hamburg Arbeit: Miete doppelt \n' +
+    'Für Arbeitsmittel pauschal 5.20€\n' +
+    'Für jeden Entfernungskilometer zur Arbeit 5.20€';
+
 
   // Formularabschnitt G
   public static readonly G_kontoBezeichnung = 'Bezeichnung';
