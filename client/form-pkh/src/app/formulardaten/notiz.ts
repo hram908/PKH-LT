@@ -5,9 +5,8 @@ import {NotizMaterial} from './notiz-material';
  **/
 
 export class Notiz {
-  rechtsgebiet = '';
   downloadLink = '';
-  progonose = '';
+  prognose = '';
   a: NotizMaterial = new NotizMaterial();
   b: NotizMaterial = new NotizMaterial();
   c: NotizMaterial = new NotizMaterial();
