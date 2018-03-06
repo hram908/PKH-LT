@@ -38,6 +38,7 @@ import {Fragen} from './common/fragen';
 import {Notiz} from './formulardaten/notiz';
 import {EndfensterComponent} from './formular/endfenster/endfenster.component';
 import { NotizComponent } from './notiz/notiz.component';
+import {NotizService} from './notiz/notiz-service';
 
 
 
@@ -80,6 +81,7 @@ import { NotizComponent } from './notiz/notiz.component';
     FormIMaterial,
     FormJMaterial,
     PkhMaterial,
+    NotizService,
     Notiz,
     Fragen,
     AllgemeineDaten,

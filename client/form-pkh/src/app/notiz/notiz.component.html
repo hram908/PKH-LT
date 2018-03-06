@@ -5,6 +5,8 @@
 <div class="notiz-side-menu" [class.notiz-side-menu-pushed]="notizIsActive">
   <h2>Notizen</h2>
   <hr class="divider">
-  Here might be some text input!
+  <textarea rows="4" cols="50" class="form-control notiz" placeholder="Notizen..." [(ngModel)]="activeNotizFeld">
+  </textarea>
+
 </div>
 

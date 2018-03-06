@@ -53,7 +53,6 @@ export class ChatbotService {
   }
 
   private onFormChanged = (abschnitt: Abschnitt) => {
-    if (abschnitt) {
       this._watsonResponse = [];
 
       if (this.chatbotFragenMap.get(abschnitt.id)) {
@@ -64,7 +63,6 @@ export class ChatbotService {
         this._botIsActive = false;
         this._activeChatbotFragen = [];
       }
-    }
   }
 
   private initializeAbschnitte() {

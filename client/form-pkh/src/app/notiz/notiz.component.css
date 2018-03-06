@@ -14,7 +14,7 @@
 .notiz-button-pushed {
   position: fixed;
   color: white;
-  right: 488px;
+  right: 388px;
   text-align: center;
 }
 
@@ -22,13 +22,13 @@
   position: fixed;
   background: #627A8F;
   color: white;
-  right: -500px;
+  right: -400px;
   padding: 5px;
   padding-top: 25px;
   margin: 0;
   top: 0;
   height: 100%;
-  width: 500px;
+  width: 400px;
   transition: 0.7s;
   text-align: center;
   overflow: auto;
@@ -41,4 +41,9 @@
 .note-icon{
   width: 30px;
   height: 30px;
+}
+
+.notiz{
+  width: auto;
+  height: 400px;
 }
