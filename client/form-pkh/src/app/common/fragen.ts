@@ -67,6 +67,10 @@ export class Fragen {
   public static readonly E_arbeitslosengeld2Betrag = 'Haben Sie Einnahmen aus Arbeitslosengeld II?';
   public static readonly E_krankengeldBetrag = 'Haben Sie Einnahmen aus Krankengeld?';
   public static readonly E_elterngeldBetrag = 'Haben Sie Einnahmen aus Elterngeld?';
+  public static readonly E_verpachtungBeschreibung = 'Im Gegensatz zur Miete darf bei einer Verpachtung ein Pächter nicht nur eine Sache nutzen, sondern darüber hinaus auch "Früchte" aus der Sache ziehen – also einen Gewinn erwirtschaften';
+  public static readonly E_andereEinnahmenBeschreibung = 'Alle anderen als die oben angegebenen Einnahmen, z.B. Weihnachts/Urlaubsgeld, Steuererstattung jährlich, BAföG mtl.';
+  public static readonly E_kapitalBeschreibung = 'Erträge der Vermögensverwaltung erfasst, die Erlöse oder Entgelte für die Überlassung von Kapital darstellen z.B. Aktiengewinn, Dividenden, Sparzinsen';
+  public static readonly E_selstArbeitBeschreibung = '"Wenn man unabjängig von einem Arbeitsgeber auf eigenes Risiko seinen Lebensunterhalt bestreitet"';
 
   // Formularabschnitt F
   public static readonly F_steuernBezeichnung = 'Steuern';
