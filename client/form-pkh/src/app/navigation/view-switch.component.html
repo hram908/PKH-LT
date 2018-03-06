@@ -1,10 +1,12 @@
-<div class="btn-group-vertical sidenav">
-  <ng-container *ngFor="let navButton of allNavButtons">
-    <button type="button" class="btn sidenav-button" [class.sidenav-button-checked]="navButton == currentFormString" (click)="showForm(navButton)">{{navButton}}</button>
-  </ng-container>
-</div>
+<div id="navBackground">
+  <div class="btn-group-vertical sidenav">
+    <ng-container *ngFor="let navButton of allNavButtons">
+      <button type="button" class="btn sidenav-button" [class.sidenav-button-checked]="navButton == currentFormString" (click)="showForm(navButton)">{{navButton}}</button>
+    </ng-container>
+  </div>
 
-<div class="back-forward-buttons">
-<button *ngIf="currentFormString != '0'" class="btn btn-primary custom-control-inline" (click)="showFormBefore()">Zurück</button>
-<button *ngIf="currentFormString != '9' && formB.uebernahme != 2" type="button" class="btn btn-primary custom-control-inline" (click)="showFormAfter()">Weiter</button>
+  <div class="back-forward-buttons">
+  <button *ngIf="currentFormString != '0'" class="btn btn-primary custom-control-inline" (click)="showFormBefore()">Zurück</button>
+  <button *ngIf="currentFormString != '9' && formB.uebernahme != 2" type="button" class="btn btn-primary custom-control-inline" (click)="showFormAfter()">Weiter</button>
+  </div>
 </div>

@@ -1,3 +1,11 @@
+.navBackground {
+  /* TODO: Rahmen um die Navigation einbauen, mit Div oder anders */
+  position: relative;
+  width: 50px;
+  height: 500px;
+  background: #2694ff;
+}
+
 .sidenav {
   position: fixed;
   left: 0;
@@ -5,13 +13,13 @@
 }
 
 .sidenav-button {
-   background: #51bfff;
+   background: #2694ff;
    color: white;
  }
 
 .sidenav-button-checked {
   background: white;
-  color: #51bfff;
+  color: #2694ff;
 }
 
 .back-forward-buttons {

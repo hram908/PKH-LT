@@ -1,6 +1,6 @@
 .bot-button {
   position: fixed;
-  background: #51bfff;
+  background: #2694ff;
   border: transparent;
   color: white;
   z-index: 1;
@@ -26,7 +26,7 @@
 
 .bot-side-menu {
   position: fixed;
-  background: #51bfff;
+  background: #2694ff;
   color: white;
   right: -500px;
   padding: 5px;
@@ -47,7 +47,7 @@
 .chatbot-input {
   padding: 25px;
   right: 500px;
-  background: #3f71c1;
+  background: #2694ff;
   color: white;
   top: 400px;
   text-align: center;

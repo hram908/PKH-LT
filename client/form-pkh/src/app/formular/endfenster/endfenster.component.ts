@@ -9,16 +9,17 @@ import {FormularService} from '../../rest-api/formular-service';
   styleUrls: ['./endfenster.component.css']
 })
 export class EndfensterComponent implements IFormComponentBase {
+  public linkAktiv = false;
 
-  constructor(private formularService: FormularService,public pkhForm: PkhMaterial) {
+  constructor(private formularService: FormularService, public pkhForm: PkhMaterial) {
   }
 
   getUntertitel(): string {
     return 'Generieren des PDFs';
   }
 
-  public sendFormularToServer(){
-    // TODO generate download link
+  public sendFormularToServer() {
     this.formularService.sendeFormularAnServer(this.pkhForm);
+    this.linkAktiv = true;
   }
 }
