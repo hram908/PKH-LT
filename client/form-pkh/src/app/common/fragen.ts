@@ -124,13 +124,11 @@ export class Fragen {
       'PER_LNG': 'Anzahl der Personen, die diese Wohnraum bewohnen',
     },
   };
-  public static readonly H_gesamtgroesseWohnung = ' 1. Gesamtgröße des Wohnraums, den Sie ' +
     'allein oder gemeinsam mit anderen Personen bewohnen';
-  public static readonly H_anzahlZimmer = '2. Anzahl der Zimmer';
-  public static readonly H_anzahlPersonenWohnraum = '3. Anzahl der Personen, die diese Wohnraum bewohnen';
   public static readonly H_miete = 'Kaltmiete';
   public static readonly H_heizkosten = 'Heizungskosten';
-  public static readonly H_sonstNebenkosten = 'sonstige Nebenkosten (kein Strom, Gas, Telefon oder GEZ)';
+  public static readonly H_sonstNebenkosten = 'sonst. Nebenkosten';
+  public static readonly H_sonstNebenkostenZusatz = ' (kein Strom, Gas, Telefon oder GEZ)';
   public static readonly H_gesamtbetrag = 'Gesamtbetrag';
   public static readonly H_kostenAlleine = 'Ich allein zahle davon';
   public static readonly H_zinsenUndTilgung = 'Zinsen und Tilgung';
@@ -151,10 +149,6 @@ export class Fragen {
   public static readonly I_restschuld = 'Restschuld';
   public static readonly I_gesamtbelastung = 'Gesamtbelastung';
   public static readonly I_alleineZahlen = 'monatlich zahle ich';
-  public static readonly I_bezeichnung1 = 'Bezeichung';
-  public static readonly I_restschuld1 = 'Restschuld';
-  public static readonly I_gesamtbelastung1 = 'Gesamtbelastung';
-  public static readonly I_alleineZahlen1 = 'monatlich zahle ich';
   public static readonly I_zahlunsVerpflichtungBeschreibung = 'Hier anrechenbare Versicherungsbeiträge sind z.B.: Lebensversicherung (besitzen Sie mehrere, darf nur eine ' +
     'angerechnet werden), Sterbegeldversicherung, Hausratversicherung, Haftpflichtversicherung, Glasversicherung, Unfallversicherung, ' +
     'Gebäudeversicherung, freiwillige Krankenversicherung, freiwillige Rentenversicherung, Riester-Rente, zur aktuellen Tätigkeit notwendige Rechtsschutzversicherung';
@@ -162,9 +156,7 @@ export class Fragen {
   // Formularabschnitt J
   public static readonly J_belastungBezeichung = 'Bezeichung';
   public static readonly J_ichAlleineZahle = 'Ich allein zahle davon';
-  public static readonly J_belastungBezeichung1 = 'Bezeichung';
-  public static readonly J_ichAlleineZahle1 = 'Ich allein zahle davon';
-  public static readonly J_behinderungBeschreibung = 'Ich allein zahle davon';
+  public static readonly J_behinderungBeschreibung = 'Zeichen G im Ausweis';
   public static readonly J_sgbIIBeschreibung = 'Kosten für aufwändige Ernährung (Intoleranzen), klassischer Mehrbedarf ist Schwangerschaft ';
   public static readonly J_sgbXIIBeschreibung = 'Mehrbedarf wegen Behinderung';
 }

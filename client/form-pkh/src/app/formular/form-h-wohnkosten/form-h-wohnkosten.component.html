@@ -36,7 +36,11 @@
 <!-- ENDE Abschnitt Frage nach Wohnung 3 -->
 
 <!-- Abschnitt Frage nach Wohnung 4 -->
-<label class="form-check-inline"> 4. Nutzen Sie den Raum als Mieter oder in einem ähnlichen Nutzungsverhältnis?</label>
+<label class="form-check-inline"> 4. Nutzen Sie den Raum als Mieter oder in einem
+  <div class="speech-bubble">ähnlichen Nutzungsverhältnis?
+    <span class="speech-bubble-text">{{getFragen().H_nutzungsVerhaeltnisseBeschreibung}}</span>
+  </div>
+</label>
 <div class="row">
   <div class="col-sm-6">
     <div class="radio">
@@ -69,33 +73,40 @@
     </div>
     <div class="col-sm-2">
       <div class="form-group">
-        <label for="andNebenkosten">{{getFragen().H_sonstNebenkosten}} *</label>
-        <input id="andNebenkosten" type="text" class="form-control" placeholder="Pflicht"
-               [(ngModel)]="formH.mietDaten.uebrigeNebenkosten" required="required">
+        <label for="andNebenkosten">
+          <div class="speech-bubble"> {{getFragen().H_sonstNebenkosten}}
+            <span class="speech-bubble-text">{{getFragen().H_mietNebenkostenBeschreibung}}</span>
       </div>
+          {{getFragen().H_sonstNebenkostenZusatz}} *</label>
+      <input id="andNebenkosten" type="text" class="form-control" placeholder="Pflicht"
+             [(ngModel)]="formH.mietDaten.uebrigeNebenkosten" required="required">
     </div>
-    <div class="col-sm-2">
-      <div class="form-group">
-        <label for="WohnungGes">{{getFragen().H_gesamtbetrag}} *</label>
-        <input id="WohnungGes" type="text" class="form-control" placeholder="Pflicht"
-               [(ngModel)]="formH.mietDaten.gesamtbetrag"
-               required="required">
-      </div>
+  </div>
+  <div class="col-sm-2">
+    <div class="form-group">
+      <label for="WohnungGes">{{getFragen().H_gesamtbetrag}} *</label>
+      <input id="WohnungGes" type="text" class="form-control" placeholder="Pflicht"
+             [(ngModel)]="formH.mietDaten.gesamtbetrag"
+             required="required">
     </div>
-    <div class="col-sm-2">
-      <div class="form-group">
-        <label for="WohnungAllein">{{getFragen().H_kostenAlleine}} *</label>
-        <input id="WohnungAllein" type="text" class="form-control" placeholder="Pflicht"
-               [(ngModel)]="formH.mietDaten.alleinigeZahlung" required="required">
-      </div>
+  </div>
+  <div class="col-sm-2">
+    <div class="form-group">
+      <label for="WohnungAllein">{{getFragen().H_kostenAlleine}} *</label>
+      <input id="WohnungAllein" type="text" class="form-control" placeholder="Pflicht"
+             [(ngModel)]="formH.mietDaten.alleinigeZahlung" required="required">
     </div>
+  </div>
   </div>
 </ng-container>
 <!-- ENDE Abschnitt Frage nach Wohnung 4-->
 
 <!-- Abschnitt Frage nach Wohnung 5 -->
 <label class="form-check-inline"> 5. Nutzen Sie den Raum als Eigentümer, Miteigentümer oder
-  Erbbauberechtigter?</label>
+  <div class="speech-bubble">Erbbauberechtigter?
+    <span class="speech-bubble-text">{{getFragen().H_erbbauBeschreibung}}</span>
+  </div>
+</label>
 <div class="row">
   <div class="col-sm-6">
     <div class="radio">

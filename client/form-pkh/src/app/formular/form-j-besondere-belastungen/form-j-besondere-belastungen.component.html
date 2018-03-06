@@ -3,9 +3,20 @@
 </div>
 
 <!-- Abschnitt Frage nach besonderen Belastungen -->
-<label class="form-check-inline">Haben Sie besondere Belastungen? (z.B. Mehrausgaben für körperbehinderten Angehörigen
-  und Angabe des GdB/
-  Mehrbedarfs gemäß §21 SGB II und §30 SGB XII)</label>
+<label class="form-check-inline">Haben Sie besondere Belastungen? (z.B. Mehrausgaben für
+  <div class="speech-bubble">körperbehinderten
+  <span class="speech-bubble-text">{{getFragen().J_behinderungBeschreibung}}</span>
+  </div>
+    Angehörigen und Angabe des GdB/
+  Mehrbedarfs gemäß
+  <div class="speech-bubble">§21 SGB II
+  <span class="speech-bubble-text">{{getFragen().J_sgbIIBeschreibung}}</span>
+  </div>
+  und
+  <div class="speech-bubble">§30 SGB XII
+  <span class="speech-bubble-text">{{getFragen().J_sgbXIIBeschreibung}}</span>
+  </div>
+    )</label>
 <p>Mehrbedarf auch beiwerdenden Müttern nach der 12. Schwangerschaftswoche und bei Personen die mit einem oder
   mehreren minderkährigen Kindern zusamenleben und allein für deren Pflege und Erziehung sorgen</p>
 <div class="row">
