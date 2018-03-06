@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.*;
 import pkh.form.materials.PkhFormular;
 import pkh.form.common.LinkCreatorService;
 
+import java.io.File;
+
 @RestController
 @EnableAutoConfiguration
 @Configuration
@@ -26,7 +28,7 @@ public class FormularController {
 
     @CrossOrigin(origins = "*", allowedHeaders = "*", methods = RequestMethod.POST)
     @PostMapping("/formular")
-    public String erzeugeFormular(@RequestBody String jsonString) {
+    public String produceFormular(@RequestBody String jsonString) {
         Log.info("Received Formular: " + jsonString);
 
         PkhFormular savedForm = formService.befuellePkhFormular(jsonString);
@@ -35,5 +37,10 @@ public class FormularController {
 
         System.out.println(LinkCreatorService.getDownloadLink());
         return "Downloadlink: " + LinkCreatorService.getDownloadLink();
+    }
+
+    @GetMapping("/pdf")
+    public File getPdfDownload(String fileName) {
+        return null;
     }
 }

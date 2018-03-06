@@ -8,10 +8,11 @@ import pkh.form.pdfConverter.materials.Fields;
 import pkh.form.pdfConverter.FillFormularHelper;
 
 import java.io.IOException;
+import java.util.List;
 
 public class FormFieldA {
     // Befüllt den kompletten Abschnitt A
-    public static void FillA(PDDocument pdfDocument, PkhFormular pkhFormular) throws IOException {
+    public static List<String> FillA(PDDocument pdfDocument, PkhFormular pkhFormular, List<String> noteList) throws IOException {
         Antragsteller antragsteller = pkhFormular.getFormA().getAntragsteller();
         GesetzVertreter gesetzVertreter = pkhFormular.getFormA().getGesetzVertreter();
 
@@ -20,24 +21,24 @@ public class FormFieldA {
         if (!antragsteller.getGeburtsname().equals("")) {
             vollstaendigerName += " (geboren " + antragsteller.getGeburtsname() + ")";
         }
-        FillFormularHelper.setFieldTo(pdfDocument, Fields.NAME.getDescription(), vollstaendigerName);
+        FillFormularHelper.setFieldTo(pdfDocument, Fields.A_NAME.getDescription(), vollstaendigerName);
         // Berufsfeld
         String beruf = antragsteller.getErwerbstaetigkeit();
         if (!antragsteller.getBeruf().equals("")) {
             beruf += " (" + antragsteller.getBeruf() + ")";
         }
-        FillFormularHelper.setFieldTo(pdfDocument, Fields.BERUF.getDescription(), beruf);
+        FillFormularHelper.setFieldTo(pdfDocument, Fields.A_BERUF.getDescription(), beruf);
         // Geburtsdatum
-        FillFormularHelper.setFieldTo(pdfDocument, Fields.GEBURTSDATUM.getDescription(), antragsteller.getGeburtstag());
+        FillFormularHelper.setFieldTo(pdfDocument, Fields.A_GEBURTSDATUM.getDescription(), antragsteller.getGeburtstag());
         // Familienstand
-        FillFormularHelper.setFieldTo(pdfDocument, Fields.FAMILIENSTAND.getDescription(), antragsteller.getFamilienstand());
+        FillFormularHelper.setFieldTo(pdfDocument, Fields.A_FAMILIENSTAND.getDescription(), antragsteller.getFamilienstand());
 
         // Anschrift
         String anschrift = antragsteller.getStrasse() + " " + antragsteller.getHausnummer() + ",  " + antragsteller.getPlz() + " " + antragsteller.getOrt();
-        FillFormularHelper.setFieldTo(pdfDocument, Fields.ADRESSE.getDescription(), anschrift);
+        FillFormularHelper.setFieldTo(pdfDocument, Fields.A_ADRESSE.getDescription(), anschrift);
 
         // Telefonnummer
-        FillFormularHelper.setFieldTo(pdfDocument, Fields.TELEFON.getDescription(), antragsteller.getTelefon());
+        FillFormularHelper.setFieldTo(pdfDocument, Fields.A_TELEFON.getDescription(), ", TEL: " + antragsteller.getTelefon());
 
         // Prüfe ob Gesetzlicher Vertreter vohanden ist
         if (gesetzVertreter.isHatGesetzlichenVertreter()) {
@@ -50,7 +51,18 @@ public class FormFieldA {
             if (!gesetzVertreter.getVertreterTelefon().equals("")) {
                 gesVertreter += gesetzVertreter.getVertreterTelefon();
             }
-            FillFormularHelper.setFieldTo(pdfDocument, Fields.GES_VERTRETER.getDescription(), gesVertreter);
+            FillFormularHelper.setFieldTo(pdfDocument, Fields.A_GES_VERTRETER.getDescription(), gesVertreter);
         }
+
+        if (!pkhFormular.getNotiz().getA().getNotiz().equals("") || !pkhFormular.getNotiz().getA().getHinweis().equals("")) {
+            noteList.add("Abschnitt A:");
+            if (!pkhFormular.getNotiz().getA().getNotiz().equals("")) {
+                noteList.add("Notiz des Kunden: " + pkhFormular.getNotiz().getA().getNotiz());
+            }
+            if (!pkhFormular.getNotiz().getA().getHinweis().equals("")) {
+                noteList.add("Hinweis für den Sachbearbeiter: " + pkhFormular.getNotiz().getA().getNotiz());
+            }
+        }
+        return noteList;
     }
 }

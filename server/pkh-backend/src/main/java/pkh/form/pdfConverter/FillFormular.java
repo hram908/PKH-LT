@@ -11,22 +11,19 @@ import java.util.List;
 public class FillFormular {
 
     public void befuellePdf(PDDocument aktuellePdf, PkhFormular pkhFormular) throws IOException {
-        FormFieldA.FillA(aktuellePdf, pkhFormular);
-        FormFieldB.FillB(aktuellePdf, pkhFormular);
-        FormFieldC.FillC(aktuellePdf, pkhFormular);
-        FormFieldD.FillD(aktuellePdf, pkhFormular);
-        FormFieldE.FillE(aktuellePdf, pkhFormular);
-        FormFieldF.FillF(aktuellePdf, pkhFormular);
-        FormFieldG.FillG(aktuellePdf, pkhFormular);
-        FormFieldH.FillH(aktuellePdf, pkhFormular);
-        FormFieldI.FillI(aktuellePdf, pkhFormular);
-        FormFieldJ.FillJ(aktuellePdf, pkhFormular);
+        List<String> noteList = new ArrayList<>();
 
-        FillNotePage.addEmptyPage(aktuellePdf);
-        List<String> bla = new ArrayList<>();
-        bla.add("Abschnitt B:");
-        bla.add("Dieser Abschnitt ist noch nicht fertig");
-        bla.add("Es wird daran gearbeitet");
-        FillNotePage.writeNotesToPage(aktuellePdf, bla);
+        noteList = FormFieldA.FillA(aktuellePdf, pkhFormular, noteList);
+        noteList = FormFieldB.FillB(aktuellePdf, pkhFormular, noteList);
+        noteList = FormFieldC.FillC(aktuellePdf, pkhFormular, noteList);
+        noteList = FormFieldD.FillD(aktuellePdf, pkhFormular, noteList);
+        noteList = FormFieldE.FillE(aktuellePdf, pkhFormular, noteList);
+        noteList = FormFieldF.FillF(aktuellePdf, pkhFormular, noteList);
+        noteList = FormFieldG.FillG(aktuellePdf, pkhFormular, noteList);
+        noteList = FormFieldH.FillH(aktuellePdf, pkhFormular, noteList);
+        noteList = FormFieldI.FillI(aktuellePdf, pkhFormular, noteList);
+        noteList = FormFieldJ.FillJ(aktuellePdf, pkhFormular, noteList);
+
+        FillNotePage.writeNotesToPage(aktuellePdf, noteList);
     }
 }
