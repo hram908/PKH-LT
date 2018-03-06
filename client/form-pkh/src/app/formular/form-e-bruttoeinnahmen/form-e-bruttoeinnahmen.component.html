@@ -1,7 +1,7 @@
 <div id="formularUeberschrift">
   <h2>{{getUntertitel()}}</h2>
 </div>
-
+<p>{{getFragen().E_defaultFrage}}</p>
 <!-- Abschnitt für ... -->
 <div class="row">
   <div class="col-sm-4">
@@ -15,7 +15,12 @@
   <!-- Abschnitt für ... -->
   <div class="col-sm-4">
     <div class="form-group">
-      <label for="selbstArbeitBetrag">{{getFragen().E_selbstArbeitBetrag}} </label>
+      <label for="selbstArbeitBetrag">
+      <div class="speech-bubble">
+        {{getFragen().E_selbstArbeitBetrag}}
+      <span class="speech-bubble-text">{{getFragen().E_selbstArbeitBeschreibung}}</span>
+      </div>
+      </label>
       <input id="selbstArbeitBetrag" type="text" class="form-control" placeholder="optional"
              [(ngModel)]="formE.antragsteller.selbstarbeit">
     </div>
@@ -26,7 +31,11 @@
 <div class="row">
   <div class="col-sm-4">
     <div class="form-group">
-      <label for="vermietungUndVerpachtungBetrag">{{getFragen().E_vermietungUndVerpachtungBetrag}} </label>
+      <label for="vermietungUndVerpachtungBetrag">Vermietung oder
+        <div class="speech-bubble">Verpachtung?
+        <span class="speech-bubble-text">{{getFragen().E_verpachtungBeschreibung}}</span>
+        </div>
+      </label>
       <input id="vermietungUndVerpachtungBetrag" type="text" class="form-control" placeholder="optional"
              [(ngModel)]="formE.antragsteller.vermietung">
     </div>
@@ -35,7 +44,11 @@
   <!-- Abschnitt für ... -->
   <div class="col-sm-4">
     <div class="form-group">
-      <label for="kapitalvermoegenBetrag">{{getFragen().E_kapitalvermoegenBetrag}} </label>
+      <label for="kapitalvermoegenBetrag">
+        <div class="speech-bubble">{{getFragen().E_kapitalvermoegenBetrag}}
+        <span class="speech-bubble-text">{{getFragen().E_kapitalBeschreibung}}</span>
+        </div>
+      </label>
       <input id="kapitalvermoegenBetrag" type="text" class="form-control" placeholder="optional"
              [(ngModel)]="formE.antragsteller.kapital">
     </div>
@@ -160,7 +173,11 @@
     <!-- Abschnitt für ... -->
     <div class="col-sm-4">
       <div class="form-group">
-        <label for="kapitalvermoegenBetrag1">{{getFragen().E_kapitalvermoegenBetrag}} </label>
+        <label for="kapitalvermoegenBetrag1">
+          <div class="speech-bubble">{{getFragen().E_kapitalvermoegenBetrag}}
+        <span class="speech-bubble-text">{{getFragen().E_kapitalBeschreibung}}</span>
+          </div>
+        </label>
         <input id="kapitalvermoegenBetrag1" type="text" class="form-control" placeholder="optional"
                [(ngModel)]="formE.ehepartner.kapital">
       </div>
