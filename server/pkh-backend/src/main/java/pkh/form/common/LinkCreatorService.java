@@ -1,6 +1,6 @@
-package pkh.form.pdfConverter;
+package pkh.form.common;
 
-public class LinkCreator {
+public class LinkCreatorService {
     private static String downloadLink;
 
     public static String erzeugeDownloadLink(String fileName) {

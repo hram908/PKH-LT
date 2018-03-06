@@ -6,7 +6,7 @@ import org.apache.pdfbox.pdmodel.interactive.form.PDAcroForm;
 import org.apache.pdfbox.pdmodel.interactive.form.PDField;
 import pkh.form.materials.PkhFormular;
 import pkh.form.pdfConverter.FillFormular;
-import pkh.form.pdfConverter.LinkCreator;
+import pkh.form.common.LinkCreatorService;
 
 import java.io.File;
 import java.io.IOException;
@@ -28,13 +28,14 @@ public class PdfConverterService {
      * @param formular ist das vom Client übertragene PkhFormular
      */
     public void erzeugePdf(PkhFormular formular) {
+        // TODO: Testabschnitt zur Datenbefüllung nach Fertigstellung löschen
         if (formular.getFormA().getAntragsteller().getNachname().equals("")) {
             formular.getFormA().getAntragsteller().setNachname("test2");
             formular.getFormA().getAntragsteller().setVorname("test");
             formular.getFormA().getAntragsteller().setGeburtsname("test3");
             formular.getFormA().getAntragsteller().setStrasse("teststraße");
             formular.getFormA().getGesetzVertreter().setVertreterName("testVertreter");
-        }
+        } // ENDE
         String fileName = erzeugeDateinamen(formular.getFormA().getAntragsteller().getNachname());
 
         try {
@@ -44,19 +45,14 @@ public class PdfConverterService {
             FillFormular formularBefuellung = new FillFormular();
             formularBefuellung.befuellePdf(_pdfDocument, formular);
 
-            // TODO: Implementiere Bearbeitung
-            // _pdfDocument.addPage(new PDPage());
-            // TODO ENDE Bearbeitung
-
             speicherNeuePdfDatei(_pdfDocument, fileName);
+            _pdfDocument.close();
         } catch (IOException e) {
             e.printStackTrace();
         }
 
-        LinkCreator.setDownloadLink(LinkCreator.erzeugeDownloadLink(fileName));
+        LinkCreatorService.setDownloadLink(LinkCreatorService.erzeugeDownloadLink(fileName));
     }
-
-
 
     private static void gebeFeldnamenAus() throws IOException {
         PDDocumentCatalog docCatalog = _pdfDocument.getDocumentCatalog();
@@ -67,7 +63,6 @@ public class PdfConverterService {
             System.out.println("Feldname: " + field.getPartialName() + "\n");
         }
     }
-
 
     private static PDDocument ladePdfDatei(String originalPdf) throws IOException {
         return PDDocument.load(new File(originalPdf));

@@ -7,7 +7,7 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.bind.annotation.*;
 import pkh.form.materials.PkhFormular;
-import pkh.form.pdfConverter.LinkCreator;
+import pkh.form.common.LinkCreatorService;
 
 @RestController
 @EnableAutoConfiguration
@@ -33,7 +33,7 @@ public class FormularController {
 
         pdfConverterService.erzeugePdf(savedForm);
 
-        System.out.println(LinkCreator.getDownloadLink());
-        return "Downloadlink: " + LinkCreator.getDownloadLink();
+        System.out.println(LinkCreatorService.getDownloadLink());
+        return "Downloadlink: " + LinkCreatorService.getDownloadLink();
     }
 }

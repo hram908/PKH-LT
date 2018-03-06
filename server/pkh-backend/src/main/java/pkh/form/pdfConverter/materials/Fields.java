@@ -1,10 +1,10 @@
-package pkh.form.pdfConverter;
+package pkh.form.pdfConverter.materials;
 
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
-enum Fields {
+public enum Fields {
     // Form A
     NAME("name", "Text1"),
     BERUF("beruf", "Text2"),
