@@ -70,8 +70,7 @@ export class Fragen {
 
   // Formularabschnitt F
   public static readonly F_steuernBezeichnung = 'Steuern';
-  public static readonly F_steuernBeschreibung = 'Einkommenssteuer, Lohnsteuer, Kirchensteuer, Solidaritätszuschlag. ' +
-    'Nicht jedoch andere Steuern wie Umsatzsteuer und Erbschaftssteuer';
+  public static readonly F_steuernBeschreibung = 'Einkommenssteuer, Lohnsteuer, Kirchensteuer, Solidaritätszuschlag. Nicht jedoch andere Steuern wie Umsatzsteuer und Erbschaftssteuer';
   public static readonly F_solidaritaetBezeichnung = 'Solidarität';
   public static readonly F_solidaritaetBeschreibung = 'Ist auf der Steuerabrechnung angegeben ';
   public static readonly F_steuernBetrag = 'Betrag in EUR pro Monat';
@@ -103,7 +102,10 @@ export class Fragen {
   public static readonly G_versicherungBezeichnung = 'Bezeichnung';
   public static readonly G_versicherungBetrag = 'Betrag in EUR';
   public static readonly G_sonstigeBezeichnung = 'Bezeichnung';
-  public static readonly G_sonstigeBetrag = 'Betrag in EUR';
+  public static readonly G_bargeldBeschreibung = 'Grundsätzlich jeder Betrag';
+  public static readonly G_schmuckBeschreibung = 'ist anzugeben, wenn er den Rahmen des Üblichen übersteigt oder wenn es sich um Gegenstände von höherem Wert handelt';
+  public static readonly G_elektrGeraeteBeschreibung = 'ist anzugeben, wenn er den Rahmen des Üblichen übersteigt oder wenn es sich um Gegenstände von höherem Wert handelt';
+
 
   // Formularabschnitt H
   public static readonly H = {

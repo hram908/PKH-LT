@@ -160,8 +160,19 @@
 <!-- ENDE Abschnitt Frage nach Grundeigentum-->
 
 <!-- Abschnitt Frage nach Bargeld etc.-->
-<label class="form-check-inline"> 4. Verfügen Sie oder Ihr Ehepartner/eingetragener Lebenspartner über Bargeld
-  oder Wertgegenstände (z.B. Schmuck, Antiquitäten, elektronische Geräte)?</label>
+<label class="form-check-inline"> 4. Verfügen Sie oder Ihr Ehepartner/eingetragener Lebenspartner über
+  <div class="speech-bubble">Bargeld
+    <span class="speech-bubble-text">{{getFragen().G_bargeldBeschreibung}}</span>
+  </div>
+  oder Wertgegenstände (z.B.
+  <div class="speech-bubble">Schmuck
+    <span class="speech-bubble-text">{{getFragen().G_schmuckBeschreibung}}</span>
+  </div>
+  , Antiquitäten,
+  <div class="speech-bubble">elektronische Geräte
+    <span class="speech-bubble-text">{{getFragen().G_elektrGeraeteBeschreibung}}</span>
+  </div>)?
+</label>
 <div class="row">
   <div class="col-sm-2">
     <div class="radio">
