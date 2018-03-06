@@ -1,8 +1,7 @@
 .speech-bubble {
   position: relative;
   display: inline-block;
-  color: #f4429b;
-  border-bottom: 1px dotted #f4429b;
+  border-bottom: 1px dotted gray;
 }
 
 .speech-bubble-text {

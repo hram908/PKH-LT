@@ -18,6 +18,4 @@ export class Notiz {
   h: NotizMaterial = new NotizMaterial();
   i: NotizMaterial = new NotizMaterial();
   j: NotizMaterial = new NotizMaterial();
-
-  downloadLink: string = '';
 }
