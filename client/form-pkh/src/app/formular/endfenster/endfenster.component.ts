@@ -1,7 +1,7 @@
 import {Component, EventEmitter} from '@angular/core';
 import {IFormComponentBase} from '../../common/i-form-component-base';
 import {PkhMaterial} from '../../formulardaten/pkh-material';
-import {FormularService} from '../../rest-api/formular-service';
+import {FormularService} from '../../formular-api/formular-service';
 
 @Component({
   selector: 'app-endfenster',

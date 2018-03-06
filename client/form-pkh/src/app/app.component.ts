@@ -5,7 +5,7 @@ import {
 import {AllgemeineDaten} from './allgemeineDaten';
 import {ViewSwitchService} from './navigation/view-switch-service';
 import {Abschnitt} from './abschnitt';
-import {FormularService} from './rest-api/formular-service';
+import {FormularService} from './formular-api/formular-service';
 import {Notiz} from './formulardaten/notiz';
 import {PkhMaterial} from './formulardaten/pkh-material';
 

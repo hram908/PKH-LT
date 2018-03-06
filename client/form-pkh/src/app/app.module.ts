@@ -32,7 +32,7 @@ import {FormFMaterial} from './formulardaten/form-f/form-f-material';
 import {FormGMaterial} from './formulardaten/form-g/form-g-material';
 import {FormHMaterial} from './formulardaten/form-h/form-h-material';
 import {PkhMaterial} from './formulardaten/pkh-material';
-import {FormularService} from './rest-api/formular-service';
+import {FormularService} from './formular-api/formular-service';
 import {HttpClientModule} from '@angular/common/http';
 import {Fragen} from './common/fragen';
 import {Notiz} from './formulardaten/notiz';
