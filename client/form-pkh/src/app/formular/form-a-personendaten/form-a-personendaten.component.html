@@ -6,6 +6,9 @@
       <div class="col-sm-4">
         <div class="form-group">
           <label for="name">{{getFragen().A.vorname}} *</label>
+          <audio id="sound1" src="/assets/audio/Vorname.ogg" preload="auto"></audio>
+          <button type="button" class="btn btn-secondary btn-xs" onclick="document.getElementById('sound1').play();"><span
+            class="glyphicon glyphicon-volume-up"></span></button>
           <input id="name" type="text" class="form-control" placeholder="Pflicht"
                  [(ngModel)]="formA.antragsteller.vorname" required="required" data-error="Der Vorname ist notwendig.">
         </div>
@@ -126,10 +129,16 @@
     </div>
 
     <!-- Abschnitt Frage nach gesetzlichem Vertreter -->
-    <label class="form-check-inline">Haben Sie einen gesetzlichen
-      </label><div class="speech-bubble vertreter"><b> Vertreter?</b>
-    <span class="speech-bubble-text">{{getFragen().A_vertreterBeschreibung}}</span>
-  </div>
+    <div class="row"><label class="form-check-inline">Haben Sie einen gesetzlichen
+    </label><div class="speech-bubble vertreter"><b> Vertreter?</b>
+      <span class="speech-bubble-text">{{getFragen().A_vertreterBeschreibung}}</span></div>
+      <audio id="sound2" src="/assets/audio/Haben_Sie_einen_gese.ogg" preload="auto"></audio>
+        <button type="button" class="btn btn-secondary btn-xs" onclick="document.getElementById('sound2').play();"><span
+          class="glyphicon glyphicon-volume-up"></span></button>
+    </div>
+
+
+
     <div class="row">
       <div class="col-sm-6">
         <div class="radio">
