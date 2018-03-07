@@ -1,10 +1,11 @@
-/*package pkh.form.classifier;
+package pkh.form.classifier;
 
 
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.bind.annotation.*;
+import pkh.form.classifier.ClassifierService;
 
 import java.util.List;
 
@@ -27,4 +28,3 @@ public class ClassifierController {
         return response;
     }
 }
-*/
