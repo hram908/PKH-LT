@@ -4,6 +4,7 @@ import org.apache.pdfbox.pdmodel.PDDocument;
 import org.apache.pdfbox.pdmodel.PDDocumentCatalog;
 import org.apache.pdfbox.pdmodel.interactive.form.PDAcroForm;
 import org.apache.pdfbox.pdmodel.interactive.form.PDField;
+import pkh.form.fileManager.FileService;
 import pkh.form.materials.PkhFormular;
 import pkh.form.pdfConverter.FillFormular;
 import pkh.form.common.LinkCreatorService;
@@ -18,34 +19,36 @@ import java.util.*;
 public class PdfConverterService {
     private static PDDocument _pdfDocument;
 
-    private static final String VORLAGE = "pkh_formular_vorlage.pdf";
+    private final String TEMPLATE;
+    private final String PATH;
+
+    PdfConverterService() {
+        // Lokal
+        TEMPLATE = "pkh_formular_vorlage.pdf";
+        PATH = "";
+        // Server
+        // TEMPLATE = this.getClass().getResource("/pkh_formular_vorlage.pdf").getPath();
+        // PATH = VORLAGE.substring(0, VORLAGE.lastIndexOf("/")) + "/";
+    }
 
     /**
      * Befüllung und Generierung des PDF Formulars
-     *
+     * <p>
      * Am Ende wird der Downloadlink gesetzt, der anschließend vom FormularController an den Client zurückgesendet wird
      *
      * @param formular ist das vom Client übertragene PkhFormular
      */
-    public void erzeugePdf(PkhFormular formular) {
-        // TODO: Testabschnitt zur Datenbefüllung nach Fertigstellung löschen
-        if (formular.getFormA().getAntragsteller().getNachname().equals("")) {
-            formular.getFormA().getAntragsteller().setNachname("test2");
-            formular.getFormA().getAntragsteller().setVorname("test");
-            formular.getFormA().getAntragsteller().setGeburtsname("test3");
-            formular.getFormA().getAntragsteller().setStrasse("teststraße");
-            formular.getFormA().getGesetzVertreter().setVertreterName("testVertreter");
-        } // ENDE
-        String fileName = erzeugeDateinamen(formular.getFormA().getAntragsteller().getNachname());
+    public void createPdf(PkhFormular formular) {
+        String fileName = createFileName(formular.getFormA().getAntragsteller().getNachname());
 
         try {
-            _pdfDocument = ladePdfDatei(VORLAGE);
+            _pdfDocument = loadPdfFile(TEMPLATE);
 
             // Rufe die Formularbefüllung auf
             FillFormular formularBefuellung = new FillFormular();
             formularBefuellung.befuellePdf(_pdfDocument, formular);
 
-            speicherNeuePdfDatei(_pdfDocument, fileName);
+            saveNewPdfFile(_pdfDocument, fileName);
             _pdfDocument.close();
         } catch (IOException e) {
             e.printStackTrace();
@@ -54,27 +57,29 @@ public class PdfConverterService {
         LinkCreatorService.setDownloadLink(LinkCreatorService.erzeugeDownloadLink(fileName));
     }
 
-    private static void gebeFeldnamenAus() throws IOException {
+    private static void printFieldNames() throws IOException {
         PDDocumentCatalog docCatalog = _pdfDocument.getDocumentCatalog();
         PDAcroForm acroForm = docCatalog.getAcroForm();
         List<PDField> fields = acroForm.getFields();
 
-        for (PDField field: fields) {
+        for (PDField field : fields) {
             System.out.println("Feldname: " + field.getPartialName() + "\n");
         }
     }
 
-    private static PDDocument ladePdfDatei(String originalPdf) throws IOException {
+    private static PDDocument loadPdfFile(String originalPdf) throws IOException {
         return PDDocument.load(new File(originalPdf));
     }
 
-    private static void speicherNeuePdfDatei(PDDocument aktuellePdf, String dateiName) throws IOException {
+    private void saveNewPdfFile(PDDocument aktuellePdf, String dateiName) throws IOException {
         aktuellePdf.save(dateiName);
         _pdfDocument.close();
+        FileService.addFileName(PATH, dateiName);
+        FileService.checkFileForOldEntries(PATH);
     }
 
-    private String erzeugeDateinamen(String nachname) {
+    private String createFileName(String nachname) {
         Integer id = new Random().nextInt(1000);
-        return "pkh_formular_" + nachname + "_" + id + ".pdf";
+        return PATH + "pkh_formular_" + nachname + "_" + id + ".pdf";
     }
 }

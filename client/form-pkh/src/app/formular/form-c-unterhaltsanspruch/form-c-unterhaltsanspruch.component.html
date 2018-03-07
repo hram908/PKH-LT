@@ -20,7 +20,7 @@
           <label for="UnterhaltsgebenderEhe" *ngIf='formA.antragsteller.familienstand === "Eingetragene Partnerschaft"'>{{getFragen().C_FrageJaLebenspartner}}
             *</label>
           <input id="UnterhaltsgebenderEhe" type="text" class="form-control"
-                 [(ngModel)]="formC.verpflichteter[0]" placeholder="Pflicht">
+                 [(ngModel)]="formC.verpflichteter[0].verpflichteter" placeholder="Pflicht">
         </div>
       </div>
     </div>
