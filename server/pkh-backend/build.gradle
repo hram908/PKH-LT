@@ -31,8 +31,9 @@ dependencies {
     compile("com.h2database:h2")
     compile("com.google.guava:guava:23.0")
     compile ("org.apache.pdfbox:pdfbox:2.0.8")
+    compile ("com.ibm.watson.developer_cloud:java-sdk:3.7.1")
 
     compile("com.ibm.watson.developer_cloud:conversation:4.2.1")
-
+    compile("com.ibm.watson.developer_cloud:natural-language-classifier:3.8.0")
     testCompile('org.springframework.boot:spring-boot-starter-test')
 }

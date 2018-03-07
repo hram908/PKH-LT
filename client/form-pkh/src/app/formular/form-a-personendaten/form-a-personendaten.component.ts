@@ -4,6 +4,7 @@ import {Untertitel} from '../../common/untertitel';
 import {IFormComponentBase} from '../../common/i-form-component-base';
 import {Fragen} from '../../common/fragen';
 
+
 @Component({
   selector: 'app-form-a-personendaten',
   templateUrl: './form-a-personendaten.component.html',
