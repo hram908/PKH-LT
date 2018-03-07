@@ -19,7 +19,7 @@ public class FormularController {
     private FormularService formService;
     private PdfConverterService pdfConverterService;
 
-    private Logger Log = LoggerFactory.getLogger(FormularController.class);
+    // private Logger Log = LoggerFactory.getLogger(FormularController.class);
 
     public FormularController(FormularService formService) {
         this.formService = formService;
@@ -29,13 +29,13 @@ public class FormularController {
     @CrossOrigin(origins = "*", allowedHeaders = "*", methods = RequestMethod.POST)
     @PostMapping("/formular")
     public String produceFormular(@RequestBody String jsonString) {
-        Log.info("Received Formular: " + jsonString);
+        // Log.info("Received Formular: " + jsonString);
 
         PkhFormular savedForm = formService.befuellePkhFormular(jsonString);
 
-        pdfConverterService.erzeugePdf(savedForm);
+        pdfConverterService.createPdf(savedForm);
 
-        System.out.println(LinkCreatorService.getDownloadLink());
+        // System.out.println(LinkCreatorService.getDownloadLink());
         return "Downloadlink: " + LinkCreatorService.getDownloadLink();
     }
 
