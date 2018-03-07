@@ -6,6 +6,7 @@
 // - (219€, wenn Ehegatte arbeitend)
 // - (275€ wenn Kind)
 
+import {FormAMaterial} from '../../formulardaten/form-a/form-a-material';
 import {FormDMaterial} from '../../formulardaten/form-d/form-d-material';
 import {FormEMaterial} from '../../formulardaten/form-e/form-e-material';
 import {FormFMaterial} from '../../formulardaten/form-f/form-f-material';
@@ -27,15 +28,28 @@ export class FormPMaterial {
 
   public constructor(public formE: FormEMaterial, public formG: FormGMaterial, public formD: FormDMaterial,
                      public formF: FormFMaterial, public formH: FormHMaterial, public formI: FormIMaterial,
-                     public formJ: FormJMaterial) {
+                     public formJ: FormJMaterial, public formA: FormAMaterial) {
   }
 
   public berechneE(): number {
-    return this.formE.antragsteller.nichtselbstarbeit + this.formE.antragsteller.selbstarbeit + this.formE.antragsteller.vermietung +
-      this.formE.antragsteller.kapital + this.formE.antragsteller.wohngeld + this.formE.antragsteller.unterhalt +
-      this.formE.antragsteller.rente + this.formE.antragsteller.arbeitslosg1 + this.formE.antragsteller.arbeitslosg2 +
-      this.formE.antragsteller.krankengeld + this.formE.antragsteller.elterngeld +
-      this.formE.antragsteller.kindergeld;
+    if (this.formA.antragsteller.familienstand === 'Eingetragene Partnerschaft' ||
+      this.formA.antragsteller.familienstand === 'Verheiratet') {
+      return this.formE.antragsteller.nichtselbstarbeit + this.formE.antragsteller.selbstarbeit + this.formE.antragsteller.vermietung +
+        this.formE.antragsteller.kapital + this.formE.antragsteller.wohngeld + this.formE.antragsteller.unterhalt +
+        this.formE.antragsteller.rente + this.formE.antragsteller.arbeitslosg1 + this.formE.antragsteller.arbeitslosg2 +
+        this.formE.antragsteller.krankengeld + this.formE.antragsteller.elterngeld +
+        this.formE.antragsteller.kindergeld + this.formE.ehepartner.nichtselbstarbeit + this.formE.ehepartner.selbstarbeit +
+        this.formE.ehepartner.vermietung + this.formE.ehepartner.kapital + this.formE.ehepartner.wohngeld +
+        this.formE.ehepartner.unterhalt + this.formE.ehepartner.rente + this.formE.ehepartner.arbeitslosg1 +
+        this.formE.ehepartner.arbeitslosg2 + this.formE.ehepartner.krankengeld + this.formE.ehepartner.elterngeld +
+        this.formE.ehepartner.kindergeld - this.freibetragRechtssuchende - this.freibetragUnterhaltEhegatte;
+    } else {
+      return this.formE.antragsteller.nichtselbstarbeit + this.formE.antragsteller.selbstarbeit + this.formE.antragsteller.vermietung +
+        this.formE.antragsteller.kapital + this.formE.antragsteller.wohngeld + this.formE.antragsteller.unterhalt +
+        this.formE.antragsteller.rente + this.formE.antragsteller.arbeitslosg1 + this.formE.antragsteller.arbeitslosg2 +
+        this.formE.antragsteller.krankengeld + this.formE.antragsteller.elterngeld +
+        this.formE.antragsteller.kindergeld - this.freibetragRechtssuchende;
+    }
   }
 
   public berechneG(): number {
@@ -58,9 +72,19 @@ export class FormPMaterial {
   }
 
   public berechneF(): number {
-    return this.formF.antragsteller.steuern.betrag + this.formF.antragsteller.sozialversicherung.betrag +
-      this.formF.antragsteller.sonstigeVersicherungen.betrag + this.formF.antragsteller.arbeitsfahrtkosten.betrag +
-      this.formF.antragsteller.werbungskosten.betrag;
+    if (this.formA.antragsteller.familienstand === 'Eingetragene Partnerschaft' ||
+      this.formA.antragsteller.familienstand === 'Verheiratet') {
+      return this.formF.antragsteller.steuern.betrag + this.formF.antragsteller.sozialversicherung.betrag +
+        this.formF.antragsteller.sonstigeVersicherungen.betrag + this.formF.antragsteller.arbeitsfahrtkosten.betrag +
+        this.formF.antragsteller.werbungskosten.betrag +
+        this.formF.ehepartner.steuern.betrag + this.formF.ehepartner.sozialversicherung.betrag +
+        this.formF.ehepartner.sonstigeVersicherungen.betrag + this.formF.ehepartner.arbeitsfahrtkosten.betrag +
+        this.formF.ehepartner.werbungskosten.betrag;
+    } else {
+      return this.formF.antragsteller.steuern.betrag + this.formF.antragsteller.sozialversicherung.betrag +
+        this.formF.antragsteller.sonstigeVersicherungen.betrag + this.formF.antragsteller.arbeitsfahrtkosten.betrag +
+        this.formF.antragsteller.werbungskosten.betrag;
+    }
   }
 
   public berechneH(): number {
@@ -81,8 +105,10 @@ export class FormPMaterial {
     return result;
   }
 
-  public berechnePrognose(): number {
+  public berechnePrognoseFormel(): number {
     return this.berechneE() + this.berechneG() - this.berechneF() - this.berechneD() - this.berechneH() -
       this.berechneI() - this.berechneJ();
   }
+
+
 }
