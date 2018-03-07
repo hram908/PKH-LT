@@ -1,9 +1,6 @@
 import {Component} from '@angular/core';
-import {Notiz} from '../formulardaten/notiz';
 import {ViewSwitchService} from '../navigation/view-switch-service';
 import {Abschnitt} from '../abschnitt';
-import {ChatbotFragen} from '../common/chatbot-fragen';
-import {NotizMaterial} from '../formulardaten/notiz-material';
 import {NotizService} from './notiz-service';
 
 @Component({
@@ -20,6 +17,10 @@ export class NotizComponent {
     this.localTextInput = this.activeNotizFeld;
 
     this.viewSwitchService.formChanged.subscribe(this.onFormChanged);
+  }
+
+  public get notizButtonDisabled(): boolean {
+    return this.service.notizButtonDisabled;
   }
 
   public get activeNotizFeld(): string {

@@ -1,5 +1,6 @@
-<button class="btn btn-primary notiz-button" (click)="toggleNotiz()" [class.notiz-button-pushed]="notizIsActive">
-  <img class="note-icon" src="./../assets/img/notes_icon.png"/>
+<button class="btn btn-primary notiz-button" (click)="toggleNotiz()" [class.notiz-button-pushed]="notizIsActive"
+        [disabled]="notizButtonDisabled">
+  <span class="glyphicon glyphicon-edit"></span>
 </button>
 
 <div class="notiz-side-menu" [class.notiz-side-menu-pushed]="notizIsActive">
