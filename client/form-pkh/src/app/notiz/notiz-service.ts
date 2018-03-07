@@ -17,8 +17,13 @@ export class NotizService {
     viewSwitchService.formChanged.subscribe(this.onFormChanged);
   }
 
-  public get activeNotiz(){
-    return this._activeNotiz;
+  public get activeNotiz(): string{
+    return this._activeNotiz.notiz;
+  }
+
+  public set activeNotiz(input: string){
+    this._activeNotiz.notiz = input;
+    console.log(this.notiz.a.notiz);
   }
 
   private onFormChanged= (abschnitt: Abschnitt) => {

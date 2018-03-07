@@ -13,16 +13,25 @@ import {NotizService} from './notiz-service';
 })
 export class NotizComponent{
   public notizIsActive: boolean;
+  public localTextInput: string;
 
 
 
   constructor(private service: NotizService) {
     this.notizIsActive = false;
-
+    this.localTextInput = this.activeNotizFeld;
   }
 
   public get activeNotizFeld(): string{
-    return this.service.activeNotiz.notiz;
+    return this.service.activeNotiz;
+  }
+
+  public set activeNotizFeld(input: string) {
+    this.service.activeNotiz = input;
+  }
+
+  public change() {
+    this.activeNotizFeld = this.localTextInput;
   }
 
   public toggleNotiz(){
