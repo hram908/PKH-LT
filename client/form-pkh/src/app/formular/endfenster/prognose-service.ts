@@ -7,8 +7,10 @@ import {FormHMaterial} from '../../formulardaten/form-h/form-h-material';
 import {FormIMaterial} from '../../formulardaten/form-i/form-i-material';
 import {FormJMaterial} from '../../formulardaten/form-j/form-j-material';
 import {Notiz} from '../../formulardaten/notiz';
+import {Injectable} from '@angular/core';
 
-export class FormPMaterial {
+@Injectable()
+export class PrognoseService {
   freibetragRechtssuchende = 481;
   freibetragRechtssuchendeArbeit = 219;
   freibetragUnterhaltEhegatte = 481;
@@ -25,7 +27,15 @@ export class FormPMaterial {
                      public formJ: FormJMaterial, public formA: FormAMaterial, public notiz: Notiz) {
   }
 
-  public berechneE(): number {
+  public gibPrognose(): void {
+    if (this.berechnePrognoseVemoegen() >= this.Prozesskosten) {
+      this.notiz.prognose = 'Es ist unwahrscheinlich, dass Sie Prozesskostenhilfe bekommen';
+    } else {
+      this.notiz.prognose = 'Es ist wahrscheinlich, dass Sie Porzesskostenhilfe bekommen';
+    }
+  }
+
+  private berechneE(): number {
     if (this.formA.antragsteller.familienstand === 'Eingetragene Partnerschaft' ||
       this.formA.antragsteller.familienstand === 'Verheiratet') {
       return this.formE.antragsteller.nichtselbstarbeit + this.formE.antragsteller.selbstarbeit + this.formE.antragsteller.vermietung +
@@ -46,7 +56,7 @@ export class FormPMaterial {
     }
   }
 
-  public berechneG(): number {
+  private berechneG(): number {
     let result = 0;
     this.formG.konto.forEach(vermoegen => result += vermoegen.vermoegen);
     this.formG.grundeigentum.forEach(vermoegen => result += vermoegen.vermoegen);
@@ -59,13 +69,13 @@ export class FormPMaterial {
     return result < 0 ? 0 : result;
   }
 
-  public berechneD(): number {
+  private berechneD(): number {
     let result = 0;
     this.formD.naturalunterhalt.forEach(naturalunterhalt => result += naturalunterhalt.monatsbetrag);
     return result;
   }
 
-  public berechneF(): number {
+  private berechneF(): number {
     if (this.formA.antragsteller.familienstand === 'Eingetragene Partnerschaft' ||
       this.formA.antragsteller.familienstand === 'Verheiratet') {
       return this.formF.antragsteller.steuern.betrag + this.formF.antragsteller.sozialversicherung.betrag +
@@ -81,25 +91,25 @@ export class FormPMaterial {
     }
   }
 
-  public berechneH(): number {
+  private berechneH(): number {
     return this.formH.mietDaten.mieteOderZinsen + this.formH.mietDaten.heizungskosten + this.formH.mietDaten.uebrigeNebenkosten
       + this.formH.mietDaten.alleinigeZahlung + this.formH.eigentumsDaten.mieteOderZinsen + this.formH.eigentumsDaten.heizungskosten +
       this.formH.eigentumsDaten.uebrigeNebenkosten + this.formH.eigentumsDaten.alleinigeZahlung;
   }
 
-  public berechneI(): number {
+  private berechneI(): number {
     let result = 0;
     this.formI.zahlungsverpflichtungen.forEach(zahlungsverplfichtung => result += zahlungsverplfichtung.alleinigeZahlung);
     return result;
   }
 
-  public berechneJ(): number {
+  private berechneJ(): number {
     let result = 0;
     this.formJ.besondereBelastungen.forEach(besondereBelastung => result += besondereBelastung.alleinigeZahlung);
     return result;
   }
 
-  public berechneAntragstellerAtrbeit(): number {
+  private berechneAntragstellerArbeit(): number {
     let result = 0;
     if (this.formE.antragsteller.nichtselbstarbeit !== 0 || this.formE.antragsteller.selbstarbeit !== 0) {
       result = result - this.freibetragRechtssuchendeArbeit;
@@ -109,7 +119,7 @@ export class FormPMaterial {
     }
   }
 
-  public berechneEhegatteAtrbeit(): number {
+  private berechneEhegatteArbeit(): number {
     let result = 0;
     if (this.formE.ehepartner.nichtselbstarbeit !== 0 || this.formE.ehepartner.selbstarbeit !== 0) {
       result = result - this.freibetragEhegatteArbeit;
@@ -119,20 +129,12 @@ export class FormPMaterial {
     }
   }
 
-  public berechnePrognoseFormel(): number {
+  private berechnePrognoseFormel(): number {
     return this.berechneE() + this.berechneG() - this.berechneF() - this.berechneD() - this.berechneH() -
-      this.berechneI() - this.berechneJ() - this.berechneEhegatteAtrbeit() - this.berechneAntragstellerAtrbeit();
+      this.berechneI() - this.berechneJ() - this.berechneEhegatteArbeit() - this.berechneAntragstellerArbeit();
   }
 
-  public brechnePrognoseVemoegen(): number {
+  private berechnePrognoseVemoegen(): number {
     return this.berechnePrognoseFormel() * 5 / 2;
-  }
-
-  public gibtPrognose(): string {
-    if (this.brechnePrognoseVemoegen() >= this.Prozesskosten) {
-      this.notiz.prognose = 'Es ist unwahrscheinlich, dass Sie Prozesskostenhilfe bekommen';
-    } else {
-      this.notiz.prognose = 'Es ist wahrscheinlich, dass Sie Porzesskostenhilfe bekommen';
-    }
   }
 }

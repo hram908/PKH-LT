@@ -2,18 +2,21 @@
   <h2>{{getUntertitel()}}</h2>
   <p>Überprüfen Sie bitte Ihre Einträge bevor Sie die PDF generieren!</p>
 
-  <div *ngIf="notiz.prognose != ''">
-    {{notiz.prognose}}
-  </div>
 
   <!-- Button trigger modal -->
   <button type="button" class="btn btn-primary send-button" data-toggle="modal" data-target="#myModal">
   PDF generieren
 </button>
 
+  <br><br>
+  <div *ngIf="notiz.prognose != ''">
+    <i>{{notiz.prognose}}</i>
+  </div>
+
   <div *ngIf="linkAktiv">
     {{pkhForm.notiz.downloadLink}}
   </div>
+  <br><br>
 
   <!-- Modal -->
   <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">

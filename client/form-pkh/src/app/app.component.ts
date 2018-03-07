@@ -8,6 +8,7 @@ import {Abschnitt} from './abschnitt';
 import {FormularService} from './formular-api/formular-service';
 import {Notiz} from './formulardaten/notiz';
 import {PkhMaterial} from './formulardaten/pkh-material';
+import {PrognoseService} from './formular/endfenster/prognose-service';
 
 
 @Component({
@@ -25,7 +26,7 @@ export class AppComponent implements OnDestroy, OnInit {
   constructor(private viewSwitchService: ViewSwitchService,
               private componentFactoryResolver: ComponentFactoryResolver,
               public allgemeineDaten: AllgemeineDaten,
-              private notiz: Notiz) {
+              private notiz: Notiz, private prognoseService: PrognoseService) {
     this.viewSwitchService.formChanged.subscribe(this.onFormViewChanged);
   }
 
@@ -81,10 +82,12 @@ export class AppComponent implements OnDestroy, OnInit {
   }
 
   private onFormViewChanged = (abschnitt: Abschnitt) => {
-    if (abschnitt) {
-      this.container.clear();
-      const factory = this.componentFactoryResolver.resolveComponentFactory(abschnitt.component);
-      this.componentRef = this.container.createComponent(factory);
+    this.container.clear();
+    const factory = this.componentFactoryResolver.resolveComponentFactory(abschnitt.component);
+    this.componentRef = this.container.createComponent(factory);
+
+    if (abschnitt.id === '9') {
+      this.prognoseService.gibPrognose();
     }
   }
 }

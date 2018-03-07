@@ -38,6 +38,7 @@ import {Fragen} from './common/fragen';
 import {Notiz} from './formulardaten/notiz';
 import {EndfensterComponent} from './formular/endfenster/endfenster.component';
 import { NotizComponent } from './notiz/notiz.component';
+import {PrognoseService} from './formular/endfenster/prognose-service';
 
 
 
@@ -86,6 +87,7 @@ import { NotizComponent } from './notiz/notiz.component';
     FormularService,
     ViewSwitchService,
     ChatbotService,
+    PrognoseService,
     StepSpeicher
   ],
   entryComponents: [
