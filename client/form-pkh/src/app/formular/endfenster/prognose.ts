@@ -129,11 +129,9 @@ export class FormPMaterial {
 
   public gibtPrognose(): string {
     if (this.brechnePrognoseVemoegen() >= this.Prozesskosten) {
-      return 'Es ist eher unwahrscheinlich, dass Sie Prozesskostenhilfe bekommen';
+      return 'Es ist unwahrscheinlich, dass Sie Prozesskostenhilfe bekommen';
     } else {
-      return 'Es ist eher wahrscheinlich, dass Sie Porzesskostenhilfe bekommen';
+      return 'Es ist wahrscheinlich, dass Sie Porzesskostenhilfe bekommen';
     }
   }
 }
-
-
