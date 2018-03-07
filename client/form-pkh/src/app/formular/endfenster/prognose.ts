@@ -1,11 +1,3 @@
-// Formel:
-// (E) + (G – 2.600€ (Wert kann aber zusammen nicht unter 0 sein) )
-// - (D + F + H + I + J)
-// - (481€ (+219, wenn arbeitend))
-// - (481€ wenn verheiratet)
-// - (219€, wenn Ehegatte arbeitend)
-// - (275€ wenn Kind)
-
 import {FormAMaterial} from '../../formulardaten/form-a/form-a-material';
 import {FormDMaterial} from '../../formulardaten/form-d/form-d-material';
 import {FormEMaterial} from '../../formulardaten/form-e/form-e-material';
@@ -25,6 +17,7 @@ export class FormPMaterial {
   freibetragKindUnter18 = 364;
   freibetragKindUeber18 = 383;
   freibetragVermoegen = 2600;
+  Prozesskosten = 262.68;
 
   public constructor(public formE: FormEMaterial, public formG: FormGMaterial, public formD: FormDMaterial,
                      public formF: FormFMaterial, public formH: FormHMaterial, public formI: FormIMaterial,
@@ -105,10 +98,42 @@ export class FormPMaterial {
     return result;
   }
 
-  public berechnePrognoseFormel(): number {
-    return this.berechneE() + this.berechneG() - this.berechneF() - this.berechneD() - this.berechneH() -
-      this.berechneI() - this.berechneJ();
+  public berechneAntragstellerAtrbeit(): number {
+    let result = 0;
+    if (this.formE.antragsteller.nichtselbstarbeit !== 0 || this.formE.antragsteller.selbstarbeit !== 0) {
+      result = result - this.freibetragRechtssuchendeArbeit;
+      return result;
+    } else {
+      return result;
+    }
   }
 
+  public berechneEhegatteAtrbeit(): number {
+    let result = 0;
+    if (this.formE.ehepartner.nichtselbstarbeit !== 0 || this.formE.ehepartner.selbstarbeit !== 0) {
+      result = result - this.freibetragEhegatteArbeit;
+      return result;
+    } else {
+      return result;
+    }
+  }
 
+  public berechnePrognoseFormel(): number {
+    return this.berechneE() + this.berechneG() - this.berechneF() - this.berechneD() - this.berechneH() -
+      this.berechneI() - this.berechneJ() - this.berechneEhegatteAtrbeit() - this.berechneAntragstellerAtrbeit();
+  }
+
+  public brechnePrognoseVemoegen(): number {
+    return this.berechnePrognoseFormel() * 5 / 2;
+  }
+
+  public gibtPrognose(): string {
+    if (this.brechnePrognoseVemoegen() >= this.Prozesskosten) {
+      return 'Es ist eher unwahrscheinlich, dass Sie Prozesskostenhilfe bekommen';
+    } else {
+      return 'Es ist eher wahrscheinlich, dass Sie Porzesskostenhilfe bekommen';
+    }
+  }
 }
+
+
