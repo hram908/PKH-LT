@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 import {Notiz} from '../formulardaten/notiz';
 import {ViewSwitchService} from '../navigation/view-switch-service';
 import {Abschnitt} from '../abschnitt';
@@ -11,18 +11,18 @@ import {NotizService} from './notiz-service';
   templateUrl: './notiz.component.html',
   styleUrls: ['./notiz.component.css']
 })
-export class NotizComponent{
+export class NotizComponent {
   public notizIsActive: boolean;
   public localTextInput: string;
 
-
-
-  constructor(private service: NotizService) {
+  constructor(private service: NotizService, private viewSwitchService: ViewSwitchService) {
     this.notizIsActive = false;
     this.localTextInput = this.activeNotizFeld;
+
+    this.viewSwitchService.formChanged.subscribe(this.onFormChanged);
   }
 
-  public get activeNotizFeld(): string{
+  public get activeNotizFeld(): string {
     return this.service.activeNotiz;
   }
 
@@ -34,8 +34,12 @@ export class NotizComponent{
     this.activeNotizFeld = this.localTextInput;
   }
 
-  public toggleNotiz(){
+  public toggleNotiz() {
     this.notizIsActive = !this.notizIsActive;
+  }
+
+  private onFormChanged = (abschnitt: Abschnitt) => {
+    this.localTextInput = this.activeNotizFeld;
   }
 
 }
