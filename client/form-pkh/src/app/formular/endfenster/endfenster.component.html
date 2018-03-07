@@ -5,8 +5,8 @@
 
   <!-- Button trigger modal -->
   <button type="button" class="btn btn-primary send-button" data-toggle="modal" data-target="#myModal">
-  PDF generieren
-</button>
+    PDF generieren
+  </button>
 
   <br><br><br>
   <div *ngIf="notiz.prognose != ''">
@@ -14,12 +14,13 @@
   </div>
 
   <div *ngIf="linkAktiv">
-    {{pkhForm.notiz.downloadLink}}
+    Downloadlink: <a target="_blank" href="{{pkhForm.notiz.downloadLink}}">{{pkhForm.notiz.downloadLink}}</a>
   </div>
   <br><br>
 
   <!-- Modal -->
-  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+       aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
@@ -32,8 +33,9 @@
           Sind Sie sicher, dass Sie alle von Ihnen eingetragenen Felder wahrheitsgemäß ausgefüllt haben?
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Schließen, Formular nochmal überprüfen</button>
-          <button type="button" class="btn btn-primary" (click)="sendFormularToServer()">Ja, PDF generieren</button>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Schließen, Formular nochmal überprüfen
+          </button>
+          <button type="button" class="btn btn-primary" (click)="sendFormularToServer()" data-dismiss="modal">Ja, PDF generieren</button>
         </div>
       </div>
     </div>
