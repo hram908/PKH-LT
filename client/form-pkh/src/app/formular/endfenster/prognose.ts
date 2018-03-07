@@ -6,6 +6,7 @@ import {FormGMaterial} from '../../formulardaten/form-g/form-g-material';
 import {FormHMaterial} from '../../formulardaten/form-h/form-h-material';
 import {FormIMaterial} from '../../formulardaten/form-i/form-i-material';
 import {FormJMaterial} from '../../formulardaten/form-j/form-j-material';
+import {Notiz} from '../../formulardaten/notiz';
 
 export class FormPMaterial {
   freibetragRechtssuchende = 481;
@@ -21,7 +22,7 @@ export class FormPMaterial {
 
   public constructor(public formE: FormEMaterial, public formG: FormGMaterial, public formD: FormDMaterial,
                      public formF: FormFMaterial, public formH: FormHMaterial, public formI: FormIMaterial,
-                     public formJ: FormJMaterial, public formA: FormAMaterial) {
+                     public formJ: FormJMaterial, public formA: FormAMaterial, public notiz: Notiz) {
   }
 
   public berechneE(): number {
@@ -129,9 +130,9 @@ export class FormPMaterial {
 
   public gibtPrognose(): string {
     if (this.brechnePrognoseVemoegen() >= this.Prozesskosten) {
-      return 'Es ist unwahrscheinlich, dass Sie Prozesskostenhilfe bekommen';
+      this.notiz.prognose = 'Es ist unwahrscheinlich, dass Sie Prozesskostenhilfe bekommen';
     } else {
-      return 'Es ist wahrscheinlich, dass Sie Porzesskostenhilfe bekommen';
+      this.notiz.prognose = 'Es ist wahrscheinlich, dass Sie Porzesskostenhilfe bekommen';
     }
   }
 }
