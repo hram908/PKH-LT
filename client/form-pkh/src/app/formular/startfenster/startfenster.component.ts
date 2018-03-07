@@ -8,7 +8,7 @@ import {IFormComponentBase} from '../../common/i-form-component-base';
   styleUrls: ['./startfenster.component.css']
 })
 export class StartfensterComponent implements OnInit, IFormComponentBase {
-  static UNTERTITEL = 'Startfenster';
+  static UNTERTITEL = 'Willkommen zum Prozesskostenhilfe-Tool';
 
   constructor(public allgemeineDaten: AllgemeineDaten) {
   }

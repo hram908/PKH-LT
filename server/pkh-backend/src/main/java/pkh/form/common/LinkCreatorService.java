@@ -4,7 +4,7 @@ public class LinkCreatorService {
     private static String downloadLink;
 
     public static String erzeugeDownloadLink(String fileName) {
-        return fileName;
+        return "./pdf?fileName=" + fileName;
     }
 
     public static String getDownloadLink() {

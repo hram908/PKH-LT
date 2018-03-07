@@ -1,5 +1,5 @@
 <div class="form-group" id="formularUeberschrift">
-  <h2>{{getUntertitel()}}</h2>
+  <h3>{{getUntertitel()}}</h3>
   <p>Überprüfen Sie bitte Ihre Einträge bevor Sie die PDF generieren!</p>
 
 
@@ -14,7 +14,7 @@
   </div>
 
   <div *ngIf="linkAktiv">
-    Downloadlink: <a target="_blank" href="{{pkhForm.notiz.downloadLink}}">{{pkhForm.notiz.downloadLink}}</a>
+    Downloadlink: <a target="_blank" href="{{pkhForm.notiz.downloadLink}}"><ng-container *ngIf="pkhForm.notiz.downloadLink != ''">PDF Download</ng-container></a>
   </div>
   <br><br>
 

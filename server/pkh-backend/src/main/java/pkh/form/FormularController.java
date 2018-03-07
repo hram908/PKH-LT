@@ -1,15 +1,19 @@
 package pkh.form;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import pkh.form.materials.PkhFormular;
 import pkh.form.common.LinkCreatorService;
 
-import java.io.File;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 
 @RestController
 @EnableAutoConfiguration
@@ -18,8 +22,6 @@ import java.io.File;
 public class FormularController {
     private FormularService formService;
     private PdfConverterService pdfConverterService;
-
-    // private Logger Log = LoggerFactory.getLogger(FormularController.class);
 
     public FormularController(FormularService formService) {
         this.formService = formService;
@@ -36,11 +38,18 @@ public class FormularController {
         pdfConverterService.createPdf(savedForm);
 
         // System.out.println(LinkCreatorService.getDownloadLink());
-        return "Downloadlink: " + LinkCreatorService.getDownloadLink();
+        return LinkCreatorService.getDownloadLink();
     }
 
+    @CrossOrigin(origins = "*", allowedHeaders = "*", methods = RequestMethod.GET)
     @GetMapping("/pdf")
-    public File getPdfDownload(String fileName) {
-        return null;
+    public ResponseEntity<byte[]> getPdfDownload(@RequestParam String fileName) throws IOException {
+        byte[] contents = Files.readAllBytes(Paths.get(fileName));
+
+        HttpHeaders headers = new HttpHeaders();
+        headers.setContentType(MediaType.parseMediaType("application/pdf"));
+        headers.setContentDispositionFormData(fileName, fileName);
+        headers.setCacheControl("must-revalidate, post-check=0, pre-check=0");
+        return new ResponseEntity<>(contents, headers, HttpStatus.OK); // /WEB-INF/classes/
     }
 }

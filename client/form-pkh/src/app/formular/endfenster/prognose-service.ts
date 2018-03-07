@@ -31,7 +31,7 @@ export class PrognoseService {
     if (this.berechnePrognoseVemoegen() >= this.Prozesskosten) {
       this.notiz.prognose = 'Es ist unwahrscheinlich, dass Sie Prozesskostenhilfe bekommen';
     } else {
-      this.notiz.prognose = 'Es ist wahrscheinlich, dass Sie Porzesskostenhilfe bekommen';
+      this.notiz.prognose = 'Es ist wahrscheinlich, dass Sie Prozesskostenhilfe bekommen';
     }
   }
 

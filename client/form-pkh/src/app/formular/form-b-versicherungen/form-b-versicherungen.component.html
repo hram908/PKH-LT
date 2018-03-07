@@ -1,5 +1,5 @@
 <div id="formularUeberschrift">
-  <h2>{{getUntertitel()}}</h2>
+  <h3>{{getUntertitel()}}</h3>
 </div>
 <!--
 -> 1. RSV? (0: False | 1: True | 2: Weiß ich nicht)
@@ -141,7 +141,7 @@ ELSE
       </ng-container>
     </div>
     <ng-container *ngIf="formB.antragGestellt == 0">
-      <div class="row" *ngFor="let versicherung of formB.versicherung; let i = index">
+      <div class="row" *ngFor="let versicherung of formB.versicherung">
         <div class="col-sm-4">
           <div class="form-group">
             <label for="nameDerInstitution">Name </label>
