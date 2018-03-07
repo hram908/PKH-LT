@@ -4,11 +4,10 @@ import {Observable} from 'rxjs/Observable';
 import {ChatbotFragen} from '../common/chatbot-fragen';
 import {ViewSwitchService} from '../navigation/view-switch-service';
 import {Abschnitt} from '../abschnitt';
+import {Urls} from '../common/urls';
 
 @Injectable()
 export class ChatbotService {
-  // IMPORTANT NOTE: for deployment delete 4242 port
-  private readonly chatbotUrl: string = 'http://127.0.0.1:4242/chatbot';
   private chatbotFragenMap: Map<string, string[]>;
   private _activeChatbotFragen: string[];
   private _activeAbschnittString: string;
@@ -48,7 +47,7 @@ export class ChatbotService {
 
   public askWatson(userInput: string) {
     let responses: string[] = [];
-    let response: Observable<any> = this.http.post<any>(this.chatbotUrl, userInput);
+    let response: Observable<any> = this.http.post<any>(Urls.Chatbot, userInput);
     response.subscribe(rs => this._watsonResponse = rs);
   }
 

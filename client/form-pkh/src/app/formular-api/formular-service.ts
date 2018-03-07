@@ -2,6 +2,7 @@ import {HttpClient} from '@angular/common/http';
 import {PkhMaterial} from '../formulardaten/pkh-material';
 import {Injectable} from '@angular/core';
 import {Notiz} from '../formulardaten/notiz';
+import {Urls} from '../common/urls';
 
 @Injectable()
 export class FormularService {
@@ -10,7 +11,7 @@ export class FormularService {
 
   async sendeFormularAnServer(pkhForm: PkhMaterial) {
 
-    const anfrage = this.httpClient.post('http://127.0.0.1:4242/formular', pkhForm, {responseType: 'text'});
+    const anfrage = this.httpClient.post(Urls.Formular, pkhForm, {responseType: 'text'});
     await anfrage.subscribe(data => {
       this.notiz.downloadLink = data;
     });
