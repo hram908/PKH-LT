@@ -2,6 +2,8 @@ import {Component, EventEmitter} from '@angular/core';
 import {IFormComponentBase} from '../../common/i-form-component-base';
 import {PkhMaterial} from '../../formulardaten/pkh-material';
 import {FormularService} from '../../formular-api/formular-service';
+import {PrognoseService} from './prognose-service';
+import {Notiz} from '../../formulardaten/notiz';
 
 @Component({
   selector: 'app-endfenster',
@@ -11,7 +13,8 @@ import {FormularService} from '../../formular-api/formular-service';
 export class EndfensterComponent implements IFormComponentBase {
   public linkAktiv = false;
 
-  constructor(private formularService: FormularService, public pkhForm: PkhMaterial) {
+  constructor(private formularService: FormularService, public pkhForm: PkhMaterial, public notiz: Notiz) {
+
   }
 
   getUntertitel(): string {
