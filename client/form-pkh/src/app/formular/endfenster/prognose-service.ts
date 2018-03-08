@@ -29,9 +29,11 @@ export class PrognoseService {
 
   public gibPrognose(): void {
     if (this.berechnePrognoseVemoegen() >= this.Prozesskosten) {
-      this.notiz.prognose = 'Es ist unwahrscheinlich, dass Sie Prozesskostenhilfe bekommen';
+      this.notiz.prognose = 'Es ist eher unwahrscheinlich, dass Sie Prozesskostenhilfe bekommen.'
+        + '\n Es kann trotzdem sein, dass sie trotzdem Prozesskostenhilfe bekommen, wenn zum Beispiel' +
+        ' der Streitwert ihres Prozesses hoch ist.';
     } else {
-      this.notiz.prognose = 'Es ist wahrscheinlich, dass Sie Prozesskostenhilfe bekommen';
+      this.notiz.prognose = 'Es ist wahrscheinlich, dass Sie Prozesskostenhilfe bekommen.';
     }
   }
 
