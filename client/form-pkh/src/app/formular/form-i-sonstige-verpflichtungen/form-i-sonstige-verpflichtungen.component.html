@@ -1,11 +1,11 @@
 <div id="formularUeberschrift">
-  <h3>{{getUntertitel()}}</h3>
+  <h3>{{untertitel.I}}</h3>
 </div>
 
 <!-- Abschnitt Frage nach sontigen Zahlungsverpflichtungen -->
 <label class="form-check-inline">Haben Sie
   <div class="speech-bubble">sonstige Zahlungsverpflichtungen?
-  <span class="speech-bubble-text">{{getFragen().I_zahlunsVerpflichtungBeschreibung}}</span>
+  <span class="speech-bubble-text">{{fragen.I_zahlunsVerpflichtungBeschreibung}}</span>
   </div>
     (z.B. Ratenkredite der Bank,
   Dahrlehnsverträge, Zahlungsnachweise)</label>
@@ -39,28 +39,28 @@
   <div class="row" *ngFor="let zahlungsverpflichtung of formI.zahlungsverpflichtungen; let i = index">
     <div class="col-sm-4">
       <div class="form-group">
-        <label for="sonsVerpflichtung_{{i}}">{{getFragen().I_bezeichnung}} *</label>
+        <label for="sonsVerpflichtung_{{i}}">{{fragen.I_bezeichnung}} *</label>
         <input id="sonsVerpflichtung_{{i}}" type="text" class="form-control" placeholder="Pflicht"
                [(ngModel)]="zahlungsverpflichtung.beschreibung" required="required">
       </div>
     </div>
     <div class="col-sm-2">
       <div class="form-group">
-        <label for="sonVerpflichtungRestBetrag_{{i}}">{{getFragen().I_restschuld}} *</label>
+        <label for="sonVerpflichtungRestBetrag_{{i}}">{{fragen.I_restschuld}} *</label>
         <input id="sonVerpflichtungRestBetrag_{{i}}" type="text" class="form-control" placeholder="Pflicht"
                [(ngModel)]="zahlungsverpflichtung.restschuld" required="required">
       </div>
     </div>
     <div class="col-sm-2">
       <div class="form-group">
-        <label for="sonVerpflichtungGesBelastung_{{i}}">{{getFragen().I_gesamtbelastung}} *</label>
+        <label for="sonVerpflichtungGesBelastung_{{i}}">{{fragen.I_gesamtbelastung}} *</label>
         <input id="sonVerpflichtungGesBelastung_{{i}}" type="text" class="form-control" placeholder="Pflicht"
                [(ngModel)]="zahlungsverpflichtung.gesamtbelastungMtl" required="required">
       </div>
     </div>
     <div class="col-sm-2">
       <div class="form-group">
-        <label for="sonVerpflichtungEigZahlung_{{i}}">{{getFragen().I_alleineZahlen}} *</label>
+        <label for="sonVerpflichtungEigZahlung_{{i}}">{{fragen.I_alleineZahlen}} *</label>
         <input id="sonVerpflichtungEigZahlung_{{i}}" type="text" class="form-control" placeholder="Pflicht"
                [(ngModel)]="zahlungsverpflichtung.alleinigeZahlung" required="required">
       </div>

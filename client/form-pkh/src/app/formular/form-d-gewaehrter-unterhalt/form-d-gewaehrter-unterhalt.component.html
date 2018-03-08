@@ -1,5 +1,5 @@
 <div id="formularUeberschrift">
-  <h3>{{getUntertitel()}}</h3>
+  <h3>{{untertitel.D}}</h3>
 </div>
 
 
@@ -50,21 +50,21 @@
       <div class="row">
         <div class="col-sm-3">
           <div class="form-group">
-            <label for="name_{{i}}">{{getFragen().D_Name}} *</label>
+            <label for="name_{{i}}">{{fragen.D_Name}} *</label>
             <input id="name_{{i}}" type="text" class="form-control" placeholder="Pflicht"
                    [(ngModel)]="naturalunterhalt.vollstaendigerName">
           </div>
         </div>
         <div class="col-sm-3">
           <div class="form-group">
-            <label for="strasse_{{i}}">{{getFragen().D_Strasse}} *</label>
+            <label for="strasse_{{i}}">{{fragen.D_Strasse}} *</label>
             <input id="strasse_{{i}}" type="text" class="form-control" placeholder="Pflicht"
                    [(ngModel)]="naturalunterhalt.strasse">
           </div>
         </div>
         <div class="col-sm-2">
           <div class="form-group">
-            <label for="hausnummer_{{i}}">{{getFragen().D_Hausnummer}} *</label>
+            <label for="hausnummer_{{i}}">{{fragen.D_Hausnummer}} *</label>
             <input id="hausnummer_{{i}}" type="text" class="form-control" placeholder="Pflicht"
                    [(ngModel)]="naturalunterhalt.hausnummer">
           </div>
@@ -74,21 +74,21 @@
       <div class="row">
         <div class="col-sm-2">
           <div class="form-group">
-            <label for="plz_{{i}}">{{getFragen().D_PLZ}} *</label>
+            <label for="plz_{{i}}">{{fragen.D_PLZ}} *</label>
             <input id="plz_{{i}}" type="text" class="form-control" placeholder="Pflicht"
                    [(ngModel)]="naturalunterhalt.plz">
           </div>
         </div>
         <div class="col-sm-3">
           <div class="form-group">
-            <label for="ort_{{i}}">{{getFragen().D_Ort}} *</label>
+            <label for="ort_{{i}}">{{fragen.D_Ort}} *</label>
             <input id="ort_{{i}}" type="text" class="form-control" placeholder="Pflicht"
                    [(ngModel)]="naturalunterhalt.ort">
           </div>
         </div>
         <div class="col-sm-3">
           <div class="form-group">
-            <label for="geburtsdatum_{{i}}">{{getFragen().D_Geburtsdatum}} *</label>
+            <label for="geburtsdatum_{{i}}">{{fragen.D_Geburtsdatum}} *</label>
             <input id="geburtsdatum_{{i}}" type="text" class="form-control" placeholder="Pflicht"
                    [(ngModel)]="naturalunterhalt.geburtsdatum">
           </div>
@@ -99,14 +99,14 @@
       <div class="row">
         <div class="col-sm-3">
           <div class="form-group">
-            <label for="verhaeltnis_{{i}}">{{getFragen().D_Verhaeltnis}} *</label>
+            <label for="verhaeltnis_{{i}}">{{fragen.D_Verhaeltnis}} *</label>
             <input id="verhaeltnis_{{i}}" type="text" class="form-control" placeholder="Pflicht"
                    [(ngModel)]="naturalunterhalt.verhaeltnis">
           </div>
         </div>
         <div class="col-sm-3">
           <div class="form-group">
-            <label for="monatsbetrag_{{i}}">{{getFragen().D_Monatsbetrag}} *</label>
+            <label for="monatsbetrag_{{i}}">{{fragen.D_Monatsbetrag}} *</label>
             <input id="monatsbetrag_{{i}}" type="text" class="form-control" placeholder="Pflicht"
                    [(ngModel)]="naturalunterhalt.monatsbetrag">
           </div>
@@ -123,7 +123,7 @@
 
       <div class="row">
         <div class="col-sm-4">
-          <label for="angehoerigenEinnahmen_ja_{{i}}">{{getFragen().D_FrageAngehoeriger}}</label>
+          <label for="angehoerigenEinnahmen_ja_{{i}}">{{fragen.D_FrageAngehoeriger}}</label>
           <div class="radio">
             <label class="radio-inline" for="angehoerigenEinnahmen_ja_{{i}}"><input type="radio"
                                                                                     id="angehoerigenEinnahmen_ja_{{i}}"
@@ -140,7 +140,7 @@
         <ng-container *ngIf="naturalunterhalt.hatAngehoerigerEinnahmen">
           <div class="col-sm-4">
             <div class="form-group">
-              <label for="angehoerigenEinnahmen_{{i}}">{{getFragen().D_einnahmenAngehoeriger}} *</label>
+              <label for="angehoerigenEinnahmen_{{i}}">{{fragen.D_einnahmenAngehoeriger}} *</label>
               <input id="angehoerigenEinnahmen_{{i}}" type="text" class="form-control" placeholder="Pflicht"
                      [(ngModel)]="naturalunterhalt.einnahmenAngehoeriger">
             </div>

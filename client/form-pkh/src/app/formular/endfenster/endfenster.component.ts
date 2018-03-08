@@ -1,24 +1,20 @@
-import {Component, EventEmitter} from '@angular/core';
-import {IFormComponentBase} from '../../common/i-form-component-base';
+import {Component} from '@angular/core';
 import {PkhMaterial} from '../../formulardaten/pkh-material';
 import {FormularService} from '../../formular-api/formular-service';
-import {PrognoseService} from './prognose-service';
 import {Notiz} from '../../formulardaten/notiz';
+import {Untertitel} from '../../common/untertitel';
 
 @Component({
   selector: 'app-endfenster',
   templateUrl: './endfenster.component.html',
   styleUrls: ['./endfenster.component.css']
 })
-export class EndfensterComponent implements IFormComponentBase {
+export class EndfensterComponent {
   public linkAktiv = false;
 
-  constructor(private formularService: FormularService, public pkhForm: PkhMaterial, public notiz: Notiz) {
+  constructor(private formularService: FormularService, public pkhForm: PkhMaterial,
+              public notiz: Notiz, public untertitel: Untertitel) {
 
-  }
-
-  getUntertitel(): string {
-    return 'Generieren des PDFs';
   }
 
   public sendFormularToServer() {

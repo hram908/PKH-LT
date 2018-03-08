@@ -1,12 +1,12 @@
 <div id="formularUeberschrift">
-  <h3>{{getUntertitel()}}</h3>
+  <h3>{{untertitel.E}}</h3>
 </div>
-<p>{{getFragen().E_defaultFrage}}</p>
+<label >{{fragen.E_defaultFrage}}</label>
 <!-- Abschnitt für ... -->
 <div class="row">
   <div class="col-sm-4">
     <div class="form-group">
-      <label for="nichtSelbstArbeitBetrag">{{getFragen().E_nichtSelbstArbeitBetrag}} </label>
+      <label for="nichtSelbstArbeitBetrag">{{fragen.E_nichtSelbstArbeitBetrag}} </label>
       <input id="nichtSelbstArbeitBetrag" type="text" class="form-control" placeholder="optional"
              [(ngModel)]="formE.antragsteller.nichtselbstarbeit">
     </div>
@@ -17,8 +17,8 @@
     <div class="form-group">
       <label for="selbstArbeitBetrag">
       <div class="speech-bubble">
-        {{getFragen().E_selbstArbeitBetrag}}
-      <span class="speech-bubble-text">{{getFragen().E_selbstArbeitBeschreibung}}</span>
+        {{fragen.E_selbstArbeitBetrag}}
+      <span class="speech-bubble-text">{{fragen.E_selbstArbeitBeschreibung}}</span>
       </div>
       </label>
       <input id="selbstArbeitBetrag" type="text" class="form-control" placeholder="optional"
@@ -33,7 +33,7 @@
     <div class="form-group">
       <label for="vermietungUndVerpachtungBetrag">Vermietung oder
         <div class="speech-bubble">Verpachtung?
-        <span class="speech-bubble-text">{{getFragen().E_verpachtungBeschreibung}}</span>
+        <span class="speech-bubble-text">{{fragen.E_verpachtungBeschreibung}}</span>
         </div>
       </label>
       <input id="vermietungUndVerpachtungBetrag" type="text" class="form-control" placeholder="optional"
@@ -45,8 +45,8 @@
   <div class="col-sm-4">
     <div class="form-group">
       <label for="kapitalvermoegenBetrag">
-        <div class="speech-bubble">{{getFragen().E_kapitalvermoegenBetrag}}
-        <span class="speech-bubble-text">{{getFragen().E_kapitalBeschreibung}}</span>
+        <div class="speech-bubble">{{fragen.E_kapitalvermoegenBetrag}}
+        <span class="speech-bubble-text">{{fragen.E_kapitalBeschreibung}}</span>
         </div>
       </label>
       <input id="kapitalvermoegenBetrag" type="text" class="form-control" placeholder="optional"
@@ -59,7 +59,7 @@
 <div class="row">
   <div class="col-sm-4">
     <div class="form-group">
-      <label for="kindergeldBetrag">{{getFragen().E_kindergeldBetrag}}</label>
+      <label for="kindergeldBetrag">{{fragen.E_kindergeldBetrag}}</label>
       <input id="kindergeldBetrag" type="text" class="form-control" placeholder="optional"
              [(ngModel)]="formE.antragsteller.kindergeld">
     </div>
@@ -68,7 +68,7 @@
   <!-- Abschnitt für ... -->
   <div class="col-sm-4">
     <div class="form-group">
-      <label for="wohngeldBetrag">{{getFragen().E_wohngeldBetrag}} </label>
+      <label for="wohngeldBetrag">{{fragen.E_wohngeldBetrag}} </label>
       <input id="wohngeldBetrag" type="text" class="form-control" placeholder="optional"
              [(ngModel)]="formE.antragsteller.wohngeld">
     </div>
@@ -79,7 +79,7 @@
 <div class="row">
   <div class="col-sm-4">
     <div class="form-group">
-      <label for="unterhaltBetrag">{{getFragen().E_unterhaltBetrag}} </label>
+      <label for="unterhaltBetrag">{{fragen.E_unterhaltBetrag}} </label>
       <input id="unterhaltBetrag" type="text" class="form-control" placeholder="optional"
              [(ngModel)]="formE.antragsteller.unterhalt">
     </div>
@@ -88,7 +88,7 @@
   <!-- Abschnitt für ... -->
   <div class="col-sm-4">
     <div class="form-group">
-      <label for="renteUndPensionBetrag">{{getFragen().E_renteUndPensionBetrag}} </label>
+      <label for="renteUndPensionBetrag">{{fragen.E_renteUndPensionBetrag}} </label>
       <input id="renteUndPensionBetrag" type="text" class="form-control" placeholder="optional"
              [(ngModel)]="formE.antragsteller.rente">
     </div>
@@ -99,7 +99,7 @@
 <div class="row">
   <div class="col-sm-4">
     <div class="form-group">
-      <label for="arbeitslosengeldBetrag">{{getFragen().E_arbeitslosengeldBetrag}} </label>
+      <label for="arbeitslosengeldBetrag">{{fragen.E_arbeitslosengeldBetrag}} </label>
       <input id="arbeitslosengeldBetrag" type="text" class="form-control" placeholder="optional"
              [(ngModel)]="formE.antragsteller.arbeitslosg1">
     </div>
@@ -108,7 +108,7 @@
   <!-- Abschnitt für ... -->
   <div class="col-sm-4">
     <div class="form-group">
-      <label for="arbeitslosengeld2Betrag">{{getFragen().E_arbeitslosengeld2Betrag}} </label>
+      <label for="arbeitslosengeld2Betrag">{{fragen.E_arbeitslosengeld2Betrag}} </label>
       <input id="arbeitslosengeld2Betrag" type="text" class="form-control" placeholder="optional"
              [(ngModel)]="formE.antragsteller.arbeitslosg2">
     </div>
@@ -119,7 +119,7 @@
 <div class="row">
   <div class="col-sm-4">
     <div class="form-group">
-      <label for="krankengeldBetrag">{{getFragen().E_krankengeldBetrag}} </label>
+      <label for="krankengeldBetrag">{{fragen.E_krankengeldBetrag}} </label>
       <input id="krankengeldBetrag" type="text" class="form-control" placeholder="optional"
              [(ngModel)]="formE.antragsteller.krankengeld">
     </div>
@@ -128,7 +128,7 @@
   <!-- Abschnitt für ... -->
   <div class="col-sm-4">
     <div class="form-group">
-      <label for="elterngeldBetrag">{{getFragen().E_elterngeldBetrag}} </label>
+      <label for="elterngeldBetrag">{{fragen.E_elterngeldBetrag}} </label>
       <input id="elterngeldBetrag" type="text" class="form-control" placeholder="optional"
              [(ngModel)]="formE.antragsteller.elterngeld">
     </div>
@@ -144,7 +144,7 @@
   <div class="row">
     <div class="col-sm-4">
       <div class="form-group">
-        <label for="nichtSelbstArbeitBetrag1">{{getFragen().E_nichtSelbstArbeitBetrag}} </label>
+        <label for="nichtSelbstArbeitBetrag1">{{fragen.E_nichtSelbstArbeitBetrag}} </label>
         <input id="nichtSelbstArbeitBetrag1" type="text" class="form-control" placeholder="optional"
                [(ngModel)]="formE.ehepartner.nichtselbstarbeit">
       </div>
@@ -153,7 +153,7 @@
     <!-- Abschnitt für ... -->
     <div class="col-sm-4">
       <div class="form-group">
-        <label for="selbstArbeitBetrag1">{{getFragen().E_selbstArbeitBetrag}} </label>
+        <label for="selbstArbeitBetrag1">{{fragen.E_selbstArbeitBetrag}} </label>
         <input id="selbstArbeitBetrag1" type="text" class="form-control" placeholder="optional"
                [(ngModel)]="formE.ehepartner.selbstarbeit">
       </div>
@@ -164,7 +164,7 @@
   <div class="row">
     <div class="col-sm-4">
       <div class="form-group">
-        <label for="vermietungUndVerpachtungBetrag1">{{getFragen().E_vermietungUndVerpachtungBetrag}} </label>
+        <label for="vermietungUndVerpachtungBetrag1">{{fragen.E_vermietungUndVerpachtungBetrag}} </label>
         <input id="vermietungUndVerpachtungBetrag1" type="text" class="form-control" placeholder="optional"
                [(ngModel)]="formE.ehepartner.vermietung">
       </div>
@@ -174,8 +174,8 @@
     <div class="col-sm-4">
       <div class="form-group">
         <label for="kapitalvermoegenBetrag1">
-          <div class="speech-bubble">{{getFragen().E_kapitalvermoegenBetrag}}
-        <span class="speech-bubble-text">{{getFragen().E_kapitalBeschreibung}}</span>
+          <div class="speech-bubble">{{fragen.E_kapitalvermoegenBetrag}}
+        <span class="speech-bubble-text">{{fragen.E_kapitalBeschreibung}}</span>
           </div>
         </label>
         <input id="kapitalvermoegenBetrag1" type="text" class="form-control" placeholder="optional"
@@ -188,7 +188,7 @@
   <div class="row">
     <div class="col-sm-4">
       <div class="form-group">
-        <label for="kindergeldBetrag1">{{getFragen().E_kindergeldBetrag}} </label>
+        <label for="kindergeldBetrag1">{{fragen.E_kindergeldBetrag}} </label>
         <input id="kindergeldBetrag1" type="text" class="form-control" placeholder="optional"
                [(ngModel)]="formE.ehepartner.kindergeld">
       </div>
@@ -197,7 +197,7 @@
     <!-- Abschnitt für ... -->
     <div class="col-sm-4">
       <div class="form-group">
-        <label for="wohngeldBetrag1">{{getFragen().E_wohngeldBetrag}} </label>
+        <label for="wohngeldBetrag1">{{fragen.E_wohngeldBetrag}} </label>
         <input id="wohngeldBetrag1" type="text" class="form-control" placeholder="optional"
                [(ngModel)]="formE.ehepartner.wohngeld">
       </div>
@@ -208,7 +208,7 @@
   <div class="row">
     <div class="col-sm-4">
       <div class="form-group">
-        <label for="unterhaltBetrag1">{{getFragen().E_unterhaltBetrag}} </label>
+        <label for="unterhaltBetrag1">{{fragen.E_unterhaltBetrag}} </label>
         <input id="unterhaltBetrag1" type="text" class="form-control" placeholder="optional"
                [(ngModel)]="formE.ehepartner.unterhalt">
       </div>
@@ -217,7 +217,7 @@
     <!-- Abschnitt für ... -->
     <div class="col-sm-4">
       <div class="form-group">
-        <label for="renteUndPensionBetrag1">{{getFragen().E_renteUndPensionBetrag}} </label>
+        <label for="renteUndPensionBetrag1">{{fragen.E_renteUndPensionBetrag}} </label>
         <input id="renteUndPensionBetrag1" type="text" class="form-control" placeholder="optional"
                [(ngModel)]="formE.ehepartner.rente">
       </div>
@@ -228,7 +228,7 @@
   <div class="row">
     <div class="col-sm-4">
       <div class="form-group">
-        <label for="arbeitslosengeldBetrag1">{{getFragen().E_arbeitslosengeldBetrag}} </label>
+        <label for="arbeitslosengeldBetrag1">{{fragen.E_arbeitslosengeldBetrag}} </label>
         <input id="arbeitslosengeldBetrag1" type="text" class="form-control" placeholder="optional"
                [(ngModel)]="formE.ehepartner.arbeitslosg1">
       </div>
@@ -237,7 +237,7 @@
     <!-- Abschnitt für ... -->
     <div class="col-sm-4">
       <div class="form-group">
-        <label for="arbeitslosengeld2Betrag1">{{getFragen().E_arbeitslosengeld2Betrag}} </label>
+        <label for="arbeitslosengeld2Betrag1">{{fragen.E_arbeitslosengeld2Betrag}} </label>
         <input id="arbeitslosengeld2Betrag1" type="text" class="form-control" placeholder="optional"
                [(ngModel)]="formE.ehepartner.arbeitslosg2">
       </div>
@@ -248,7 +248,7 @@
   <div class="row">
     <div class="col-sm-4">
       <div class="form-group">
-        <label for="krankengeldBetrag1">{{getFragen().E_krankengeldBetrag}} </label>
+        <label for="krankengeldBetrag1">{{fragen.E_krankengeldBetrag}} </label>
         <input id="krankengeldBetrag1" type="text" class="form-control" placeholder="optional"
                [(ngModel)]="formE.ehepartner.krankengeld">
       </div>
@@ -257,7 +257,7 @@
     <!-- Abschnitt für ... -->
     <div class="col-sm-4">
       <div class="form-group">
-        <label for="elterngeldBetrag1">{{getFragen().E_elterngeldBetrag}} </label>
+        <label for="elterngeldBetrag1">{{fragen.E_elterngeldBetrag}} </label>
         <input id="elterngeldBetrag1" type="text" class="form-control" placeholder="optional"
                [(ngModel)]="formE.ehepartner.elterngeld">
       </div>

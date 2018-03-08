@@ -1,6 +1,5 @@
 import {Component} from '@angular/core';
 import {Untertitel} from '../../common/untertitel';
-import {IFormComponentBase} from '../../common/i-form-component-base';
 import {FormHMaterial} from '../../formulardaten/form-h/form-h-material';
 import {Fragen} from '../../common/fragen';
 import {FremdmittelBelastung} from '../../formulardaten/form-h/fremdmittel-belastung';
@@ -10,17 +9,8 @@ import {FremdmittelBelastung} from '../../formulardaten/form-h/fremdmittel-belas
   templateUrl: './form-h-wohnkosten.component.html',
   styleUrls: ['./form-h-wohnkosten.component.css']
 })
-export class FormHWohnkostenComponent implements IFormComponentBase {
-  constructor(public formH: FormHMaterial) {
-  }
-
-  // tslint:disable-next-line
-  getFragen() {
-    return Fragen;
-  }
-
-  getUntertitel(): string {
-    return Untertitel.H;
+export class FormHWohnkostenComponent {
+  constructor(public formH: FormHMaterial, public untertitel: Untertitel, public fragen: Fragen) {
   }
 
   fuegeBelastungHinzu() {

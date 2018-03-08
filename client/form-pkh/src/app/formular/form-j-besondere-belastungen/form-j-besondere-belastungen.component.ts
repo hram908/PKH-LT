@@ -1,9 +1,7 @@
 import {Component} from '@angular/core';
 import {Untertitel} from '../../common/untertitel';
-import {IFormComponentBase} from '../../common/i-form-component-base';
 import {FormJMaterial} from '../../formulardaten/form-j/form-j-material';
 import {Fragen} from '../../common/fragen';
-import {EintragI} from '../../formulardaten/form-i/eintrag-i';
 import {EintragJ} from '../../formulardaten/form-j/eintrag-j';
 
 @Component({
@@ -11,16 +9,8 @@ import {EintragJ} from '../../formulardaten/form-j/eintrag-j';
   templateUrl: './form-j-besondere-belastungen.component.html',
   styleUrls: ['./form-j-besondere-belastungen.component.css']
 })
-export class FormJBesondereBelastungenComponent implements IFormComponentBase {
-  constructor(public formJ: FormJMaterial) {
-  }
-
-  getUntertitel(): string {
-    return Untertitel.J;
-  }
-
-  getFragen() {
-    return Fragen;
+export class FormJBesondereBelastungenComponent {
+  constructor(public formJ: FormJMaterial, public untertitel: Untertitel, public fragen: Fragen) {
   }
 
   fuegeHinzuBelastung() {

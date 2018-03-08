@@ -1,12 +1,14 @@
 export class Untertitel {
-  public static readonly A: string = 'Angaben zu Ihrer Person';
-  public static readonly B: string = 'Rechtsschutzversicherung / Mitgliedschaft';
-  public static readonly C: string = 'Unterhaltsanspruch gegenüber anderen Personen';
-  public static readonly D: string = 'Angehörige, denen Sie Bar- oder Naturalunterhalt gewähren';
-  public static readonly E: string = 'Bruttoeinnahmen';
-  public static readonly F: string = 'Abzüge';
-  public static readonly G: string = 'Bankkonten / Grundeigentum / Kraftfahrzeuge / Bargeld / Vermögenswerte';
-  public static readonly H: string = 'Wohnkosten';
-  public static readonly I: string = 'Sonstige Zahlungsverpflichtungen';
-  public static readonly J: string = 'Besondere Belastungen';
+  public readonly Start = 'Willkommen zum Prozesskostenhilfe-Tool';
+  public readonly A = 'Angaben zu Ihrer Person';
+  public readonly B = 'Rechtsschutzversicherung / Mitgliedschaft';
+  public readonly C = 'Unterhaltsanspruch gegenüber anderen Personen';
+  public readonly D = 'Angehörige, denen Sie Bar- oder Naturalunterhalt gewähren';
+  public readonly E = 'Bruttoeinnahmen';
+  public readonly F = 'Abzüge';
+  public readonly G = 'Bankkonten / Grundeigentum / Kraftfahrzeuge / Bargeld / Vermögenswerte';
+  public readonly H = 'Wohnkosten';
+  public readonly I = 'Sonstige Zahlungsverpflichtungen';
+  public readonly J = 'Besondere Belastungen';
+  public readonly Ende = 'Generieren des PDFs';
 }
