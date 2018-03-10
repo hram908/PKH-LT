@@ -71,3 +71,11 @@
 
 **for the jar file:**
 -  go to *build.gradle* and comment line 10 *apply plugin: 'war'*
+-  then run the *build.bat* on the root directory
+
+**for building manually**
+-  go to *client/form-pkh*
+-  run *ng build --prod* in the terminal
+-  copy everything inside the *dist*-directory to *server/pkh-backend/src/main/resources/public*
+-  go to *server/pkh-backend*
+-  run *gradlew build* in the terminal
