@@ -1,17 +1,17 @@
 <div id="formularUeberschrift">
-  <h3>{{getUntertitel()}}</h3>
+  <h3>{{untertitel.F}}</h3>
 </div>
 
 <!-- Abschnitt für Steuern/Solidaritätszuschlag -->
 <div class="row">
   <div class="col-sm-4">
     <div class="form-group">
-      <label for="steuernBezeichnung"><div class="speech-bubble">{{getFragen().F_steuernBezeichnung}}
-        <span class="speech-bubble-text">{{getFragen().F_steuernBeschreibung}}</span>
+      <label for="steuernBezeichnung"><div class="speech-bubble">{{fragen.F_steuernBezeichnung}}
+        <span class="speech-bubble-text">{{fragen.F_steuernBeschreibung}}</span>
         </div>
           /
-        <div class="speech-bubble">{{getFragen().F_solidaritaetBezeichnung}}
-          <span class="speech-bubble-text">{{getFragen().F_solidaritaetBeschreibung}}</span>
+        <div class="speech-bubble">{{fragen.F_solidaritaetBezeichnung}}
+          <span class="speech-bubble-text">{{fragen.F_solidaritaetBeschreibung}}</span>
         </div>
       </label>
       <input id="steuernBezeichnung" type="text" class="form-control" placeholder="optional"
@@ -20,7 +20,7 @@
   </div>
   <div class="col-sm-4">
     <div class="form-group">
-      <label for="F_steuernBetrag">{{getFragen().F_steuernBetrag}} </label>
+      <label for="F_steuernBetrag">{{fragen.F_steuernBetrag}} </label>
       <input id="F_steuernBetrag" type="text" class="form-control" placeholder=" "
              [(ngModel)]="formF.antragsteller.steuern.betrag">
     </div>
@@ -33,8 +33,8 @@
     <div class="form-group">
       <label
         for="sozialversicherungsbeitreageBezeichnung">
-        <div class="speech-bubble">{{getFragen().F_sozialversicherungsbeitreageBezeichnung}}
-          <span class="speech-bubble-text">{{getFragen().F_sozialversicherungsbeitreageBeschreibung}}</span>
+        <div class="speech-bubble">{{fragen.F_sozialversicherungsbeitreageBezeichnung}}
+          <span class="speech-bubble-text">{{fragen.F_sozialversicherungsbeitreageBeschreibung}}</span>
         </div>
       </label>
       <input id="sozialversicherungsbeitreageBezeichnung" type="text" class="form-control" placeholder="optional"
@@ -43,7 +43,7 @@
   </div>
   <div class="col-sm-4">
     <div class="form-group">
-      <label for="sozialversicherungsbeitreageBetrag">{{getFragen().F_sozialversicherungsbeitreageBetrag}} </label>
+      <label for="sozialversicherungsbeitreageBetrag">{{fragen.F_sozialversicherungsbeitreageBetrag}} </label>
       <input id="sozialversicherungsbeitreageBetrag" type="text" class="form-control" placeholder=" "
              [(ngModel)]="formF.antragsteller.sozialversicherung.betrag">
     </div>
@@ -54,8 +54,8 @@
 <div class="row">
   <div class="col-sm-4">
     <div class="form-group">
-      <label for="sonsVersicherungBezeichnung"><div class="speech-bubble">{{getFragen().F_sonsVersicherungBezeichnung}}
-        <span class="speech-bubble-text">{{getFragen().F_sonsVersicherungBeschreibung}}</span>
+      <label for="sonsVersicherungBezeichnung"><div class="speech-bubble">{{fragen.F_sonsVersicherungBezeichnung}}
+        <span class="speech-bubble-text">{{fragen.F_sonsVersicherungBeschreibung}}</span>
       </div>
       </label>
       <input id="sonsVersicherungBezeichnung" type="text" class="form-control" placeholder="optional"
@@ -64,7 +64,7 @@
   </div>
   <div class="col-sm-4">
     <div class="form-group">
-      <label for="sonsVersicherungBetrag">{{getFragen().F_sonsVersicherungBetrag}} </label>
+      <label for="sonsVersicherungBetrag">{{fragen.F_sonsVersicherungBetrag}} </label>
       <input id="sonsVersicherungBetrag" type="text" class="form-control" placeholder=" "
              [(ngModel)]="formF.antragsteller.sonstigeVersicherungen.betrag">
     </div>
@@ -75,14 +75,14 @@
 <div class="row">
   <div class="col-sm-4">
     <div class="form-group">
-      <label for="fahrtZurArbeitBezeichnung">{{getFragen().F_fahrtZurArbeitBezeichnung}} </label>
+      <label for="fahrtZurArbeitBezeichnung">{{fragen.F_fahrtZurArbeitBezeichnung}} </label>
       <input id="fahrtZurArbeitBezeichnung" type="text" class="form-control" placeholder="optional"
              [(ngModel)]="formF.antragsteller.arbeitsfahrtkosten.art">
     </div>
   </div>
   <div class="col-sm-4">
     <div class="form-group">
-      <label for="fahrtZurArbeitBetrag">{{getFragen().F_fahrtZurArbeitBetrag}} </label>
+      <label for="fahrtZurArbeitBetrag">{{fragen.F_fahrtZurArbeitBetrag}} </label>
       <input id="fahrtZurArbeitBetrag" type="text" class="form-control" placeholder=" "
              [(ngModel)]="formF.antragsteller.arbeitsfahrtkosten.betrag">
     </div>
@@ -95,7 +95,7 @@
     <div class="form-group">
       <label for="werbeUndBetriebskostenBezichnung">Sonstige
         <div class="speech-bubble">Werbungskosten
-          <span class="speech-bubble-text werbungskosten">{{getFragen().F_werbungskostenBeschreibung}}</span>
+          <span class="speech-bubble-text werbungskosten">{{fragen.F_werbungskostenBeschreibung}}</span>
         </div>
         /Betriebskosten</label>
       <input id="werbeUndBetriebskostenBezichnung" type="text" class="form-control" placeholder="optional"
@@ -104,7 +104,7 @@
   </div>
   <div class="col-sm-4">
     <div class="form-group">
-      <label for="werbeUndBetriebskostenBetrag">{{getFragen().F_werbeUndBetriebskostenBetrag}} </label>
+      <label for="werbeUndBetriebskostenBetrag">{{fragen.F_werbeUndBetriebskostenBetrag}} </label>
       <input id="werbeUndBetriebskostenBetrag" type="text" class="form-control" placeholder=" "
              [(ngModel)]="formF.antragsteller.werbungskosten.betrag">
     </div>
@@ -120,14 +120,14 @@
   <div class="row">
     <div class="col-sm-4">
       <div class="form-group">
-        <label for="steuernBezeichnung1">{{getFragen().F_steuernBezeichnung}} </label>
+        <label for="steuernBezeichnung1">{{fragen.F_steuernBezeichnung}} </label>
         <input id="steuernBezeichnung1" type="text" class="form-control" placeholder="optional"
                [(ngModel)]="formF.ehepartner.steuern.art" required="required">
       </div>
     </div>
     <div class="col-sm-4">
       <div class="form-group">
-        <label for="F_steuernBetrag1">{{getFragen().F_steuernBetrag}} </label>
+        <label for="F_steuernBetrag1">{{fragen.F_steuernBetrag}} </label>
         <input id="F_steuernBetrag1" type="text" class="form-control" placeholder=" "
                [(ngModel)]="formF.ehepartner.steuern.betrag" required="required">
       </div>
@@ -139,14 +139,14 @@
     <div class="col-sm-4">
       <div class="form-group">
         <label
-          for="sozialversicherungsbeitreageBezeichnung1">{{getFragen().F_sozialversicherungsbeitreageBezeichnung}} </label>
+          for="sozialversicherungsbeitreageBezeichnung1">{{fragen.F_sozialversicherungsbeitreageBezeichnung}} </label>
         <input id="sozialversicherungsbeitreageBezeichnung1" type="text" class="form-control" placeholder="optional"
                [(ngModel)]="formF.ehepartner.sozialversicherung.art" required="required">
       </div>
     </div>
     <div class="col-sm-4">
       <div class="form-group">
-        <label for="sozialversicherungsbeitreageBetrag1">{{getFragen().F_sozialversicherungsbeitreageBetrag}} </label>
+        <label for="sozialversicherungsbeitreageBetrag1">{{fragen.F_sozialversicherungsbeitreageBetrag}} </label>
         <input id="sozialversicherungsbeitreageBetrag1" type="text" class="form-control" placeholder=" "
                [(ngModel)]="formF.ehepartner.sozialversicherung.betrag" required="required">
       </div>
@@ -157,14 +157,14 @@
   <div class="row">
     <div class="col-sm-4">
       <div class="form-group">
-        <label for="sonsVersicherungBezeichnung1">{{getFragen().F_sonsVersicherungBezeichnung}} </label>
+        <label for="sonsVersicherungBezeichnung1">{{fragen.F_sonsVersicherungBezeichnung}} </label>
         <input id="sonsVersicherungBezeichnung1" type="text" class="form-control" placeholder="optional"
                [(ngModel)]="formF.ehepartner.sonstigeVersicherungen.art" required="required">
       </div>
     </div>
     <div class="col-sm-4">
       <div class="form-group">
-        <label for="sonsVersicherungBetrag1">{{getFragen().F_sonsVersicherungBetrag}} </label>
+        <label for="sonsVersicherungBetrag1">{{fragen.F_sonsVersicherungBetrag}} </label>
         <input id="sonsVersicherungBetrag1" type="text" class="form-control" placeholder=" "
                [(ngModel)]="formF.ehepartner.sonstigeVersicherungen.betrag" required="required">
       </div>
@@ -175,14 +175,14 @@
   <div class="row">
     <div class="col-sm-4">
       <div class="form-group">
-        <label for="fahrtZurArbeitBezeichnung1">{{getFragen().F_fahrtZurArbeitBezeichnung}} </label>
+        <label for="fahrtZurArbeitBezeichnung1">{{fragen.F_fahrtZurArbeitBezeichnung}} </label>
         <input id="fahrtZurArbeitBezeichnung1" type="text" class="form-control" placeholder="optional"
                [(ngModel)]="formF.ehepartner.arbeitsfahrtkosten.art" required="required">
       </div>
     </div>
     <div class="col-sm-4">
       <div class="form-group">
-        <label for="fahrtZurArbeitBetrag1">{{getFragen().F_fahrtZurArbeitBetrag}} </label>
+        <label for="fahrtZurArbeitBetrag1">{{fragen.F_fahrtZurArbeitBetrag}} </label>
         <input id="fahrtZurArbeitBetrag1" type="text" class="form-control" placeholder=" "
                [(ngModel)]="formF.ehepartner.arbeitsfahrtkosten.betrag" required="required">
       </div>
@@ -193,14 +193,14 @@
   <div class="row">
     <div class="col-sm-4">
       <div class="form-group">
-        <label for="werbeUndBetriebskostenBezichnung1">{{getFragen().F_werbeUndBetriebskostenBezichnung}} </label>
+        <label for="werbeUndBetriebskostenBezichnung1">{{fragen.F_werbeUndBetriebskostenBezichnung}} </label>
         <input id="werbeUndBetriebskostenBezichnung1" type="text" class="form-control" placeholder="optional"
                [(ngModel)]="formF.ehepartner.werbungskosten.art" required="required">
       </div>
     </div>
     <div class="col-sm-4">
       <div class="form-group">
-        <label for="werbeUndBetriebskostenBetrag1">{{getFragen().F_werbeUndBetriebskostenBetrag}} </label>
+        <label for="werbeUndBetriebskostenBetrag1">{{fragen.F_werbeUndBetriebskostenBetrag}} </label>
         <input id="werbeUndBetriebskostenBetrag1" type="text" class="form-control" placeholder=" "
                [(ngModel)]="formF.ehepartner.werbungskosten.betrag" required="required">
       </div>

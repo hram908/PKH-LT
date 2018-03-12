@@ -1,6 +1,5 @@
 import {Component} from '@angular/core';
 import {Untertitel} from '../../common/untertitel';
-import {IFormComponentBase} from '../../common/i-form-component-base';
 import {FormDMaterial} from '../../formulardaten/form-d/form-d-material';
 import {Fragen} from '../../common/fragen';
 import {NaturalunterhaltRow} from '../../formulardaten/form-d/naturalunterhalt-row';
@@ -10,19 +9,14 @@ import {NaturalunterhaltRow} from '../../formulardaten/form-d/naturalunterhalt-r
   templateUrl: './form-d-gewaehrter-unterhalt.component.html',
   styleUrls: ['./form-d-gewaehrter-unterhalt.component.css']
 })
-export class FormDGewaehrterUnterhaltComponent implements IFormComponentBase {
-  constructor(public formD: FormDMaterial) {
+export class FormDGewaehrterUnterhaltComponent {
+  constructor(public formD: FormDMaterial, public untertitel: Untertitel, public fragen: Fragen) {
   }
 
-  getUntertitel(): string {
-    return Untertitel.D;
-  }
-  getFragen() {
-    return Fragen;
-  }
   fuegeUnterhaltHinzu() {
     this.formD.naturalunterhalt.push(new NaturalunterhaltRow());
   }
+
   entferneUnterhalt() {
     this.formD.naturalunterhalt.pop();
   }

@@ -58,11 +58,24 @@
 
 ## Build
 ### General
--  Go to *client/form-pkh/src/app/chatbot/chatbot-service.ts*
--  change the chatbotUrl to the url of your deployed server
+-  go to *client/form-pkh/src/app/common/urls.ts*
+-  change the urls from localhost (127.0.0.1) to the url your deployed server
+-  also: remove the port *4242* (since the client will run on the root url of the server)
+
+-  go to *server/pkh-backend/src/main/java/pkh/form/PdfConverterService.java*
+-  comment the two lines under *// LOKAL*
+-  uncomment two two lines under *// SERVER*
 
 **for the war file:**
 -  run the *build.bat* on the root directory
 
 **for the jar file:**
 -  go to *build.gradle* and comment line 10 *apply plugin: 'war'*
+-  then run the *build.bat* on the root directory
+
+**for building manually**
+-  go to *client/form-pkh*
+-  run *ng build --prod* in the terminal
+-  copy everything inside the *dist*-directory to *server/pkh-backend/src/main/resources/public*
+-  go to *server/pkh-backend*
+-  run *gradlew build* in the terminal

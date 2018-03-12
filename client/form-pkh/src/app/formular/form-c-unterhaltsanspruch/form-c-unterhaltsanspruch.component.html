@@ -1,12 +1,12 @@
 <div id="formularUeberschrift">
-  <h3>{{getUntertitel()}}</h3>
+  <h3>{{untertitel.C}}</h3>
 </div>
 
 <div class="controls">
   <div class="row">
     <div class="col-sm-6">
       <div class="form-group">
-        <label for="Unterhaltsanspruch_ja">{{getFragen().C_Frage}}<br>{{getFragen().C_Zusatz}}</label>
+        <label for="Unterhaltsanspruch_ja">{{fragen.C_Frage}}<br>{{fragen.C_Zusatz}}</label>
       </div>
     </div>
   </div>
@@ -16,8 +16,8 @@
     <div class="row">
       <div class="col-sm-5">
         <div class="form-group">
-          <label for="UnterhaltsgebenderEhe" *ngIf='formA.antragsteller.familienstand === "Verheiratet"'>{{getFragen().C_FrageJaEhe}}</label>
-          <label for="UnterhaltsgebenderEhe" *ngIf='formA.antragsteller.familienstand === "Eingetragene Partnerschaft"'>{{getFragen().C_FrageJaLebenspartner}}
+          <label for="UnterhaltsgebenderEhe" *ngIf='formA.antragsteller.familienstand === "Verheiratet"'>{{fragen.C_FrageJaEhe}}</label>
+          <label for="UnterhaltsgebenderEhe" *ngIf='formA.antragsteller.familienstand === "Eingetragene Partnerschaft"'>{{fragen.C_FrageJaLebenspartner}}
             *</label>
           <input id="UnterhaltsgebenderEhe" type="text" class="form-control"
                  [(ngModel)]="formC.verpflichteter[0].verpflichteter" placeholder="Pflicht">
@@ -26,7 +26,7 @@
     </div>
   </ng-container>
 
-  <p>{{getFragen().C_Hinweis}}</p>
+  <p>{{fragen.C_Hinweis}}</p>
 
   <div class="row">
     <div class="col-sm-4">
@@ -57,7 +57,7 @@
     <div class="row" *ngFor="let person of formC.verpflichteter; let i = index">
       <div class="form-group">
         <div class="col-sm-5" *ngIf="i != 0">
-          <label for="Unterhaltsgebender_{{i}}">{{getFragen().C_FrageJa}}</label>
+          <label for="Unterhaltsgebender_{{i}}">{{fragen.C_FrageJa}}</label>
           <input id="Unterhaltsgebender_{{i}}" type="text" class="form-control"
                  [(ngModel)]="person.verpflichteter" placeholder="...">
         </div>

@@ -40,6 +40,7 @@ import {EndfensterComponent} from './formular/endfenster/endfenster.component';
 import { NotizComponent } from './notiz/notiz.component';
 import {PrognoseService} from './formular/endfenster/prognose-service';
 import {NotizService} from './notiz/notiz-service';
+import {Untertitel} from './common/untertitel';
 
 @NgModule({
   declarations: [
@@ -81,6 +82,7 @@ import {NotizService} from './notiz/notiz-service';
     PkhMaterial,
     NotizService,
     Notiz,
+    Untertitel,
     Fragen,
     AllgemeineDaten,
     FormularService,

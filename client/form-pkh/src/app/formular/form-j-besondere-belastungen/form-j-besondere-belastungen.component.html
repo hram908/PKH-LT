@@ -1,20 +1,20 @@
 <div id="formularUeberschrift">
-  <h3>{{getUntertitel()}}</h3>
+  <h3>{{untertitel.J}}</h3>
 </div>
 
 <!-- Abschnitt Frage nach besonderen Belastungen -->
 <label class="form-check-inline">Haben Sie besondere Belastungen? (z.B. Mehrausgaben für
   <div class="speech-bubble">körperbehinderten
-  <span class="speech-bubble-text">{{getFragen().J_behinderungBeschreibung}}</span>
+  <span class="speech-bubble-text">{{fragen.J_behinderungBeschreibung}}</span>
   </div>
     Angehörigen und Angabe des GdB/
   Mehrbedarfs gemäß
   <div class="speech-bubble">§21 SGB II
-  <span class="speech-bubble-text">{{getFragen().J_sgbIIBeschreibung}}</span>
+  <span class="speech-bubble-text">{{fragen.J_sgbIIBeschreibung}}</span>
   </div>
   und
   <div class="speech-bubble">§30 SGB XII
-  <span class="speech-bubble-text">{{getFragen().J_sgbXIIBeschreibung}}</span>
+  <span class="speech-bubble-text">{{fragen.J_sgbXIIBeschreibung}}</span>
   </div>
     )</label>
 <p>Mehrbedarf auch beiwerdenden Müttern nach der 12. Schwangerschaftswoche und bei Personen die mit einem oder
@@ -47,14 +47,14 @@
   <div class="row" *ngFor="let belastung of formJ.besondereBelastungen; let i = index">
     <div class="col-sm-3">
       <div class="form-group">
-        <label for="besBelastung_{{i}}">{{getFragen().J_belastungBezeichung}} *</label>
+        <label for="besBelastung_{{i}}">{{fragen.J_belastungBezeichung}} *</label>
         <input id="besBelastung_{{i}}" type="text" class="form-control" placeholder="Pflicht"
                [(ngModel)]="belastung.beschreibung" required="required">
       </div>
     </div>
     <div class="col-sm-3">
       <div class="form-group">
-        <label for="besBelastungBetrag_{{i}}">{{getFragen().J_ichAlleineZahle}} *</label>
+        <label for="besBelastungBetrag_{{i}}">{{fragen.J_ichAlleineZahle}} *</label>
         <input id="besBelastungBetrag_{{i}}" type="text" class="form-control" placeholder="Pflicht"
                [(ngModel)]="belastung.alleinigeZahlung" required="required">
       </div>

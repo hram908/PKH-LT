@@ -1,6 +1,5 @@
 import {Component} from '@angular/core';
 import {Untertitel} from '../../common/untertitel';
-import {IFormComponentBase} from '../../common/i-form-component-base';
 import {FormGMaterial} from '../../formulardaten/form-g/form-g-material';
 import {Fragen} from '../../common/fragen';
 import {Vermoegen} from '../../formulardaten/form-g/vermoegen';
@@ -10,16 +9,8 @@ import {Vermoegen} from '../../formulardaten/form-g/vermoegen';
   templateUrl: './form-g-eigentum.component.html',
   styleUrls: ['./form-g-eigentum.component.css']
 })
-export class FormGEigentumComponent implements IFormComponentBase {
-  constructor(public formG: FormGMaterial) {
-  }
-
-  getFragen() {
-    return Fragen;
-  }
-
-  getUntertitel(): string {
-    return Untertitel.G;
+export class FormGEigentumComponent {
+  constructor(public formG: FormGMaterial, public untertitel: Untertitel, public fragen: Fragen) {
   }
 
   fuegeHinzuKonto() {
